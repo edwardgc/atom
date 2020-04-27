@@ -1,0 +1,323 @@
+<rpc message-id="6" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <default-operation>merge</default-operation>
+    <test-option>set</test-option>
+    <error-option>stop-on-error</error-option>
+    <config>
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <hardware>
+              <component xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+          <name>ont1</name>
+          <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:chassis</class>
+                                </component>
+            </hardware>
+          </root>
+        </onu>
+      </onus>
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <traffic-descriptor-profiles>
+		<traffic-descriptor-profile xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+			<name>TDP0</name>
+		</traffic-descriptor-profile>
+	</traffic-descriptor-profiles>
+          </root>
+        </onu>
+      </onus>
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <classifiers>
+		<classifier-entry xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+			<name>classifier_ing0</name>
+		</classifier-entry>
+		<classifier-entry xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+			<name>classifier_ing1</name>
+		</classifier-entry>
+		<classifier-entry xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+			<name>classifier_ing2</name>
+		</classifier-entry>
+		<classifier-entry xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+			<name>classifier_ing3</name>
+		</classifier-entry>
+		<classifier-entry xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+			<name>classifier_ing4</name>
+		</classifier-entry>
+		<classifier-entry xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+			<name>classifier_ing5</name>
+		</classifier-entry>
+		<classifier-entry xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+			<name>classifier_ing6</name>
+		</classifier-entry>
+		<classifier-entry xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+			<name>classifier_ing7</name>
+		</classifier-entry>
+	</classifiers>
+          </root>
+        </onu>
+      </onus>
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <policies>
+		<policy xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+			<name>POLICY_ING</name>
+		</policy>
+	</policies>
+          </root>
+        </onu>
+      </onus>
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <tm-profiles>
+		<tc-id-2-queue-id-mapping-profile xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+			<name>tc2queue1</name>
+		</tc-id-2-queue-id-mapping-profile>
+	</tm-profiles>
+          </root>
+        </onu>
+      </onus>
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <qos-policy-profiles>
+		<policy-profile xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+			<name>IPP0</name>
+		</policy-profile>
+	</qos-policy-profiles>
+          </root>
+        </onu>
+      </onus>
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <hardware>
+              <component xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+          <name>ontCard_ont1_1</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:board</class>
+          <parent>ont1</parent>
+                                </component>
+            </hardware>
+          </root>
+        </onu>
+      </onus>
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <hardware>
+              <component xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+          <name>ontCage_ont1</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+          <parent>ontCard_ont1_1</parent>
+                                </component>
+            </hardware>
+          </root>
+        </onu>
+      </onus>
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <hardware>
+              <component xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+          <name>ontSfp_ont1</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+          <parent>ontCage_ont1</parent>
+                                </component>
+            </hardware>
+          </root>
+        </onu>
+      </onus>
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <hardware>
+              <component xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+          <name>ontAniPort_ont1</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+          <parent>ontSfp_ont1</parent>
+                                </component>
+            </hardware>
+          </root>
+        </onu>
+      </onus>
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <hardware>
+              <component xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+          <name>ontUni_ont1_1_1</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+          <parent>ontCard_ont1_1</parent>
+                                </component>
+            </hardware>
+          </root>
+        </onu>
+      </onus>
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+          <name>ont1_olt_uplink_vlan_network</name>
+          <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>network-port</interface-usage>
+                                    </interface-usage>
+                                </interface>
+      </interfaces>
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+          <name>vAni_ont1</name>
+          <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:v-ani</type>
+                                </interface>
+      </interfaces>
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+          <name>venet_uni_ont1_1_1</name>
+          <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
+          <olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
+            <lower-layer-interface>vAni_ont1</lower-layer-interface>
+                                    </olt-v-enet>
+                                </interface>
+      </interfaces>
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <interfaces>
+              <interface xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+          <name>ont1_venet_vlan_user</name>
+          <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">vlan-sub-interface</type>
+          <subif-lower-layer xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+            <interface>venet_uni_ont1_1_1</interface>
+                                    </subif-lower-layer>
+          <ingress-qos-policy-profile xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">IPP0</ingress-qos-policy-profile>
+                                </interface>
+            </interfaces>
+          </root>
+        </onu>
+      </onus>
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <interfaces>
+              <interface xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+          <name>ontAni_ont1</name>
+          <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">ani</type>
+          <port-layer-if xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">ontAniPort_ont1</port-layer-if>
+          <ani xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+            <mgnt-gemport-aes-indicator>false</mgnt-gemport-aes-indicator>
+            <upstream-fec-indicator>true</upstream-fec-indicator>
+            <onu-id>1</onu-id>
+                                    </ani>
+                                </interface>
+            </interfaces>
+          </root>
+        </onu>
+      </onus>
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <interfaces>
+              <interface xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+          <name>enet_uni_ont1_1_1</name>
+          <port-layer-if xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">ontUni_ont1_1_1</port-layer-if>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ethernetCsmacd</type>
+                                </interface>
+            </interfaces>
+          </root>
+        </onu>
+      </onus>
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <interfaces>
+              <interface xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+          <name>enet_vlan_ont1</name>
+          <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">vlan-sub-interface</type>
+          <subif-lower-layer xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+            <interface>enet_uni_ont1_1_1</interface>
+                                    </subif-lower-layer>
+          <ingress-qos-policy-profile xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">IPP0</ingress-qos-policy-profile>
+                                </interface>
+            </interfaces>
+          </root>
+        </onu>
+      </onus>
+      <tconts-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+        <tcont xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+            <name>tcont_ont1</name>
+            <alloc-id>256</alloc-id>
+            <interface-reference>vAni_ont1</interface-reference>
+            <traffic-descriptor-profile-ref>TDP0</traffic-descriptor-profile-ref>
+                                    </tcont>
+      </tconts-config>
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <tconts-config>
+              <tcont xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+            <name>tcont_ont1</name>
+            <alloc-id>256</alloc-id>
+            <interface-reference>ontAni_ont1</interface-reference>
+            <traffic-descriptor-profile-ref>TDP0</traffic-descriptor-profile-ref>
+                                    </tcont>
+            </tconts-config>
+          </root>
+        </onu>
+      </onus>
+      <gemports-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+        <gemport xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+            <name>gem_ont1</name>
+            <itf-ref>venet_uni_ont1_1_1</itf-ref>
+            <tcont-ref>tcont_ont1</tcont-ref>
+            <traffic-class>0</traffic-class>
+            <gemport-id>263</gemport-id>
+                                    </gemport>
+      </gemports-config>
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <gemports-config>
+              <gemport xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+            <name>gem_ont1</name>
+            <itf-ref>enet_vlan_ont1</itf-ref>
+            <tcont-ref>tcont_ont1</tcont-ref>
+            <traffic-class>0</traffic-class>
+            <gemport-id>263</gemport-id>
+                                    </gemport>
+            </gemports-config>
+          </root>
+        </onu>
+      </onus>
+      <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+        <forwarders>
+          <forwarder xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="remove">
+            <name>ont1_500_113</name>
+                                    </forwarder>
+                                </forwarders>
+                            </forwarding>
+    </config>
+  </edit-config>
+</rpc>

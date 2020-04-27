@@ -1,0 +1,7 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="2">
+    <get>
+        <filter>
+            <manageEvent:netconf xmlns:manageEvent="urn:ietf:params:xml:ns:netmod:notification" />
+        </filter>
+    </get>
+</rpc>

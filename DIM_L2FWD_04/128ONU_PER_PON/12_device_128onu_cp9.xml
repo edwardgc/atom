@@ -1,0 +1,907 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+	  <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont01</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991001</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont02</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991002</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont03</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991003</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont04</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991004</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont05</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991005</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont06</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991006</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont07</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991007</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont08</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991008</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont09</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991009</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont0a</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991010</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont0b</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991011</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont0c</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991012</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont0d</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991013</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont0e</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991014</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont0f</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991015</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont10</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991016</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont11</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991017</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont12</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991018</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont13</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991019</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont14</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991020</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont15</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991021</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont16</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991022</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont17</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991023</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont18</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991024</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont19</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991025</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont1a</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991026</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont1b</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991027</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont1c</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991028</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont1d</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991029</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont1e</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991030</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont1f</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991031</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont20</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991032</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont21</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991033</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont22</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991034</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont23</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991035</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont24</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991036</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont25</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991037</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont26</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991038</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont27</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991039</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont28</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991040</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont29</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991041</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont2a</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991042</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont2b</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991043</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont2c</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991044</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont2d</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991045</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont2e</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991046</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont2f</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991047</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont30</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991048</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont31</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991049</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont32</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991050</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont33</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991051</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont34</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991052</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont35</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991053</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont36</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991054</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont37</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991055</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont38</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991056</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont39</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991057</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont3a</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991058</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont3b</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991059</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont3c</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991060</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont3d</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991061</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont3e</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991062</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont3f</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991063</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont40</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991064</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont41</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991065</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont42</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991066</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont43</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991067</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont44</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991068</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont45</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991069</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont46</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991070</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont47</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991071</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont48</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991072</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont49</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991073</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont4a</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991074</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont4b</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991075</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont4c</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991076</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont4d</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991077</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont4e</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991078</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont4f</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991079</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont50</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991080</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont51</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991081</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont52</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991082</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont53</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991083</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont54</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991084</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont55</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991085</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont56</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991086</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont57</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991087</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont58</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991088</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont59</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991089</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont5a</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991090</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont5b</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991091</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont5c</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991092</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont5d</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991093</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont5e</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991094</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont5f</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991095</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont60</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991096</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont61</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991097</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont62</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991098</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont63</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991099</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont64</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991100</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont65</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991101</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont66</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991102</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont67</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991103</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont68</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991104</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont69</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991105</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont6a</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991106</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont6b</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991107</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont6c</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991108</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont6d</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991109</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont6e</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991110</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont6f</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991111</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont70</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991112</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont71</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991113</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont72</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991114</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont73</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991115</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont74</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991116</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont75</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991117</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont76</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991118</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont77</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991119</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont78</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991120</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont79</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991121</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont7a</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991122</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont7b</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991123</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont7c</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991124</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont7d</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991125</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont7e</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991126</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont7f</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991127</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>cp9_ont80</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>ALCLF0991128</duid>
+          <hardware-type>SDVONU</hardware-type>
+          <interface-version>19A.03</interface-version>
+        </device>		
+      </device-manager>		  
+    </config>
+  </edit-config>
+</rpc>

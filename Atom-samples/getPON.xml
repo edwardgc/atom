@@ -1,0 +1,21 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="6">
+    <get xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+      <filter>
+        <anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+          <adh:device-holder xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+            <adh:name>Bade-Wurtemberg</adh:name>
+            <adh:device>
+              <adh:device-id>Stuttgart-1</adh:device-id>
+              <adh:device-specific-data>
+                <if:interfaces xmlns:if="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:ietf:params:xml:ns:yang:ietf-interfaces">
+                  <if:interface>
+                    <if:type xmlns:bbfift="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:bbf:yang:bbf-if-type">bbfift:channel-termination</if:type>
+                  </if:interface>
+                </if:interfaces>
+                </adh:device-specific-data>
+            </adh:device>
+          </adh:device-holder>
+        </anv:device-manager>
+      </filter>
+    </get>
+</rpc>

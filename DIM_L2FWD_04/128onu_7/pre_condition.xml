@@ -1,0 +1,141 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="70" timeout="600">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>cfmb-a</device-id>
+          <device-specific-data>
+            <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cg_cp7</name>
+                <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+                <channel-group xmlns="urn:bbf:yang:bbf-xpon">
+                  <polling-period>100</polling-period>
+                  <raman-mitigation>raman_none</raman-mitigation>
+                  <system-id>000000</system-id>
+                </channel-group>
+              </interface>
+              <interface xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+                <name>cp7-net</name>
+                <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+                <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+                  <interface-usage>network-port</interface-usage>
+                </interface-usage>
+                <enabled>true</enabled>
+                <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <ingress-rule>
+                    <rule>
+                      <name>rule_1</name>
+                      <priority>100</priority>
+                      <flexible-match>
+                        <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                          <tag>
+                            <index>0</index>
+                            <dot1q-tag>
+                              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                              <vlan-id>200</vlan-id>
+                              <pbit>any</pbit>
+                              <dei>any</dei>
+                            </dot1q-tag>
+                          </tag>
+                          <tag>
+                            <index>1</index>
+                            <dot1q-tag>
+                              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                              <vlan-id>107</vlan-id>
+                              <pbit>any</pbit>
+                              <dei>any</dei>
+                            </dot1q-tag>
+                          </tag>
+                        </match-criteria>
+                      </flexible-match>
+                      <ingress-rewrite>
+                        <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">2</pop-tags>
+                      </ingress-rewrite>
+                    </rule>
+                  </ingress-rule>
+                  <egress-rewrite>
+                    <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">0</pop-tags>
+                    <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                      <index>0</index>
+                      <dot1q-tag>
+                        <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                        <vlan-id>200</vlan-id>
+                        <pbit-from-tag-index>0</pbit-from-tag-index>
+                        <dei-from-tag-index>0</dei-from-tag-index>
+                      </dot1q-tag>
+                    </push-tag>
+                    <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                      <index>1</index>
+                      <dot1q-tag>
+                        <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                        <vlan-id>107</vlan-id>
+                        <pbit-from-tag-index>0</pbit-from-tag-index>
+                        <dei-from-tag-index>0</dei-from-tag-index>
+                      </dot1q-tag>
+                    </push-tag>
+                  </egress-rewrite>
+                </inline-frame-processing>
+              </interface>
+              <interface xmlns:ns387="urn:ietf:params:xml:ns:netconf:base:1.0" ns387:operation="merge">
+                <name>cp7</name>
+                <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-pair</type>
+                <channel-pair xmlns="urn:bbf:yang:bbf-xpon">
+                  <channel-group-ref>cg_cp7</channel-group-ref>
+                  <channel-partition-ref>scg_cp7</channel-partition-ref>
+                  <wavelength-prof-ref>xgspon-wave</wavelength-prof-ref>
+                  <channel-pair-type xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:xgs</channel-pair-type>
+                </channel-pair>
+              </interface>
+              <interface xmlns:ns388="urn:ietf:params:xml:ns:netconf:base:1.0" ns388:operation="merge">
+                <name>scg_cp7</name>
+                <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-partition</type>
+                <channel-partition xmlns="urn:bbf:yang:bbf-xpon">
+                  <channel-group-ref>cg_cp7</channel-group-ref>
+                  <channel-partition-index>1</channel-partition-index>
+                  <fec-downstream>true</fec-downstream>
+                  <multicast-aes-indicator>false</multicast-aes-indicator>
+                  <authentication-method>serial-number</authentication-method>
+                  <closest-onu-distance>0</closest-onu-distance>
+                  <max-differential-xpon-distance>20</max-differential-xpon-distance>
+                </channel-partition>
+              </interface>
+            </interfaces>
+            <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+              <forwarders>
+                <forwarder>
+                  <name>fwd_cp7</name>
+                  <ports>
+                    <port>
+                      <name>cp7-net_port</name>
+                      <sub-interface>cp7-net</sub-interface>
+                    </port>
+                  </ports>
+                  <mac-learning>
+                    <forwarding-database>fdb_cp7</forwarding-database>
+                  </mac-learning>
+                  <split-horizon-profiles>
+                    <split-horizon-profile>split</split-horizon-profile>
+                  </split-horizon-profiles>
+                  <flooding-policies>
+                    <flooding-policies-profile>drop_all</flooding-policies-profile>
+                  </flooding-policies>
+                </forwarder>
+              </forwarders>
+              <forwarding-databases>
+                <forwarding-database xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                  <name>fdb_cp7</name>
+                  <max-number-mac-addresses>1024</max-number-mac-addresses>
+                  <aging-timer>300</aging-timer>
+                </forwarding-database>
+              </forwarding-databases>
+            </forwarding>
+          </device-specific-data>
+        </device>
+      </device-manager>
+    </config>
+  </edit-config>
+</rpc>

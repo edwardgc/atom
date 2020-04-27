@@ -1,0 +1,6 @@
+<rpc message-id="1" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+    <nws:retrieve-slice-model xmlns:nws="http://www.nokia.com/management-solutions/anv-network-slicing" >
+         <nws:hardware-type>LS-CF-24W</nws:hardware-type>
+         <nws:interface-version>19A.06</nws:interface-version>
+    </nws:retrieve-slice-model>
+</rpc>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="6">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+        <adh:device-holder xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+          <adh:name>Bade-Wurtemberg</adh:name>
+          <adh:device>
+            <adh:device-id>Stuttgart-1</adh:device-id>
+            <adh:device-specific-data>
+              <entity xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:ietf:params:xml:ns:yang:ietf-entity">
+                <physical-entity>
+                  <name>ont/1/1/1</name>
+                  <class xmlns:ianaent="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:ietf:params:xml:ns:yang:iana-entity" xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:broadband-forum-org:bbf-entity-extension">ianaent:chassis</class>
+                  <ont xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:broadband-forum-org:yang:bbf-eqpt">
+                    <ont-config>
+                      <battery-backup>false</battery-backup>
+                      <security-mode>Aes-128-Algorithm</security-mode>
+                      <current-connectivity-mode>map-filtering-1-MP</current-connectivity-mode>
+                      <pri-q-scale-factor>0</pri-q-scale-factor>
+                      <planned-sw-version>unplanned</planned-sw-version>
+                      <download-url>http://</download-url>
+                      <reboot-cmd>reboot-active-img</reboot-cmd>
+                      <ber-interval>8000</ber-interval>
+                      <slid>wildcard</slid>
+                      <prov-version-num>*</prov-version-num>
+                      <subscriber-id-1>0</subscriber-id-1>
+                      <subscriber-id-2>0</subscriber-id-2>
+                      <power-shed-profile>0</power-shed-profile>
+                      <disable-enable-ont-cmd>auto-ont</disable-enable-ont-cmd>
+                      <data-store-cmd>force-data-store</data-store-cmd>
+                      <sw-download-version>disabled</sw-download-version>
+                      <eth-port-to-port-ind>false</eth-port-to-port-ind>
+                      <optical-supervision-daily-ind>false</optical-supervision-daily-ind>
+                      <police-mode>local-police-mode</police-mode>
+                      <logical-onu-id>0</logical-onu-id>
+                      <logical-onu-id-password>0</logical-onu-id-password>
+                      <serial-number-bundle-control>sn-unbundle</serial-number-bundle-control>
+                      <planned-cfg-file-1>DISABLED</planned-cfg-file-1>
+                      <planned-cfg-file-2>DISABLED</planned-cfg-file-2>
+                      <download-cfg-file-1>DISABLED</download-cfg-file-1>
+                      <download-cfg-file-2>DISABLED</download-cfg-file-2>
+                    </ont-config>
+                  </ont>
+                </physical-entity>
+                <physical-entity>
+                  <name>ontcage/1/1/1</name>
+                  <class xmlns:ianaent="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:ietf:params:xml:ns:yang:iana-entity" xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:broadband-forum-org:bbf-entity-extension">ianaent:container</class>
+                  <contained-in xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:broadband-forum-org:bbf-entity-extension">ont/1/1/1</contained-in>
+                </physical-entity>
+                <physical-entity>
+                  <name>ontsfp/1/1/1</name>
+                  <class xmlns:bbf-ent="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:broadband-forum-org:bbf-entity" xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:broadband-forum-org:bbf-entity-extension">bbf-ent:pluggable-transceiver</class>
+                  <contained-in xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:broadband-forum-org:bbf-entity-extension">ontcage/1/1/1</contained-in>
+                </physical-entity>
+                <physical-entity>
+                  <name>ontaniport/1/1/1</name>
+                  <class xmlns:ianaent="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:ietf:params:xml:ns:yang:iana-entity" xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:broadband-forum-org:bbf-entity-extension">ianaent:port</class>
+                  <contained-in xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:broadband-forum-org:bbf-entity-extension">ontsfp/1/1/1</contained-in>
+                </physical-entity>
+              </entity>
+              <interfaces xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:ietf:params:xml:ns:yang:ietf-interfaces">
+                <interface>
+                  <name>vontani/1/1/1</name>
+                  <type xmlns:bbfift="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:bbf:yang:bbf-if-type">bbfift:v-ontani</type>
+                  <fiber:v-ontani xmlns:fiber="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:bbf:yang:bbf-fiber">
+                    <fiber:v-ontani-config>
+                      <fiber:parent-ref>Channel Partition 1/1</fiber:parent-ref>
+                      <fiber:expected-registration-id>1</fiber:expected-registration-id>
+                      <fiber:expected-serial-number>ALCLF9C9A244</fiber:expected-serial-number>
+                      <fiber:preferred-chanpair>Channel Pair 1</fiber:preferred-chanpair>
+                    </fiber:v-ontani-config>
+                  </fiber:v-ontani>
+                </interface>
+                <interface>
+                  <name>ontani/1/1/1</name>
+                  <type xmlns:bbfift="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:bbf:yang:bbf-if-type">bbfift:ontani</type>
+                  <port-layer-if xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:bbf:yang:bbf-interface-port-reference">ontaniport/1/1/1</port-layer-if>
+                  <ontani xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:bbf:yang:bbf-fiber">
+                    <ontani-config>
+                      <upstream-fec-indicator>false</upstream-fec-indicator>
+                      <mgnt-gemport-aes-indicator>false</mgnt-gemport-aes-indicator>
+                    </ontani-config>
+                  </ontani>
+                </interface>
+              </interfaces>
+              <link-table xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:bbf:yang:bbf-link-table-body">
+                <link-table>
+                  <itf-from>vontani/1/1/1</itf-from>
+                  <itf-to>ontani/1/1/1</itf-to>
+                </link-table>
+              </link-table>
+            </adh:device-specific-data>
+          </adh:device>
+        </adh:device-holder>
+      </anv:device-manager>
+    </config>
+  </edit-config>
+</rpc>

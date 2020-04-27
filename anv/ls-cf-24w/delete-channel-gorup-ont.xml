@@ -1,0 +1,67 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="10" timeout="600">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>HelloWorld</device-id>
+          <device-specific-data>
+            <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                <name>cg_cp1-ls</name>
+                <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+                <channel-group xmlns="urn:bbf:yang:bbf-xpon">
+                  <polling-period>100</polling-period>
+                  <raman-mitigation>raman_none</raman-mitigation>
+                  <system-id>000000</system-id>
+                </channel-group>
+              </interface>
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>scg_cp1</name>
+          <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-partition</type>
+          <channel-partition xmlns="urn:bbf:yang:bbf-xpon">
+            <channel-group-ref>cg_cp1-ls</channel-group-ref>
+            <channel-partition-index>1</channel-partition-index>
+            <fec-downstream>true</fec-downstream>
+            <multicast-aes-indicator>false</multicast-aes-indicator>
+            <authentication-method>serial-number</authentication-method>
+            <closest-onu-distance>0</closest-onu-distance>
+            <max-differential-xpon-distance>20</max-differential-xpon-distance>
+          </channel-partition>
+        </interface>
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>cp1</name>
+          <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-pair</type>
+          <channel-pair xmlns="urn:bbf:yang:bbf-xpon">
+            <channel-group-ref>cg_cp1-ls</channel-group-ref>
+            <channel-partition-ref>scg_cp1</channel-partition-ref>
+            <channel-pair-type xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:xgs</channel-pair-type>
+            <wavelength-prof-ref>xgspon-wave</wavelength-prof-ref>
+          </channel-pair>
+        </interface>
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>cp1_ont01</name>
+          <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:v-ani</type>
+          <v-ani xmlns="urn:bbf:yang:bbf-xponvani">
+            <parent-ref>scg_cp1</parent-ref>
+            <onu-id>1</onu-id>
+            <expected-serial-number>ALCLFA5FEA01</expected-serial-number>
+            <preferred-chanpair>cp1</preferred-chanpair>
+          </v-ani>
+        </interface>
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>cp1_ont01_uni1</name>
+          <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
+          <olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
+            <lower-layer-interface>cp1_ont01</lower-layer-interface>
+          </olt-v-enet>
+        </interface>
+              </interfaces>
+              </device-specific-data>
+        </device>
+      </device-manager>
+    </config>
+  </edit-config>
+</rpc>

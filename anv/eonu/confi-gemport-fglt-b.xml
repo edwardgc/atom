@@ -1,0 +1,36 @@
+ <rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+  <config>
+   <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+   <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+    <device-id>Demo</device-id>
+     <device-specific-data>
+
+		 <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+          <interface>
+            <name>cp1_ont01_uni1</name>
+            <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
+            <olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
+              <lower-layer-interface>cp1_ont01</lower-layer-interface>
+            </olt-v-enet>
+          </interface>
+        </interfaces>
+
+     <gemports-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+		      <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                  <name>cp1_ont01_uni1_gem1</name>
+                  <itf-ref>cp1_ont01_uni1</itf-ref>
+				  <tcont-ref>cp1_ont01_tcont1</tcont-ref>
+                  <traffic-class>0</traffic-class>
+                  <gemport-id>1024</gemport-id>
+                </gemport>
+      </gemports-config>
+	   </device-specific-data>
+    </device>
+   </device-manager>
+  </config>
+ </edit-config>
+</rpc>

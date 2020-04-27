@@ -1,0 +1,170 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="171" timeout="1800">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>cfmb-a</device-id>
+          <device-specific-data>
+            <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+              <component>
+                <name>SFP17</name>
+                <parent>C-X17</parent>
+                <parent-rel-pos>1</parent-rel-pos>
+                <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE46232AA</model-name>
+                <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+              </component>
+              <component>
+                <name>PORT17</name>
+                <parent>SFP17</parent>
+                <parent-rel-pos>1</parent-rel-pos>
+                <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+              </component>
+            </hardware>
+            <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cg_cp17</name>
+                <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+                <channel-group xmlns="urn:bbf:yang:bbf-xpon">
+                  <polling-period>100</polling-period>
+                  <raman-mitigation>raman_none</raman-mitigation>
+                  <system-id>000000</system-id>
+                </channel-group>
+              </interface>
+              <interface xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+                <name>cp17-net</name>
+                <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+                <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+                  <interface-usage>network-port</interface-usage>
+                </interface-usage>
+                <enabled>true</enabled>
+                <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <ingress-rule>
+                    <rule>
+                      <name>rule_1</name>
+                      <priority>100</priority>
+                      <flexible-match>
+                        <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                          <tag>
+                            <index>0</index>
+                            <dot1q-tag>
+                              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                              <vlan-id>200</vlan-id>
+                              <pbit>any</pbit>
+                              <dei>any</dei>
+                            </dot1q-tag>
+                          </tag>
+                          <tag>
+                            <index>1</index>
+                            <dot1q-tag>
+                              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                              <vlan-id>117</vlan-id>
+                              <pbit>any</pbit>
+                              <dei>any</dei>
+                            </dot1q-tag>
+                          </tag>
+                        </match-criteria>
+                      </flexible-match>
+                      <ingress-rewrite>
+                        <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">2</pop-tags>
+                      </ingress-rewrite>
+                    </rule>
+                  </ingress-rule>
+                  <egress-rewrite>
+                    <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">0</pop-tags>
+                    <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                      <index>0</index>
+                      <dot1q-tag>
+                        <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                        <vlan-id>200</vlan-id>
+                        <pbit-from-tag-index>0</pbit-from-tag-index>
+                        <dei-from-tag-index>0</dei-from-tag-index>
+                      </dot1q-tag>
+                    </push-tag>
+                    <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                      <index>1</index>
+                      <dot1q-tag>
+                        <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                        <vlan-id>117</vlan-id>
+                        <pbit-from-tag-index>0</pbit-from-tag-index>
+                        <dei-from-tag-index>0</dei-from-tag-index>
+                      </dot1q-tag>
+                    </push-tag>
+                  </egress-rewrite>
+                </inline-frame-processing>
+              </interface>
+              <interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+                <name>cp17_ont80_uni1-user1</name>
+                <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+                <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <interface>cp17_ont80_uni1</interface>
+                </subif-lower-layer>
+                <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+                  <interface-usage>user-port</interface-usage>
+                </interface-usage>
+                <enabled>true</enabled>
+                <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <ingress-rule>
+                    <rule>
+                      <name>rule_1</name>
+                      <priority>100</priority>
+                      <flexible-match>
+                        <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                          <tag>
+                            <index>0</index>
+                            <dot1q-tag>
+                              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                              <vlan-id>101</vlan-id>
+                              <pbit>any</pbit>
+                              <dei>any</dei>
+                            </dot1q-tag>
+                          </tag>
+                        </match-criteria>
+                      </flexible-match>
+                      <ingress-rewrite>
+                        <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+                      </ingress-rewrite>
+                    </rule>
+                  </ingress-rule>
+                  <egress-rewrite>
+                    <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">0</pop-tags>
+                    <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                      <index>0</index>
+                      <dot1q-tag>
+                        <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                        <vlan-id>101</vlan-id>
+                        <pbit-from-tag-index>0</pbit-from-tag-index>
+                        <dei-from-tag-index>0</dei-from-tag-index>
+                      </dot1q-tag>
+                    </push-tag>
+                  </egress-rewrite>
+                </inline-frame-processing>
+                <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP0</ingress-qos-policy-profile>
+                <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">QPP0</egress-qos-policy-profile>
+              </interface>
+              <interface xmlns:ns3="urn:ietf:params:xml:ns:netconf:base:1.0" ns3:operation="merge">
+                <name>cp17_ont80_uni1</name>
+                <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
+                <olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
+                  <lower-layer-interface>cp17_ont80</lower-layer-interface>
+                </olt-v-enet>
+              </interface>
+              <interface xmlns:ns4="urn:ietf:params:xml:ns:netconf:base:1.0" ns4:operation="merge">
+                <name>cp17_ont80</name>
+                <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:v-ani</type>
+                <v-ani xmlns="urn:bbf:yang:bbf-xponvani">
+                  <parent-ref>scg_cp17</parent-ref>
+                  <onu-id>128</onu-id>
+                  <expected-serial-number>ALCLF1091128</expected-serial-number>
+                  <preferred-chanpair>cp17</preferred-chanpair>
+                </v-ani>
+              </interface>
+			</interfaces>
+         </device-specific-data>
+        </device>
+      </device-manager>
+    </config>
+  </edit-config>
+</rpc>

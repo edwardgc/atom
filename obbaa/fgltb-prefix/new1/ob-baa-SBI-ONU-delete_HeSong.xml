@@ -1,0 +1,69 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1527307907658">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+
+    <config>
+
+    <!-- olt-side vani -->
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>vAni_ont1</name>
+        </interface>
+      </interfaces>
+
+
+      <!-- olt-side venet -->
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>venet_uni_ont1_1_1</name>
+        </interface>
+      </interfaces>
+
+
+  <!-- olt-side vlan sub-interface user-->
+        <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>ont1_venet_vlan_user</name>
+        </interface>
+      </interfaces>
+
+
+  <!-- olt-side l2fwd forwarder -->
+      <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+        <forwarders>
+          <forwarder  xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+            <name>ont1_20_100</name>
+          </forwarder>
+        </forwarders>
+      </forwarding>
+
+
+      <!-- olt-side tcont -->
+      <tconts-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+        <tcont  xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>tcont_ont1</name>
+        </tcont>
+      </tconts-config>
+
+
+
+  <!-- olt-side gemport -->
+      <gemports-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+        <gemport  xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>gem_ont1</name>
+        </gemport>
+      </gemports-config>
+
+
+	<!-- onu-side configuration -->
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu   xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>ont1</name>
+        </onu>
+      </onus>
+
+</config>
+</edit-config>
+</rpc>

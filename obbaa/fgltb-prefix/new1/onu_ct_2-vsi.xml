@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1527307907656">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+    	<onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    		<onu>
+    			<name>ont1</name>
+    			<root>
+    				<hardware>
+    					<component xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="merge">
+    						<name>ont1</name>
+    						<class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:chassis</class>
+    						<admin-state>unlocked</admin-state>
+    						<parent-rel-pos>1</parent-rel-pos>
+    						<mfg-name>ALCL</mfg-name>
+    					</component>
+    				</hardware>
+    			</root>
+    		</onu>
+    	</onus>
+    	<onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    		<onu>
+    			<name>ont1</name>
+    			<root>
+    				<traffic-descriptor-profiles>
+    					<traffic-descriptor-profile>
+    						<name>TDP0</name>
+    						<fixed-bandwidth>10000000</fixed-bandwidth>
+    						<assured-bandwidth>10000000</assured-bandwidth>
+    						<maximum-bandwidth>30000000</maximum-bandwidth>
+    					</traffic-descriptor-profile>
+    				</traffic-descriptor-profiles>
+    			</root>
+    		</onu>
+    	</onus>
+    	<onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    		<onu>
+    			<name>ont1</name>
+    			<root>
+    				<classifiers>
+    					<classifier-entry>
+    						<name>classifier_ing0</name>
+    						<filter-operation>match-all-filter</filter-operation>
+    						<match-criteria>
+    							<tag>
+    								<index>0</index>
+    								<in-pbit-list>0</in-pbit-list>
+    							</tag>
+    						</match-criteria>
+    						<classifier-action-entry-cfg>
+    							<action-type>scheduling-traffic-class</action-type>
+    							<scheduling-traffic-class>0</scheduling-traffic-class>
+    						</classifier-action-entry-cfg>
+    					</classifier-entry>
+    					<classifier-entry>
+    						<name>classifier_ing1</name>
+    						<filter-operation>match-all-filter</filter-operation>
+    						<match-criteria>
+    							<tag>
+    								<index>0</index>
+    								<in-pbit-list>1</in-pbit-list>
+    							</tag>
+    						</match-criteria>
+    						<classifier-action-entry-cfg>
+    							<action-type>scheduling-traffic-class</action-type>
+    							<scheduling-traffic-class>1</scheduling-traffic-class>
+    						</classifier-action-entry-cfg>
+    					</classifier-entry>
+    					<classifier-entry>
+    						<name>classifier_ing2</name>
+    						<filter-operation>match-all-filter</filter-operation>
+    						<match-criteria>
+    							<tag>
+    								<index>0</index>
+    								<in-pbit-list>2</in-pbit-list>
+    							</tag>
+    						</match-criteria>
+    						<classifier-action-entry-cfg>
+    							<action-type>scheduling-traffic-class</action-type>
+    							<scheduling-traffic-class>2</scheduling-traffic-class>
+    						</classifier-action-entry-cfg>
+    					</classifier-entry>
+    					<classifier-entry>
+    						<name>classifier_ing3</name>
+    						<filter-operation>match-all-filter</filter-operation>
+    						<match-criteria>
+    							<tag>
+    								<index>0</index>
+    								<in-pbit-list>3</in-pbit-list>
+    							</tag>
+    						</match-criteria>
+    						<classifier-action-entry-cfg>
+    							<action-type>scheduling-traffic-class</action-type>
+    							<scheduling-traffic-class>3</scheduling-traffic-class>
+    						</classifier-action-entry-cfg>
+    					</classifier-entry>
+    					<classifier-entry>
+    						<name>classifier_ing4</name>
+    						<filter-operation>match-all-filter</filter-operation>
+    						<match-criteria>
+    							<tag>
+    								<index>0</index>
+    								<in-pbit-list>4</in-pbit-list>
+    							</tag>
+    						</match-criteria>
+    						<classifier-action-entry-cfg>
+    							<action-type>scheduling-traffic-class</action-type>
+    							<scheduling-traffic-class>4</scheduling-traffic-class>
+    						</classifier-action-entry-cfg>
+    					</classifier-entry>
+    					<classifier-entry>
+    						<name>classifier_ing5</name>
+    						<filter-operation>match-all-filter</filter-operation>
+    						<match-criteria>
+    							<tag>
+    								<index>0</index>
+    								<in-pbit-list>5</in-pbit-list>
+    							</tag>
+    						</match-criteria>
+    						<classifier-action-entry-cfg>
+    							<action-type>scheduling-traffic-class</action-type>
+    							<scheduling-traffic-class>5</scheduling-traffic-class>
+    						</classifier-action-entry-cfg>
+    					</classifier-entry>
+    					<classifier-entry>
+    						<name>classifier_ing6</name>
+    						<filter-operation>match-all-filter</filter-operation>
+    						<match-criteria>
+    							<tag>
+    								<index>0</index>
+    								<in-pbit-list>6</in-pbit-list>
+    							</tag>
+    						</match-criteria>
+    						<classifier-action-entry-cfg>
+    							<action-type>scheduling-traffic-class</action-type>
+    							<scheduling-traffic-class>6</scheduling-traffic-class>
+    						</classifier-action-entry-cfg>
+    					</classifier-entry>
+    					<classifier-entry>
+    						<name>classifier_ing7</name>
+    						<filter-operation>match-all-filter</filter-operation>
+    						<match-criteria>
+    							<tag>
+    								<index>0</index>
+    								<in-pbit-list>7</in-pbit-list>
+    							</tag>
+    						</match-criteria>
+    						<classifier-action-entry-cfg>
+    							<action-type>scheduling-traffic-class</action-type>
+    							<scheduling-traffic-class>7</scheduling-traffic-class>
+    						</classifier-action-entry-cfg>
+    					</classifier-entry>
+    				</classifiers>
+    			</root>
+    		</onu>
+    	</onus>
+    	<onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    		<onu>
+    			<name>ont1</name>
+    			<root>
+    				<policies>
+    					<policy>
+    						<name>POLICY_ING</name>
+    						<classifiers>
+    							<name>classifier_ing0</name>
+    						</classifiers>
+    						<classifiers>
+    							<name>classifier_ing1</name>
+    						</classifiers>
+    						<classifiers>
+    							<name>classifier_ing2</name>
+    						</classifiers>
+    						<classifiers>
+    							<name>classifier_ing3</name>
+    						</classifiers>
+    						<classifiers>
+    							<name>classifier_ing4</name>
+    						</classifiers>
+    						<classifiers>
+    							<name>classifier_ing5</name>
+    						</classifiers>
+    						<classifiers>
+    							<name>classifier_ing6</name>
+    						</classifiers>
+    						<classifiers>
+    							<name>classifier_ing7</name>
+    						</classifiers>
+    					</policy>
+    				</policies>
+    			</root>
+    		</onu>
+    	</onus>
+    	<onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    		<onu>
+    			<name>ont1</name>
+    			<root>
+    				<tm-profiles>
+    					<tc-id-2-queue-id-mapping-profile>
+    						<name>tc2queue1</name>
+    						<mapping-entry>
+    							<traffic-class-id>0</traffic-class-id>
+    							<local-queue-id>0</local-queue-id>
+    						</mapping-entry>
+    						<mapping-entry>
+    							<traffic-class-id>1</traffic-class-id>
+    							<local-queue-id>1</local-queue-id>
+    						</mapping-entry>
+    						<mapping-entry>
+    							<traffic-class-id>2</traffic-class-id>
+    							<local-queue-id>2</local-queue-id>
+    						</mapping-entry>
+    						<mapping-entry>
+    							<traffic-class-id>3</traffic-class-id>
+    							<local-queue-id>3</local-queue-id>
+    						</mapping-entry>
+    						<mapping-entry>
+    							<traffic-class-id>4</traffic-class-id>
+    							<local-queue-id>4</local-queue-id>
+    						</mapping-entry>
+    						<mapping-entry>
+    							<traffic-class-id>5</traffic-class-id>
+    							<local-queue-id>5</local-queue-id>
+    						</mapping-entry>
+    						<mapping-entry>
+    							<traffic-class-id>6</traffic-class-id>
+    							<local-queue-id>6</local-queue-id>
+    						</mapping-entry>
+    						<mapping-entry>
+    							<traffic-class-id>7</traffic-class-id>
+    							<local-queue-id>7</local-queue-id>
+    						</mapping-entry>
+    					</tc-id-2-queue-id-mapping-profile>
+    				</tm-profiles>
+    			</root>
+    		</onu>
+    	</onus>
+    	<onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    		<onu>
+    			<name>ont1</name>
+    			<root>
+    				<qos-policy-profiles>
+    					<policy-profile>
+    						<name>IPP0</name>
+    						<policy-list>
+    							<name>POLICY_ING</name>
+    						</policy-list>
+    					</policy-profile>
+    				</qos-policy-profiles>
+    			</root>
+    		</onu>
+    	</onus>
+    	<onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    		<onu>
+    			<name>ont1</name>
+    			<root>
+    				<hardware>
+    					<component xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="merge">
+    						<name>ontCard_ont1_1</name>
+    						<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:board</class>
+    						<admin-state>unlocked</admin-state>
+    						<parent>ont1</parent>
+    						<parent-rel-pos>1</parent-rel-pos>
+    						<mfg-name>ALCL</mfg-name>
+    					</component>
+    				</hardware>
+    			</root>
+    		</onu>
+    	</onus>
+    	<onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    		<onu>
+    			<name>ont1</name>
+    			<root>
+    				<hardware>
+    					<component xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="merge">
+    						<name>ontCage_ont1</name>
+    						<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+    						<parent>ontCard_ont1_1</parent>
+    						<parent-rel-pos>1</parent-rel-pos>
+    					</component>
+    				</hardware>
+    			</root>
+    		</onu>
+    	</onus>
+    	<onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    		<onu>
+    			<name>ont1</name>
+    			<root>
+    				<hardware>
+    					<component xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="merge">
+    						<name>ontSfp_ont1</name>
+    						<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+    						<parent>ontCage_ont1</parent>
+    						<parent-rel-pos>1</parent-rel-pos>
+    					</component>
+    				</hardware>
+    			</root>
+    		</onu>
+    	</onus>
+    	<onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    		<onu>
+    			<name>ont1</name>
+    			<root>
+    				<hardware>
+    					<component xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="merge">
+    						<name>ontAniPort_ont1</name>
+    						<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+    						<parent>ontSfp_ont1</parent>
+    						<parent-rel-pos>1</parent-rel-pos>
+    					</component>
+    				</hardware>
+    			</root>
+    		</onu>
+    	</onus>
+    	<onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    		<onu>
+    			<name>ont1</name>
+    			<root>
+    				<hardware>
+    					<component xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="merge">
+    						<name>ontUni_ont1_1_1</name>
+    						<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+    						<parent>ontCard_ont1_1</parent>
+    						<parent-rel-pos>1</parent-rel-pos>
+    					</component>
+    				</hardware>
+    			</root>
+    		</onu>
+    	</onus>
+    	<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+    		<interface xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="merge">
+    			<name>ont1_olt_uplink_vlan_network</name>
+    			<type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+
+    			<interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+    				<interface-usage>network-port</interface-usage>
+    			</interface-usage>
+    			<enabled>true</enabled>
+    			<inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+    				<ingress-rule>
+    					<rule>
+    						<name>rule_1</name>
+    						<priority>100</priority>
+    						<flexible-match>
+    							<match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+    								<tag>
+    									<index>0</index>
+    									<dot1q-tag>
+    										<tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+    										<vlan-id>20</vlan-id>
+    										<pbit>any</pbit>
+    										<dei>any</dei>
+    									</dot1q-tag>
+    								</tag>
+    								<tag>
+    									<index>1</index>
+    									<dot1q-tag>
+    										<tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+    										<vlan-id>100</vlan-id>
+    										<pbit>any</pbit>
+    										<dei>any</dei>
+    									</dot1q-tag>
+    								</tag>
+    							</match-criteria>
+    						</flexible-match>
+    						<ingress-rewrite>
+    							<pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+    						</ingress-rewrite>
+    					</rule>
+    				</ingress-rule>
+    				<egress-rewrite>
+    					<pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">0</pop-tags>
+    					<push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+    						<index>0</index>
+    						<dot1q-tag>
+    							<tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+    							<vlan-id>20</vlan-id>
+    							<pbit-from-tag-index>0</pbit-from-tag-index>
+    							<dei-from-tag-index>0</dei-from-tag-index>
+    						</dot1q-tag>
+    					</push-tag>
+    				</egress-rewrite>
+    			</inline-frame-processing>
+    		</interface>
+    	</interfaces>
+    	<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+    		<interface xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="merge">
+    			<name>vAni_ont1</name>
+    			<enabled>true</enabled>
+    			<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:v-ani</type>
+    			<v-ani xmlns="urn:bbf:yang:bbf-xponvani">
+    				<parent-ref>CG_2.CPart_1</parent-ref>
+    				<onu-id>1</onu-id>
+    				<expected-serial-number>ALCLF8889FE3</expected-serial-number>
+    				<preferred-chanpair>CG_2.CPart_1.CPair_gpon</preferred-chanpair>
+    				<onu-name xmlns="urn:broadband-forum-org:yang:bbf-xponinfra-augment-nodes">ont1</onu-name>
+    			</v-ani>
+    		</interface>
+    	</interfaces>
+    	<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+    		<interface xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="merge">
+    			<name>venet_uni_ont1_1_1</name>
+    			<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
+    			<enabled>true</enabled>
+    			<olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
+    				<lower-layer-interface>vAni_ont1</lower-layer-interface>
+    			</olt-v-enet>
+    		</interface>
+    	</interfaces>
+    	<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+    		<interface xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="merge">
+    			<name>ont1_venet_vlan_user</name>
+    			<type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+    			<subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+    				<interface>venet_uni_ont1_1_1</interface>
+    			</subif-lower-layer>
+    			<interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+    				<interface-usage>user-port</interface-usage>
+    			</interface-usage>
+    			<enabled>true</enabled>
+    			<inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+    				<ingress-rule>
+    					<rule>
+    						<name>rule_1</name>
+    						<priority>100</priority>
+    						<flexible-match>
+    							<match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+    								<tag>
+    									<index>0</index>
+    									<dot1q-tag>
+    										<tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+    										<vlan-id>100</vlan-id>
+    										<pbit>any</pbit>
+    										<dei>any</dei>
+    									</dot1q-tag>
+    								</tag>
+    							</match-criteria>
+    						</flexible-match>
+    					</rule>
+    				</ingress-rule>
+    			</inline-frame-processing>
+
+    			<!-- olt-side vlan sub-interface dhcp relay profile association -->
+    			<l2-dhcpv4-relay xmlns="urn:bbf:yang:bbf-l2-dhcpv4-relay">
+    				<enable>true</enable>
+    				<trusted-port>false</trusted-port>
+    				<profile-ref>DHCP_Default</profile-ref>
+    			</l2-dhcpv4-relay>
+
+    			<!-- olt-side vlan sub-interface qos -->
+    			<ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP0</ingress-qos-policy-profile>
+    			<egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">QPP0</egress-qos-policy-profile>
+    			<egress-tm-objects xmlns="urn:bbf:yang:bbf-qos-enhanced-scheduling">
+    				<root-if-name>CG_2.CPart_1</root-if-name>
+    				<scheduler-node-name>NODE_DEF</scheduler-node-name>
+    			</egress-tm-objects>
+    		</interface>
+    	</interfaces>
+    	<onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    		<onu>
+    			<name>ont1</name>
+    			<root>
+    				<interfaces>
+    					<interface xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="merge">
+    						<name>ontAni_ont1</name>
+    						<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">ani</type>
+    						<enabled>true</enabled>
+    						<port-layer-if xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">ontAniPort_ont1</port-layer-if>
+    						<ani xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    							<mgnt-gemport-aes-indicator>false</mgnt-gemport-aes-indicator>
+    							<upstream-fec-indicator>true</upstream-fec-indicator>
+    							<onu-id>1</onu-id>
+    						</ani>
+    					</interface>
+    				</interfaces>
+    			</root>
+    		</onu>
+    	</onus>
+    	<onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    		<onu>
+    			<name>ont1</name>
+    			<root>
+    				<interfaces>
+    					<interface xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="merge">
+    						<name>enet_uni_ont1_1_1</name>
+    						<type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ethernetCsmacd</type>
+    						<enabled>true</enabled>
+    						<port-layer-if xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">ontUni_ont1_1_1</port-layer-if>
+    					</interface>
+    				</interfaces>
+    			</root>
+    		</onu>
+    	</onus>
+    	<onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    		<onu>
+    			<name>ont1</name>
+    			<root>
+    				<interfaces>
+    					<interface xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="merge">
+    						<name>enet_vlan_ont1</name>
+    						<type xmlns:bbfift="urn:bbf:yang:bbf-if-type">vlan-sub-interface</type>
+    						<enabled>true</enabled>
+    						<subif-lower-layer xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    							<interface>enet_uni_ont1_1_1</interface>
+    						</subif-lower-layer>
+    						<inline-frame-processing xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    							<ingress-rule>
+    								<rule>
+    									<name>rule_1</name>
+    									<priority>100</priority>
+    									<flexible-match>
+    										<match-criteria xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    											<untagged/>
+    										</match-criteria>
+    									</flexible-match>
+    									<ingress-rewrite>
+    										<pop-tags xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">0</pop-tags>
+    										<push-tag xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    											<index>0</index>
+    											<dot1q-tag>
+    												<tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">c-vlan</tag-type>
+    												<vlan-id>100</vlan-id>
+    												<pbit-from-tag-index>0</pbit-from-tag-index>
+    												<dei-from-tag-index>0</dei-from-tag-index>
+    											</dot1q-tag>
+    										</push-tag>
+    									</ingress-rewrite>
+    								</rule>
+    							</ingress-rule>
+    							<egress-rewrite>
+    								<pop-tags xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">1</pop-tags>
+    							</egress-rewrite>
+    						</inline-frame-processing>
+    						<!-- onu-side sub-interface Qos -->
+    						<ingress-qos-policy-profile xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">IPP0</ingress-qos-policy-profile>
+    					</interface>
+    				</interfaces>
+    			</root>
+    		</onu>
+    	</onus>
+    	<tconts-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+    		<tcont xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="merge">
+    			<name>tcont_ont1</name>
+    			<alloc-id>256</alloc-id>
+    			<interface-reference>vAni_ont1</interface-reference>
+    			<traffic-descriptor-profile-ref>TDP0</traffic-descriptor-profile-ref>
+    		</tcont>
+    	</tconts-config>
+    	<onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    		<onu>
+    			<name>ont1</name>
+    			<root>
+    				<tconts-config>
+    					<tcont xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="merge">
+    						<name>tcont_ont1</name>
+    						<alloc-id>256</alloc-id>
+    						<interface-reference>ontAni_ont1</interface-reference>
+    						<traffic-descriptor-profile-ref>TDP0</traffic-descriptor-profile-ref>
+    						<tm-root>
+    							<tc-id-2-queue-id-mapping-profile-name>tc2queue1</tc-id-2-queue-id-mapping-profile-name>
+    							<queue>
+    								<local-queue-id>7</local-queue-id>
+    								<priority>7</priority>
+    								<weight>1</weight>
+    							</queue>
+    							<queue>
+    								<local-queue-id>6</local-queue-id>
+    								<priority>6</priority>
+    								<weight>1</weight>
+    							</queue>
+    							<queue>
+    								<local-queue-id>5</local-queue-id>
+    								<priority>5</priority>
+    								<weight>1</weight>
+    							</queue>
+    							<queue>
+    								<local-queue-id>4</local-queue-id>
+    								<priority>4</priority>
+    								<weight>1</weight>
+    							</queue>
+    							<queue>
+    								<local-queue-id>3</local-queue-id>
+    								<priority>3</priority>
+    								<weight>1</weight>
+    							</queue>
+    							<queue>
+    								<local-queue-id>2</local-queue-id>
+    								<priority>2</priority>
+    								<weight>1</weight>
+    							</queue>
+    							<queue>
+    								<local-queue-id>0</local-queue-id>
+    								<priority>0</priority>
+    								<weight>1</weight>
+    							</queue>
+    							<queue>
+    								<local-queue-id>1</local-queue-id>
+    								<priority>1</priority>
+    								<weight>1</weight>
+    							</queue>
+    						</tm-root>
+    					</tcont>
+    				</tconts-config>
+    			</root>
+    		</onu>
+    	</onus>
+    	<gemports-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+    		<gemport xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="merge">
+    			<name>gem_ont1</name>
+    			<itf-ref>venet_uni_ont1_1_1</itf-ref>
+    			<tcont-ref>tcont_ont1</tcont-ref>
+    			<traffic-class>0</traffic-class>
+    			<gemport-id>263</gemport-id>
+    		</gemport>
+    	</gemports-config>
+    	<onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    		<onu>
+    			<name>ont1</name>
+    			<root>
+    				<gemports-config>
+    					<gemport xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="merge">
+    						<name>gem_ont1</name>
+    						<itf-ref>enet_vlan_ont1</itf-ref>
+    						<tcont-ref>tcont_ont1</tcont-ref>
+    						<traffic-class>0</traffic-class>
+    						<gemport-id>263</gemport-id>
+    					</gemport>
+    				</gemports-config>
+    			</root>
+    		</onu>
+    	</onus>
+    	<forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+    		<forwarders>
+    			<forwarder xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="merge">
+    				<name>ont1_20_100</name>
+    				<ports>
+    					<port>
+    						<name>fwd_user_port_ont1</name>
+    						<sub-interface>ont1_venet_vlan_user</sub-interface>
+    					</port>
+    					<port>
+    						<name>fwd_net_port_ont1</name>
+    						<sub-interface>ont1_olt_uplink_vlan_network</sub-interface>
+    					</port>
+    				</ports>
+    			</forwarder>
+    		</forwarders>
+    	</forwarding>
+    </config>
+</edit-config>
+</rpc>

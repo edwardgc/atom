@@ -1,0 +1,177 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="101">
+	<edit-config>
+		<target>
+			<running/>
+		</target>
+		<config>
+			<device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+				<device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+					<device-id>cfmb-a</device-id>
+					<device-specific-data>
+						<hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+							<component>
+								<name>SFP1</name>
+								<parent>C-X1</parent>
+								<parent-rel-pos>1</parent-rel-pos>
+								<model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE46232AA</model-name>
+								<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+							</component>
+							<component>
+								<name>PORT1</name>
+								<parent>SFP1</parent>
+								<parent-rel-pos>1</parent-rel-pos>
+								<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+							</component>
+						</hardware>
+						<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cg_cp1</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+								<channel-group xmlns="urn:bbf:yang:bbf-xpon">
+									<polling-period>100</polling-period>
+									<raman-mitigation>raman_none</raman-mitigation>
+									<system-id>000000</system-id>
+								</channel-group>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cg_cp2</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+								<channel-group xmlns="urn:bbf:yang:bbf-xpon">
+									<polling-period>100</polling-period>
+									<raman-mitigation>raman_none</raman-mitigation>
+									<system-id>000000</system-id>
+								</channel-group>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cg_cp3</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+								<channel-group xmlns="urn:bbf:yang:bbf-xpon">
+									<polling-period>100</polling-period>
+									<raman-mitigation>raman_none</raman-mitigation>
+									<system-id>000000</system-id>
+								</channel-group>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cg_cp4</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+								<channel-group xmlns="urn:bbf:yang:bbf-xpon">
+									<polling-period>100</polling-period>
+									<raman-mitigation>raman_none</raman-mitigation>
+									<system-id>000000</system-id>
+								</channel-group>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cg_cp5</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+								<channel-group xmlns="urn:bbf:yang:bbf-xpon">
+									<polling-period>100</polling-period>
+									<raman-mitigation>raman_none</raman-mitigation>
+									<system-id>000000</system-id>
+								</channel-group>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cg_cp6</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+								<channel-group xmlns="urn:bbf:yang:bbf-xpon">
+									<polling-period>100</polling-period>
+									<raman-mitigation>raman_none</raman-mitigation>
+									<system-id>000000</system-id>
+								</channel-group>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cg_cp7</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+								<channel-group xmlns="urn:bbf:yang:bbf-xpon">
+									<polling-period>100</polling-period>
+									<raman-mitigation>raman_none</raman-mitigation>
+									<system-id>000000</system-id>
+								</channel-group>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cg_cp8</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+								<channel-group xmlns="urn:bbf:yang:bbf-xpon">
+									<polling-period>100</polling-period>
+									<raman-mitigation>raman_none</raman-mitigation>
+									<system-id>000000</system-id>
+								</channel-group>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cg_cp9</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+								<channel-group xmlns="urn:bbf:yang:bbf-xpon">
+									<polling-period>100</polling-period>
+									<raman-mitigation>raman_none</raman-mitigation>
+									<system-id>000000</system-id>
+								</channel-group>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cg_cp10</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+								<channel-group xmlns="urn:bbf:yang:bbf-xpon">
+									<polling-period>100</polling-period>
+									<raman-mitigation>raman_none</raman-mitigation>
+									<system-id>000000</system-id>
+								</channel-group>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cg_cp11</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+								<channel-group xmlns="urn:bbf:yang:bbf-xpon">
+									<polling-period>100</polling-period>
+									<raman-mitigation>raman_none</raman-mitigation>
+									<system-id>000000</system-id>
+								</channel-group>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cg_cp12</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+								<channel-group xmlns="urn:bbf:yang:bbf-xpon">
+									<polling-period>100</polling-period>
+									<raman-mitigation>raman_none</raman-mitigation>
+									<system-id>000000</system-id>
+								</channel-group>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cg_cp13</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+								<channel-group xmlns="urn:bbf:yang:bbf-xpon">
+									<polling-period>100</polling-period>
+									<raman-mitigation>raman_none</raman-mitigation>
+									<system-id>000000</system-id>
+								</channel-group>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cg_cp14</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+								<channel-group xmlns="urn:bbf:yang:bbf-xpon">
+									<polling-period>100</polling-period>
+									<raman-mitigation>raman_none</raman-mitigation>
+									<system-id>000000</system-id>
+								</channel-group>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cg_cp15</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+								<channel-group xmlns="urn:bbf:yang:bbf-xpon">
+									<polling-period>100</polling-period>
+									<raman-mitigation>raman_none</raman-mitigation>
+									<system-id>000000</system-id>
+								</channel-group>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cg_cp16</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+								<channel-group xmlns="urn:bbf:yang:bbf-xpon">
+									<polling-period>100</polling-period>
+									<raman-mitigation>raman_none</raman-mitigation>
+									<system-id>000000</system-id>
+								</channel-group>
+							</interface>
+						</interfaces>
+					</device-specific-data>
+				</device>
+			</device-manager>
+		</config>
+	</edit-config>
+</rpc>

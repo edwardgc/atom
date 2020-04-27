@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1527307907659">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+  <!-- olt-side vlan sub-interface  network-->
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>ont1_olt_uplink_vlan_network</name>
+        </interface>
+      </interfaces>
+
+
+    <!-- olt-side vani -->
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>vAni_ont1</name>
+        </interface>
+      </interfaces>
+
+
+      <!-- olt-side venet -->
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>venet_uni_ont1_1_1</name>
+        </interface>
+      </interfaces>
+
+  <!-- olt-side vlan sub-interface user-->
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>ont1_venet_vlan_user</name>
+        </interface>
+      </interfaces>
+
+
+  <!-- olt-side l2fwd forwarder -->
+      <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+        <forwarders>
+          <forwarder xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+            <name>ont1_20_100</name>
+          </forwarder>
+        </forwarders>
+      </forwarding>
+
+
+      <!-- olt-side tcont -->
+      <tconts-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+        <tcont xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>tcont_ont1</name>
+        </tcont>
+      </tconts-config>
+
+
+
+  <!-- olt-side gemport -->
+      <gemports-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+        <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>gem_ont1</name>
+        </gemport>
+      </gemports-config>
+
+      <!-- onu-side board -->
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <hardware>
+              <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                <name>ontCard_ont1_1</name>
+              </component>
+            </hardware>
+          </root>
+        </onu>
+      </onus>
+
+      <!-- onu-side cage -->
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <hardware>
+              <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                <name>ontCage_ont1</name>
+              </component>
+            </hardware>
+          </root>
+        </onu>
+      </onus>
+
+      <!-- onu-side sfp -->
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <hardware>
+              <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                <name>ontSfp_ont1</name>
+              </component>
+            </hardware>
+          </root>
+        </onu>
+      </onus>
+
+      <!-- onu-side aniport -->
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <hardware>
+              <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                <name>ontAniPort_ont1</name>
+              </component>
+            </hardware>
+          </root>
+        </onu>
+      </onus>
+
+      <!-- onu-side ani -->
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <interfaces>
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                <name>ontAni_ont1</name>
+              </interface>
+            </interfaces>
+          </root>
+        </onu>
+      </onus>
+
+
+ <!-- onu-side tcont  -->
+  <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+	<onu>
+		<name>ont1</name>
+		<root>
+			<tconts-config>
+				<tcont xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+					<name>tcont_ont1</name>
+				</tcont>
+			</tconts-config>
+		</root>
+	</onu>
+</onus>
+
+
+      <!-- onu-side uni hardware -->
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <hardware>
+              <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                <name>ontUni_ont1_1_1</name>
+              </component>
+            </hardware>
+          </root>
+        </onu>
+      </onus>
+
+      <!-- onu-side uni interface  -->
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+			      <interfaces>
+			        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+	                <name>enet_uni_ont1_1_1</name>
+				        </interface>
+				      </interfaces>
+          </root>
+        </onu>
+      </onus>
+
+
+      <!-- onu-side sub-interface  -->
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <interfaces>
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                <name>enet_vlan_ont1</name>
+              </interface>
+            </interfaces>
+          </root>
+        </onu>
+      </onus>
+
+
+  <!-- onu-side  gemport -->
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <gemports-config>
+              <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                <name>gem_ont1</name>
+              </gemport>
+            </gemports-config>
+          </root>
+        </onu>
+      </onus>
+
+
+  <!-- ONU-side QOS -->
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <traffic-descriptor-profiles>
+              <traffic-descriptor-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                <name>TDP0</name>
+              </traffic-descriptor-profile>
+            </traffic-descriptor-profiles>
+          </root>
+        </onu>
+      </onus>
+
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <classifiers>
+			       <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+			          <name>classifier_ing0</name>
+			        </classifier-entry>
+			        <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+			          <name>classifier_ing1</name>
+			        </classifier-entry>
+			        <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+			          <name>classifier_ing2</name>
+			        </classifier-entry>
+			        <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+			          <name>classifier_ing3</name>
+			        </classifier-entry>
+			        <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+			          <name>classifier_ing4</name>
+			        </classifier-entry>
+			        <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+			          <name>classifier_ing5</name>
+			        </classifier-entry>
+			        <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+			          <name>classifier_ing6</name>
+			        </classifier-entry>
+			        <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+			          <name>classifier_ing7</name>
+			        </classifier-entry>
+            </classifiers>
+          </root>
+        </onu>
+      </onus>
+
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <policies>
+			        <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+			          <name>POLICY_ING</name>
+			        </policy>
+            </policies>
+          </root>
+        </onu>
+      </onus>
+
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <tm-profiles>
+              <tc-id-2-queue-id-mapping-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                <name>tc2queue1</name>
+              </tc-id-2-queue-id-mapping-profile>
+            </tm-profiles>
+          </root>
+        </onu>
+      </onus>
+
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu>
+          <name>ont1</name>
+          <root>
+            <qos-policy-profiles>
+              <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                <name>IPP0</name>
+              </policy-profile>
+            </qos-policy-profiles>
+          </root>
+        </onu>
+      </onus>
+
+      <!-- onu-side chassis -->
+          <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+            <onu>
+              <name>ont1</name>
+              <root>
+                <hardware>
+                  <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                    <name>ont1</name>
+                  </component>
+                </hardware>
+              </root>
+            </onu>
+          </onus>
+
+</config>
+</edit-config>
+</rpc>

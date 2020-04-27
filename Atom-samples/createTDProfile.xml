@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="6">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+        <adh:device-holder xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+          <adh:name>Bade-Wurtemberg</adh:name>
+          <adh:device>
+            <adh:device-id>Stuttgart-1</adh:device-id>
+            <adh:device-specific-data>
+              <fiber-traffic-descriptor-profiles xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:bbf:yang:bbf-fiber">
+                <traffic-descriptor-profile>
+                  <name>TDP2</name>
+                  <fixed-bandwidth>10000</fixed-bandwidth>
+                  <assured-bandwidth>10000</assured-bandwidth>
+                  <maximum-bandwidth>20000</maximum-bandwidth>
+                </traffic-descriptor-profile>
+                <traffic-descriptor-profile>
+                  <name>TDP3</name>
+                  <fixed-bandwidth>5000</fixed-bandwidth>
+                  <assured-bandwidth>5000</assured-bandwidth>
+                  <maximum-bandwidth>10000</maximum-bandwidth>
+                </traffic-descriptor-profile>
+              </fiber-traffic-descriptor-profiles>
+            </adh:device-specific-data>
+          </adh:device>
+        </adh:device-holder>
+      </anv:device-manager>
+    </config>
+  </edit-config>
+</rpc>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="2">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+			<anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+				<adh:netconf-stack-configuration xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+          <adh:request-timeout>1800</adh:request-timeout>
+          <adh:tcp-connection-timeout>10</adh:tcp-connection-timeout>
+				</adh:netconf-stack-configuration>
+			</anv:device-manager>
+    </config>  
+	</edit-config>
+</rpc>

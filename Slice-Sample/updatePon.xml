@@ -1,0 +1,22 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+          <adh:device xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+            <adh:device-id>HelloWorld</adh:device-id>
+              <adh:device-specific-data>
+                <if:interfaces xmlns:if="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+                  <if:interface>
+                    <if:name>cg_pon1</if:name>
+                    <if:enabled>false</if:enabled>
+                  </if:interface>
+                </if:interfaces>
+             </adh:device-specific-data>
+          </adh:device>
+      </anv:device-manager>
+    </config>
+  </edit-config>
+</rpc>

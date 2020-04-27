@@ -1,0 +1,163 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+<edit-config>
+<target>
+<running/>
+</target>
+<config>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry>
+            <name>cls_pbit2tc00</name>
+            <filter-operation>match-all-filter</filter-operation>
+            <match-criteria>
+              <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                <index>0</index>
+                <pbit-value>0</pbit-value>
+              </pbit-marking-list>
+            </match-criteria>
+            <classifier-action-entry-cfg>
+              <action-type>scheduling-traffic-class</action-type>
+              <scheduling-traffic-class>0</scheduling-traffic-class>
+            </classifier-action-entry-cfg>
+  </classifier-entry>
+
+  <classifier-entry>
+            <name>cls_pbit2tc01</name>
+            <filter-operation>match-all-filter</filter-operation>
+            <match-criteria>
+              <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                <index>0</index>
+                <pbit-value>1</pbit-value>
+              </pbit-marking-list>
+            </match-criteria>
+            <classifier-action-entry-cfg>
+              <action-type>scheduling-traffic-class</action-type>
+              <scheduling-traffic-class>1</scheduling-traffic-class>
+            </classifier-action-entry-cfg>
+  </classifier-entry>
+
+  <classifier-entry>
+            <name>cls_pbit2tc02</name>
+            <filter-operation>match-all-filter</filter-operation>
+            <match-criteria>
+              <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                <index>0</index>
+                <pbit-value>2</pbit-value>
+              </pbit-marking-list>
+            </match-criteria>
+            <classifier-action-entry-cfg>
+              <action-type>scheduling-traffic-class</action-type>
+              <scheduling-traffic-class>2</scheduling-traffic-class>
+            </classifier-action-entry-cfg>
+  </classifier-entry>
+
+  <classifier-entry>
+            <name>cls_pbit2tc03</name>
+            <filter-operation>match-all-filter</filter-operation>
+            <match-criteria>
+              <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                <index>0</index>
+                <pbit-value>3</pbit-value>
+              </pbit-marking-list>
+            </match-criteria>
+            <classifier-action-entry-cfg>
+              <action-type>scheduling-traffic-class</action-type>
+              <scheduling-traffic-class>3</scheduling-traffic-class>
+            </classifier-action-entry-cfg>
+  </classifier-entry>
+
+  <classifier-entry>
+            <name>cls_pbit2tc04</name>
+            <filter-operation>match-all-filter</filter-operation>
+            <match-criteria>
+              <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                <index>0</index>
+                <pbit-value>4</pbit-value>
+              </pbit-marking-list>
+            </match-criteria>
+            <classifier-action-entry-cfg>
+              <action-type>scheduling-traffic-class</action-type>
+              <scheduling-traffic-class>4</scheduling-traffic-class>
+            </classifier-action-entry-cfg>
+  </classifier-entry>
+
+  <classifier-entry>
+            <name>cls_pbit2tc05</name>
+            <filter-operation>match-all-filter</filter-operation>
+            <match-criteria>
+              <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                <index>0</index>
+                <pbit-value>5</pbit-value>
+              </pbit-marking-list>
+            </match-criteria>
+            <classifier-action-entry-cfg>
+              <action-type>scheduling-traffic-class</action-type>
+              <scheduling-traffic-class>5</scheduling-traffic-class>
+            </classifier-action-entry-cfg>
+  </classifier-entry>
+
+  <classifier-entry>
+            <name>cls_pbit2tc06</name>
+            <filter-operation>match-all-filter</filter-operation>
+            <match-criteria>
+              <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                <index>0</index>
+                <pbit-value>6</pbit-value>
+              </pbit-marking-list>
+            </match-criteria>
+            <classifier-action-entry-cfg>
+              <action-type>scheduling-traffic-class</action-type>
+              <scheduling-traffic-class>6</scheduling-traffic-class>
+            </classifier-action-entry-cfg>
+  </classifier-entry>
+
+  <classifier-entry>
+            <name>cls_pbit2tc07</name>
+            <filter-operation>match-all-filter</filter-operation>
+            <match-criteria>
+              <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                <index>0</index>
+                <pbit-value>7</pbit-value>
+              </pbit-marking-list>
+            </match-criteria>
+            <classifier-action-entry-cfg>
+              <action-type>scheduling-traffic-class</action-type>
+              <scheduling-traffic-class>7</scheduling-traffic-class>
+            </classifier-action-entry-cfg>
+  </classifier-entry>
+
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy>
+           <name>policies5</name>
+           <classifiers>
+             <name>cls_pbit2tc00</name>
+           </classifiers>
+           <classifiers>
+             <name>cls_pbit2tc01</name>
+           </classifiers>
+           <classifiers>
+             <name>cls_pbit2tc02</name>
+           </classifiers>
+           <classifiers>
+             <name>cls_pbit2tc03</name>
+           </classifiers>
+           <classifiers>
+             <name>cls_pbit2tc04</name>
+           </classifiers>
+           <classifiers>
+             <name>cls_pbit2tc05</name>
+           </classifiers>
+           <classifiers>
+             <name>cls_pbit2tc06</name>
+           </classifiers>
+           <classifiers>
+             <name>cls_pbit2tc07</name>
+           </classifiers>
+  </policy>
+</policies>
+
+</config>
+</edit-config>
+</rpc>

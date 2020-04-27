@@ -1,0 +1,158 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+	<edit-config>
+		<target>
+			<running/>
+		</target>
+		<config>
+			<device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+				<device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+					<device-id>HelloWorld</device-id>
+					<device-specific-data>
+						<hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+							<component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>SFP1</name>
+								<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+								<parent>C-X1</parent>
+								<parent-rel-pos>1</parent-rel-pos>
+							</component>
+							<component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>PORT1</name>
+								<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+								<parent>SFP1</parent>
+								<parent-rel-pos>1</parent-rel-pos>
+							</component>
+							<component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>SFP2</name>
+								<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+								<parent>C-X2</parent>
+								<parent-rel-pos>1</parent-rel-pos>
+							</component>
+							<component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>PORT2</name>
+								<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+								<parent>SFP2</parent>
+								<parent-rel-pos>1</parent-rel-pos>
+							</component>
+							<component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>SFP3</name>
+								<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+								<parent>C-X3</parent>
+								<parent-rel-pos>1</parent-rel-pos>
+							</component>
+							<component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>PORT3</name>
+								<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+								<parent>SFP3</parent>
+								<parent-rel-pos>1</parent-rel-pos>
+							</component>
+							<component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>SFP4</name>
+								<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+								<parent>C-X4</parent>
+								<parent-rel-pos>1</parent-rel-pos>
+							</component>
+							<component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>PORT4</name>
+								<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+								<parent>SFP4</parent>
+								<parent-rel-pos>1</parent-rel-pos>
+							</component>
+						</hardware>
+						<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cg_ont1</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+								<channel-group xmlns="urn:bbf:yang:bbf-xpon">
+									<polling-period>100</polling-period>
+									<raman-mitigation>raman_none</raman-mitigation>
+									<system-id>000000</system-id>
+								</channel-group>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>scg_ont1</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-partition</type>
+								<channel-partition xmlns="urn:bbf:yang:bbf-xpon">
+									<channel-group-ref>cg_ont1</channel-group-ref>
+									<channel-partition-index>1</channel-partition-index>
+									<fec-downstream>true</fec-downstream>
+									<closest-onu-distance>0</closest-onu-distance>
+									<max-differential-xpon-distance>20</max-differential-xpon-distance>
+									<authentication-method>serial-number</authentication-method>
+									<multicast-aes-indicator>false</multicast-aes-indicator>
+								</channel-partition>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cp_ont1</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-pair</type>
+								<channel-pair xmlns="urn:bbf:yang:bbf-xpon">
+									<channel-group-ref>cg_ont1</channel-group-ref>
+									<channel-pair-line-rate xmlns:xpon-types="urn:bbf:yang:bbf-xpon-types">xpon-types:unplanned-cp-line-rate</channel-pair-line-rate>
+									<channel-pair-type xmlns:xpon-types="urn:bbf:yang:bbf-xpon-types">xpon-types:ngpon2-twdm</channel-pair-type>
+									<channel-partition-ref>scg_ont1</channel-partition-ref>
+									<wavelength-prof-ref>ngpon2-wave-1</wavelength-prof-ref>
+								</channel-pair>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>ct_cp_ont1</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-termination</type>
+								<channel-termination xmlns="urn:bbf:yang:bbf-xpon">
+									<channel-pair-ref>cp_ont1</channel-pair-ref>
+
+									<pon-tag>1111111111111111</pon-tag>
+									<ber-calc-period>10</ber-calc-period>
+									<location xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:inside-olt</location>
+									<channel-termination-hw-port-ref>PORT1</channel-termination-hw-port-ref>
+								</channel-termination>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cg_ont4</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+								<channel-group xmlns="urn:bbf:yang:bbf-xpon">
+									<polling-period>100</polling-period>
+									<raman-mitigation>raman_none</raman-mitigation>
+									<system-id>000000</system-id>
+								</channel-group>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>scg_ont4</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-partition</type>
+								<channel-partition xmlns="urn:bbf:yang:bbf-xpon">
+									<channel-group-ref>cg_ont4</channel-group-ref>
+									<channel-partition-index>1</channel-partition-index>
+									<fec-downstream>true</fec-downstream>
+									<closest-onu-distance>0</closest-onu-distance>
+									<max-differential-xpon-distance>20</max-differential-xpon-distance>
+									<authentication-method>serial-number</authentication-method>
+									<multicast-aes-indicator>false</multicast-aes-indicator>
+								</channel-partition>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>cp_ont4</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-pair</type>
+								<channel-pair xmlns="urn:bbf:yang:bbf-xpon">
+									<channel-group-ref>cg_ont4</channel-group-ref>
+									<channel-pair-line-rate xmlns:xpon-types="urn:bbf:yang:bbf-xpon-types">xpon-types:unplanned-cp-line-rate</channel-pair-line-rate>
+									<channel-pair-type xmlns:xpon-types="urn:bbf:yang:bbf-xpon-types">xpon-types:ngpon2-twdm</channel-pair-type>
+									<channel-partition-ref>scg_ont4</channel-partition-ref>
+									<wavelength-prof-ref>ngpon2-wave-1</wavelength-prof-ref>
+								</channel-pair>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>ct_cp_ont4</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-termination</type>
+								<channel-termination xmlns="urn:bbf:yang:bbf-xpon">
+									<channel-pair-ref>cp_ont4</channel-pair-ref>
+
+									<pon-tag>1111111111111111</pon-tag>
+									<ber-calc-period>10</ber-calc-period>
+									<location xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:inside-olt</location>
+									<channel-termination-hw-port-ref>PORT4</channel-termination-hw-port-ref>
+								</channel-termination>
+							</interface>
+						</interfaces>
+					</device-specific-data>
+				</device>
+			</device-manager>
+		</config>
+	</edit-config>
+</rpc>

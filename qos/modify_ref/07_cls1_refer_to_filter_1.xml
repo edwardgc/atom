@@ -1,0 +1,87 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+   <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+     <name>cls1</name>
+     <filter-operation>match-all-filter</filter-operation>
+     <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter1</enhanced-filter-name>
+     <classifier-action-entry-cfg>
+     <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:discard</action-type>
+     <discard xmlns="urn:bbf:yang:bbf-qos-policing"/>
+     </classifier-action-entry-cfg>
+   </classifier-entry>
+
+ <classifier-entry>
+   <name>classifier_ing0</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <match-criteria>
+     <tag>
+       <index>0</index>
+       <in-pbit-list>0-7</in-pbit-list>
+     </tag>
+   </match-criteria>
+   <classifier-action-entry-cfg>
+     <action-type>scheduling-traffic-class</action-type>
+     <scheduling-traffic-class>0</scheduling-traffic-class>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+</classifiers>
+
+  <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+    <policy>
+   <name>ccl_policy_01</name>
+   <classifiers>
+     <name>cls1</name>
+   </classifiers>
+    </policy>
+   <policy>
+      <name>POLICY_ING</name>
+      <classifiers>
+        <name>classifier_ing0</name>
+      </classifiers>
+    </policy>
+   </policies>
+
+   <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+     <policy-profile>
+        <name>ccl_profile_01</name>
+        <policy-list>
+          <name>ccl_policy_01</name>
+        </policy-list>
+        <policy-list>
+          <name>POLICY_ING</name>
+        </policy-list>
+      </policy-profile>
+   </qos-policy-profiles>
+
+   <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+   <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <name>cp1_ont01_uni1-user1</name>
+            <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">ccl_profile_01</ingress-qos-policy-profile>
+            <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">ccl_profile_01</egress-qos-policy-profile>
+   </interface>
+   <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <name>cp1_ont01_uni1-user2</name>
+            <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">ccl_profile_01</ingress-qos-policy-profile>
+            <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">ccl_profile_01</egress-qos-policy-profile>
+   </interface>
+   <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <name>cp1_ont01_uni1-user3</name>
+            <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">ccl_profile_01</ingress-qos-policy-profile>
+            <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">ccl_profile_01</egress-qos-policy-profile>
+   </interface>
+   <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <name>cp1_ont01_uni1-user4</name>
+            <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">ccl_profile_01</ingress-qos-policy-profile>
+            <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">ccl_profile_01</egress-qos-policy-profile>
+   </interface>
+   </interfaces>
+
+  </config>
+ </edit-config>
+</rpc>

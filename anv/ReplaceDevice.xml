@@ -1,0 +1,19 @@
+<rpc message-id="7" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+        <adh:device xc:operation="replace" xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+          <adh:device-id>HelloWorld</adh:device-id>
+          <adh:duid>123</adh:duid>
+          <adh:hardware-type>LS-CF-24W</adh:hardware-type>
+          <adh:interface-version>19A.06</adh:interface-version>
+          <adh:push-nav-configuration-to-device>true</adh:push-nav-configuration-to-device>
+          <tag:configured-labels xmlns:tag="http://www.nokia.com/management-solutions/anv-device-tag"/>
+        </adh:device>
+      </anv:device-manager>
+    </config>
+  </edit-config>
+</rpc>

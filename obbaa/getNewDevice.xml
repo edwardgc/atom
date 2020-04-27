@@ -1,0 +1,9 @@
+<rpc message-id="10101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+    <get>
+        <filter type="subtree">
+            <network-manager xmlns="urn:bbf:yang:obbaa:network-manager">
+                <new-devices xmlns="urn:bbf:yang:obbaa:network-manager"/>
+            </network-manager>
+        </filter>
+    </get>
+</rpc>

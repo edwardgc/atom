@@ -1,0 +1,49 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+  <config>
+   <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+   <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+    <device-id>Demo</device-id>
+     <device-specific-data>
+       <traffic-descriptor-profiles xmlns="urn:bbf:yang:bbf-xpongemtcont">
+        <traffic-descriptor-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>TDP0</name>
+          <fixed-bandwidth>1000000</fixed-bandwidth>
+          <assured-bandwidth>1000000000</assured-bandwidth>
+          <maximum-bandwidth>1250000000</maximum-bandwidth>
+        </traffic-descriptor-profile>
+      </traffic-descriptor-profiles>
+       <tm-profiles xmlns="urn:bbf:yang:bbf-qos-traffic-mngt">
+        <tc-id-2-queue-id-mapping-profile>
+          <name>T2Q0</name>
+          <mapping-entry>
+            <traffic-class-id>0</traffic-class-id>
+            <local-queue-id>0</local-queue-id>
+          </mapping-entry>
+        </tc-id-2-queue-id-mapping-profile>
+      </tm-profiles>
+	      <tconts-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+        <tcont xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>cp1_ont01_tcont1</name>
+          <alloc-id>256</alloc-id>
+          <interface-reference>cp1_ont01</interface-reference>
+          <traffic-descriptor-profile-ref>TDP0</traffic-descriptor-profile-ref>
+          <tm-root>
+            <queue>
+              <local-queue-id>0</local-queue-id>
+              <priority>0</priority>
+              <weight>1</weight>
+            </queue>
+            <tc-id-2-queue-id-mapping-profile-name>T2Q0</tc-id-2-queue-id-mapping-profile-name>
+          </tm-root>
+        </tcont>
+      </tconts-config>
+     </device-specific-data>
+    </device>
+   </device-manager>
+  </config>
+ </edit-config>
+</rpc>

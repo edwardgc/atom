@@ -1,0 +1,18 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="12345">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+	  <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>HelloWorld</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>123</duid>
+          <hardware-type>LS-CF-24W</hardware-type>
+          <interface-version>20A.03</interface-version>
+        </device>
+      </device-manager>
+    </config>
+  </edit-config>
+</rpc>

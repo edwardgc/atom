@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="6">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+        <adh:device-holder xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+          <adh:name>Bade-Wurtemberg</adh:name>
+          <adh:device>
+            <adh:device-id>Stuttgart-1</adh:device-id>
+            <adh:device-specific-data>
+              <fiber-tcont xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:bbf:yang:bbf-fiber">
+                <tconts>
+                  <name>TCONT1</name>
+                  <traffic-descriptor-profile-ref>~TDP1</traffic-descriptor-profile-ref>
+                </tconts>
+              </fiber-tcont>
+            </adh:device-specific-data>
+          </adh:device>
+        </adh:device-holder>
+      </anv:device-manager>
+    </config>
+  </edit-config>
+</rpc>

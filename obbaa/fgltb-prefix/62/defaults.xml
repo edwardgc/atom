@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1527307907888">
+  <copy-config>
+		<target>
+      <running/>
+    </target>
+    <source>
+      <config>
+
+	<nacm xmlns="urn:ietf:params:xml:ns:yang:ietf-netconf-acm">
+		<log-if-default-permit xmlns="http://tail-f.com/yang/acm" />
+		<groups>
+			<group>
+				<name>admin</name>
+				<user-name>admin</user-name>
+				<user-name>init_oper</user-name>
+			</group>
+			<group>
+				<name>nokia</name>
+				<user-name>nokia</user-name>
+			</group>
+			<group>
+				<name>defaultGroup</name>
+			</group>
+		</groups>
+		<rule-list>
+			<name>admin</name>
+			<group>admin</group>
+			<rule>
+				<name>deny-delete-current-user</name>
+				<module-name>nokia-aaa</module-name>
+				<path>/users/user[name='$USER']</path>
+				<context xmlns="http://tail-f.com/yang/acm">*</context>
+				<access-operations>delete</access-operations>
+				<action>deny</action>
+			</rule>
+			<rule>
+				<name>any-access</name>
+				<action>permit</action>
+			</rule>
+			<cmdrule xmlns="http://tail-f.com/yang/acm">
+				<name>restrictedFileAccess</name>
+				<context>cli</context>
+				<command>confdConfig cli restrictedFileAccess</command>
+				<access-operations>create read update delete exec</access-operations>
+				<action>deny</action>
+			</cmdrule>
+			<cmdrule xmlns="http://tail-f.com/yang/acm">
+				<name>restrictedFileRegexp</name>
+				<context>cli</context>
+				<command>confdConfig cli restrictedFileRegexp</command>
+				<access-operations>create read update delete exec</access-operations>
+				<action>deny</action>
+			</cmdrule>
+			<cmdrule xmlns="http://tail-f.com/yang/acm">
+				<name>permit-logout-user</name>
+				<context>cli</context>
+				<command>logout user</command>
+				<action>permit</action>
+			</cmdrule>
+			<cmdrule xmlns="http://tail-f.com/yang/acm">
+				<name>permit-logout-session</name>
+				<context>cli</context>
+				<command>logout session</command>
+				<action>permit</action>
+			</cmdrule>
+			<cmdrule xmlns="http://tail-f.com/yang/acm">
+				<name>permit-config-exclusive</name>
+				<context>cli</context>
+				<command>config exclusive</command>
+				<action>permit</action>
+			</cmdrule>
+		</rule-list>
+		<rule-list>
+			<name>default</name>
+			<group>defaultGroup</group>
+			<cmdrule xmlns="http://tail-f.com/yang/acm">
+				<name>deny-logout</name>
+				<context>cli</context>
+				<command>logout</command>
+				<access-operations>*</access-operations>
+				<action>deny</action>
+			</cmdrule>
+			<cmdrule xmlns="http://tail-f.com/yang/acm">
+				<name>deny-config</name>
+				<context>cli</context>
+				<command>config</command>
+				<access-operations>*</access-operations>
+				<action>deny</action>
+			</cmdrule>
+			<cmdrule xmlns="http://tail-f.com/yang/acm">
+				<name>deny-all-cmd</name>
+				<context>cli</context>
+				<command>*</command>
+				<access-operations>create read update delete</access-operations>
+				<action>deny</action>
+			</cmdrule>
+			<rule>
+				<name>deny-all</name>
+				<module-name>*</module-name>
+				<path>*</path>
+				<context xmlns="http://tail-f.com/yang/acm">*</context>
+				<access-operations>*</access-operations>
+				<action>deny</action>
+			</rule>
+		</rule-list>
+		<rule-list>
+			<name>any-group</name>
+			<group>*</group>
+			<rule>
+				<name>permit-change-password</name>
+				<module-name>nokia-aaa</module-name>
+				<path>/users/user[name='$USER']/authentication/change-password</path>
+				<context xmlns="http://tail-f.com/yang/acm">*</context>
+				<access-operations>create read update exec</access-operations>
+				<action>permit</action>
+			</rule>
+			<rule>
+				<name>permit-read-user-name</name>
+				<module-name>nokia-aaa</module-name>
+				<path>/users/user[name='$USER']/name</path>
+				<context xmlns="http://tail-f.com/yang/acm">*</context>
+				<access-operations>read</access-operations>
+				<action>permit</action>
+			</rule>
+			<rule>
+				<name>permit-hidden</name>
+				<module-name>nokia-aaa-hidden</module-name>
+				<path>/login-user/user[name='$USER']</path>
+				<context xmlns="http://tail-f.com/yang/acm">*</context>
+				<access-operations>create read update delete</access-operations>
+				<action>permit</action>
+			</rule>
+			<rule>
+				<name>permit-password</name>
+				<module-name>tailf-aaa</module-name>
+				<path>/aaa/authentication/users/user[name='$USER']/password</path>
+				<context xmlns="http://tail-f.com/yang/acm">*</context>
+				<access-operations>create read update delete</access-operations>
+				<action>permit</action>
+			</rule>
+			<rule>
+				<name>deny-lock</name>
+				<rpc-name>lock</rpc-name>
+				<context xmlns="http://tail-f.com/yang/acm">netconf</context>
+				<access-operations>*</access-operations>
+				<action>deny</action>
+			</rule>
+			<rule>
+				<name>deny-kill-session</name>
+				<rpc-name>kill-session</rpc-name>
+				<context xmlns="http://tail-f.com/yang/acm">netconf</context>
+				<access-operations>*</access-operations>
+				<action>deny</action>
+			</rule>
+			<rule>
+				<name>permit-last-password-changed</name>
+				<module-name>nokia-aaa</module-name>
+				<path>/users/user[name='$USER']/login/last-password-changed</path>
+				<context xmlns="http://tail-f.com/yang/acm">*</context>
+				<access-operations>read</access-operations>
+				<action>permit</action>
+			</rule>
+			<rule>
+				<name>permit-last-login</name>
+				<module-name>nokia-aaa</module-name>
+				<path>/users/user[name='$USER']/login/last-login</path>
+				<context xmlns="http://tail-f.com/yang/acm">*</context>
+				<access-operations>read</access-operations>
+				<action>permit</action>
+			</rule>
+			<rule>
+				<name>permit-last-failed</name>
+				<module-name>nokia-aaa</module-name>
+				<path>/users/user[name='$USER']/login/last-failed</path>
+				<context xmlns="http://tail-f.com/yang/acm">*</context>
+				<access-operations>read</access-operations>
+				<action>permit</action>
+			</rule>
+			<rule>
+				<name>permit-failed-login</name>
+				<module-name>nokia-aaa</module-name>
+				<path>/users/user[name='$USER']/login/failed-login</path>
+				<context xmlns="http://tail-f.com/yang/acm">*</context>
+				<access-operations>read</access-operations>
+				<action>permit</action>
+			</rule>
+			<rule>
+				<name>deny-show-other-users</name>
+				<module-name>nokia-aaa</module-name>
+				<path>/users/*</path>
+				<context xmlns="http://tail-f.com/yang/acm">*</context>
+				<access-operations>create read update delete</access-operations>
+				<action>deny</action>
+			</rule>
+			<rule>
+				<name>deny-show-lockout</name>
+				<module-name>nokia-aaa</module-name>
+				<path>/system-security/lockout</path>
+				<context xmlns="http://tail-f.com/yang/acm">*</context>
+				<access-operations>read</access-operations>
+				<action>deny</action>
+			</rule>
+			<rule>
+				<name>deny-remove-lockout</name>
+				<module-name>nokia-aaa</module-name>
+				<path>/system-security/remove-lockout</path>
+				<context xmlns="http://tail-f.com/yang/acm">*</context>
+				<access-operations>create read update exec</access-operations>
+				<action>deny</action>
+			</rule>
+			<cmdrule xmlns="http://tail-f.com/yang/acm">
+				<name>deny-logout-user</name>
+				<context>cli</context>
+				<command>logout user</command>
+				<action>deny</action>
+			</cmdrule>
+			<cmdrule xmlns="http://tail-f.com/yang/acm">
+				<name>deny-logout-session</name>
+				<context>cli</context>
+				<command>logout session</command>
+				<action>deny</action>
+			</cmdrule>
+			<cmdrule xmlns="http://tail-f.com/yang/acm">
+				<name>deny-config-exclusive</name>
+				<context>cli</context>
+				<command>config exclusive</command>
+				<action>deny</action>
+			</cmdrule>
+		</rule-list>
+		<rule-list>
+			<name>loggers-nokia</name>
+			<group>nokia</group>
+			<rule>
+				<name>permit-application-logger</name>
+				<module-name>nokia-logging-app</module-name>
+				<path>/applications</path>
+				<access-operations>*</access-operations>
+				<action>permit</action>
+				<context xmlns="http://tail-f.com/yang/acm">*</context>
+			</rule>
+		</rule-list>
+		<rule-list>
+			<name>loggers-any-group</name>
+			<group>*</group>
+			<rule>
+				<name>deny-application-logger</name>
+				<module-name>nokia-logging-app</module-name>
+				<path>/applications</path>
+				<access-operations>*</access-operations>
+				<action>deny</action>
+				<context xmlns="http://tail-f.com/yang/acm">*</context>
+			</rule>
+		</rule-list>
+	</nacm>
+	<confdConfig xmlns="http://tail-f.com/ns/confd_dyncfg/1.0">
+		<ssh>
+			<algorithms>
+				<mac>hmac-sha1,hmac-sha2-256,hmac-sha2-512</mac>
+				<encryption>aes128-ctr,aes192-ctr,aes256-ctr</encryption>
+			</algorithms>
+		</ssh>
+		<aaa>
+			<authenticationCallback>
+				<enabled>true</enabled>
+			</authenticationCallback>
+			<defaultGroup>defaultGroup</defaultGroup>
+		</aaa>
+		<cli>
+			<style>c</style>
+			<tableLabel>true</tableLabel>
+			<promptEnumLimit>10</promptEnumLimit>
+			<showDefaults>true</showDefaults>
+			<ignoreLeadingWhitespace>true</ignoreLeadingWhitespace>
+			<ssh>
+				<enabled>true</enabled>
+				<ip>0.0.0.0</ip>
+				<port>2024</port>
+			</ssh>
+			<restrictedFileAccess>true</restrictedFileAccess>
+			<allowTableCellWrap>false</allowTableCellWrap>
+			<suppressCommitMessages>
+				<context>system</context>
+			</suppressCommitMessages>
+			<reallocateOperTrans>true</reallocateOperTrans>
+		</cli>
+		<netconf>
+			<transport>
+				<ssh>
+					<enabled>true</enabled>
+					<ip>0.0.0.0</ip>
+					<port>830</port>
+				</ssh>
+				<tcp>
+					<enabled>true</enabled>
+					<ip>127.0.0.1</ip>
+					<port>2023</port>
+				</tcp>
+			</transport>
+			<extendedSessions>true</extendedSessions>
+		</netconf>
+		<sessionLimits>
+			<maxSessions>10</maxSessions>
+			<sessionLimit>
+				<context>cli</context>
+				<maxSessions>3</maxSessions>
+			</sessionLimit>
+			<sessionLimit>
+				<context>netconf</context>
+				<maxSessions>6</maxSessions>
+			</sessionLimit>
+			<maxConfigSessions>10</maxConfigSessions>
+			<configSessionLimit>
+				<context>cli</context>
+				<maxSessions>3</maxSessions>
+			</configSessionLimit>
+			<configSessionLimit>
+				<context>netconf</context>
+				<maxSessions>6</maxSessions>
+			</configSessionLimit>
+		</sessionLimits>
+		<encryptedStrings>
+			<DES3CBC>
+				<key1>0123456789abcdef</key1>
+				<key2>0123456789abcdef</key2>
+				<key3>0123456789abcdef</key3>
+				<initVector>0123456789abcdef</initVector>
+			</DES3CBC>
+			<AESCFB128>
+				<key>0123456789abcdef0123456789abcdef</key>
+				<initVector>0123456789abcdef0123456789abcdef</initVector>
+			</AESCFB128>
+		</encryptedStrings>
+		<logs>
+			<syslogConfig>
+				<facility>daemon</facility>
+				<udp>
+					<enabled>false</enabled>
+					<host>syslogsrv.example.com</host>
+					<port>514</port>
+				</udp>
+			</syslogConfig>
+			<confdLog>
+				<enabled>false</enabled>
+				<file>
+					<enabled>true</enabled>
+					<name>/var/confd/log/confd.log</name>
+				</file>
+				<syslog>
+					<enabled>false</enabled>
+				</syslog>
+			</confdLog>
+			<developerLog>
+				<enabled>false</enabled>
+				<file>
+					<enabled>true</enabled>
+					<name>/var/confd/log/devel.log</name>
+				</file>
+				<syslog>
+					<enabled>false</enabled>
+				</syslog>
+			</developerLog>
+			<auditLog>
+				<enabled>true</enabled>
+				<file>
+					<enabled>true</enabled>
+					<name>/var/confd/log/audit.log</name>
+				</file>
+				<syslog>
+					<enabled>false</enabled>
+				</syslog>
+			</auditLog>
+			<auditLogCommit>false</auditLogCommit>
+			<netconfLog>
+				<enabled>false</enabled>
+				<file>
+					<enabled>true</enabled>
+					<name>/var/confd/log/netconf.log</name>
+				</file>
+				<syslog>
+					<enabled>false</enabled>
+				</syslog>
+			</netconfLog>
+			<webuiAccessLog>
+				<enabled>false</enabled>
+				<dir>/var/confd/log/confd</dir>
+			</webuiAccessLog>
+			<snmpLog>
+				<enabled>false</enabled>
+				<file>
+					<enabled>true</enabled>
+					<name>/var/confd/log/snmp.log</name>
+				</file>
+				<syslog>
+					<enabled>false</enabled>
+				</syslog>
+			</snmpLog>
+			<netconfTraceLog>
+				<enabled>false</enabled>
+				<filename>/var/confd/log/netconf.trace</filename>
+			</netconfTraceLog>
+			<errorLog>
+				<enabled>true</enabled>
+				<filename>/var/confd/log/confderr.log</filename>
+				<maxSize>S10M</maxSize>
+			</errorLog>
+		</logs>
+		<notifications>
+			<eventStreams>
+				<stream>
+					<name>NETCONF</name>
+					<description>RFC 5277 Default Notifications Stream</description>
+					<replaySupport>true</replaySupport>
+					<builtinReplayStore>
+						<enabled>true</enabled>
+						<dir>/run/confd/log</dir>
+						<maxSize>S1M</maxSize>
+						<maxFiles>2</maxFiles>
+					</builtinReplayStore>
+				</stream>
+			</eventStreams>
+		</notifications>
+	</confdConfig>
+	<hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+		<component>
+			<name>Chassis</name>
+			<class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:chassis</class>
+			<parent-rel-pos>1</parent-rel-pos>
+			<mfg-name>ALCL</mfg-name>
+			<model-name xmlns="urn:bbf:yang:bbf-hardware-extension">FGLT-B</model-name>
+			<admin-state>unlocked</admin-state>
+		</component>
+		<component>
+			<name>Slot</name>
+			<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:slot</class>
+			<parent>Chassis</parent>
+			<parent-rel-pos>1</parent-rel-pos>
+			<admin-state>unlocked</admin-state>
+		</component>
+		<component>
+			<name>Board</name>
+			<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:board</class>
+			<parent>Slot</parent>
+			<parent-rel-pos>1</parent-rel-pos>
+			<mfg-name>ALCL</mfg-name>
+			<model-name xmlns="urn:bbf:yang:bbf-hardware-extension">FGLT-B</model-name>
+			<admin-state>unlocked</admin-state>
+		</component>
+		<component>
+			<name>C1</name>
+			<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+			<parent>Board</parent>
+			<parent-rel-pos>1</parent-rel-pos>
+			<admin-state>unlocked</admin-state>
+		</component>
+		<component>
+			<name>C2</name>
+			<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+			<parent>Board</parent>
+			<parent-rel-pos>2</parent-rel-pos>
+			<admin-state>unlocked</admin-state>
+		</component>
+		<component>
+			<name>C3</name>
+			<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+			<parent>Board</parent>
+			<parent-rel-pos>3</parent-rel-pos>
+			<admin-state>unlocked</admin-state>
+		</component>
+		<component>
+			<name>C4</name>
+			<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+			<parent>Board</parent>
+			<parent-rel-pos>4</parent-rel-pos>
+			<admin-state>unlocked</admin-state>
+		</component>
+		<component>
+			<name>C5</name>
+			<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+			<parent>Board</parent>
+			<parent-rel-pos>5</parent-rel-pos>
+			<admin-state>unlocked</admin-state>
+		</component>
+		<component>
+			<name>C6</name>
+			<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+			<parent>Board</parent>
+			<parent-rel-pos>6</parent-rel-pos>
+			<admin-state>unlocked</admin-state>
+		</component>
+		<component>
+			<name>C7</name>
+			<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+			<parent>Board</parent>
+			<parent-rel-pos>7</parent-rel-pos>
+			<admin-state>unlocked</admin-state>
+		</component>
+		<component>
+			<name>C8</name>
+			<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+			<parent>Board</parent>
+			<parent-rel-pos>8</parent-rel-pos>
+			<admin-state>unlocked</admin-state>
+		</component>
+		<component>
+			<name>C9</name>
+			<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+			<parent>Board</parent>
+			<parent-rel-pos>9</parent-rel-pos>
+			<admin-state>unlocked</admin-state>
+		</component>
+		<component>
+			<name>C10</name>
+			<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+			<parent>Board</parent>
+			<parent-rel-pos>10</parent-rel-pos>
+			<admin-state>unlocked</admin-state>
+		</component>
+		<component>
+			<name>C11</name>
+			<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+			<parent>Board</parent>
+			<parent-rel-pos>11</parent-rel-pos>
+			<admin-state>unlocked</admin-state>
+		</component>
+		<component>
+			<name>C12</name>
+			<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+			<parent>Board</parent>
+			<parent-rel-pos>12</parent-rel-pos>
+			<admin-state>unlocked</admin-state>
+		</component>
+		<component>
+			<name>C13</name>
+			<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+			<parent>Board</parent>
+			<parent-rel-pos>13</parent-rel-pos>
+			<admin-state>unlocked</admin-state>
+		</component>
+		<component>
+			<name>C14</name>
+			<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+			<parent>Board</parent>
+			<parent-rel-pos>14</parent-rel-pos>
+			<admin-state>unlocked</admin-state>
+		</component>
+		<component>
+			<name>C15</name>
+			<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+			<parent>Board</parent>
+			<parent-rel-pos>15</parent-rel-pos>
+			<admin-state>unlocked</admin-state>
+		</component>
+		<component>
+			<name>C16</name>
+			<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+			<parent>Board</parent>
+			<parent-rel-pos>16</parent-rel-pos>
+			<admin-state>unlocked</admin-state>
+		</component>
+		<component>
+			<name>Bp_Logical_Port</name>
+			<class xmlns:nokia-hwi="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-hardware-identities">nokia-hwi:backplane-port</class>
+			<parent>Board</parent>
+			<parent-rel-pos>1</parent-rel-pos>
+			<admin-state>unlocked</admin-state>
+		</component>
+	</hardware>
+	<forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+		<flooding-policies-profiles>
+			<flooding-policies-profile>
+				<name>drop_all</name>
+				<flooding-policy>
+					<name>dn_drop</name>
+					<in-interface-usages>
+						<interface-usages>network-port</interface-usages>
+					</in-interface-usages>
+					<destination-address>
+						<any-frame />
+					</destination-address>
+					<discard />
+				</flooding-policy>
+				<flooding-policy>
+					<name>up_drop</name>
+					<in-interface-usages>
+						<interface-usages>user-port</interface-usages>
+					</in-interface-usages>
+					<destination-address>
+						<any-multicast-mac-address />
+					</destination-address>
+					<discard />
+				</flooding-policy>
+			</flooding-policies-profile>
+		</flooding-policies-profiles>
+	</forwarding>
+	<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+		<classifier-entry>
+			<name>obcRateLimitCla</name>
+			<match-criteria>
+				<match-all />
+			</match-criteria>
+			<classifier-action-entry-cfg>
+				<action-type xmlns:bbf-qos-rc="urn:bbf:yang:bbf-qos-rate-control">bbf-qos-rc:rate-limit-frames</action-type>
+				<rate-limit-frames xmlns="urn:bbf:yang:bbf-qos-rate-control">
+					<rate>15</rate>
+					<burst-size>15</burst-size>
+				</rate-limit-frames>
+			</classifier-action-entry-cfg>
+		</classifier-entry>
+	</classifiers>
+	<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+		<policy>
+			<name>obcRateLimitPol</name>
+			<classifiers>
+				<name>obcRateLimitCla</name>
+			</classifiers>
+		</policy>
+	</policies>
+	<cpu-load-control-cfg xmlns="urn:bbf:yang:nokia-ingress-cpu-packets-rate-limit">
+		<default-ingress-cpu-packets-rate-limit>
+			<interface-usage>user-port</interface-usage>
+			<rate-limit-policy-name>obcRateLimitPol</rate-limit-policy-name>
+		</default-ingress-cpu-packets-rate-limit>
+	</cpu-load-control-cfg>
+	<system xmlns="urn:ietf:params:xml:ns:yang:ietf-system">
+		<ntp>
+			<enabled>true</enabled>
+			<server>
+				<name>ntp_fixed_server</name>
+				<association-type>server</association-type>
+				<iburst>true</iburst>
+				<prefer>true</prefer>
+				<udp>
+					<address>169.254.1.253</address>
+					<port>123</port>
+				</udp>
+			</server>
+		</ntp>
+	</system>
+	<wavelength-profiles xmlns="urn:bbf:yang:bbf-xpon">
+		<wavelength-profile>
+			<name>ngpon2-wave-1</name>
+			<upstream-channel-id>0</upstream-channel-id>
+			<downstream-channel-id>0</downstream-channel-id>
+			<downstream-wavelength>159634</downstream-wavelength>
+		</wavelength-profile>
+		<wavelength-profile>
+			<name>ngpon2-wave-2</name>
+			<upstream-channel-id>1</upstream-channel-id>
+			<downstream-channel-id>1</downstream-channel-id>
+			<downstream-wavelength>159719</downstream-wavelength>
+		</wavelength-profile>
+		<wavelength-profile>
+			<name>ngpon2-wave-3</name>
+			<upstream-channel-id>2</upstream-channel-id>
+			<downstream-channel-id>2</downstream-channel-id>
+			<downstream-wavelength>159804</downstream-wavelength>
+		</wavelength-profile>
+		<wavelength-profile>
+			<name>ngpon2-wave-4</name>
+			<upstream-channel-id>3</upstream-channel-id>
+			<downstream-channel-id>3</downstream-channel-id>
+			<downstream-wavelength>159889</downstream-wavelength>
+		</wavelength-profile>
+		<wavelength-profile>
+			<name>ngpon2-wave-5</name>
+			<upstream-channel-id>4</upstream-channel-id>
+			<downstream-channel-id>4</downstream-channel-id>
+			<downstream-wavelength>159975</downstream-wavelength>
+		</wavelength-profile>
+		<wavelength-profile>
+			<name>ngpon2-wave-6</name>
+			<upstream-channel-id>5</upstream-channel-id>
+			<downstream-channel-id>5</downstream-channel-id>
+			<downstream-wavelength>160060</downstream-wavelength>
+		</wavelength-profile>
+		<wavelength-profile>
+			<name>ngpon2-wave-7</name>
+			<upstream-channel-id>6</upstream-channel-id>
+			<downstream-channel-id>6</downstream-channel-id>
+			<downstream-wavelength>160146</downstream-wavelength>
+		</wavelength-profile>
+		<wavelength-profile>
+			<name>ngpon2-wave-8</name>
+			<upstream-channel-id>7</upstream-channel-id>
+			<downstream-channel-id>7</downstream-channel-id>
+			<downstream-wavelength>160231</downstream-wavelength>
+		</wavelength-profile>
+		<wavelength-profile>
+			<name>xgspon-wave</name>
+			<upstream-channel-id>0</upstream-channel-id>
+			<downstream-channel-id>0</downstream-channel-id>
+			<downstream-wavelength>157700</downstream-wavelength>
+		</wavelength-profile>
+	</wavelength-profiles>
+	<users xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-aaa">
+		<user>
+			<name>admin</name>
+			<authentication>
+				<password>$6$khVPrY1q6Q9RzKaD$K9vhjvduazVoNh6HbnDmszaMawSt2F0VJG3hBlFLog1vmiVaUFJ6NJYnGfO7VD26iwp1PzbXnoC8egIBCO/aF.</password>
+				<ssh_keydir>/var/confd/homes/admin/.ssh</ssh_keydir>
+				<homedir>/tmp/syslog</homedir>
+			</authentication>
+			<login>
+				<password-expiry>0</password-expiry>
+				<password-expiry-notification>0</password-expiry-notification>
+				<password-history-policy>3</password-history-policy>
+				<disable>false</disable>
+			</login>
+		</user>
+		<user>
+			<name>init_oper</name>
+			<authentication>
+				<password>$6$MrAUy8IfX4B1i5LU$00qwhVJN497uBLhkbJyRcWBYHPTJOlVzl4Xw9IE3dO9ux1M1.MUZamx0Xie4fGfWWWWeAfLv.s12.yFUlQf9I0</password>
+				<ssh_keydir>/var/confd/homes/init_oper/.ssh</ssh_keydir>
+				<homedir>/tmp/syslog</homedir>
+			</authentication>
+			<login>
+				<password-expiry>0</password-expiry>
+				<password-expiry-notification>0</password-expiry-notification>
+				<password-history-policy>3</password-history-policy>
+				<disable>false</disable>
+			</login>
+		</user>
+		<user>
+			<name>nokia</name>
+			<authentication>
+				<password>$6$VuElaLglb2URpSEx$2Wk9lgrCYMzJIm9qpbV6x9YFVhkejCJIMuBW6dJAehDJnTOPBfg9cDNKFKlKv.uRmU56xsy9./zvQxdIaOhe40</password>
+				<ssh_keydir>/var/confd/homes/nokia/.ssh</ssh_keydir>
+				<homedir>/tmp/syslog</homedir>
+			</authentication>
+			<login>
+				<password-expiry>0</password-expiry>
+				<password-expiry-notification>0</password-expiry-notification>
+				<password-history-policy>3</password-history-policy>
+				<disable>false</disable>
+			</login>
+		</user>
+	</users>
+
+</config>                                                                                                                          
+</source>
+</copy-config>
+</rpc>

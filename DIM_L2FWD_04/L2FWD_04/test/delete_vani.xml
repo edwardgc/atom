@@ -1,0 +1,28 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1606" timeout="600">
+	<edit-config>
+		<target>
+			<running/>
+		</target>
+		<config>
+			<device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+				<device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+					<device-id>cfmb-a</device-id>
+					<device-specific-data>
+						<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+							<interface xmlns:ns4="urn:ietf:params:xml:ns:netconf:base:1.0" ns4:operation="delete">
+								<name>cp16_ont80</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:v-ani</type>
+								<v-ani xmlns="urn:bbf:yang:bbf-xponvani">
+									<parent-ref>scg_cp16</parent-ref>
+									<onu-id>128</onu-id>
+									<expected-serial-number>ALCLF1091128</expected-serial-number>
+									<preferred-chanpair>cp16</preferred-chanpair>
+								</v-ani>
+							</interface>
+						</interfaces>
+					</device-specific-data>
+				</device>
+			</device-manager>
+		</config>
+	</edit-config>
+</rpc>

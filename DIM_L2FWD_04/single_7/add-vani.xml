@@ -1,0 +1,277 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="70" timeout="600">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>cfmb-a</device-id>
+          <device-specific-data>
+            <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+              <interface xmlns:ns383="urn:ietf:params:xml:ns:netconf:base:1.0" ns383:operation="merge">
+                <name>cp7_ont01_uni1-user1</name>
+                <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+                <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <interface>cp7_ont01_uni1</interface>
+                </subif-lower-layer>
+                <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+                  <interface-usage>user-port</interface-usage>
+                </interface-usage>
+                <enabled>true</enabled>
+                <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <ingress-rule>
+                    <rule>
+                      <name>rule_1</name>
+                      <priority>100</priority>
+                      <flexible-match>
+                        <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                          <tag>
+                            <index>0</index>
+                            <dot1q-tag>
+                              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                              <vlan-id>101</vlan-id>
+                              <pbit>any</pbit>
+                              <dei>any</dei>
+                            </dot1q-tag>
+                          </tag>
+                        </match-criteria>
+                      </flexible-match>
+                      <ingress-rewrite>
+                        <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+                      </ingress-rewrite>
+                    </rule>
+                  </ingress-rule>
+                  <egress-rewrite>
+                    <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">0</pop-tags>
+                    <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                      <index>0</index>
+                      <dot1q-tag>
+                        <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                        <vlan-id>101</vlan-id>
+                        <pbit-from-tag-index>0</pbit-from-tag-index>
+                        <dei-from-tag-index>0</dei-from-tag-index>
+                      </dot1q-tag>
+                    </push-tag>
+                  </egress-rewrite>
+                </inline-frame-processing>
+                <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP0</ingress-qos-policy-profile>
+                <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">QPP0</egress-qos-policy-profile>
+              </interface>
+              <interface xmlns:ns384="urn:ietf:params:xml:ns:netconf:base:1.0" ns384:operation="merge">
+                <name>cp7_ont01_uni1</name>
+                <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
+                <olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
+                  <lower-layer-interface>cp7_ont01</lower-layer-interface>
+                </olt-v-enet>
+              </interface>
+              <interface xmlns:ns385="urn:ietf:params:xml:ns:netconf:base:1.0" ns385:operation="merge">
+                <name>cp7_ont01</name>
+                <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:v-ani</type>
+                <v-ani xmlns="urn:bbf:yang:bbf-xponvani">
+                  <parent-ref>scg_cp7</parent-ref>
+                  <onu-id>0</onu-id>
+                  <expected-serial-number>ALCLF0791001</expected-serial-number>
+                  <preferred-chanpair>cp7</preferred-chanpair>
+                </v-ani>
+              </interface>
+            </interfaces>
+            <tconts-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+              <tcont xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cp7_ont01_tcont1</name>
+                <alloc-id>1024</alloc-id>
+                <interface-reference>cp7_ont01</interface-reference>
+                <traffic-descriptor-profile-ref>TDP0</traffic-descriptor-profile-ref>
+              </tcont>
+            </tconts-config>
+            <gemports-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+              <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cp7_ont01_uni1_gem1</name>
+                <itf-ref>cp7_ont01_uni1-user1</itf-ref>
+                <traffic-class>0</traffic-class>
+                <gemport-id>1024</gemport-id>
+              </gemport>
+            </gemports-config>
+            <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+              <forwarders>
+                <forwarder>
+                  <name>fwd_cp7</name>
+                  <ports>
+                    <port>
+                      <name>cp7_ont01_uni1-user1_port</name>
+                      <sub-interface>cp7_ont01_uni1-user1</sub-interface>
+                    </port>
+                    <port>
+                      <name>cp7-net_port</name>
+                      <sub-interface>cp7-net</sub-interface>
+                    </port>
+                  </ports>
+                  <mac-learning>
+                    <forwarding-database>fdb_cp7</forwarding-database>
+                  </mac-learning>
+                  <split-horizon-profiles>
+                    <split-horizon-profile>split</split-horizon-profile>
+                  </split-horizon-profiles>
+                  <flooding-policies>
+                    <flooding-policies-profile>drop_all</flooding-policies-profile>
+                  </flooding-policies>
+                </forwarder>
+              </forwarders>
+              <forwarding-databases>
+                <forwarding-database xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                  <name>fdb_cp7</name>
+                  <max-number-mac-addresses>1024</max-number-mac-addresses>
+                  <aging-timer>300</aging-timer>
+                </forwarding-database>
+              </forwarding-databases>
+            </forwarding>
+          </device-specific-data>
+        </device>
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>cp7_ont01</device-id>
+          <device-specific-data>
+            <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+              <component>
+                <name>ont_cp7_ont01</name>
+                <admin-state>unlocked</admin-state>
+                <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types" xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:chassis</class>
+              </component>
+              <component>
+                <name>ontuni_cp7_ont01_uni1</name>
+                <parent>cp7_ont01_card</parent>
+                <parent-rel-pos>1</parent-rel-pos>
+                <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+              </component>
+              <component>
+                <name>cp7_ont01_card</name>
+                <admin-state>unlocked</admin-state>
+                <parent>ont_cp7_ont01</parent>
+                <parent-rel-pos>1</parent-rel-pos>
+                <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:board</class>
+              </component>
+              <component>
+                <name>ontaniport_cp7_ont01</name>
+                <parent>ontsfp_cp7_ont01</parent>
+                <parent-rel-pos>1</parent-rel-pos>
+                <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+              </component>
+              <component>
+                <name>ontsfp_cp7_ont01</name>
+                <parent>ontcage_cp7_ont01</parent>
+                <parent-rel-pos>0</parent-rel-pos>
+                <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+              </component>
+              <component>
+                <name>ontcage_cp7_ont01</name>
+                <parent>ont_cp7_ont01</parent>
+                <parent-rel-pos>0</parent-rel-pos>
+                <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+              </component>
+            </hardware>
+            <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cp7_ont01</name>
+                <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:ani</type>
+                <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">ontaniport_cp7_ont01</port-layer-if>
+                <ani xmlns="urn:bbf:yang:bbf-xponani">
+                  <onu-id>0</onu-id>
+                </ani>
+              </interface>
+              <interface xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+                <name>cp7_ont01_uni1-user1</name>
+                <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+                <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <interface>cp7_ont01_uni1</interface>
+                </subif-lower-layer>
+                <enabled>true</enabled>
+                <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <ingress-rule>
+                    <rule>
+                      <name>rule_1</name>
+                      <priority>100</priority>
+                      <flexible-match>
+                        <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                          <tag>
+                            <index>0</index>
+                            <dot1q-tag>
+                              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                              <vlan-id>11</vlan-id>
+                              <pbit>any</pbit>
+                              <dei>any</dei>
+                            </dot1q-tag>
+                          </tag>
+                        </match-criteria>
+                      </flexible-match>
+                      <ingress-rewrite>
+                        <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+                        <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                          <index>0</index>
+                          <dot1q-tag>
+                            <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                            <vlan-id>101</vlan-id>
+                            <pbit-from-tag-index>0</pbit-from-tag-index>
+                            <dei-from-tag-index>0</dei-from-tag-index>
+                          </dot1q-tag>
+                        </push-tag>
+                      </ingress-rewrite>
+                    </rule>
+                  </ingress-rule>
+                  <egress-rewrite>
+                    <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+                    <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                      <index>0</index>
+                      <dot1q-tag>
+                        <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                        <vlan-id>11</vlan-id>
+                        <pbit-from-tag-index>0</pbit-from-tag-index>
+                        <dei-from-tag-index>0</dei-from-tag-index>
+                      </dot1q-tag>
+                    </push-tag>
+                  </egress-rewrite>
+                </inline-frame-processing>
+                <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">QPP0</ingress-qos-policy-profile>
+              </interface>
+              <interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+                <name>cp7_ont01_uni1</name>
+                <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+                <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">ontuni_cp7_ont01_uni1</port-layer-if>
+                <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
+                  <auto-negotiation>
+                    <status>enabled</status>
+                    <speed>eth-if-speed-1gb</speed>
+                    <duplex>full</duplex>
+                  </auto-negotiation>
+                </ethernet>
+              </interface>
+            </interfaces>
+            <tconts-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+              <tcont xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cp7_ont01_tcont1</name>
+                <alloc-id>1024</alloc-id>
+                <interface-reference>cp7_ont01</interface-reference>
+                <traffic-descriptor-profile-ref>TDP0</traffic-descriptor-profile-ref>
+                <tm-root>
+                  <queue>
+                    <local-queue-id>0</local-queue-id>
+                    <priority>0</priority>
+                    <weight>1</weight>
+                  </queue>
+                  <tc-id-2-queue-id-mapping-profile-name>T2Q0</tc-id-2-queue-id-mapping-profile-name>
+                </tm-root>
+              </tcont>
+            </tconts-config>
+            <gemports-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+              <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cp7_ont01_uni1_gem1</name>
+                <itf-ref>cp7_ont01_uni1-user1</itf-ref>
+                <tcont-ref>cp7_ont01_tcont1</tcont-ref>
+                <traffic-class>0</traffic-class>
+                <gemport-id>1024</gemport-id>
+              </gemport>
+            </gemports-config>
+          </device-specific-data>
+        </device>
+      </device-manager>
+    </config>
+  </edit-config>
+</rpc>

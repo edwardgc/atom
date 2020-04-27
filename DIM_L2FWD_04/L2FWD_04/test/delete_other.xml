@@ -1,0 +1,113 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1602" timeout="600">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>cfmb-a</device-id>
+          <device-specific-data>
+		  <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+              <interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+                <name>cp16_ont80_uni1-user1</name>
+                <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+                <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <interface>cp16_ont80_uni1</interface>
+                </subif-lower-layer>
+                <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+                  <interface-usage>user-port</interface-usage>
+                </interface-usage>
+                <enabled>true</enabled>
+                <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <ingress-rule>
+                    <rule>
+                      <name>rule_1</name>
+                      <priority>100</priority>
+                      <flexible-match>
+                        <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                          <tag>
+                            <index>0</index>
+                            <dot1q-tag>
+                              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                              <vlan-id>101</vlan-id>
+                              <pbit>any</pbit>
+                              <dei>any</dei>
+                            </dot1q-tag>
+                          </tag>
+                        </match-criteria>
+                      </flexible-match>
+                      <ingress-rewrite>
+                        <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+                      </ingress-rewrite>
+                    </rule>
+                  </ingress-rule>
+                  <egress-rewrite>
+                    <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">0</pop-tags>
+                    <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                      <index>0</index>
+                      <dot1q-tag>
+                        <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                        <vlan-id>101</vlan-id>
+                        <pbit-from-tag-index>0</pbit-from-tag-index>
+                        <dei-from-tag-index>0</dei-from-tag-index>
+                      </dot1q-tag>
+                    </push-tag>
+                  </egress-rewrite>
+                </inline-frame-processing>
+                <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP0</ingress-qos-policy-profile>
+                <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">QPP0</egress-qos-policy-profile>
+              </interface>
+              <interface xmlns:ns3="urn:ietf:params:xml:ns:netconf:base:1.0" ns3:operation="delete">
+                <name>cp16_ont80_uni1</name>
+                <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
+                <olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
+                  <lower-layer-interface>cp16_ont80</lower-layer-interface>
+                </olt-v-enet>
+              </interface>
+              <interface xmlns:ns4="urn:ietf:params:xml:ns:netconf:base:1.0" ns4:operation="merge">
+                <name>cp16_ont80</name>
+                <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:v-ani</type>
+                <v-ani xmlns="urn:bbf:yang:bbf-xponvani">
+                  <parent-ref>scg_cp16</parent-ref>
+                  <onu-id>128</onu-id>
+                  <expected-serial-number>ALCLF1091128</expected-serial-number>
+                  <preferred-chanpair>cp16</preferred-chanpair>
+                </v-ani>
+              </interface>
+            </interfaces>
+            <tconts-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+              <tcont xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="delete">
+                <name>cp16_ont80_tcont1</name>
+                <alloc-id>2040</alloc-id>
+                <interface-reference>cp16_ont80</interface-reference>
+                <traffic-descriptor-profile-ref>TDP0</traffic-descriptor-profile-ref>
+              </tcont>
+             </tconts-config>
+            <gemports-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+              <gemport xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="delete">
+                <name>cp16_ont80_uni1_gem1</name>
+                <itf-ref>cp16_ont80_uni1-user1</itf-ref>
+                <traffic-class>0</traffic-class>
+                <gemport-id>2040</gemport-id>
+              </gemport>
+            </gemports-config>
+            <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+              <forwarders>
+                <forwarder>
+                  <name>fwd_cp16</name>
+                  <ports>
+                    <port xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="delete">
+                      <name>cp16_ont80_uni1-user1_port</name>
+                      <sub-interface>cp16_ont80_uni1-user1</sub-interface>
+                    </port>
+                  </ports>
+                </forwarder>
+              </forwarders>
+            </forwarding>
+          </device-specific-data>
+        </device>
+      </device-manager>
+    </config>
+  </edit-config>
+</rpc>

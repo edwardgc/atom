@@ -1,0 +1,295 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>cfmb-a</device-id>
+          <device-specific-data>
+            <system xmlns="urn:ietf:params:xml:ns:yang:ietf-system" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+              <hostname>cfmb-a</hostname>
+            </system>
+            <virtual-network-functions xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-virtual-network-function">
+              <virtual-network-function xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>vOnuMgmt</name>
+                <type>vonumgmt</type>
+                <address>tcp://135.251.247.21:8802/</address>
+              </virtual-network-function>
+            </virtual-network-functions>
+            <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+              <component>
+                <name>QSFP3</name>
+                <admin-state>unlocked</admin-state>
+                <parent>C-A2</parent>
+                <parent-rel-pos>1</parent-rel-pos>
+                <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE74158AA</model-name>
+                <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+              </component>
+              <component>
+                <name>UPLINK_PORT3</name>
+                <admin-state>unlocked</admin-state>
+                <parent>QSFP3</parent>
+                <parent-rel-pos>1</parent-rel-pos>
+                <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+              </component>
+            </hardware>
+            <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>UPLINK3</name>
+                <enabled>true</enabled>
+                <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+                <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">UPLINK_PORT3</port-layer-if>
+                <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
+                  <manual>
+                    <duplex>full</duplex>
+                    <speed>eth-if-speed-40gb</speed>
+                  </manual>
+                </ethernet>
+                <aggregation-port xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+                  <aggregation-port-lacp>
+                    <actor-system-priority>4</actor-system-priority>
+                    <actor-admin-key>01</actor-admin-key>
+                  </aggregation-port-lacp>
+                </aggregation-port>
+              </interface>
+              <interface xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+                <name>lag_01</name>
+                <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+                <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+                  <name>agg01</name>
+                  <aggregator-lacp>
+                    <actor-admin-key>01</actor-admin-key>
+                  </aggregator-lacp>
+                  <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">static</mode>
+                </aggregator>
+              </interface>
+            </interfaces>
+            <lag-system xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+              <aggregating-system xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <agg-system>lagsys01</agg-system>
+                <system-id>00-11-22-33-44-55</system-id>
+                <system-priority>5</system-priority>
+              </aggregating-system>
+            </lag-system>
+            <traffic-descriptor-profiles xmlns="urn:bbf:yang:bbf-xpongemtcont">
+              <traffic-descriptor-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>TDP0</name>
+                <fixed-bandwidth>1000000</fixed-bandwidth>
+                <assured-bandwidth>10000000</assured-bandwidth>
+                <maximum-bandwidth>10000000000</maximum-bandwidth>
+              </traffic-descriptor-profile>
+            </traffic-descriptor-profiles>
+            <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+              <classifier-entry>
+                <name>classifier_eg0</name>
+                <filter-operation>match-all-filter</filter-operation>
+                <match-criteria>
+                  <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                    <index>0</index>
+                    <pbit-value>0</pbit-value>
+                  </pbit-marking-list>
+                </match-criteria>
+                <classifier-action-entry-cfg>
+                  <action-type>scheduling-traffic-class</action-type>
+                  <scheduling-traffic-class>0</scheduling-traffic-class>
+                </classifier-action-entry-cfg>
+              </classifier-entry>
+              <classifier-entry>
+                <name>classifier_ing0</name>
+                <filter-operation>match-all-filter</filter-operation>
+                <match-criteria>
+                  <tag>
+                    <index>0</index>
+                    <in-pbit-list>0-7</in-pbit-list>
+                  </tag>
+                </match-criteria>
+                <classifier-action-entry-cfg>
+                  <action-type>scheduling-traffic-class</action-type>
+                  <scheduling-traffic-class>0</scheduling-traffic-class>
+                </classifier-action-entry-cfg>
+              </classifier-entry>
+              <classifier-entry>
+                <name>classifier_eg7</name>
+                <filter-operation>match-all-filter</filter-operation>
+                <match-criteria>
+                  <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                    <index>0</index>
+                    <pbit-value>7</pbit-value>
+                  </pbit-marking-list>
+                </match-criteria>
+                <classifier-action-entry-cfg>
+                  <action-type>scheduling-traffic-class</action-type>
+                  <scheduling-traffic-class>0</scheduling-traffic-class>
+                </classifier-action-entry-cfg>
+              </classifier-entry>
+              <classifier-entry>
+                <name>classifier_eg6</name>
+                <filter-operation>match-all-filter</filter-operation>
+                <match-criteria>
+                  <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                    <index>0</index>
+                    <pbit-value>6</pbit-value>
+                  </pbit-marking-list>
+                </match-criteria>
+                <classifier-action-entry-cfg>
+                  <action-type>scheduling-traffic-class</action-type>
+                  <scheduling-traffic-class>0</scheduling-traffic-class>
+                </classifier-action-entry-cfg>
+              </classifier-entry>
+              <classifier-entry>
+                <name>classifier_eg5</name>
+                <filter-operation>match-all-filter</filter-operation>
+                <match-criteria>
+                  <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                    <index>0</index>
+                    <pbit-value>5</pbit-value>
+                  </pbit-marking-list>
+                </match-criteria>
+                <classifier-action-entry-cfg>
+                  <action-type>scheduling-traffic-class</action-type>
+                  <scheduling-traffic-class>0</scheduling-traffic-class>
+                </classifier-action-entry-cfg>
+              </classifier-entry>
+              <classifier-entry>
+                <name>classifier_eg4</name>
+                <filter-operation>match-all-filter</filter-operation>
+                <match-criteria>
+                  <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                    <index>0</index>
+                    <pbit-value>4</pbit-value>
+                  </pbit-marking-list>
+                </match-criteria>
+                <classifier-action-entry-cfg>
+                  <action-type>scheduling-traffic-class</action-type>
+                  <scheduling-traffic-class>0</scheduling-traffic-class>
+                </classifier-action-entry-cfg>
+              </classifier-entry>
+              <classifier-entry>
+                <name>classifier_eg3</name>
+                <filter-operation>match-all-filter</filter-operation>
+                <match-criteria>
+                  <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                    <index>0</index>
+                    <pbit-value>3</pbit-value>
+                  </pbit-marking-list>
+                </match-criteria>
+                <classifier-action-entry-cfg>
+                  <action-type>scheduling-traffic-class</action-type>
+                  <scheduling-traffic-class>0</scheduling-traffic-class>
+                </classifier-action-entry-cfg>
+              </classifier-entry>
+              <classifier-entry>
+                <name>classifier_eg2</name>
+                <filter-operation>match-all-filter</filter-operation>
+                <match-criteria>
+                  <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                    <index>0</index>
+                    <pbit-value>2</pbit-value>
+                  </pbit-marking-list>
+                </match-criteria>
+                <classifier-action-entry-cfg>
+                  <action-type>scheduling-traffic-class</action-type>
+                  <scheduling-traffic-class>0</scheduling-traffic-class>
+                </classifier-action-entry-cfg>
+              </classifier-entry>
+              <classifier-entry>
+                <name>classifier_eg1</name>
+                <filter-operation>match-all-filter</filter-operation>
+                <match-criteria>
+                  <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                    <index>0</index>
+                    <pbit-value>1</pbit-value>
+                  </pbit-marking-list>
+                </match-criteria>
+                <classifier-action-entry-cfg>
+                  <action-type>scheduling-traffic-class</action-type>
+                  <scheduling-traffic-class>0</scheduling-traffic-class>
+                </classifier-action-entry-cfg>
+              </classifier-entry>
+            </classifiers>
+            <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+              <policy>
+                <name>POLICY0</name>
+                <classifiers>
+                  <name>classifier_eg0</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_eg7</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_eg6</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_eg5</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_eg4</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_eg3</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_eg2</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_eg1</name>
+                </classifiers>
+              </policy>
+              <policy>
+                <name>POLICY_ING</name>
+                <classifiers>
+                  <name>classifier_ing0</name>
+                </classifiers>
+              </policy>
+            </policies>
+            <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+              <policy-profile>
+                <name>QPP0</name>
+                <policy-list>
+                  <name>POLICY0</name>
+                </policy-list>
+              </policy-profile>
+              <policy-profile>
+                <name>IPP0</name>
+                <policy-list>
+                  <name>POLICY_ING</name>
+                </policy-list>
+              </policy-profile>
+            </qos-policy-profiles>
+            <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+              <split-horizon-profiles>
+                <split-horizon-profile>
+                  <name>split</name>
+                  <split-horizon>
+                    <in-interface-usage>user-port</in-interface-usage>
+                    <out-interface-usage>user-port</out-interface-usage>
+                  </split-horizon>
+                </split-horizon-profile>
+              </split-horizon-profiles>
+            </forwarding>
+            <l2-dhcpv4-relay-profiles xmlns="urn:bbf:yang:bbf-l2-dhcpv4-relay">
+              <l2-dhcpv4-relay-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>dhcp_profile</name>
+                <option82-format>
+                  <suboptions>circuit-id</suboptions>
+                  <default-circuit-id-syntax>Telecom</default-circuit-id-syntax>
+                </option82-format>
+              </l2-dhcpv4-relay-profile>
+            </l2-dhcpv4-relay-profiles>
+            <pppoe-profiles xmlns="urn:bbf:yang:bbf-pppoe-intermediate-agent">
+              <pppoe-profile>
+                <name>pppoe_profile</name>
+                <pppoe-vendor-specific-tag xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                  <subtag>remote-id</subtag>
+                  <default-remote-id-syntax>Telecom</default-remote-id-syntax>
+                </pppoe-vendor-specific-tag>
+              </pppoe-profile>
+            </pppoe-profiles>
+          </device-specific-data>
+        </device>
+      </device-manager>
+    </config>
+  </edit-config>
+</rpc>

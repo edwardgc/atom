@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="6">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+        <adh:device-holder xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+          <adh:name>Bade-Wurtemberg</adh:name>
+          <adh:device>
+            <adh:device-id>Stuttgart-1</adh:device-id>
+            <adh:device-specific-data>
+              <entity xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:ietf:params:xml:ns:yang:ietf-entity">
+                <physical-entity>
+                  <name>ontcard/1/1/1/1</name>
+                  <admin-state>unlocked</admin-state>
+                  <class xmlns:ianaent="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:ietf:params:xml:ns:yang:iana-entity" xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:broadband-forum-org:bbf-entity-extension">ianaent:module</class>
+                  <contained-in xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:broadband-forum-org:bbf-entity-extension">ont/1/1/1</contained-in>
+                  <parent-rel-pos xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:broadband-forum-org:bbf-entity-extension">1</parent-rel-pos>
+                  <ontcard xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:broadband-forum-org:yang:bbf-eqpt">
+                    <ontcard-config>
+                      <type>e-10-100-base-t</type>
+                      <num-non-pots-ports>4</num-non-pots-ports>
+                      <num-pots-ports>2</num-pots-ports>
+                      <bridge-ip-ind>bridged</bridge-ip-ind>
+                      <card-config>e1</card-config>
+                      <connect-node-type>uni</connect-node-type>
+                      <transparent-mode>false</transparent-mode>
+                    </ontcard-config>
+                  </ontcard>
+                </physical-entity>
+                <physical-entity>
+                  <name>uniport/1/1/1/1/1</name>
+                  <class xmlns:ianaent="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:ietf:params:xml:ns:yang:iana-entity" xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:broadband-forum-org:bbf-entity-extension">ianaent:port</class>
+                  <contained-in xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:broadband-forum-org:bbf-entity-extension">ontcard/1/1/1/1</contained-in>
+                  <parent-rel-pos xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:broadband-forum-org:bbf-entity-extension">1</parent-rel-pos>
+                </physical-entity>
+              </entity>
+              <if:interfaces xmlns:if="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:ietf:params:xml:ns:yang:ietf-interfaces">
+                <if:interface>
+                  <if:name>venet/1/1/1/1/1</if:name>
+                  <if:type xmlns:bbfift="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:bbf:yang:bbf-if-type">bbfift:v-enet</if:type>
+                  <fiber:v-enet xmlns:fiber="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:bbf:yang:bbf-fiber">
+                    <fiber:ontani-ref>vontani/1/1/1</fiber:ontani-ref>
+                  </fiber:v-enet>
+                </if:interface>
+                <if:interface>
+                  <if:name>enet/1/1/1/1/1</if:name>
+                  <if:type xmlns:ianaift="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</if:type>
+                  <port-layer-if xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:bbf:yang:bbf-interface-port-reference">uniport/1/1/1/1/1</port-layer-if>
+                </if:interface>
+              </if:interfaces>
+              <link-table xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:bbf:yang:bbf-link-table-body">
+                <link-table>
+                  <itf-from>venet/1/1/1/1/1</itf-from>
+                  <itf-to>enet/1/1/1/1/1</itf-to>
+                </link-table>
+              </link-table>
+            </adh:device-specific-data>
+          </adh:device>
+        </adh:device-holder>
+      </anv:device-manager>
+    </config>
+  </edit-config>
+</rpc>

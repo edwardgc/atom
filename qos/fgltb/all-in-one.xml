@@ -1,0 +1,1128 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+      <system xmlns="urn:ietf:params:xml:ns:yang:ietf-system" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+        <hostname>FGLT-B_HAOJUN</hostname>
+      </system>
+      <virtual-network-functions xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-virtual-network-function">
+        <virtual-network-function xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>vOnuMgmt</name>
+          <type>vonumgmt</type>
+          <address>tcp://10.131.150.4:30802</address>
+        </virtual-network-function>
+      </virtual-network-functions>
+      <traffic-descriptor-profiles xmlns="urn:bbf:yang:bbf-xpongemtcont">
+        <traffic-descriptor-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>TDP0</name>
+          <fixed-bandwidth>1000000</fixed-bandwidth>
+          <assured-bandwidth>10000000</assured-bandwidth>
+          <maximum-bandwidth>1250000000</maximum-bandwidth>
+        </traffic-descriptor-profile>
+      </traffic-descriptor-profiles>
+      <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+        <classifier-entry>
+          <name>classifier_eg0</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <match-criteria>
+            <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+              <index>0</index>
+              <pbit-value>0</pbit-value>
+            </pbit-marking-list>
+          </match-criteria>
+          <classifier-action-entry-cfg>
+            <action-type>scheduling-traffic-class</action-type>
+            <scheduling-traffic-class>0</scheduling-traffic-class>
+          </classifier-action-entry-cfg>
+        </classifier-entry>
+        <classifier-entry>
+          <name>classifier_eg1</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <match-criteria>
+            <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+              <index>0</index>
+              <pbit-value>1</pbit-value>
+            </pbit-marking-list>
+          </match-criteria>
+          <classifier-action-entry-cfg>
+            <action-type>scheduling-traffic-class</action-type>
+            <scheduling-traffic-class>0</scheduling-traffic-class>
+          </classifier-action-entry-cfg>
+        </classifier-entry>
+        <classifier-entry>
+          <name>classifier_eg2</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <match-criteria>
+            <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+              <index>0</index>
+              <pbit-value>2</pbit-value>
+            </pbit-marking-list>
+          </match-criteria>
+          <classifier-action-entry-cfg>
+            <action-type>scheduling-traffic-class</action-type>
+            <scheduling-traffic-class>0</scheduling-traffic-class>
+          </classifier-action-entry-cfg>
+        </classifier-entry>
+        <classifier-entry>
+          <name>classifier_eg3</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <match-criteria>
+            <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+              <index>0</index>
+              <pbit-value>3</pbit-value>
+            </pbit-marking-list>
+          </match-criteria>
+          <classifier-action-entry-cfg>
+            <action-type>scheduling-traffic-class</action-type>
+            <scheduling-traffic-class>0</scheduling-traffic-class>
+          </classifier-action-entry-cfg>
+        </classifier-entry>
+        <classifier-entry>
+          <name>classifier_eg4</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <match-criteria>
+            <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+              <index>0</index>
+              <pbit-value>4</pbit-value>
+            </pbit-marking-list>
+          </match-criteria>
+          <classifier-action-entry-cfg>
+            <action-type>scheduling-traffic-class</action-type>
+            <scheduling-traffic-class>0</scheduling-traffic-class>
+          </classifier-action-entry-cfg>
+        </classifier-entry>
+        <classifier-entry>
+          <name>classifier_eg5</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <match-criteria>
+            <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+              <index>0</index>
+              <pbit-value>5</pbit-value>
+            </pbit-marking-list>
+          </match-criteria>
+          <classifier-action-entry-cfg>
+            <action-type>scheduling-traffic-class</action-type>
+            <scheduling-traffic-class>0</scheduling-traffic-class>
+          </classifier-action-entry-cfg>
+        </classifier-entry>
+        <classifier-entry>
+          <name>classifier_eg6</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <match-criteria>
+            <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+              <index>0</index>
+              <pbit-value>6</pbit-value>
+            </pbit-marking-list>
+          </match-criteria>
+          <classifier-action-entry-cfg>
+            <action-type>scheduling-traffic-class</action-type>
+            <scheduling-traffic-class>0</scheduling-traffic-class>
+          </classifier-action-entry-cfg>
+        </classifier-entry>
+        <classifier-entry>
+          <name>classifier_eg7</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <match-criteria>
+            <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+              <index>0</index>
+              <pbit-value>7</pbit-value>
+            </pbit-marking-list>
+          </match-criteria>
+          <classifier-action-entry-cfg>
+            <action-type>scheduling-traffic-class</action-type>
+            <scheduling-traffic-class>0</scheduling-traffic-class>
+          </classifier-action-entry-cfg>
+        </classifier-entry>
+        <classifier-entry>
+          <name>classifier_ing0</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <match-criteria>
+            <tag>
+              <index>0</index>
+              <in-pbit-list>0-7</in-pbit-list>
+            </tag>
+          </match-criteria>
+          <classifier-action-entry-cfg>
+            <action-type>scheduling-traffic-class</action-type>
+            <scheduling-traffic-class>0</scheduling-traffic-class>
+          </classifier-action-entry-cfg>
+        </classifier-entry>
+        <classifier-entry>
+          <name>classifier_mc</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <match-criteria>
+            <protocol>igmp</protocol>
+          </match-criteria>
+          <classifier-action-entry-cfg>
+            <action-type>pbit-marking</action-type>
+            <pbit-marking-cfg>
+              <pbit-marking-list>
+                <index>0</index>
+                <pbit-value>0</pbit-value>
+              </pbit-marking-list>
+            </pbit-marking-cfg>
+          </classifier-action-entry-cfg>
+        </classifier-entry>
+      </classifiers>
+      <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy>
+          <name>POLICY0</name>
+          <classifiers>
+            <name>classifier_eg0</name>
+          </classifiers>
+          <classifiers>
+            <name>classifier_eg1</name>
+          </classifiers>
+          <classifiers>
+            <name>classifier_eg2</name>
+          </classifiers>
+          <classifiers>
+            <name>classifier_eg3</name>
+          </classifiers>
+          <classifiers>
+            <name>classifier_eg4</name>
+          </classifiers>
+          <classifiers>
+            <name>classifier_eg5</name>
+          </classifiers>
+          <classifiers>
+            <name>classifier_eg6</name>
+          </classifiers>
+          <classifiers>
+            <name>classifier_eg7</name>
+          </classifiers>
+          <classifiers>
+            <name>classifier_mc</name>
+          </classifiers>
+        </policy>
+        <policy>
+          <name>POLICY_ING</name>
+          <classifiers>
+            <name>classifier_ing0</name>
+          </classifiers>
+        </policy>
+        <policy>
+          <name>policy_ds_mcast</name>
+          <classifiers>
+            <name>classifier_mc</name>
+          </classifiers>
+        </policy>
+      </policies>
+      <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy-profile>
+          <name>QPP0</name>
+          <policy-list>
+            <name>POLICY0</name>
+          </policy-list>
+        </policy-profile>
+        <policy-profile>
+          <name>IPP0</name>
+          <policy-list>
+            <name>POLICY_ING</name>
+          </policy-list>
+        </policy-profile>
+        <policy-profile>
+          <name>MCQP</name>
+          <policy-list>
+            <name>policy_ds_mcast</name>
+          </policy-list>
+        </policy-profile>
+      </qos-policy-profiles>
+      <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+        <split-horizon-profiles>
+          <split-horizon-profile>
+            <name>split</name>
+            <split-horizon>
+              <in-interface-usage>user-port</in-interface-usage>
+              <out-interface-usage>user-port</out-interface-usage>
+            </split-horizon>
+          </split-horizon-profile>
+        </split-horizon-profiles>
+      </forwarding>
+      <multicast xmlns="urn:bbf:yang:bbf-mgmd">
+        <mgmd>
+          <multicast-proxy-profile>
+            <name>vpnproxy</name>
+            <protocol-version>version-2</protocol-version>
+            <interfaces-to-hosts-data>
+              <query-interval>125</query-interval>
+              <query-max-response-time>100</query-max-response-time>
+              <immediate-leave>enabled</immediate-leave>
+              <startup-query-count>2</startup-query-count>
+              <startup-query-interval>30</startup-query-interval>
+            </interfaces-to-hosts-data>
+          </multicast-proxy-profile>
+        </mgmd>
+      </multicast>
+    <l2-dhcpv4-relay-profiles xmlns="urn:bbf:yang:bbf-l2-dhcpv4-relay">
+        <l2-dhcpv4-relay-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>dhcp_cp1</name>
+          <option82-format>
+            <suboptions>circuit-id</suboptions>
+            <default-circuit-id-syntax>1:1:channel-group:v-ani</default-circuit-id-syntax>
+          </option82-format>
+        </l2-dhcpv4-relay-profile>
+        <l2-dhcpv4-relay-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>dhcp_cp2</name>
+          <option82-format>
+            <suboptions>circuit-id</suboptions>
+            <default-circuit-id-syntax>1:1:channel-group:v-ani</default-circuit-id-syntax>
+          </option82-format>
+        </l2-dhcpv4-relay-profile>
+        <l2-dhcpv4-relay-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>dhcp_cp3</name>
+          <option82-format>
+            <suboptions>circuit-id</suboptions>
+            <default-circuit-id-syntax>1:1:channel-group:v-ani</default-circuit-id-syntax>
+          </option82-format>
+        </l2-dhcpv4-relay-profile>
+        <l2-dhcpv4-relay-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>dhcp_cp4</name>
+          <option82-format>
+            <suboptions>circuit-id</suboptions>
+            <default-circuit-id-syntax>1:1:channel-group:v-ani</default-circuit-id-syntax>
+          </option82-format>
+        </l2-dhcpv4-relay-profile>
+        <l2-dhcpv4-relay-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>dhcp_cp5</name>
+          <option82-format>
+            <suboptions>circuit-id</suboptions>
+            <default-circuit-id-syntax>1:1:channel-group:v-ani</default-circuit-id-syntax>
+          </option82-format>
+        </l2-dhcpv4-relay-profile>
+        <l2-dhcpv4-relay-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>dhcp_cp6</name>
+          <option82-format>
+            <suboptions>circuit-id</suboptions>
+            <default-circuit-id-syntax>1:1:channel-group:v-ani</default-circuit-id-syntax>
+          </option82-format>
+        </l2-dhcpv4-relay-profile>
+        <l2-dhcpv4-relay-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>dhcp_cp7</name>
+          <option82-format>
+            <suboptions>circuit-id</suboptions>
+            <default-circuit-id-syntax>1:1:channel-group:v-ani</default-circuit-id-syntax>
+          </option82-format>
+        </l2-dhcpv4-relay-profile>
+        <l2-dhcpv4-relay-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>dhcp_cp8</name>
+          <option82-format>
+            <suboptions>circuit-id</suboptions>
+            <default-circuit-id-syntax>1:1:channel-group:v-ani</default-circuit-id-syntax>
+          </option82-format>
+        </l2-dhcpv4-relay-profile>
+        <l2-dhcpv4-relay-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>dhcp_cp9</name>
+          <option82-format>
+            <suboptions>circuit-id</suboptions>
+            <default-circuit-id-syntax>1:1:channel-group:v-ani</default-circuit-id-syntax>
+          </option82-format>
+        </l2-dhcpv4-relay-profile>
+        <l2-dhcpv4-relay-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>dhcp_cp10</name>
+          <option82-format>
+            <suboptions>circuit-id</suboptions>
+            <default-circuit-id-syntax>1:1:channel-group:v-ani</default-circuit-id-syntax>
+          </option82-format>
+        </l2-dhcpv4-relay-profile>
+        <l2-dhcpv4-relay-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>dhcp_cp11</name>
+          <option82-format>
+            <suboptions>circuit-id</suboptions>
+            <default-circuit-id-syntax>1:1:channel-group:v-ani</default-circuit-id-syntax>
+          </option82-format>
+        </l2-dhcpv4-relay-profile>
+        <l2-dhcpv4-relay-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>dhcp_cp12</name>
+          <option82-format>
+            <suboptions>circuit-id</suboptions>
+            <default-circuit-id-syntax>1:1:channel-group:v-ani</default-circuit-id-syntax>
+          </option82-format>
+        </l2-dhcpv4-relay-profile>
+        <l2-dhcpv4-relay-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>dhcp_cp13</name>
+          <option82-format>
+            <suboptions>circuit-id</suboptions>
+            <default-circuit-id-syntax>1:1:channel-group:v-ani</default-circuit-id-syntax>
+          </option82-format>
+        </l2-dhcpv4-relay-profile>
+        <l2-dhcpv4-relay-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>dhcp_cp14</name>
+          <option82-format>
+            <suboptions>circuit-id</suboptions>
+            <default-circuit-id-syntax>1:1:channel-group:v-ani</default-circuit-id-syntax>
+          </option82-format>
+        </l2-dhcpv4-relay-profile>
+        <l2-dhcpv4-relay-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>dhcp_cp15</name>
+          <option82-format>
+            <suboptions>circuit-id</suboptions>
+            <default-circuit-id-syntax>1:1:channel-group:v-ani</default-circuit-id-syntax>
+          </option82-format>
+        </l2-dhcpv4-relay-profile>
+        <l2-dhcpv4-relay-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>dhcp_cp16</name>
+          <option82-format>
+            <suboptions>circuit-id</suboptions>
+            <default-circuit-id-syntax>1:1:channel-group:v-ani</default-circuit-id-syntax>
+          </option82-format>
+        </l2-dhcpv4-relay-profile>
+      </l2-dhcpv4-relay-profiles>
+    <pppoe-profiles xmlns="urn:bbf:yang:bbf-pppoe-intermediate-agent">
+        <pppoe-profile>
+          <name>pppoe_cp1</name>
+          <pppoe-vendor-specific-tag xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <subtag>remote-id</subtag>
+            <default-remote-id-syntax>1:1:channel-group:v-ani</default-remote-id-syntax>
+          </pppoe-vendor-specific-tag>
+        </pppoe-profile>
+        <pppoe-profile>
+          <name>pppoe_cp2</name>
+          <pppoe-vendor-specific-tag xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <subtag>remote-id</subtag>
+            <default-remote-id-syntax>1:1:channel-group:v-ani</default-remote-id-syntax>
+          </pppoe-vendor-specific-tag>
+        </pppoe-profile>
+        <pppoe-profile>
+          <name>pppoe_cp3</name>
+          <pppoe-vendor-specific-tag xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <subtag>remote-id</subtag>
+            <default-remote-id-syntax>1:1:channel-group:v-ani</default-remote-id-syntax>
+          </pppoe-vendor-specific-tag>
+        </pppoe-profile>
+        <pppoe-profile>
+          <name>pppoe_cp4</name>
+          <pppoe-vendor-specific-tag xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <subtag>remote-id</subtag>
+            <default-remote-id-syntax>1:1:channel-group:v-ani</default-remote-id-syntax>
+          </pppoe-vendor-specific-tag>
+        </pppoe-profile>
+        <pppoe-profile>
+          <name>pppoe_cp5</name>
+          <pppoe-vendor-specific-tag xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <subtag>remote-id</subtag>
+            <default-remote-id-syntax>1:1:channel-group:v-ani</default-remote-id-syntax>
+          </pppoe-vendor-specific-tag>
+        </pppoe-profile>
+        <pppoe-profile>
+          <name>pppoe_cp6</name>
+          <pppoe-vendor-specific-tag xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <subtag>remote-id</subtag>
+            <default-remote-id-syntax>1:1:channel-group:v-ani</default-remote-id-syntax>
+          </pppoe-vendor-specific-tag>
+        </pppoe-profile>
+        <pppoe-profile>
+          <name>pppoe_cp7</name>
+          <pppoe-vendor-specific-tag xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <subtag>remote-id</subtag>
+            <default-remote-id-syntax>1:1:channel-group:v-ani</default-remote-id-syntax>
+          </pppoe-vendor-specific-tag>
+        </pppoe-profile>
+        <pppoe-profile>
+          <name>pppoe_cp8</name>
+          <pppoe-vendor-specific-tag xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <subtag>remote-id</subtag>
+            <default-remote-id-syntax>1:1:channel-group:v-ani</default-remote-id-syntax>
+          </pppoe-vendor-specific-tag>
+        </pppoe-profile>
+        <pppoe-profile>
+          <name>pppoe_cp9</name>
+          <pppoe-vendor-specific-tag xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <subtag>remote-id</subtag>
+            <default-remote-id-syntax>1:1:channel-group:v-ani</default-remote-id-syntax>
+          </pppoe-vendor-specific-tag>
+        </pppoe-profile>
+        <pppoe-profile>
+          <name>pppoe_cp10</name>
+          <pppoe-vendor-specific-tag xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <subtag>remote-id</subtag>
+            <default-remote-id-syntax>1:1:channel-group:v-ani</default-remote-id-syntax>
+          </pppoe-vendor-specific-tag>
+        </pppoe-profile>
+        <pppoe-profile>
+          <name>pppoe_cp11</name>
+          <pppoe-vendor-specific-tag xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <subtag>remote-id</subtag>
+            <default-remote-id-syntax>1:1:channel-group:v-ani</default-remote-id-syntax>
+          </pppoe-vendor-specific-tag>
+        </pppoe-profile>
+        <pppoe-profile>
+          <name>pppoe_cp12</name>
+          <pppoe-vendor-specific-tag xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <subtag>remote-id</subtag>
+            <default-remote-id-syntax>1:1:channel-group:v-ani</default-remote-id-syntax>
+          </pppoe-vendor-specific-tag>
+        </pppoe-profile>
+        <pppoe-profile>
+          <name>pppoe_cp13</name>
+          <pppoe-vendor-specific-tag xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <subtag>remote-id</subtag>
+            <default-remote-id-syntax>1:1:channel-group:v-ani</default-remote-id-syntax>
+          </pppoe-vendor-specific-tag>
+        </pppoe-profile>
+        <pppoe-profile>
+          <name>pppoe_cp14</name>
+          <pppoe-vendor-specific-tag xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <subtag>remote-id</subtag>
+            <default-remote-id-syntax>1:1:channel-group:v-ani</default-remote-id-syntax>
+          </pppoe-vendor-specific-tag>
+        </pppoe-profile>
+        <pppoe-profile>
+          <name>pppoe_cp15</name>
+          <pppoe-vendor-specific-tag xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <subtag>remote-id</subtag>
+            <default-remote-id-syntax>1:1:channel-group:v-ani</default-remote-id-syntax>
+          </pppoe-vendor-specific-tag>
+        </pppoe-profile>
+        <pppoe-profile>
+          <name>pppoe_cp16</name>
+          <pppoe-vendor-specific-tag xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <subtag>remote-id</subtag>
+            <default-remote-id-syntax>1:1:channel-group:v-ani</default-remote-id-syntax>
+          </pppoe-vendor-specific-tag>
+        </pppoe-profile>
+      </pppoe-profiles>
+      <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+        <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>SFP1</name>
+          <parent>C1</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+          <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE53441AC</model-name>
+        </component>
+        <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>PORT1</name>
+          <parent>SFP1</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+        </component>
+      </hardware>
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>cg_cp1</name>
+          <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+          <channel-group xmlns="urn:bbf:yang:bbf-xpon">
+            <polling-period>100</polling-period>
+            <raman-mitigation>raman_none</raman-mitigation>
+            <system-id>000000</system-id>
+          </channel-group>
+        </interface>
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>scg_cp1</name>
+          <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-partition</type>
+          <channel-partition xmlns="urn:bbf:yang:bbf-xpon">
+            <channel-group-ref>cg_cp1</channel-group-ref>
+            <channel-partition-index>1</channel-partition-index>
+            <fec-downstream>true</fec-downstream>
+            <multicast-aes-indicator>false</multicast-aes-indicator>
+            <authentication-method>serial-number</authentication-method>
+            <closest-onu-distance>0</closest-onu-distance>
+            <max-differential-xpon-distance>20</max-differential-xpon-distance>
+          </channel-partition>
+          <tm-root xmlns="urn:bbf:yang:bbf-qos-traffic-mngt">
+            <scheduler-node xmlns="urn:bbf:yang:bbf-qos-enhanced-scheduling">
+              <name>NODE_DEF</name>
+              <scheduling-level>1</scheduling-level>
+              <queue>
+                <local-queue-id>0</local-queue-id>
+              </queue>
+              <queue>
+                <local-queue-id>1</local-queue-id>
+              </queue>
+              <queue>
+                <local-queue-id>2</local-queue-id>
+              </queue>
+              <queue>
+                <local-queue-id>3</local-queue-id>
+              </queue>
+              <queue>
+                <local-queue-id>4</local-queue-id>
+              </queue>
+              <queue>
+                <local-queue-id>5</local-queue-id>
+              </queue>
+              <queue>
+                <local-queue-id>6</local-queue-id>
+              </queue>
+              <queue>
+                <local-queue-id>7</local-queue-id>
+              </queue>
+            </scheduler-node>
+            <child-scheduler-nodes xmlns="urn:bbf:yang:bbf-qos-enhanced-scheduling">
+              <name>NODE_DEF</name>
+            </child-scheduler-nodes>
+          </tm-root>
+        </interface>
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>cp1</name>
+          <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-pair</type>
+          <channel-pair xmlns="urn:bbf:yang:bbf-xpon">
+            <channel-group-ref>cg_cp1</channel-group-ref>
+            <channel-partition-ref>scg_cp1</channel-partition-ref>
+            <channel-pair-type xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:gpon</channel-pair-type>
+            <gpon-pon-id-interval>0</gpon-pon-id-interval>
+            <gpon-pon-id-odn-class>class-auto</gpon-pon-id-odn-class>
+          </channel-pair>
+        </interface>
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>ct_cp1</name>
+          <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-termination</type>
+          <channel-termination xmlns="urn:bbf:yang:bbf-xpon">
+            <channel-pair-ref>cp1</channel-pair-ref>
+            <gpon-pon-id>0000000</gpon-pon-id>
+            <ber-calc-period>10</ber-calc-period>
+            <location xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:inside-olt</location>
+            <channel-termination-hw-port-ref>PORT1</channel-termination-hw-port-ref>
+          </channel-termination>
+        </interface>
+      </interfaces>
+
+
+            <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+              <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>SFP1</name>
+                <parent>C1</parent>
+                <parent-rel-pos>1</parent-rel-pos>
+                <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+                <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE53441AA</model-name>
+              </component>
+              <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>PORT1</name>
+                <parent>SFP1</parent>
+                <parent-rel-pos>1</parent-rel-pos>
+                <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+              </component>
+            </hardware>
+            <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cg_cp1</name>
+                <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+                <channel-group xmlns="urn:bbf:yang:bbf-xpon">
+                  <polling-period>100</polling-period>
+                  <raman-mitigation>raman_none</raman-mitigation>
+                  <system-id>000000</system-id>
+                </channel-group>
+              </interface>
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>scg_cp1</name>
+                <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-partition</type>
+                <channel-partition xmlns="urn:bbf:yang:bbf-xpon">
+                  <channel-group-ref>cg_cp1</channel-group-ref>
+                  <channel-partition-index>1</channel-partition-index>
+                  <fec-downstream>true</fec-downstream>
+                  <multicast-aes-indicator>false</multicast-aes-indicator>
+                  <authentication-method>serial-number</authentication-method>
+                  <closest-onu-distance>0</closest-onu-distance>
+                  <max-differential-xpon-distance>20</max-differential-xpon-distance>
+                </channel-partition>
+                <tm-root xmlns="urn:bbf:yang:bbf-qos-traffic-mngt">
+                  <scheduler-node xmlns="urn:bbf:yang:bbf-qos-enhanced-scheduling">
+                    <name>NODE_DEF</name>
+                    <scheduling-level>1</scheduling-level>
+                    <queue>
+                      <local-queue-id>0</local-queue-id>
+                    </queue>
+                    <queue>
+                      <local-queue-id>1</local-queue-id>
+                    </queue>
+                    <queue>
+                      <local-queue-id>2</local-queue-id>
+                    </queue>
+                    <queue>
+                      <local-queue-id>3</local-queue-id>
+                    </queue>
+                    <queue>
+                      <local-queue-id>4</local-queue-id>
+                    </queue>
+                    <queue>
+                      <local-queue-id>5</local-queue-id>
+                    </queue>
+                    <queue>
+                      <local-queue-id>6</local-queue-id>
+                    </queue>
+                    <queue>
+                      <local-queue-id>7</local-queue-id>
+                    </queue>
+                  </scheduler-node>
+                  <child-scheduler-nodes xmlns="urn:bbf:yang:bbf-qos-enhanced-scheduling">
+                    <name>NODE_DEF</name>
+                  </child-scheduler-nodes>
+                </tm-root>
+              </interface>
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cp1</name>
+                <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-pair</type>
+                <channel-pair xmlns="urn:bbf:yang:bbf-xpon">
+                  <channel-group-ref>cg_cp1</channel-group-ref>
+                  <channel-partition-ref>scg_cp1</channel-partition-ref>
+                  <channel-pair-type xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:gpon</channel-pair-type>
+                  <gpon-pon-id-interval>0</gpon-pon-id-interval>
+                  <gpon-pon-id-odn-class>class-auto</gpon-pon-id-odn-class>
+                </channel-pair>
+              </interface>
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>ct_cp1</name>
+                <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-termination</type>
+                <channel-termination xmlns="urn:bbf:yang:bbf-xpon">
+                  <channel-pair-ref>cp1</channel-pair-ref>
+                  <gpon-pon-id>0000000</gpon-pon-id>
+                  <ber-calc-period>10</ber-calc-period>
+                  <location xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:inside-olt</location>
+                  <channel-termination-hw-port-ref>PORT1</channel-termination-hw-port-ref>
+                </channel-termination>
+              </interface>
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cp1_ont01_fglt-b</name>
+                <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:v-ani</type>
+                <v-ani xmlns="urn:bbf:yang:bbf-xponvani">
+                  <parent-ref>scg_cp1</parent-ref>
+                  <onu-id>1</onu-id>
+                  <expected-serial-number>ALCLFA5FEA0B</expected-serial-number>
+                  <preferred-chanpair>cp1</preferred-chanpair>
+                </v-ani>
+              </interface>
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cp1_ont01_uni1</name>
+                <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
+                <olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
+                  <lower-layer-interface>cp1_ont01_fglt-b</lower-layer-interface>
+                </olt-v-enet>
+              </interface>
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cp1_ont01_uni1-user1</name>
+                <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+                <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <interface>cp1_ont01_uni1</interface>
+                </subif-lower-layer>
+                <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+                  <interface-usage>user-port</interface-usage>
+                </interface-usage>
+                <enabled>true</enabled>
+                <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <ingress-rule>
+                    <rule>
+                      <name>rule_1</name>
+                      <priority>100</priority>
+                      <flexible-match>
+                        <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                          <tag>
+                            <index>0</index>
+                            <dot1q-tag>
+                              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                              <vlan-id>101</vlan-id>
+                              <pbit>any</pbit>
+                              <dei>any</dei>
+                            </dot1q-tag>
+                          </tag>
+                        </match-criteria>
+                      </flexible-match>
+                      <ingress-rewrite>
+                        <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+                      </ingress-rewrite>
+                    </rule>
+                  </ingress-rule>
+                  <egress-rewrite>
+                    <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">0</pop-tags>
+                    <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                      <index>0</index>
+                      <dot1q-tag>
+                        <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                        <vlan-id>101</vlan-id>
+                        <pbit-from-tag-index>0</pbit-from-tag-index>
+                        <dei-from-tag-index>0</dei-from-tag-index>
+                      </dot1q-tag>
+                    </push-tag>
+                  </egress-rewrite>
+                </inline-frame-processing>
+                <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP0</ingress-qos-policy-profile>
+                <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">QPP0</egress-qos-policy-profile>
+                <egress-tm-objects xmlns="urn:bbf:yang:bbf-qos-enhanced-scheduling">
+                  <root-if-name>scg_cp1</root-if-name>
+                  <scheduler-node-name>NODE_DEF</scheduler-node-name>
+                </egress-tm-objects>
+                <l2-dhcpv4-relay xmlns="urn:bbf:yang:bbf-l2-dhcpv4-relay">
+                  <enable>true</enable>
+                  <profile-ref>dhcp_cp1</profile-ref>
+                </l2-dhcpv4-relay>
+                <pppoe xmlns="urn:bbf:yang:bbf-pppoe-intermediate-agent">
+                  <enable>true</enable>
+                  <profile-ref>pppoe_cp1</profile-ref>
+                </pppoe>
+              </interface>
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cp1_ont01_uni1-user2</name>
+                <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+                <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <interface>cp1_ont01_uni1</interface>
+                </subif-lower-layer>
+                <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+                  <interface-usage>user-port</interface-usage>
+                </interface-usage>
+                <enabled>true</enabled>
+                <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <ingress-rule>
+                    <rule>
+                      <name>rule_1</name>
+                      <priority>100</priority>
+                      <flexible-match>
+                        <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                          <tag>
+                            <index>0</index>
+                            <dot1q-tag>
+                              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                              <vlan-id>102</vlan-id>
+                              <pbit>any</pbit>
+                              <dei>any</dei>
+                            </dot1q-tag>
+                          </tag>
+                        </match-criteria>
+                      </flexible-match>
+                      <ingress-rewrite>
+                        <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+                      </ingress-rewrite>
+                    </rule>
+                  </ingress-rule>
+                  <egress-rewrite>
+                    <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">0</pop-tags>
+                    <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                      <index>0</index>
+                      <dot1q-tag>
+                        <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                        <vlan-id>102</vlan-id>
+                        <pbit-from-tag-index>0</pbit-from-tag-index>
+                        <dei-from-tag-index>0</dei-from-tag-index>
+                      </dot1q-tag>
+                    </push-tag>
+                  </egress-rewrite>
+                </inline-frame-processing>
+                <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP0</ingress-qos-policy-profile>
+                <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">QPP0</egress-qos-policy-profile>
+                <egress-tm-objects xmlns="urn:bbf:yang:bbf-qos-enhanced-scheduling">
+                  <root-if-name>scg_cp1</root-if-name>
+                  <scheduler-node-name>NODE_DEF</scheduler-node-name>
+                </egress-tm-objects>
+                <l2-dhcpv4-relay xmlns="urn:bbf:yang:bbf-l2-dhcpv4-relay">
+                  <enable>true</enable>
+                  <profile-ref>dhcp_cp1</profile-ref>
+                </l2-dhcpv4-relay>
+                <pppoe xmlns="urn:bbf:yang:bbf-pppoe-intermediate-agent">
+                  <enable>true</enable>
+                  <profile-ref>pppoe_cp1</profile-ref>
+                </pppoe>
+              </interface>
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cp1_ont01_uni1-user3</name>
+                <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+                <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <interface>cp1_ont01_uni1</interface>
+                </subif-lower-layer>
+                <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+                  <interface-usage>user-port</interface-usage>
+                </interface-usage>
+                <enabled>true</enabled>
+                <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <ingress-rule>
+                    <rule>
+                      <name>rule_1</name>
+                      <priority>100</priority>
+                      <flexible-match>
+                        <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                          <tag>
+                            <index>0</index>
+                            <dot1q-tag>
+                              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                              <vlan-id>103</vlan-id>
+                              <pbit>any</pbit>
+                              <dei>any</dei>
+                            </dot1q-tag>
+                          </tag>
+                        </match-criteria>
+                      </flexible-match>
+                      <ingress-rewrite>
+                        <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+                      </ingress-rewrite>
+                    </rule>
+                  </ingress-rule>
+                  <egress-rewrite>
+                    <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">0</pop-tags>
+                    <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                      <index>0</index>
+                      <dot1q-tag>
+                        <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                        <vlan-id>103</vlan-id>
+                        <pbit-from-tag-index>0</pbit-from-tag-index>
+                        <dei-from-tag-index>0</dei-from-tag-index>
+                      </dot1q-tag>
+                    </push-tag>
+                  </egress-rewrite>
+                </inline-frame-processing>
+                <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP0</ingress-qos-policy-profile>
+                <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">QPP0</egress-qos-policy-profile>
+                <egress-tm-objects xmlns="urn:bbf:yang:bbf-qos-enhanced-scheduling">
+                  <root-if-name>scg_cp1</root-if-name>
+                  <scheduler-node-name>NODE_DEF</scheduler-node-name>
+                </egress-tm-objects>
+                <l2-dhcpv4-relay xmlns="urn:bbf:yang:bbf-l2-dhcpv4-relay">
+                  <enable>true</enable>
+                  <profile-ref>dhcp_cp1</profile-ref>
+                </l2-dhcpv4-relay>
+                <pppoe xmlns="urn:bbf:yang:bbf-pppoe-intermediate-agent">
+                  <enable>true</enable>
+                  <profile-ref>pppoe_cp1</profile-ref>
+                </pppoe>
+              </interface>
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cp1_ont01_uni1-user4</name>
+                <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+                <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <interface>cp1_ont01_uni1</interface>
+                </subif-lower-layer>
+                <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+                  <interface-usage>user-port</interface-usage>
+                </interface-usage>
+                <enabled>true</enabled>
+                <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <ingress-rule>
+                    <rule>
+                      <name>rule_1</name>
+                      <priority>100</priority>
+                      <flexible-match>
+                        <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                          <tag>
+                            <index>0</index>
+                            <dot1q-tag>
+                              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                              <vlan-id>104</vlan-id>
+                              <pbit>any</pbit>
+                              <dei>any</dei>
+                            </dot1q-tag>
+                          </tag>
+                        </match-criteria>
+                      </flexible-match>
+                      <ingress-rewrite>
+                        <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+                      </ingress-rewrite>
+                    </rule>
+                  </ingress-rule>
+                  <egress-rewrite>
+                    <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">0</pop-tags>
+                    <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                      <index>0</index>
+                      <dot1q-tag>
+                        <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                        <vlan-id>104</vlan-id>
+                        <pbit-from-tag-index>0</pbit-from-tag-index>
+                        <dei-from-tag-index>0</dei-from-tag-index>
+                      </dot1q-tag>
+                    </push-tag>
+                  </egress-rewrite>
+                </inline-frame-processing>
+                <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP0</ingress-qos-policy-profile>
+                <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">QPP0</egress-qos-policy-profile>
+                <egress-tm-objects xmlns="urn:bbf:yang:bbf-qos-enhanced-scheduling">
+                  <root-if-name>scg_cp1</root-if-name>
+                  <scheduler-node-name>NODE_DEF</scheduler-node-name>
+                </egress-tm-objects>
+                <l2-dhcpv4-relay xmlns="urn:bbf:yang:bbf-l2-dhcpv4-relay">
+                  <enable>true</enable>
+                  <profile-ref>dhcp_cp1</profile-ref>
+                </l2-dhcpv4-relay>
+                <pppoe xmlns="urn:bbf:yang:bbf-pppoe-intermediate-agent">
+                  <enable>true</enable>
+                  <profile-ref>pppoe_cp1</profile-ref>
+                </pppoe>
+              </interface>
+
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cp1-net</name>
+                <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+                <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+                  <interface-usage>network-port</interface-usage>
+                </interface-usage>
+                <enabled>true</enabled>
+                <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <ingress-rule>
+                    <rule>
+                      <name>rule_1</name>
+                      <priority>100</priority>
+                      <flexible-match>
+                        <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                          <tag>
+                            <index>0</index>
+                            <dot1q-tag>
+                              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                              <vlan-id>200</vlan-id>
+                              <pbit>any</pbit>
+                              <dei>any</dei>
+                            </dot1q-tag>
+                          </tag>
+                        </match-criteria>
+                      </flexible-match>
+                      <ingress-rewrite>
+                        <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+                      </ingress-rewrite>
+                    </rule>
+                  </ingress-rule>
+                  <egress-rewrite>
+                    <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">0</pop-tags>
+                    <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                      <index>0</index>
+                      <dot1q-tag>
+                        <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                        <vlan-id>200</vlan-id>
+                        <pbit-from-tag-index>0</pbit-from-tag-index>
+                        <dei-from-tag-index>0</dei-from-tag-index>
+                      </dot1q-tag>
+                    </push-tag>
+                  </egress-rewrite>
+                </inline-frame-processing>
+                <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">MCQP</egress-qos-policy-profile>
+              </interface>
+            </interfaces>
+            <tconts-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+              <tcont xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cp1_ont01_tcont1</name>
+                <alloc-id>256</alloc-id>
+                <interface-reference>cp1_ont01_fglt-b</interface-reference>
+                <traffic-descriptor-profile-ref>TDP0</traffic-descriptor-profile-ref>
+              </tcont>
+              </tconts-config>
+            <gemports-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+              <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cp1_ont01_uni1_gem1</name>
+                <itf-ref>cp1_ont01_uni1-user1</itf-ref>
+                <traffic-class>0</traffic-class>
+                <downstream-aes-indicator>true</downstream-aes-indicator>
+                <gemport-id>256</gemport-id>
+              </gemport>
+              <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cp1_ont01_uni1_gem2</name>
+                <itf-ref>cp1_ont01_uni1-user2</itf-ref>
+                <traffic-class>0</traffic-class>
+                <downstream-aes-indicator>true</downstream-aes-indicator>
+                <gemport-id>257</gemport-id>
+              </gemport>
+              <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cp1_ont01_uni1_gem3</name>
+                <itf-ref>cp1_ont01_uni1-user3</itf-ref>
+                <traffic-class>0</traffic-class>
+                <downstream-aes-indicator>true</downstream-aes-indicator>
+                <gemport-id>258</gemport-id>
+              </gemport>
+              <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cp1_ont01_uni1_gem4</name>
+                <itf-ref>cp1_ont01_uni1-user4</itf-ref>
+                <traffic-class>0</traffic-class>
+                <downstream-aes-indicator>true</downstream-aes-indicator>
+                <gemport-id>259</gemport-id>
+              </gemport>
+            </gemports-config>
+            <multicast xmlns="urn:bbf:yang:bbf-mgmd">
+              <mgmd>
+                <multicast-vpn>
+                  <name>vpn_cp1</name>
+                  <multicast-interface-to-host xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>mc-cp1_ont01_uni1-user1</name>
+                    <vlan-sub-interface>cp1_ont01_uni1-user1</vlan-sub-interface>
+                    <max-group-number>32</max-group-number>
+                    <multicast-package>Pkg_cp1</multicast-package>
+                  </multicast-interface-to-host>
+                  <multicast-interface-to-host xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>mc-cp1_ont01_uni1-user2</name>
+                    <vlan-sub-interface>cp1_ont01_uni1-user2</vlan-sub-interface>
+                    <max-group-number>32</max-group-number>
+                    <multicast-package>Pkg_cp1</multicast-package>
+                  </multicast-interface-to-host>
+                  <multicast-interface-to-host xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>mc-cp1_ont01_uni1-user3</name>
+                    <vlan-sub-interface>cp1_ont01_uni1-user3</vlan-sub-interface>
+                    <max-group-number>32</max-group-number>
+                    <multicast-package>Pkg_cp1</multicast-package>
+                  </multicast-interface-to-host>
+                  <multicast-interface-to-host xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>mc-cp1_ont01_uni1-user4</name>
+                    <vlan-sub-interface>cp1_ont01_uni1-user4</vlan-sub-interface>
+                    <max-group-number>32</max-group-number>
+                    <multicast-package>Pkg_cp1</multicast-package>
+                  </multicast-interface-to-host>
+                  <mode>proxy</mode>
+                  <multicast-proxy-profile-name>vpnproxy</multicast-proxy-profile-name>
+                  <ipv4-address>0.0.0.0</ipv4-address>
+                  <multicast-network-interface>
+                    <name>mc_cp1-net</name>
+                    <single-uplink-interface-data>
+                      <vlan-sub-interface>cp1-net</vlan-sub-interface>
+                    </single-uplink-interface-data>
+                    <ipv4-address>192.168.10.11</ipv4-address>
+                  </multicast-network-interface>
+                  <multicast-channel xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>Channel-cp1</name>
+                    <ipv4>
+                      <group-ipv4-address>224.0.1.0</group-ipv4-address>
+                      <group-ipv4-address-end>238.255.255.255</group-ipv4-address-end>
+                      <source-ipv4-address>0.0.0.0</source-ipv4-address>
+                    </ipv4>
+                    <network-interface>mc_cp1-net</network-interface>
+                  </multicast-channel>
+                  <multicast-package xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>Pkg_cp1</name>
+                    <multicast-channel-list>Channel-cp1</multicast-channel-list>
+                  </multicast-package>
+                </multicast-vpn>
+              </mgmd>
+            </multicast>
+          <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+              <forwarders>
+                <forwarder>
+                  <name>fwd_cp1</name>
+                  <ports>
+                    <port>
+                      <name>cp1_ont01_uni1-user1_port</name>
+                      <sub-interface>cp1_ont01_uni1-user1</sub-interface>
+                    </port>
+                    <port>
+                      <name>cp1_ont01_uni1-user2_port</name>
+                      <sub-interface>cp1_ont01_uni1-user2</sub-interface>
+                    </port>
+                    <port>
+                      <name>cp1_ont01_uni1-user3_port</name>
+                      <sub-interface>cp1_ont01_uni1-user3</sub-interface>
+                    </port>
+                    <port>
+                      <name>cp1_ont01_uni1-user4_port</name>
+                      <sub-interface>cp1_ont01_uni1-user4</sub-interface>
+                    </port>
+                    <port>
+                      <name>cp1-net_port</name>
+                      <sub-interface>cp1-net</sub-interface>
+                    </port>
+                  </ports>
+                  <mac-learning>
+                    <forwarding-database>fdb_cp1</forwarding-database>
+                  </mac-learning>
+                  <split-horizon-profiles>
+                    <split-horizon-profile>split</split-horizon-profile>
+                  </split-horizon-profiles>
+                  <flooding-policies>
+                    <flooding-policies-profile>drop_all</flooding-policies-profile>
+                  </flooding-policies>
+                  <l2-dhcpv4-relay xmlns="urn:bbf:yang:bbf-l2-dhcpv4-relay-forwarding">
+                    <downstream-broadcast-flooding>false</downstream-broadcast-flooding>
+                  </l2-dhcpv4-relay>
+                </forwarder>
+              </forwarders>
+              <forwarding-databases>
+                <forwarding-database xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                  <name>fdb_cp1</name>
+                  <max-number-mac-addresses>10000</max-number-mac-addresses>
+                  <aging-timer>3600</aging-timer>
+                </forwarding-database>
+              </forwarding-databases>
+            </forwarding>
+       
+    </config>
+  </edit-config>
+</rpc>

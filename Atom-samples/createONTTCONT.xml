@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="6">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+        <adh:device-holder xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+          <adh:name>Bade-Wurtemberg</adh:name>
+          <adh:device>
+            <adh:device-id>Stuttgart-1</adh:device-id>
+            <adh:device-specific-data>
+              <fiber-traffic-descriptor-profiles xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:bbf:yang:bbf-fiber">
+                <traffic-descriptor-profile>
+                  <name>TDP0</name>
+                  <fixed-bandwidth>10000</fixed-bandwidth>
+                  <assured-bandwidth>10000</assured-bandwidth>
+                  <maximum-bandwidth>20000</maximum-bandwidth>
+                </traffic-descriptor-profile>
+              </fiber-traffic-descriptor-profiles>
+              <fiber-tcont xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:bbf:yang:bbf-fiber">
+                <tconts>
+                  <name>TCONT1</name>
+                  <interface-reference>vontani/1/1/1</interface-reference>
+                  <traffic-descriptor-profile-ref>TDP0</traffic-descriptor-profile-ref>
+                  <tm-root>
+                    <queue>
+                      <id>0</id>
+                    </queue>
+                  </tm-root>
+                </tconts>
+              </fiber-tcont>
+              <fiber-gemport xmlns="http://www.nokia.com/management-solutions/anv/device/SD-OLT-1.0/urn:bbf:yang:bbf-fiber">
+                <gemport-config>
+                  <gemports>
+                    <name>GEM1</name>
+                    <itf-ref>venet/1/1/1/1/1</itf-ref>
+                    <traffic-class>0</traffic-class>
+                  </gemports>
+                </gemport-config>
+              </fiber-gemport>
+            </adh:device-specific-data>
+          </adh:device>
+        </adh:device-holder>
+      </anv:device-manager>
+    </config>
+  </edit-config>
+</rpc>

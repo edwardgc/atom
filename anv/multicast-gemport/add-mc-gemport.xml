@@ -1,0 +1,23 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="10" timeout="600">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+			<adh:device xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+				<adh:device-id>Demo</adh:device-id>
+				<device-specific-data xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+					<bbf-xpon:multicast-gemports-config xmlns:bbf-xpon="urn:bbf:yang:bbf-xpon">
+                        <bbf-xpon:multicast-gemport>
+                            <bbf-xpon:name>mcgemport1</bbf-xpon:name>
+                            <bbf-xpon:itf-ref>cp1</bbf-xpon:itf-ref>
+                            <bbf-xpon:gemport-id>65534</bbf-xpon:gemport-id>
+                        </bbf-xpon:multicast-gemport>
+                    </bbf-xpon:multicast-gemports-config>
+				</device-specific-data>
+			</adh:device>
+		</anv:device-manager>
+  </config>
+</edit-config>
+</rpc>

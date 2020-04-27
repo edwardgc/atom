@@ -1,0 +1,16 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1" timeout="600">
+  <get-free-gemport-ids xmlns="http://www.nokia.com/management-solutions/pon-id-allocation">
+     <channel-group-name>cg_cp1</channel-group-name>
+     <xpon-type xmlns:xpon-types="urn:bbf:yang:bbf-xpon-types">xpon-types:xgs</xpon-type>
+     <gemport-name>gemport101</gemport-name>
+     <gemport-name>gemport102</gemport-name>
+     <gemport-name>gemport103</gemport-name>
+     <gemport-name>gemport104</gemport-name>
+     <gemport-name>gemport105</gemport-name>
+     <gemport-name>gemport106</gemport-name>
+     <gemport-name>gemport107</gemport-name>
+     <gemport-name>gemport108</gemport-name>
+     <gemport-name>gemport109</gemport-name>
+     <gemport-name>gemport110</gemport-name>
+  </get-free-gemport-ids>
+</rpc>

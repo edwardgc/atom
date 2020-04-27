@@ -1,0 +1,85 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+<edit-config>
+<target>
+<running/>
+</target>
+<config>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+      <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+        <name>cls4</name>
+        <filter-operation>match-all-filter</filter-operation>
+        <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter1</enhanced-filter-name>
+        <classifier-action-entry-cfg>
+          <action-type>pbit-marking</action-type>
+            <pbit-marking-cfg>
+              <pbit-marking-list>
+                <index>0</index>
+                <pbit-value>7</pbit-value>
+              </pbit-marking-list>
+            </pbit-marking-cfg>
+        </classifier-action-entry-cfg>
+        </classifier-entry>
+
+  <classifier-entry>
+          <name>cls_bac0</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <match-criteria>
+            <flow-color xmlns="urn:bbf:yang:bbf-qos-policing">red</flow-color>
+          </match-criteria>
+          <classifier-action-entry-cfg>
+            <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+            <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">red</bac-color>
+          </classifier-action-entry-cfg>
+          <classifier-action-entry-cfg>
+  <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:discard</action-type>
+  <discard xmlns="urn:bbf:yang:bbf-qos-policing"/>
+  </classifier-action-entry-cfg>
+ </classifier-entry>
+
+  <classifier-entry>
+          <name>cls_bac1</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <match-criteria>
+            <flow-color xmlns="urn:bbf:yang:bbf-qos-policing">yellow</flow-color>
+          </match-criteria>
+          <classifier-action-entry-cfg>
+            <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+            <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">yellow</bac-color>
+          </classifier-action-entry-cfg>
+  </classifier-entry>
+
+  <classifier-entry>
+          <name>cls_bac2</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <match-criteria>
+            <flow-color xmlns="urn:bbf:yang:bbf-qos-policing">green</flow-color>
+          </match-criteria>
+          <classifier-action-entry-cfg>
+            <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+            <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">green</bac-color>
+          </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy>
+           <name>policies4</name>
+           <classifiers>
+             <name>cls4</name>
+           </classifiers>
+           <classifiers>
+             <name>cls_bac0</name>
+           </classifiers>
+           <classifiers>
+             <name>cls_bac1</name>
+           </classifiers>
+           <classifiers>
+             <name>cls_bac2</name>
+           </classifiers>
+  </policy>
+</policies>
+
+</config>
+</edit-config>
+</rpc>

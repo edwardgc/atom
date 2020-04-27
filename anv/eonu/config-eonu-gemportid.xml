@@ -1,0 +1,30 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+  <config>
+   <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+   <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+    <device-id>Demo</device-id>
+     <device-specific-data>
+	      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+	        <onu>
+		         <name>vANI1</name>
+		         <root>
+		          <gemports-config>
+			         <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+			           <name>cp1_ont01_uni1_gem1</name>
+			             <traffic-class>0</traffic-class>
+			           <gemport-id>1024</gemport-id>
+			         </gemport>
+					    </gemports-config>
+		        </root>
+	        </onu>
+	      </onus>
+     </device-specific-data>
+    </device>
+   </device-manager>
+  </config>
+ </edit-config>
+</rpc>

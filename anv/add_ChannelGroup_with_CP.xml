@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+	<edit-config>
+		<target>
+			<running/>
+		</target>
+		<config>
+			<device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+				<device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+					<device-id>HelloWorld</device-id>
+					<device-specific-data>
+						<system xmlns="urn:ietf:params:xml:ns:yang:ietf-system">
+							<hostname>HelloWorld</hostname>
+						</system>
+						<virtual-network-functions xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-virtual-network-function">
+							<virtual-network-function>
+								<name>vOnuMgmt</name>
+								<type>vonumgmt</type>
+								<address>tcp://10.131.149.209:8802/</address>
+							</virtual-network-function>
+						</virtual-network-functions>
+
+
+						<hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+							<component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>PON_SFP_1</name>
+								<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver
+								</class>
+								<parent>C-X2</parent>
+								<parent-rel-pos>1</parent-rel-pos>
+							</component>
+							<component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>PON_1</name>
+								<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link
+								</class>
+								<parent>PON_SFP_1</parent>
+								<parent-rel-pos>1</parent-rel-pos>
+							</component>
+						</hardware>
+
+
+						<if:interfaces xmlns:if="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+							<if:interface>
+								<if:name>CG_1</if:name>
+								<if:enabled>true</if:enabled>
+								<if:type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group
+								</if:type>
+								<bbf-xpon:channel-group xmlns:bbf-xpon="urn:bbf:yang:bbf-xpon">
+									<bbf-xpon:polling-period>100</bbf-xpon:polling-period>
+									<bbf-xpon:raman-mitigation>raman_none</bbf-xpon:raman-mitigation>
+									<bbf-xpon:system-id>000000</bbf-xpon:system-id>
+								</bbf-xpon:channel-group>
+								<n-a-n-if2if:interface-to-interface
+									xmlns:n-a-n-if2if="urn:nokia-adtran-netcomm:yang:nokia-adtran-netcomm-interface-to-interface"/>
+								<bbf-if-pm:performance xmlns:bbf-if-pm="urn:bbf:yang:bbf-interfaces-performance-management">
+									<bbf-if-pm:enable>false</bbf-if-pm:enable>
+								</bbf-if-pm:performance>
+								<bbf-qos-tm:tm-root xmlns:bbf-qos-tm="urn:bbf:yang:bbf-qos-traffic-mngt"/>
+							</if:interface>
+							<if:interface>
+								<if:name>CG_1.CPart_1</if:name>
+								<if:enabled>true</if:enabled>
+								<if:type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-partition
+								</if:type>
+								<bbf-xpon:channel-partition xmlns:bbf-xpon="urn:bbf:yang:bbf-xpon">
+									<bbf-xpon:authentication-method>serial-number</bbf-xpon:authentication-method>
+									<bbf-xpon:channel-group-ref>CG_1</bbf-xpon:channel-group-ref>
+									<bbf-xpon:channel-partition-index>1</bbf-xpon:channel-partition-index>
+									<bbf-xpon:closest-onu-distance>0</bbf-xpon:closest-onu-distance>
+									<bbf-xpon:fec-downstream>true</bbf-xpon:fec-downstream>
+									<bbf-xpon:max-differential-xpon-distance>20</bbf-xpon:max-differential-xpon-distance>
+									<bbf-xpon:multicast-aes-indicator>false</bbf-xpon:multicast-aes-indicator>
+								</bbf-xpon:channel-partition>
+								<n-a-n-if2if:interface-to-interface
+									xmlns:n-a-n-if2if="urn:nokia-adtran-netcomm:yang:nokia-adtran-netcomm-interface-to-interface"/>
+								<bbf-if-pm:performance xmlns:bbf-if-pm="urn:bbf:yang:bbf-interfaces-performance-management">
+									<bbf-if-pm:enable>false</bbf-if-pm:enable>
+								</bbf-if-pm:performance>
+								<bbf-qos-tm:tm-root xmlns:bbf-qos-tm="urn:bbf:yang:bbf-qos-traffic-mngt"/>
+							</if:interface>
+							<if:interface>
+								<if:name>CG_1.CPart_1.CPair_1</if:name>
+								<if:enabled>true</if:enabled>
+								<if:type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-pair
+								</if:type>
+								<bbf-xpon:channel-pair xmlns:bbf-xpon="urn:bbf:yang:bbf-xpon">
+									<bbf-xpon:channel-group-ref>CG_1</bbf-xpon:channel-group-ref>
+									<bbf-xpon:channel-pair-type xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:xgs
+									</bbf-xpon:channel-pair-type>
+									<bbf-xpon:channel-partition-ref>CG_1.CPart_1</bbf-xpon:channel-partition-ref>
+									<bbf-xpon:wavelength-prof-ref>xgspon-wave</bbf-xpon:wavelength-prof-ref>
+								</bbf-xpon:channel-pair>
+								<n-a-n-if2if:interface-to-interface
+									xmlns:n-a-n-if2if="urn:nokia-adtran-netcomm:yang:nokia-adtran-netcomm-interface-to-interface"/>
+								<bbf-if-pm:performance xmlns:bbf-if-pm="urn:bbf:yang:bbf-interfaces-performance-management">
+									<bbf-if-pm:enable>false</bbf-if-pm:enable>
+								</bbf-if-pm:performance>
+								<bbf-qos-tm:tm-root xmlns:bbf-qos-tm="urn:bbf:yang:bbf-qos-traffic-mngt"/>
+							</if:interface>
+							<if:interface>
+								<if:name>CT_1</if:name>
+								<if:enabled>true</if:enabled>
+								<if:type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-termination
+								</if:type>
+								<bbf-xpon:channel-termination xmlns:bbf-xpon="urn:bbf:yang:bbf-xpon">
+									<bbf-xpon:ber-calc-period>10</bbf-xpon:ber-calc-period>
+									<bbf-xpon:channel-pair-ref>CG_1.CPart_1.CPair_1</bbf-xpon:channel-pair-ref>
+									<bbf-xpon:channel-termination-hw-port-ref>PON_1</bbf-xpon:channel-termination-hw-port-ref>
+									<bbf-xpon:xgs-pon-id>1</bbf-xpon:xgs-pon-id>
+									<bbf-xpon:location xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:inside-olt
+									</bbf-xpon:location>
+								</bbf-xpon:channel-termination>
+								<n-a-n-if2if:interface-to-interface
+									xmlns:n-a-n-if2if="urn:nokia-adtran-netcomm:yang:nokia-adtran-netcomm-interface-to-interface"/>
+								<bbf-if-pm:performance xmlns:bbf-if-pm="urn:bbf:yang:bbf-interfaces-performance-management">
+									<bbf-if-pm:enable>false</bbf-if-pm:enable>
+								</bbf-if-pm:performance>
+								<bbf-qos-tm:tm-root xmlns:bbf-qos-tm="urn:bbf:yang:bbf-qos-traffic-mngt"/>
+							</if:interface>
+						</if:interfaces>
+					</device-specific-data>
+				</device>
+			</device-manager>
+		</config>
+	</edit-config>
+</rpc>

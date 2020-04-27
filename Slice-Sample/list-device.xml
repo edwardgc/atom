@@ -1,0 +1,11 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="6">
+    <get xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+      <filter>
+        <anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+            <adh:device xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+              <adh:device-id/>
+            </adh:device>
+        </anv:device-manager>
+      </filter>
+    </get>
+</rpc>

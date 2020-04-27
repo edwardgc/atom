@@ -1,0 +1,109 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+  <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+    <device-id>DF16_HAOJUN</device-id>
+    <device-specific-data>
+      <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+        <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>PON_SFP1</name>
+          <parent>PON1_PON2_CP1</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+          <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE56402AA</model-name>
+        </component>
+        <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>PORT1</name>
+          <parent>PON_SFP1</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+        </component>
+      </hardware>
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>cg_cp1</name>
+          <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+          <channel-group xmlns="urn:bbf:yang:bbf-xpon">
+            <polling-period>100</polling-period>
+            <raman-mitigation>raman_none</raman-mitigation>
+            <system-id>000000</system-id>
+          </channel-group>
+        </interface>
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>scg_cp1</name>
+          <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-partition</type>
+          <channel-partition xmlns="urn:bbf:yang:bbf-xpon">
+            <channel-group-ref>cg_cp1</channel-group-ref>
+            <channel-partition-index>1</channel-partition-index>
+            <fec-downstream>true</fec-downstream>
+            <multicast-aes-indicator>false</multicast-aes-indicator>
+            <authentication-method>serial-number</authentication-method>
+            <closest-onu-distance>0</closest-onu-distance>
+            <max-differential-xpon-distance>20</max-differential-xpon-distance>
+          </channel-partition>
+          <tm-root xmlns="urn:bbf:yang:bbf-qos-traffic-mngt">
+            <scheduler-node xmlns="urn:bbf:yang:bbf-qos-enhanced-scheduling">
+              <name>NODE_DEF</name>
+              <scheduling-level>1</scheduling-level>
+              <queue>
+                <local-queue-id>0</local-queue-id>
+              </queue>
+              <queue>
+                <local-queue-id>1</local-queue-id>
+              </queue>
+              <queue>
+                <local-queue-id>2</local-queue-id>
+              </queue>
+              <queue>
+                <local-queue-id>3</local-queue-id>
+              </queue>
+              <queue>
+                <local-queue-id>4</local-queue-id>
+              </queue>
+              <queue>
+                <local-queue-id>5</local-queue-id>
+              </queue>
+              <queue>
+                <local-queue-id>6</local-queue-id>
+              </queue>
+              <queue>
+                <local-queue-id>7</local-queue-id>
+              </queue>
+            </scheduler-node>
+            <child-scheduler-nodes xmlns="urn:bbf:yang:bbf-qos-enhanced-scheduling">
+              <name>NODE_DEF</name>
+            </child-scheduler-nodes>
+          </tm-root>
+        </interface>
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>cp1</name>
+          <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-pair</type>
+          <channel-pair xmlns="urn:bbf:yang:bbf-xpon">
+            <channel-group-ref>cg_cp1</channel-group-ref>
+            <channel-partition-ref>scg_cp1</channel-partition-ref>
+            <channel-pair-type xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:gpon</channel-pair-type>
+            <gpon-pon-id-interval>0</gpon-pon-id-interval>
+            <gpon-pon-id-odn-class>class-auto</gpon-pon-id-odn-class>
+          </channel-pair>
+        </interface>
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>ct_cp1</name>
+          <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-termination</type>
+          <channel-termination xmlns="urn:bbf:yang:bbf-xpon">
+            <channel-pair-ref>cp1</channel-pair-ref>
+            <gpon-pon-id>0000000</gpon-pon-id>
+            <ber-calc-period>10</ber-calc-period>
+            <location xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:inside-olt</location>
+            <channel-termination-hw-port-ref>PORT1</channel-termination-hw-port-ref>
+          </channel-termination>
+        </interface>
+  </interfaces>      
+            </device-specific-data></device>
+</device-manager>
+    </config>
+  </edit-config>
+</rpc>

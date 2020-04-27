@@ -1,0 +1,126 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:ibn="http://www.nokia.com/management-solutions/ibn" xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="6">
+    <edit-config>
+        <target>
+            <running/>
+        </target>
+        <config>
+            <network-manager xmlns="urn:bbf:yang:obbaa:network-manager">
+                <managed-devices>
+                    <device>
+                        <name>deviceA</name>
+                        <root>
+                            <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+                                <!-- OLT Uplink Sub Interface network-->
+                                <interface xc:operation="remove">
+                                    <name>ont1_olt_uplink_vlan_network</name>
+                                </interface>
+
+                                <!-- olt-side vani -->
+                                <interface xc:operation="remove">
+                                    <name>vAni_ont1</name>
+                                </interface>
+
+                                <!-- olt-side venet -->
+                                <interface xc:operation="remove">
+                                    <name>venet_uni_ont1_1_1</name>
+                                </interface>
+
+                                <!-- OLT-ONT (VENET) VLAN Sub Interface -->
+                                <interface xc:operation="remove">
+                                    <name>ont1_venet_vlan_user</name>
+                                </interface>
+
+                                <!-- onu-side ani -->
+                                <interface xc:operation="remove">
+                                    <name>ontAni_ont1</name>
+                                </interface>
+
+                                <!-- onu-side uni interface -->
+                                <interface xc:operation="remove">
+                                    <name>enet_uni_ont1_1_1</name>
+                                </interface>
+
+                                <!-- onu-side sub-interface  -->
+                                <interface xc:operation="remove">
+                                    <name>enet_vlan_ont1</name>
+                                </interface>
+                            </interfaces>
+
+
+                            <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+                                <!-- onu-side chassis -->
+                                <component xc:operation="remove">
+                                    <name>ont1</name>
+                                </component>
+
+                                <!-- onu-side board -->
+                                <component xc:operation="remove">
+                                    <name>ontCard_ont1_1</name>
+                                </component>
+
+                                <!-- onu-side cage -->
+                                <component xc:operation="remove">
+                                    <name>ontCage_ont1</name>
+                                </component>
+
+                                <!-- onu-side sfp -->
+                                <component xc:operation="remove">
+                                    <name>ontSfp_ont1</name>
+                                </component>
+
+                                <!-- onu-side aniport sfp port-->
+                                <component xc:operation="remove">
+                                    <name>ontAniPort_ont1</name>
+                                </component>
+
+                                <!-- onu-side uni hardware -->
+                                <component xc:operation="remove">
+                                    <name>ontUni_ont1_1_1</name>
+                                </component>
+
+                            </hardware>
+
+                            <!-- olt-side l2fwd forwarder -->
+                            <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+                                <forwarders>
+                                    <forwarder xc:operation="remove">
+                                        <name>ont1_20_100</name>
+                                    </forwarder>
+                                </forwarders>
+                            </forwarding>
+
+                            <!-- olt-side tcont -->
+                            <xpongemtcont xmlns="urn:bbf:yang:bbf-xpongemtcont">
+                                <tconts>
+                                    <tcont xc:operation="remove">
+                                        <name>tcont_ont1</name>
+                                    </tcont>
+                                </tconts>
+                            </xpongemtcont>
+
+                            <!-- olt-side gemport -->
+                            <xpongemtcont xmlns="urn:bbf:yang:bbf-xpongemtcont">
+                                <gemports>
+                                    <gemport xc:operation="remove">
+                                        <name>gem_ont1</name>
+                                    </gemport>
+                                </gemports>
+                            </xpongemtcont>
+
+                            <!-- ani<->vani linktable -->
+                            <link-table xmlns="urn:bbf:yang:bbf-link-table">
+                                <link-table xc:operation="remove">
+                                    <from-interface>ontAni_ont1</from-interface>
+                                </link-table>
+                                <link-table xc:operation="remove">
+                                    <from-interface>enet_uni_ont1_1_1</from-interface>
+                                </link-table>
+                            </link-table>
+
+                        </root>
+                    </device>
+                </managed-devices>
+            </network-manager>
+        </config>
+    </edit-config>
+</rpc>

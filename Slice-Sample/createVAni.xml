@@ -1,0 +1,116 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+	<edit-config>
+		<target>
+			<running/>
+		</target>
+		<config>
+			<device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+				<device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+					<device-id>HelloWorld</device-id>
+					<device-specific-data>
+						<traffic-descriptor-profiles xmlns="urn:bbf:yang:bbf-xpongemtcont">
+							<traffic-descriptor-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>TDP0</name>
+								<fixed-bandwidth>10000000</fixed-bandwidth>
+								<assured-bandwidth>10000000</assured-bandwidth>
+								<maximum-bandwidth>30000000</maximum-bandwidth>
+							</traffic-descriptor-profile>
+						</traffic-descriptor-profiles>
+						<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>ont_5011</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:v-ani</type>
+								<v-ani xmlns="urn:bbf:yang:bbf-xponvani">
+									<parent-ref>scg_ont1</parent-ref>
+									<onu-id>1</onu-id>
+									<expected-serial-number>ALCLF9CA11E1</expected-serial-number>
+									<preferred-chanpair>cp_ont1</preferred-chanpair>
+								</v-ani>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>ont_5012</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:v-ani</type>
+								<v-ani xmlns="urn:bbf:yang:bbf-xponvani">
+									<parent-ref>scg_ont4</parent-ref>
+									<onu-id>4</onu-id>
+									<expected-serial-number>ALCLF9CA11E1</expected-serial-number>
+									<preferred-chanpair>cp_ont4</preferred-chanpair>
+								</v-ani>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>uni1_ont1-cfmb-a</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
+								<olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
+									<lower-layer-interface>ont_5011</lower-layer-interface>
+								</olt-v-enet>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>uni2_ont1-cfmb-a</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
+								<olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
+									<lower-layer-interface>ont_5012</lower-layer-interface>
+								</olt-v-enet>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>enet_uni1_ont1-cfmb-a-user</name>
+								<type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+								<subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+									<interface>uni1_ont1-cfmb-a</interface>
+								</subif-lower-layer>
+								<enabled>true</enabled>
+							</interface>
+							<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>enet_uni2_ont1-cfmb-a-user</name>
+								<type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+								<subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+									<interface>uni2_ont1-cfmb-a</interface>
+								</subif-lower-layer>
+								<enabled>true</enabled>
+							</interface>
+						</interfaces>
+						<gemports-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+							<gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>gemport5011</name>
+								<itf-ref>uni1_ont1-cfmb-a</itf-ref>
+								<traffic-class>0</traffic-class>
+								<gemport-id>1024</gemport-id>
+							</gemport>
+							<gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>gemport5012</name>
+								<itf-ref>enet_uni1_ont1-cfmb-a-user</itf-ref>
+								<traffic-class>0</traffic-class>
+								<gemport-id>1025</gemport-id>
+							</gemport>
+							<gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>gemport5013</name>
+								<itf-ref>uni2_ont1-cfmb-a</itf-ref>
+								<traffic-class>0</traffic-class>
+								<gemport-id>1026</gemport-id>
+							</gemport>
+							<gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>gemport5014</name>
+								<itf-ref>enet_uni2_ont1-cfmb-a-user</itf-ref>
+								<traffic-class>0</traffic-class>
+								<gemport-id>1027</gemport-id>
+							</gemport>
+						</gemports-config>
+						<tconts-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+							<tcont xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>tcont5011</name>
+								<alloc-id>1024</alloc-id>
+								<interface-reference>ont_5011</interface-reference>
+								<traffic-descriptor-profile-ref>TDP0</traffic-descriptor-profile-ref>
+							</tcont>
+							<tcont xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>tcont5012</name>
+								<alloc-id>1025</alloc-id>
+								<interface-reference>ont_5012</interface-reference>
+								<traffic-descriptor-profile-ref>TDP0</traffic-descriptor-profile-ref>
+							</tcont>
+						</tconts-config>
+					</device-specific-data>
+				</device>
+			</device-manager>
+		</config>
+	</edit-config>
+</rpc>

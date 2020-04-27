@@ -1,0 +1,50 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+<edit-config>
+<target>
+<running/>
+</target>
+<config>
+
+     <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+            <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+              <name>cls3</name>
+              <filter-operation>match-all-filter</filter-operation>
+              <match-criteria>
+                <nokia-qos-filt:unmetered xmlns:nokia-qos-filt="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext"/>
+              </match-criteria>
+              <classifier-action-entry-cfg>
+                <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+                <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+                  <policing-profile>policing2</policing-profile>
+                </policing>
+              </classifier-action-entry-cfg>
+      </classifier-entry>
+   </classifiers>
+
+   <policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+         <policing-profile>
+           <name>policing2</name>
+           <scope xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:vlan-sub-interface</scope>
+           <two-rate-three-color-marker-mef>
+             <cir>60000000</cir>
+             <cbs>10240</cbs>
+             <eir>20000000</eir>
+             <ebs>10240</ebs>
+             <couple-flag>1</couple-flag>
+             <color-mode>color-aware</color-mode>
+           </two-rate-three-color-marker-mef>
+         </policing-profile>
+   </policing-profiles>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+     <policy>
+        <name>policies3</name>
+          <classifiers>
+            <name>cls3</name>
+          </classifiers>
+     </policy>
+</policies>
+
+</config>
+</edit-config>
+</rpc>

@@ -1,0 +1,25 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+<filters xmlns="urn:bbf:yang:bbf-qos-filters">
+             <enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+               <!-- default filter-operation is match-any-filter-->
+               <name>enhanced-filter2</name>
+               <filter-operation xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:match-any-filter</filter-operation>
+                <filter xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                 <name>enhfilter21</name>
+                 <destination-mac-address>
+                   <mac-address-value>00:00:00:33:33:33</mac-address-value>
+                   <mac-address-mask>FF:FF:FF:FF:FF:FF</mac-address-mask>
+                 </destination-mac-address>
+               </filter>
+             </enhanced-filter>
+      </filters>
+
+</config>
+</edit-config>
+</rpc>

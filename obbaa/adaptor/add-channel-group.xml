@@ -1,0 +1,39 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="34566753">
+  <edit-config xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+    <target>
+      <running/>
+    </target>
+    <config>
+      <network-manager xmlns="urn:bbf:yang:obbaa:network-manager">
+        <managed-devices>
+          <device>
+            <name>deviceA</name>
+            <root>
+
+            	<!-- olt-side  channelgroup -->
+                  <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+                    <interface>
+                      <name>cg1</name>
+                      <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+                      <channel-group xmlns="urn:bbf:yang:bbf-xpon">
+                        <polling-period>100</polling-period>
+                      </channel-group>
+                    </interface>
+                  </interfaces>
+
+                      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+                        <interface>
+                          <name>cg1</name>
+                          <channel-group xmlns="urn:bbf:yang:bbf-xpon">
+                            <polling-period>200</polling-period>
+                          </channel-group>
+                        </interface>
+                      </interfaces>
+
+            </root>
+          </device>
+        </managed-devices>
+      </network-manager>
+    </config>
+  </edit-config>
+</rpc>

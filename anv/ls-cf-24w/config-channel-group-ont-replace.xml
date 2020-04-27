@@ -1,0 +1,2098 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="10" timeout="600">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>HelloWorld</device-id>
+          <device-specific-data xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="replace">
+
+            <alarms:alarms xmlns:alarms="urn:bbf:yang:bbf-alarm-management">
+              <alarms:control/>
+            </alarms:alarms>
+            <log-app:applications xmlns:log-app="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-logging-app"/>
+            <bbf-qos-cls:classifiers xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>obcRateLimitCla</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-any-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type xmlns:bbf-qos-rc="urn:bbf:yang:bbf-qos-rate-control">bbf-qos-rc:rate-limit-frames</bbf-qos-cls:action-type>
+                  <bbf-qos-rc:rate-limit-frames xmlns:bbf-qos-rc="urn:bbf:yang:bbf-qos-rate-control">
+                    <bbf-qos-rc:burst-size>10</bbf-qos-rc:burst-size>
+                    <bbf-qos-rc:rate>43</bbf-qos-rc:rate>
+                  </bbf-qos-rc:rate-limit-frames>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:match-all/>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>innerDEI0</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:dei-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:dei-marking-cfg>
+                    <bbf-qos-cls:dei-marking-list>
+                      <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                      <bbf-qos-cls:dei-value>0</bbf-qos-cls:dei-value>
+                    </bbf-qos-cls:dei-marking-list>
+                  </bbf-qos-cls:dei-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-dei>1</bbf-qos-cls:in-dei>
+                  </bbf-qos-cls:tag>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-dei>0</bbf-qos-cls:in-dei>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>innerDEI1</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:dei-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:dei-marking-cfg>
+                    <bbf-qos-cls:dei-marking-list>
+                      <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                      <bbf-qos-cls:dei-value>1</bbf-qos-cls:dei-value>
+                    </bbf-qos-cls:dei-marking-list>
+                  </bbf-qos-cls:dei-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-dei>1</bbf-qos-cls:in-dei>
+                  </bbf-qos-cls:tag>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-dei>1</bbf-qos-cls:in-dei>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>innerp0</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:pbit-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:pbit-marking-cfg>
+                    <bbf-qos-cls:pbit-marking-list>
+                      <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                      <bbf-qos-cls:pbit-value>0</bbf-qos-cls:pbit-value>
+                    </bbf-qos-cls:pbit-marking-list>
+                  </bbf-qos-cls:pbit-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>0-7</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>0</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>innerp1</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:pbit-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:pbit-marking-cfg>
+                    <bbf-qos-cls:pbit-marking-list>
+                      <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                      <bbf-qos-cls:pbit-value>1</bbf-qos-cls:pbit-value>
+                    </bbf-qos-cls:pbit-marking-list>
+                  </bbf-qos-cls:pbit-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>0-7</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>1</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>innerp2</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:pbit-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:pbit-marking-cfg>
+                    <bbf-qos-cls:pbit-marking-list>
+                      <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                      <bbf-qos-cls:pbit-value>2</bbf-qos-cls:pbit-value>
+                    </bbf-qos-cls:pbit-marking-list>
+                  </bbf-qos-cls:pbit-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>0-7</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>2</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>innerp3</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:pbit-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:pbit-marking-cfg>
+                    <bbf-qos-cls:pbit-marking-list>
+                      <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                      <bbf-qos-cls:pbit-value>3</bbf-qos-cls:pbit-value>
+                    </bbf-qos-cls:pbit-marking-list>
+                  </bbf-qos-cls:pbit-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>0-7</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>3</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>innerp4</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:pbit-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:pbit-marking-cfg>
+                    <bbf-qos-cls:pbit-marking-list>
+                      <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                      <bbf-qos-cls:pbit-value>4</bbf-qos-cls:pbit-value>
+                    </bbf-qos-cls:pbit-marking-list>
+                  </bbf-qos-cls:pbit-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>0-7</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>4</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>innerp5</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:pbit-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:pbit-marking-cfg>
+                    <bbf-qos-cls:pbit-marking-list>
+                      <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                      <bbf-qos-cls:pbit-value>5</bbf-qos-cls:pbit-value>
+                    </bbf-qos-cls:pbit-marking-list>
+                  </bbf-qos-cls:pbit-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>0-7</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>5</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>innerp6</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:pbit-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:pbit-marking-cfg>
+                    <bbf-qos-cls:pbit-marking-list>
+                      <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                      <bbf-qos-cls:pbit-value>6</bbf-qos-cls:pbit-value>
+                    </bbf-qos-cls:pbit-marking-list>
+                  </bbf-qos-cls:pbit-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>0-7</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>6</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>innerp7</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:pbit-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:pbit-marking-cfg>
+                    <bbf-qos-cls:pbit-marking-list>
+                      <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                      <bbf-qos-cls:pbit-value>7</bbf-qos-cls:pbit-value>
+                    </bbf-qos-cls:pbit-marking-list>
+                  </bbf-qos-cls:pbit-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>0-7</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>1</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>7</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>outerDEI0</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:dei-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:dei-marking-cfg>
+                    <bbf-qos-cls:dei-marking-list>
+                      <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                      <bbf-qos-cls:dei-value>0</bbf-qos-cls:dei-value>
+                    </bbf-qos-cls:dei-marking-list>
+                  </bbf-qos-cls:dei-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-dei>0</bbf-qos-cls:in-dei>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>outerDEI1</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:dei-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:dei-marking-cfg>
+                    <bbf-qos-cls:dei-marking-list>
+                      <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                      <bbf-qos-cls:dei-value>1</bbf-qos-cls:dei-value>
+                    </bbf-qos-cls:dei-marking-list>
+                  </bbf-qos-cls:dei-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-dei>1</bbf-qos-cls:in-dei>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>outerp0</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:pbit-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:pbit-marking-cfg>
+                    <bbf-qos-cls:pbit-marking-list>
+                      <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                      <bbf-qos-cls:pbit-value>0</bbf-qos-cls:pbit-value>
+                    </bbf-qos-cls:pbit-marking-list>
+                  </bbf-qos-cls:pbit-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>0</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>outerp1</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:pbit-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:pbit-marking-cfg>
+                    <bbf-qos-cls:pbit-marking-list>
+                      <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                      <bbf-qos-cls:pbit-value>1</bbf-qos-cls:pbit-value>
+                    </bbf-qos-cls:pbit-marking-list>
+                  </bbf-qos-cls:pbit-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>1</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>outerp2</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:pbit-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:pbit-marking-cfg>
+                    <bbf-qos-cls:pbit-marking-list>
+                      <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                      <bbf-qos-cls:pbit-value>2</bbf-qos-cls:pbit-value>
+                    </bbf-qos-cls:pbit-marking-list>
+                  </bbf-qos-cls:pbit-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>2</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>outerp3</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:pbit-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:pbit-marking-cfg>
+                    <bbf-qos-cls:pbit-marking-list>
+                      <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                      <bbf-qos-cls:pbit-value>3</bbf-qos-cls:pbit-value>
+                    </bbf-qos-cls:pbit-marking-list>
+                  </bbf-qos-cls:pbit-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>3</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>outerp4</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:pbit-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:pbit-marking-cfg>
+                    <bbf-qos-cls:pbit-marking-list>
+                      <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                      <bbf-qos-cls:pbit-value>4</bbf-qos-cls:pbit-value>
+                    </bbf-qos-cls:pbit-marking-list>
+                  </bbf-qos-cls:pbit-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>4</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>outerp5</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:pbit-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:pbit-marking-cfg>
+                    <bbf-qos-cls:pbit-marking-list>
+                      <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                      <bbf-qos-cls:pbit-value>5</bbf-qos-cls:pbit-value>
+                    </bbf-qos-cls:pbit-marking-list>
+                  </bbf-qos-cls:pbit-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>5</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>outerp6</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:pbit-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:pbit-marking-cfg>
+                    <bbf-qos-cls:pbit-marking-list>
+                      <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                      <bbf-qos-cls:pbit-value>6</bbf-qos-cls:pbit-value>
+                    </bbf-qos-cls:pbit-marking-list>
+                  </bbf-qos-cls:pbit-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>6</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+              <bbf-qos-cls:classifier-entry>
+                <bbf-qos-cls:name>outerp7</bbf-qos-cls:name>
+                <bbf-qos-cls:filter-operation>bbf-qos-cls:match-all-filter</bbf-qos-cls:filter-operation>
+                <bbf-qos-cls:classifier-action-entry-cfg>
+                  <bbf-qos-cls:action-type>bbf-qos-cls:pbit-marking</bbf-qos-cls:action-type>
+                  <bbf-qos-cls:pbit-marking-cfg>
+                    <bbf-qos-cls:pbit-marking-list>
+                      <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                      <bbf-qos-cls:pbit-value>7</bbf-qos-cls:pbit-value>
+                    </bbf-qos-cls:pbit-marking-list>
+                  </bbf-qos-cls:pbit-marking-cfg>
+                </bbf-qos-cls:classifier-action-entry-cfg>
+                <bbf-qos-cls:match-criteria>
+                  <nokia-cpe-qos-mgnt:ethernet-frame-type xmlns:nokia-cpe-qos-mgnt="urn:bbf:yang:nokia-cpe-qos-management">any</nokia-cpe-qos-mgnt:ethernet-frame-type>
+                  <bbf-qos-cls:tag>
+                    <bbf-qos-cls:index>0</bbf-qos-cls:index>
+                    <bbf-qos-cls:in-pbit-list>7</bbf-qos-cls:in-pbit-list>
+                  </bbf-qos-cls:tag>
+                </bbf-qos-cls:match-criteria>
+              </bbf-qos-cls:classifier-entry>
+            </bbf-qos-cls:classifiers>
+            <confd_dyncfg:confdConfig xmlns:confd_dyncfg="http://tail-f.com/ns/confd_dyncfg/1.0">
+              <confd_dyncfg:aaa>
+                <confd_dyncfg:auditUserName>always</confd_dyncfg:auditUserName>
+                <confd_dyncfg:defaultGroup>defaultGroup</confd_dyncfg:defaultGroup>
+                <confd_dyncfg:expirationWarning>ignore</confd_dyncfg:expirationWarning>
+                <confd_dyncfg:maxPasswordLength>32</confd_dyncfg:maxPasswordLength>
+                <confd_dyncfg:sshLoginGraceTime>PT10M</confd_dyncfg:sshLoginGraceTime>
+                <confd_dyncfg:sshMaxAuthTries>unbounded</confd_dyncfg:sshMaxAuthTries>
+                <confd_dyncfg:sshPubkeyAuthentication>system</confd_dyncfg:sshPubkeyAuthentication>
+                <confd_dyncfg:authenticationCallback>
+                  <confd_dyncfg:enabled>true</confd_dyncfg:enabled>
+                </confd_dyncfg:authenticationCallback>
+              </confd_dyncfg:aaa>
+              <confd_dyncfg:cli>
+                <confd_dyncfg:actionCallNoListInstance>deny-call</confd_dyncfg:actionCallNoListInstance>
+                <confd_dyncfg:addErrorPrefixSuffix>true</confd_dyncfg:addErrorPrefixSuffix>
+                <confd_dyncfg:addExtraTableSpacing>false</confd_dyncfg:addExtraTableSpacing>
+                <confd_dyncfg:allOrNothingLoad>false</confd_dyncfg:allOrNothingLoad>
+                <confd_dyncfg:allowAbbrevCmds>true</confd_dyncfg:allowAbbrevCmds>
+                <confd_dyncfg:allowAbbrevCmdsOnLoad>true</confd_dyncfg:allowAbbrevCmdsOnLoad>
+                <confd_dyncfg:allowAbbrevEnums>true</confd_dyncfg:allowAbbrevEnums>
+                <confd_dyncfg:allowAbbrevKeys>false</confd_dyncfg:allowAbbrevKeys>
+                <confd_dyncfg:allowAbbrevParamNames>false</confd_dyncfg:allowAbbrevParamNames>
+                <confd_dyncfg:allowAllAsWildcard>false</confd_dyncfg:allowAllAsWildcard>
+                <confd_dyncfg:allowCaseInsensitiveEnums>true</confd_dyncfg:allowCaseInsensitiveEnums>
+                <confd_dyncfg:allowImplicitWildcard>true</confd_dyncfg:allowImplicitWildcard>
+                <confd_dyncfg:allowOldStyleModeCmds>false</confd_dyncfg:allowOldStyleModeCmds>
+                <confd_dyncfg:allowOverwriteOnCopy>false</confd_dyncfg:allowOverwriteOnCopy>
+                <confd_dyncfg:allowParenQuotes>false</confd_dyncfg:allowParenQuotes>
+                <confd_dyncfg:allowRangeExpression>true</confd_dyncfg:allowRangeExpression>
+                <confd_dyncfg:allowRangeExpressionAllTypes>true</confd_dyncfg:allowRangeExpressionAllTypes>
+                <confd_dyncfg:allowTableCellWrap>false</confd_dyncfg:allowTableCellWrap>
+                <confd_dyncfg:allowTableOverflow>false</confd_dyncfg:allowTableOverflow>
+                <confd_dyncfg:allowWildcard>true</confd_dyncfg:allowWildcard>
+                <confd_dyncfg:asyncPromptRefresh>true</confd_dyncfg:asyncPromptRefresh>
+                <confd_dyncfg:auditLogMode>all</confd_dyncfg:auditLogMode>
+                <confd_dyncfg:autocommitLoad>false</confd_dyncfg:autocommitLoad>
+                <confd_dyncfg:autocommitLoadChunkSize>1</confd_dyncfg:autocommitLoadChunkSize>
+                <confd_dyncfg:banner/>
+                <confd_dyncfg:bannerFile/>
+                <confd_dyncfg:bypassAllowAbbrevKeys>false</confd_dyncfg:bypassAllowAbbrevKeys>
+                <confd_dyncfg:cAbortedPrefix>Aborted: </confd_dyncfg:cAbortedPrefix>
+                <confd_dyncfg:cAlignLeafValues>true</confd_dyncfg:cAlignLeafValues>
+                <confd_dyncfg:cConfigAlignLeafValues>true</confd_dyncfg:cConfigAlignLeafValues>
+                <confd_dyncfg:cErrorPrefix>Error: </confd_dyncfg:cErrorPrefix>
+                <confd_dyncfg:cExtendedCmdSearch>true</confd_dyncfg:cExtendedCmdSearch>
+                <confd_dyncfg:cHelp>true</confd_dyncfg:cHelp>
+                <confd_dyncfg:cModeExitFormat>!</confd_dyncfg:cModeExitFormat>
+                <confd_dyncfg:cPrivate>false</confd_dyncfg:cPrivate>
+                <confd_dyncfg:cPrompt1>\h\M# </confd_dyncfg:cPrompt1>
+                <confd_dyncfg:cPrompt2>\h(\m)# </confd_dyncfg:cPrompt2>
+                <confd_dyncfg:cRestrictiveNo>false</confd_dyncfg:cRestrictiveNo>
+                <confd_dyncfg:cSilentNo>true</confd_dyncfg:cSilentNo>
+                <confd_dyncfg:cStrictAAA>false</confd_dyncfg:cStrictAAA>
+                <confd_dyncfg:cStylePromptInJStyle>false</confd_dyncfg:cStylePromptInJStyle>
+                <confd_dyncfg:cSuppressCmdSearch>false</confd_dyncfg:cSuppressCmdSearch>
+                <confd_dyncfg:cTab>false</confd_dyncfg:cTab>
+                <confd_dyncfg:cTabInfo>false</confd_dyncfg:cTabInfo>
+                <confd_dyncfg:cWarningPrefix>Warning: </confd_dyncfg:cWarningPrefix>
+                <confd_dyncfg:caseInsensitive>false</confd_dyncfg:caseInsensitive>
+                <confd_dyncfg:caseInsensitiveKeys>false</confd_dyncfg:caseInsensitiveKeys>
+                <confd_dyncfg:cmdAAAForAutowizard>false</confd_dyncfg:cmdAAAForAutowizard>
+                <confd_dyncfg:columnStats>false</confd_dyncfg:columnStats>
+                <confd_dyncfg:commandTimeout>infinity</confd_dyncfg:commandTimeout>
+                <confd_dyncfg:commitActivityClock>false</confd_dyncfg:commitActivityClock>
+                <confd_dyncfg:commitMessage>true</confd_dyncfg:commitMessage>
+                <confd_dyncfg:commitMessageFormat>
+  System message at $(time)...
+  Commit performed by $(user) via $(proto) using $(ctx).
+  </confd_dyncfg:commitMessageFormat>
+                <confd_dyncfg:commitRetryTimeout>PT0S</confd_dyncfg:commitRetryTimeout>
+                <confd_dyncfg:compListCompact>false</confd_dyncfg:compListCompact>
+                <confd_dyncfg:compactShow>false</confd_dyncfg:compactShow>
+                <confd_dyncfg:compactStatsShow>false</confd_dyncfg:compactStatsShow>
+                <confd_dyncfg:compactTable>true</confd_dyncfg:compactTable>
+                <confd_dyncfg:completionListLine>false</confd_dyncfg:completionListLine>
+                <confd_dyncfg:completionMetaInfo>false</confd_dyncfg:completionMetaInfo>
+                <confd_dyncfg:completionShowMax>100</confd_dyncfg:completionShowMax>
+                <confd_dyncfg:completionShowOldVal>true</confd_dyncfg:completionShowOldVal>
+                <confd_dyncfg:confirmUncommitedOnExit>prompt</confd_dyncfg:confirmUncommitedOnExit>
+                <confd_dyncfg:continueOnErrorCmdStack>false</confd_dyncfg:continueOnErrorCmdStack>
+                <confd_dyncfg:defaultDisplayLevel>99999999</confd_dyncfg:defaultDisplayLevel>
+                <confd_dyncfg:defaultPrefix/>
+                <confd_dyncfg:defaultTableBehavior>dynamic</confd_dyncfg:defaultTableBehavior>
+                <confd_dyncfg:dequoteHidden>false</confd_dyncfg:dequoteHidden>
+                <confd_dyncfg:disableIdleTimeoutOnCmd>true</confd_dyncfg:disableIdleTimeoutOnCmd>
+                <confd_dyncfg:disablePipe>false</confd_dyncfg:disablePipe>
+                <confd_dyncfg:disablePipeConfig>false</confd_dyncfg:disablePipeConfig>
+                <confd_dyncfg:displayEmptyConfigContainers>true</confd_dyncfg:displayEmptyConfigContainers>
+                <confd_dyncfg:displayNonPresenceAttributes>false</confd_dyncfg:displayNonPresenceAttributes>
+                <confd_dyncfg:docWrap>true</confd_dyncfg:docWrap>
+                <confd_dyncfg:editWrapMode>wrap</confd_dyncfg:editWrapMode>
+                <confd_dyncfg:enableCliCache>true</confd_dyncfg:enableCliCache>
+                <confd_dyncfg:enableDisplayGroups>true</confd_dyncfg:enableDisplayGroups>
+                <confd_dyncfg:enableDisplayLevel>pipe</confd_dyncfg:enableDisplayLevel>
+                <confd_dyncfg:enableLoadMerge>true</confd_dyncfg:enableLoadMerge>
+                <confd_dyncfg:enableLoadMergeLeafList>false</confd_dyncfg:enableLoadMergeLeafList>
+                <confd_dyncfg:enabled>true</confd_dyncfg:enabled>
+                <confd_dyncfg:enterSubmodeOnLeaf>true</confd_dyncfg:enterSubmodeOnLeaf>
+                <confd_dyncfg:enumKeyInfo>false</confd_dyncfg:enumKeyInfo>
+                <confd_dyncfg:escapeBackslash>false</confd_dyncfg:escapeBackslash>
+                <confd_dyncfg:execNavigationCmds>false</confd_dyncfg:execNavigationCmds>
+                <confd_dyncfg:exitConfigModeOnCtrlC>true</confd_dyncfg:exitConfigModeOnCtrlC>
+                <confd_dyncfg:exitModeOnEmptyRange>false</confd_dyncfg:exitModeOnEmptyRange>
+                <confd_dyncfg:expandAliasEscape>false</confd_dyncfg:expandAliasEscape>
+                <confd_dyncfg:expandAliasOnCompletion>true</confd_dyncfg:expandAliasOnCompletion>
+                <confd_dyncfg:explicitSetCreate>false</confd_dyncfg:explicitSetCreate>
+                <confd_dyncfg:forcedExitFormat>
+  You are forced out of configure mode by $(sender).
+  </confd_dyncfg:forcedExitFormat>
+                <confd_dyncfg:hideDotFiles>false</confd_dyncfg:hideDotFiles>
+                <confd_dyncfg:historyMaxSize>1000</confd_dyncfg:historyMaxSize>
+                <confd_dyncfg:historyRemoveDuplicates>false</confd_dyncfg:historyRemoveDuplicates>
+                <confd_dyncfg:historySave>true</confd_dyncfg:historySave>
+                <confd_dyncfg:idleTimeout>PT30M</confd_dyncfg:idleTimeout>
+                <confd_dyncfg:ignoreLeadingWhitespace>true</confd_dyncfg:ignoreLeadingWhitespace>
+                <confd_dyncfg:ignoreShowWithDefaultOnDiff>false</confd_dyncfg:ignoreShowWithDefaultOnDiff>
+                <confd_dyncfg:ignoreSubsystemFailures>false</confd_dyncfg:ignoreSubsystemFailures>
+                <confd_dyncfg:inconsistentDatabaseSuffix/>
+                <confd_dyncfg:indentTemplates>false</confd_dyncfg:indentTemplates>
+                <confd_dyncfg:infoOnMatch>true</confd_dyncfg:infoOnMatch>
+                <confd_dyncfg:infoOnSpace>true</confd_dyncfg:infoOnSpace>
+                <confd_dyncfg:infoOnTab>true</confd_dyncfg:infoOnTab>
+                <confd_dyncfg:inheritPaginate>true</confd_dyncfg:inheritPaginate>
+                <confd_dyncfg:instanceDescription>true</confd_dyncfg:instanceDescription>
+                <confd_dyncfg:invalidDataString>--ERROR--</confd_dyncfg:invalidDataString>
+                <confd_dyncfg:jAbortedPrefix>Aborted: </confd_dyncfg:jAbortedPrefix>
+                <confd_dyncfg:jAlignLeafValues>true</confd_dyncfg:jAlignLeafValues>
+                <confd_dyncfg:jAllowDeleteAll>true</confd_dyncfg:jAllowDeleteAll>
+                <confd_dyncfg:jEnableLoadMergeLeafList>false</confd_dyncfg:jEnableLoadMergeLeafList>
+                <confd_dyncfg:jErrorPrefix>Error: </confd_dyncfg:jErrorPrefix>
+                <confd_dyncfg:jExtendedShow>true</confd_dyncfg:jExtendedShow>
+                <confd_dyncfg:jHideHelp>false</confd_dyncfg:jHideHelp>
+                <confd_dyncfg:jShowCR>false</confd_dyncfg:jShowCR>
+                <confd_dyncfg:jShowTableRecursive>false</confd_dyncfg:jShowTableRecursive>
+                <confd_dyncfg:jShowUnset>false</confd_dyncfg:jShowUnset>
+                <confd_dyncfg:jShowUnsetText>UNSET</confd_dyncfg:jShowUnsetText>
+                <confd_dyncfg:jStatusFormat>[$(status)][$(time)]
+  </confd_dyncfg:jStatusFormat>
+                <confd_dyncfg:jWarningPrefix>Warning: </confd_dyncfg:jWarningPrefix>
+                <confd_dyncfg:laxBarQuoting>false</confd_dyncfg:laxBarQuoting>
+                <confd_dyncfg:leafPrompting>true</confd_dyncfg:leafPrompting>
+                <confd_dyncfg:loadActivityClock>false</confd_dyncfg:loadActivityClock>
+                <confd_dyncfg:mapActions>both</confd_dyncfg:mapActions>
+                <confd_dyncfg:matchCompletionsFormat>Possible match completions:</confd_dyncfg:matchCompletionsFormat>
+                <confd_dyncfg:maxLineLength>0</confd_dyncfg:maxLineLength>
+                <confd_dyncfg:messageFormat>
+  Message from $(sender) at $(time)...
+  $(message)
+  EOF
+  </confd_dyncfg:messageFormat>
+                <confd_dyncfg:messageMaxSize>10000</confd_dyncfg:messageMaxSize>
+                <confd_dyncfg:messageQueueSize>10</confd_dyncfg:messageQueueSize>
+                <confd_dyncfg:messageWordWrap>false</confd_dyncfg:messageWordWrap>
+                <confd_dyncfg:mixedMode>false</confd_dyncfg:mixedMode>
+                <confd_dyncfg:modeInfoInAAA>false</confd_dyncfg:modeInfoInAAA>
+                <confd_dyncfg:modeInfoInAudit>false</confd_dyncfg:modeInfoInAudit>
+                <confd_dyncfg:modeNameStyle>short</confd_dyncfg:modeNameStyle>
+                <confd_dyncfg:moreBufferLines>5000</confd_dyncfg:moreBufferLines>
+                <confd_dyncfg:multiPatternOperation>any</confd_dyncfg:multiPatternOperation>
+                <confd_dyncfg:newInsert>true</confd_dyncfg:newInsert>
+                <confd_dyncfg:newLogout>true</confd_dyncfg:newLogout>
+                <confd_dyncfg:noEmbeddedComments>false</confd_dyncfg:noEmbeddedComments>
+                <confd_dyncfg:noFollowIncompleteCommand>false</confd_dyncfg:noFollowIncompleteCommand>
+                <confd_dyncfg:noMatchCompletionsFormat/>
+                <confd_dyncfg:oldDetailsArg>false</confd_dyncfg:oldDetailsArg>
+                <confd_dyncfg:orderedShowConfig>true</confd_dyncfg:orderedShowConfig>
+                <confd_dyncfg:pipeHelpMode>auto</confd_dyncfg:pipeHelpMode>
+                <confd_dyncfg:possibleCompletionsFormat>Possible completions:</confd_dyncfg:possibleCompletionsFormat>
+                <confd_dyncfg:prettifyStatsName>false</confd_dyncfg:prettifyStatsName>
+                <confd_dyncfg:prioritizeSubmodeCmds>true</confd_dyncfg:prioritizeSubmodeCmds>
+                <confd_dyncfg:prompt1>\u@\h\M&gt; </confd_dyncfg:prompt1>
+                <confd_dyncfg:prompt2>\u@\h\M% </confd_dyncfg:prompt2>
+                <confd_dyncfg:promptEnumLimit>10</confd_dyncfg:promptEnumLimit>
+                <confd_dyncfg:promptHostnameDelimiter>.</confd_dyncfg:promptHostnameDelimiter>
+                <confd_dyncfg:promptSessionsCLI>false</confd_dyncfg:promptSessionsCLI>
+                <confd_dyncfg:quickSshTeardown>false</confd_dyncfg:quickSshTeardown>
+                <confd_dyncfg:quoteStyle>backslash</confd_dyncfg:quoteStyle>
+                <confd_dyncfg:reallocateOperTrans>true</confd_dyncfg:reallocateOperTrans>
+                <confd_dyncfg:reconfirmHidden>false</confd_dyncfg:reconfirmHidden>
+                <confd_dyncfg:reportInvalidCompletionInput>true</confd_dyncfg:reportInvalidCompletionInput>
+                <confd_dyncfg:resetScreenAfterMore>true</confd_dyncfg:resetScreenAfterMore>
+                <confd_dyncfg:restrictedFileAccess>true</confd_dyncfg:restrictedFileAccess>
+                <confd_dyncfg:restrictedFileRegexp/>
+                <confd_dyncfg:rollbackAAA>false</confd_dyncfg:rollbackAAA>
+                <confd_dyncfg:rollbackMax>1000</confd_dyncfg:rollbackMax>
+                <confd_dyncfg:rollbackNumbering>rolling</confd_dyncfg:rollbackNumbering>
+                <confd_dyncfg:rollbackNumberingInitial>10000</confd_dyncfg:rollbackNumberingInitial>
+                <confd_dyncfg:safeScriptExecution>true</confd_dyncfg:safeScriptExecution>
+                <confd_dyncfg:showAllNs>false</confd_dyncfg:showAllNs>
+                <confd_dyncfg:showAnnotations>true</confd_dyncfg:showAnnotations>
+                <confd_dyncfg:showCommitProgress>false</confd_dyncfg:showCommitProgress>
+                <confd_dyncfg:showDefaults>true</confd_dyncfg:showDefaults>
+                <confd_dyncfg:showDescription>true</confd_dyncfg:showDescription>
+                <confd_dyncfg:showEditors>true</confd_dyncfg:showEditors>
+                <confd_dyncfg:showEmptyContainers>false</confd_dyncfg:showEmptyContainers>
+                <confd_dyncfg:showKeyName>true</confd_dyncfg:showKeyName>
+                <confd_dyncfg:showLogDirectory>/var/log</confd_dyncfg:showLogDirectory>
+                <confd_dyncfg:showMatchBeforePossible>false</confd_dyncfg:showMatchBeforePossible>
+                <confd_dyncfg:showNedErrorAsInfo>true</confd_dyncfg:showNedErrorAsInfo>
+                <confd_dyncfg:showPipe>true</confd_dyncfg:showPipe>
+                <confd_dyncfg:showPipeConfig>false</confd_dyncfg:showPipeConfig>
+                <confd_dyncfg:showServiceMetaData>false</confd_dyncfg:showServiceMetaData>
+                <confd_dyncfg:showSubsystemMessages>true</confd_dyncfg:showSubsystemMessages>
+                <confd_dyncfg:showTableLabelsIfMultiple>false</confd_dyncfg:showTableLabelsIfMultiple>
+                <confd_dyncfg:showTags>true</confd_dyncfg:showTags>
+                <confd_dyncfg:singleElemPattern>true</confd_dyncfg:singleElemPattern>
+                <confd_dyncfg:smartRenameFiltering>true</confd_dyncfg:smartRenameFiltering>
+                <confd_dyncfg:sortLocalCmds>true</confd_dyncfg:sortLocalCmds>
+                <confd_dyncfg:sortShowElems>true</confd_dyncfg:sortShowElems>
+                <confd_dyncfg:sortSubmodeCmds>true</confd_dyncfg:sortSubmodeCmds>
+                <confd_dyncfg:startupScriptNonInteractive>false</confd_dyncfg:startupScriptNonInteractive>
+                <confd_dyncfg:stopLoadOnError>true</confd_dyncfg:stopLoadOnError>
+                <confd_dyncfg:strictRefsOnLoad>false</confd_dyncfg:strictRefsOnLoad>
+                <confd_dyncfg:style>c</confd_dyncfg:style>
+                <confd_dyncfg:supportQuotedEOL>true</confd_dyncfg:supportQuotedEOL>
+                <confd_dyncfg:suppressBurstErrors>true</confd_dyncfg:suppressBurstErrors>
+                <confd_dyncfg:suppressFastShow>false</confd_dyncfg:suppressFastShow>
+                <confd_dyncfg:suppressNedErrors>false</confd_dyncfg:suppressNedErrors>
+                <confd_dyncfg:suppressRangeKeyword>false</confd_dyncfg:suppressRangeKeyword>
+                <confd_dyncfg:tabExtend>true</confd_dyncfg:tabExtend>
+                <confd_dyncfg:tableLabel>true</confd_dyncfg:tableLabel>
+                <confd_dyncfg:tableLookAhead>50</confd_dyncfg:tableLookAhead>
+                <confd_dyncfg:tableOverflowTruncate>false</confd_dyncfg:tableOverflowTruncate>
+                <confd_dyncfg:timezone>local</confd_dyncfg:timezone>
+                <confd_dyncfg:topLevelCmdsInSubMode>false</confd_dyncfg:topLevelCmdsInSubMode>
+                <confd_dyncfg:transactionCtrlCmds>false</confd_dyncfg:transactionCtrlCmds>
+                <confd_dyncfg:transactions>true</confd_dyncfg:transactions>
+                <confd_dyncfg:trimDefaultSave>false</confd_dyncfg:trimDefaultSave>
+                <confd_dyncfg:trimDefaultShow>false</confd_dyncfg:trimDefaultShow>
+                <confd_dyncfg:unifiedHistory>false</confd_dyncfg:unifiedHistory>
+                <confd_dyncfg:useDoubleDotRanges>false</confd_dyncfg:useDoubleDotRanges>
+                <confd_dyncfg:useExposeNsPrefix>true</confd_dyncfg:useExposeNsPrefix>
+                <confd_dyncfg:useShortEnabled>true</confd_dyncfg:useShortEnabled>
+                <confd_dyncfg:utcOffset>0</confd_dyncfg:utcOffset>
+                <confd_dyncfg:waitLockedConfigMode>true</confd_dyncfg:waitLockedConfigMode>
+                <confd_dyncfg:whoHistoryDateTimeFormat>short</confd_dyncfg:whoHistoryDateTimeFormat>
+                <confd_dyncfg:whoShowMode>true</confd_dyncfg:whoShowMode>
+                <confd_dyncfg:withDefaults>false</confd_dyncfg:withDefaults>
+                <confd_dyncfg:wrapInfo>true</confd_dyncfg:wrapInfo>
+                <confd_dyncfg:wrapPrompt>false</confd_dyncfg:wrapPrompt>
+                <confd_dyncfg:ssh>
+                  <confd_dyncfg:banner/>
+                  <confd_dyncfg:bannerFile/>
+                  <confd_dyncfg:enabled>true</confd_dyncfg:enabled>
+                  <confd_dyncfg:ip>0.0.0.0</confd_dyncfg:ip>
+                  <confd_dyncfg:port>2024</confd_dyncfg:port>
+                  <confd_dyncfg:extraIpPorts>[0::0]:2024</confd_dyncfg:extraIpPorts>
+                </confd_dyncfg:ssh>
+                <confd_dyncfg:suppressCommitMessages>
+                  <confd_dyncfg:context>system</confd_dyncfg:context>
+                </confd_dyncfg:suppressCommitMessages>
+              </confd_dyncfg:cli>
+              <confd_dyncfg:encryptedStrings>
+                <confd_dyncfg:AESCFB128>
+                  <confd_dyncfg:initVector>0123456789abcdef0123456789abcdef</confd_dyncfg:initVector>
+                  <confd_dyncfg:key>0123456789abcdef0123456789abcdef</confd_dyncfg:key>
+                </confd_dyncfg:AESCFB128>
+                <confd_dyncfg:DES3CBC>
+                  <confd_dyncfg:initVector>0123456789abcdef</confd_dyncfg:initVector>
+                  <confd_dyncfg:key1>0123456789abcdef</confd_dyncfg:key1>
+                  <confd_dyncfg:key2>0123456789abcdef</confd_dyncfg:key2>
+                  <confd_dyncfg:key3>0123456789abcdef</confd_dyncfg:key3>
+                </confd_dyncfg:DES3CBC>
+              </confd_dyncfg:encryptedStrings>
+              <confd_dyncfg:logs>
+                <confd_dyncfg:auditLogCommit>false</confd_dyncfg:auditLogCommit>
+                <confd_dyncfg:auditLogCommitDefaults>false</confd_dyncfg:auditLogCommitDefaults>
+                <confd_dyncfg:developerLogLevel>info</confd_dyncfg:developerLogLevel>
+                <confd_dyncfg:snmpLogLevel>info</confd_dyncfg:snmpLogLevel>
+                <confd_dyncfg:auditLog>
+                  <confd_dyncfg:enabled>true</confd_dyncfg:enabled>
+                  <confd_dyncfg:file>
+                    <confd_dyncfg:enabled>true</confd_dyncfg:enabled>
+                    <confd_dyncfg:name>/var/confd/log/audit.log</confd_dyncfg:name>
+                  </confd_dyncfg:file>
+                  <confd_dyncfg:syslog>
+                    <confd_dyncfg:enabled>false</confd_dyncfg:enabled>
+                  </confd_dyncfg:syslog>
+                </confd_dyncfg:auditLog>
+                <confd_dyncfg:confdLog>
+                  <confd_dyncfg:enabled>false</confd_dyncfg:enabled>
+                  <confd_dyncfg:file>
+                    <confd_dyncfg:enabled>true</confd_dyncfg:enabled>
+                    <confd_dyncfg:name>/var/confd/log/confd.log</confd_dyncfg:name>
+                  </confd_dyncfg:file>
+                  <confd_dyncfg:syslog>
+                    <confd_dyncfg:enabled>false</confd_dyncfg:enabled>
+                  </confd_dyncfg:syslog>
+                </confd_dyncfg:confdLog>
+                <confd_dyncfg:developerLog>
+                  <confd_dyncfg:enabled>false</confd_dyncfg:enabled>
+                  <confd_dyncfg:file>
+                    <confd_dyncfg:enabled>true</confd_dyncfg:enabled>
+                    <confd_dyncfg:name>/var/confd/log/devel.log</confd_dyncfg:name>
+                  </confd_dyncfg:file>
+                  <confd_dyncfg:syslog>
+                    <confd_dyncfg:enabled>false</confd_dyncfg:enabled>
+                  </confd_dyncfg:syslog>
+                </confd_dyncfg:developerLog>
+                <confd_dyncfg:errorLog>
+                  <confd_dyncfg:enabled>true</confd_dyncfg:enabled>
+                  <confd_dyncfg:filename>/var/confd/log/confderr.log</confd_dyncfg:filename>
+                  <confd_dyncfg:maxSize>S10M</confd_dyncfg:maxSize>
+                </confd_dyncfg:errorLog>
+                <confd_dyncfg:netconfLog>
+                  <confd_dyncfg:enabled>false</confd_dyncfg:enabled>
+                  <confd_dyncfg:logReplyStatus>false</confd_dyncfg:logReplyStatus>
+                  <confd_dyncfg:file>
+                    <confd_dyncfg:enabled>true</confd_dyncfg:enabled>
+                    <confd_dyncfg:name>/var/confd/log/netconf.log</confd_dyncfg:name>
+                  </confd_dyncfg:file>
+                  <confd_dyncfg:syslog>
+                    <confd_dyncfg:enabled>false</confd_dyncfg:enabled>
+                  </confd_dyncfg:syslog>
+                </confd_dyncfg:netconfLog>
+                <confd_dyncfg:netconfTraceLog>
+                  <confd_dyncfg:enabled>false</confd_dyncfg:enabled>
+                  <confd_dyncfg:filename>/var/confd/log/netconf.trace</confd_dyncfg:filename>
+                  <confd_dyncfg:format>pretty</confd_dyncfg:format>
+                </confd_dyncfg:netconfTraceLog>
+                <confd_dyncfg:snmpLog>
+                  <confd_dyncfg:enabled>false</confd_dyncfg:enabled>
+                  <confd_dyncfg:file>
+                    <confd_dyncfg:enabled>true</confd_dyncfg:enabled>
+                    <confd_dyncfg:name>/var/confd/log/snmp.log</confd_dyncfg:name>
+                  </confd_dyncfg:file>
+                  <confd_dyncfg:syslog>
+                    <confd_dyncfg:enabled>false</confd_dyncfg:enabled>
+                  </confd_dyncfg:syslog>
+                </confd_dyncfg:snmpLog>
+                <confd_dyncfg:syslogConfig>
+                  <confd_dyncfg:facility>daemon</confd_dyncfg:facility>
+                  <confd_dyncfg:version>bsd</confd_dyncfg:version>
+                  <confd_dyncfg:udp>
+                    <confd_dyncfg:enabled>false</confd_dyncfg:enabled>
+                    <confd_dyncfg:host>syslogsrv.example.com</confd_dyncfg:host>
+                    <confd_dyncfg:port>514</confd_dyncfg:port>
+                  </confd_dyncfg:udp>
+                </confd_dyncfg:syslogConfig>
+                <confd_dyncfg:webuiAccessLog>
+                  <confd_dyncfg:dir>/var/confd/log/confd</confd_dyncfg:dir>
+                  <confd_dyncfg:enabled>false</confd_dyncfg:enabled>
+                  <confd_dyncfg:trafficLog>false</confd_dyncfg:trafficLog>
+                </confd_dyncfg:webuiAccessLog>
+              </confd_dyncfg:logs>
+              <confd_dyncfg:netconf>
+                <confd_dyncfg:enabled>true</confd_dyncfg:enabled>
+                <confd_dyncfg:extendedSessions>true</confd_dyncfg:extendedSessions>
+                <confd_dyncfg:idleTimeout>PT0S</confd_dyncfg:idleTimeout>
+                <confd_dyncfg:maxBatchProcesses>unbounded</confd_dyncfg:maxBatchProcesses>
+                <confd_dyncfg:rpcErrors>close</confd_dyncfg:rpcErrors>
+                <confd_dyncfg:sendDefaults>false</confd_dyncfg:sendDefaults>
+                <confd_dyncfg:writeTimeout>PT0S</confd_dyncfg:writeTimeout>
+                <confd_dyncfg:transport>
+                  <confd_dyncfg:ssh>
+                    <confd_dyncfg:enabled>true</confd_dyncfg:enabled>
+                    <confd_dyncfg:ip>0.0.0.0</confd_dyncfg:ip>
+                    <confd_dyncfg:port>830</confd_dyncfg:port>
+                    <confd_dyncfg:extraIpPorts>[0::0]:830</confd_dyncfg:extraIpPorts>
+                  </confd_dyncfg:ssh>
+                  <confd_dyncfg:tcp>
+                    <confd_dyncfg:enabled>true</confd_dyncfg:enabled>
+                    <confd_dyncfg:ip>127.0.0.1</confd_dyncfg:ip>
+                    <confd_dyncfg:port>2023</confd_dyncfg:port>
+                    <confd_dyncfg:extraIpPorts>[0::1]:2023</confd_dyncfg:extraIpPorts>
+                  </confd_dyncfg:tcp>
+                </confd_dyncfg:transport>
+              </confd_dyncfg:netconf>
+              <confd_dyncfg:notifications>
+                <confd_dyncfg:eventStreams>
+                  <confd_dyncfg:stream>
+                    <confd_dyncfg:name>NETCONF</confd_dyncfg:name>
+                    <confd_dyncfg:description>RFC 5277 Default Notifications Stream</confd_dyncfg:description>
+                    <confd_dyncfg:replaySupport>true</confd_dyncfg:replaySupport>
+                    <confd_dyncfg:builtinReplayStore>
+                      <confd_dyncfg:dir>/run/confd/log</confd_dyncfg:dir>
+                      <confd_dyncfg:enabled>true</confd_dyncfg:enabled>
+                      <confd_dyncfg:maxFiles>2</confd_dyncfg:maxFiles>
+                      <confd_dyncfg:maxSize>S1M</confd_dyncfg:maxSize>
+                    </confd_dyncfg:builtinReplayStore>
+                  </confd_dyncfg:stream>
+                </confd_dyncfg:eventStreams>
+              </confd_dyncfg:notifications>
+              <confd_dyncfg:parserLimits>
+                <confd_dyncfg:maxAttributeCount>64</confd_dyncfg:maxAttributeCount>
+                <confd_dyncfg:maxAttributeLength>1024</confd_dyncfg:maxAttributeLength>
+                <confd_dyncfg:maxAttributeValueLength>1024</confd_dyncfg:maxAttributeValueLength>
+                <confd_dyncfg:maxDataLength>4096</confd_dyncfg:maxDataLength>
+                <confd_dyncfg:maxTagLength>1024</confd_dyncfg:maxTagLength>
+                <confd_dyncfg:maxXmlnsCount>1024</confd_dyncfg:maxXmlnsCount>
+                <confd_dyncfg:maxXmlnsPrefixLength>1024</confd_dyncfg:maxXmlnsPrefixLength>
+                <confd_dyncfg:maxXmlnsValueLength>1024</confd_dyncfg:maxXmlnsValueLength>
+              </confd_dyncfg:parserLimits>
+              <confd_dyncfg:sessionLimits>
+                <confd_dyncfg:maxConfigSessions>10</confd_dyncfg:maxConfigSessions>
+                <confd_dyncfg:maxSessions>10</confd_dyncfg:maxSessions>
+                <confd_dyncfg:configSessionLimit>
+                  <confd_dyncfg:context>cli</confd_dyncfg:context>
+                  <confd_dyncfg:maxSessions>3</confd_dyncfg:maxSessions>
+                </confd_dyncfg:configSessionLimit>
+                <confd_dyncfg:configSessionLimit>
+                  <confd_dyncfg:context>netconf</confd_dyncfg:context>
+                  <confd_dyncfg:maxSessions>6</confd_dyncfg:maxSessions>
+                </confd_dyncfg:configSessionLimit>
+                <confd_dyncfg:sessionLimit>
+                  <confd_dyncfg:context>cli</confd_dyncfg:context>
+                  <confd_dyncfg:maxSessions>3</confd_dyncfg:maxSessions>
+                </confd_dyncfg:sessionLimit>
+                <confd_dyncfg:sessionLimit>
+                  <confd_dyncfg:context>netconf</confd_dyncfg:context>
+                  <confd_dyncfg:maxSessions>6</confd_dyncfg:maxSessions>
+                </confd_dyncfg:sessionLimit>
+              </confd_dyncfg:sessionLimits>
+              <confd_dyncfg:ssh>
+                <confd_dyncfg:clientAliveCountMax>3</confd_dyncfg:clientAliveCountMax>
+                <confd_dyncfg:clientAliveInterval>infinity</confd_dyncfg:clientAliveInterval>
+                <confd_dyncfg:idleConnectionTimeout>PT10M</confd_dyncfg:idleConnectionTimeout>
+                <confd_dyncfg:algorithms>
+                  <confd_dyncfg:encryption>aes128-ctr,aes192-ctr,aes256-ctr</confd_dyncfg:encryption>
+                  <confd_dyncfg:kex/>
+                  <confd_dyncfg:mac>hmac-sha1,hmac-sha2-256,hmac-sha2-512</confd_dyncfg:mac>
+                  <confd_dyncfg:serverHostKey/>
+                </confd_dyncfg:algorithms>
+              </confd_dyncfg:ssh>
+            </confd_dyncfg:confdConfig>
+            <onu:cpu-load-control-cfg xmlns:onu="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount"/>
+            <nokia-cpu-rate-limit:cpu-load-control-cfg xmlns:nokia-cpu-rate-limit="urn:bbf:yang:nokia-ingress-cpu-packets-rate-limit">
+              <nokia-cpu-rate-limit:default-ingress-cpu-packets-rate-limit>
+                <nokia-cpu-rate-limit:interface-usage>user-port</nokia-cpu-rate-limit:interface-usage>
+                <nokia-cpu-rate-limit:rate-limit-policy-name>obcRateLimitPol</nokia-cpu-rate-limit:rate-limit-policy-name>
+              </nokia-cpu-rate-limit:default-ingress-cpu-packets-rate-limit>
+            </nokia-cpu-rate-limit:cpu-load-control-cfg>
+            <nokia-dhcp-client:dhcp-client xmlns:nokia-dhcp-client="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-dhcp-client">
+              <nokia-dhcp-client:client>enabled</nokia-dhcp-client:client>
+            </nokia-dhcp-client:dhcp-client>
+            <bbf-ldra:dhcpv6-ldra-profiles xmlns:bbf-ldra="urn:bbf:yang:bbf-ldra"/>
+            <bbf-qos-filt:filters xmlns:bbf-qos-filt="urn:bbf:yang:bbf-qos-filters"/>
+            <bbf-l2-fwd:forwarding xmlns:bbf-l2-fwd="urn:bbf:yang:bbf-l2-forwarding">
+              <bbf-l2-fwd:flooding-policies-profiles>
+                <bbf-l2-fwd:flooding-policies-profile>
+                  <bbf-l2-fwd:name>drop_all</bbf-l2-fwd:name>
+                  <bbf-l2-fwd:flooding-policy>
+                    <bbf-l2-fwd:name>dn_drop</bbf-l2-fwd:name>
+                    <bbf-l2-fwd:discard/>
+                    <bbf-l2-fwd:destination-address>
+                      <bbf-l2-fwd:any-frame/>
+                    </bbf-l2-fwd:destination-address>
+                    <bbf-l2-fwd:in-interface-usages>
+                      <bbf-l2-fwd:interface-usages>network-port</bbf-l2-fwd:interface-usages>
+                    </bbf-l2-fwd:in-interface-usages>
+                  </bbf-l2-fwd:flooding-policy>
+                  <bbf-l2-fwd:flooding-policy>
+                    <bbf-l2-fwd:name>up_drop</bbf-l2-fwd:name>
+                    <bbf-l2-fwd:discard/>
+                    <bbf-l2-fwd:destination-address>
+                      <bbf-l2-fwd:any-multicast-mac-address/>
+                    </bbf-l2-fwd:destination-address>
+                    <bbf-l2-fwd:in-interface-usages>
+                      <bbf-l2-fwd:interface-usages>user-port</bbf-l2-fwd:interface-usages>
+                    </bbf-l2-fwd:in-interface-usages>
+                  </bbf-l2-fwd:flooding-policy>
+                </bbf-l2-fwd:flooding-policies-profile>
+              </bbf-l2-fwd:flooding-policies-profiles>
+              <bbf-l2-fwd:forwarders>
+                <bbf-l2-fwd:forwarder>
+                  <bbf-l2-fwd:name>inband-forwarder</bbf-l2-fwd:name>
+                  <nokia-arpsec:arp-security xmlns:nokia-arpsec="uri:http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-arp-downstream-security.yang">
+                    <nokia-arpsec:downstream-arp-broadcast>apply-layer2-forwarding</nokia-arpsec:downstream-arp-broadcast>
+                  </nokia-arpsec:arp-security>
+                  <bbf-l2-fwd:flooding-policies/>
+                  <bbf-l2-fwd:mac-learning/>
+                  <bbf-l2-fwd:port-groups/>
+                  <bbf-l2-fwd:ports>
+                    <bbf-l2-fwd:port>
+                      <bbf-l2-fwd:name>inband-l2term-ref</bbf-l2-fwd:name>
+                      <nokia-l2-ti:l2-termination-interface xmlns:nokia-l2-ti="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-l2-forwarding-termination-itf">inband-l2term</nokia-l2-ti:l2-termination-interface>
+                    </bbf-l2-fwd:port>
+                    <bbf-l2-fwd:port>
+                      <bbf-l2-fwd:name>inband-vsi-ref</bbf-l2-fwd:name>
+                      <bbf-l2-fwd:sub-interface>sinband</bbf-l2-fwd:sub-interface>
+                    </bbf-l2-fwd:port>
+                  </bbf-l2-fwd:ports>
+                  <bbf-l2-fwd:split-horizon-profiles/>
+                </bbf-l2-fwd:forwarder>
+              </bbf-l2-fwd:forwarders>
+              <bbf-l2-fwd:forwarding-databases>
+                <nokia-l2-fwd-rst:remove-mac-addresses-from-port-down xmlns:nokia-l2-fwd-rst="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-l2-forwarding-forwarding-database-reset">false</nokia-l2-fwd-rst:remove-mac-addresses-from-port-down>
+              </bbf-l2-fwd:forwarding-databases>
+              <bbf-l2-fwd:mac-learning-control-profiles/>
+              <bbf-l2-fwd:split-horizon-profiles/>
+            </bbf-l2-fwd:forwarding>
+            <bbf-xpongemtcont:gemports-config xmlns:bbf-xpongemtcont="urn:bbf:yang:bbf-xpongemtcont"/>
+            <hw:hardware xmlns:hw="urn:ietf:params:xml:ns:yang:ietf-hardware">
+              <hw:component>
+                <hw:name>Chassis</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:chassis</hw:class>
+                <hw:mfg-name>ALCL</hw:mfg-name>
+                <bbf-hw-ext:model-name xmlns:bbf-hw-ext="urn:bbf:yang:bbf-hardware-extension">CFXR-B</bbf-hw-ext:model-name>
+              </hw:component>
+              <hw:component>
+                <hw:name>Board</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:board</hw:class>
+                <hw:mfg-name>ALCL</hw:mfg-name>
+                <bbf-hw-ext:model-name xmlns:bbf-hw-ext="urn:bbf:yang:bbf-hardware-extension">CFMB-A</bbf-hw-ext:model-name>
+                <hw:parent>Chassis</hw:parent>
+                <hw:parent-rel-pos>1</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>Slot-Fan1</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:nokia-hwi="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-hardware-identities">nokia-hwi:slot-fan</hw:class>
+                <hw:parent>Chassis</hw:parent>
+                <hw:parent-rel-pos>1</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>Slot-Fan2</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:nokia-hwi="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-hardware-identities">nokia-hwi:slot-fan</hw:class>
+                <hw:parent>Chassis</hw:parent>
+                <hw:parent-rel-pos>2</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>Slot-Fan3</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:nokia-hwi="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-hardware-identities">nokia-hwi:slot-fan</hw:class>
+                <hw:parent>Chassis</hw:parent>
+                <hw:parent-rel-pos>3</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>Slot-Fan4</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:nokia-hwi="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-hardware-identities">nokia-hwi:slot-fan</hw:class>
+                <hw:parent>Chassis</hw:parent>
+                <hw:parent-rel-pos>4</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>Slot-Fan5</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:nokia-hwi="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-hardware-identities">nokia-hwi:slot-fan</hw:class>
+                <hw:parent>Chassis</hw:parent>
+                <hw:parent-rel-pos>5</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>Slot-Psu1</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:nokia-hwi="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-hardware-identities">nokia-hwi:slot-psu</hw:class>
+                <hw:parent>Chassis</hw:parent>
+                <hw:parent-rel-pos>1</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>Slot-Psu2</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:nokia-hwi="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-hardware-identities">nokia-hwi:slot-psu</hw:class>
+                <hw:parent>Chassis</hw:parent>
+                <hw:parent-rel-pos>2</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>LEMI</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:rj45</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>1</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X1</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>1</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X2</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>2</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X3</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>3</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X4</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>4</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X5</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>5</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X6</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>6</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X7</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>7</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X8</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>8</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X9</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>9</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X10</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>10</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X11</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>11</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X12</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>12</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X13</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>13</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X14</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>14</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X15</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>15</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X16</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>16</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X17</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>17</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X18</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>18</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X19</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>19</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X20</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>20</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X21</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>21</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X22</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>22</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X23</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>23</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>X24</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>24</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>Q1A</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>25</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>Q1B</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>26</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>Q2A</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>27</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>Q2B</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>28</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>Q3A</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>29</hw:parent-rel-pos>
+              </hw:component>
+              <hw:component>
+                <hw:name>Q3B</hw:name>
+                <hw:admin-state>unlocked</hw:admin-state>
+                <hw:class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</hw:class>
+                <hw:parent>Board</hw:parent>
+                <hw:parent-rel-pos>30</hw:parent-rel-pos>
+              </hw:component>
+            </hw:hardware>
+            <if:interfaces xmlns:if="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+              <if:interface>
+                <if:name>inband</if:name>
+                <if:enabled>true</if:enabled>
+                <if:type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ipForward</if:type>
+                <ip-aug:ipif-lower-layer xmlns:ip-aug="urn:ietf:params:xml:ns:yang:nokia-ip-aug">
+                  <ip-aug:sub-interface>inband-l2term</ip-aug:sub-interface>
+                </ip-aug:ipif-lower-layer>
+                <bbf-if-pm:performance xmlns:bbf-if-pm="urn:bbf:yang:bbf-interfaces-performance-management">
+                  <bbf-if-pm:enable>false</bbf-if-pm:enable>
+                </bbf-if-pm:performance>
+                <nokia-itfstat:statistics xmlns:nokia-itfstat="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-interfaces-statistics">
+                  <nokia-itfstat:enable>best-effort</nokia-itfstat:enable>
+                </nokia-itfstat:statistics>
+                <ip-aug:tag-ip-intf xmlns:ip-aug="urn:ietf:params:xml:ns:yang:nokia-ip-aug">
+                  <ip-aug:tag-ip-intf>inband-mgnt</ip-aug:tag-ip-intf>
+                </ip-aug:tag-ip-intf>
+                <bbf-qos-tm:tm-root xmlns:bbf-qos-tm="urn:bbf:yang:bbf-qos-traffic-mngt"/>
+              </if:interface>
+              <if:interface>
+                <if:name>sinband</if:name>
+                <if:enabled>true</if:enabled>
+                <if:type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</if:type>
+                <bbf-subif:inline-frame-processing xmlns:bbf-subif="urn:bbf:yang:bbf-sub-interfaces">
+                  <bbf-subif:egress-rewrite>
+                    <bbf-subif-tag:pop-tags xmlns:bbf-subif-tag="urn:bbf:yang:bbf-sub-interface-tagging">0</bbf-subif-tag:pop-tags>
+                  </bbf-subif:egress-rewrite>
+                  <bbf-subif:ingress-rule>
+                    <bbf-subif:rule>
+                      <bbf-subif:name>rule_1</bbf-subif:name>
+                      <bbf-subif:priority>100</bbf-subif:priority>
+                      <bbf-subif:flexible-match>
+                        <bbf-subif-tag:match-criteria xmlns:bbf-subif-tag="urn:bbf:yang:bbf-sub-interface-tagging">
+                          <bbf-subif-tag:ethernet-frame-type>any</bbf-subif-tag:ethernet-frame-type>
+                          <bbf-subif-tag:tag>
+                            <bbf-subif-tag:index>0</bbf-subif-tag:index>
+                            <bbf-subif-tag:dot1q-tag>
+                              <bbf-subif-tag:dei>any</bbf-subif-tag:dei>
+                              <bbf-subif-tag:pbit>any</bbf-subif-tag:pbit>
+                              <bbf-subif-tag:tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</bbf-subif-tag:tag-type>
+                              <bbf-subif-tag:vlan-id>4093</bbf-subif-tag:vlan-id>
+                            </bbf-subif-tag:dot1q-tag>
+                          </bbf-subif-tag:tag>
+                        </bbf-subif-tag:match-criteria>
+                      </bbf-subif:flexible-match>
+                      <bbf-subif:ingress-rewrite>
+                        <bbf-subif-tag:pop-tags xmlns:bbf-subif-tag="urn:bbf:yang:bbf-sub-interface-tagging">1</bbf-subif-tag:pop-tags>
+                      </bbf-subif:ingress-rewrite>
+                    </bbf-subif:rule>
+                  </bbf-subif:ingress-rule>
+                </bbf-subif:inline-frame-processing>
+                <bbf-if-usg:interface-usage xmlns:bbf-if-usg="urn:bbf:yang:bbf-interface-usage">
+                  <bbf-if-usg:interface-usage>network-port</bbf-if-usg:interface-usage>
+                </bbf-if-usg:interface-usage>
+                <nokia-l2cp:l2cp xmlns:nokia-l2cp="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-l2cp"/>
+                <bbf-l2-fwd:mac-learning xmlns:bbf-l2-fwd="urn:bbf:yang:bbf-l2-forwarding">
+                  <bbf-l2-fwd:mac-learning-enable>true</bbf-l2-fwd:mac-learning-enable>
+                  <bbf-l2-fwd:mac-learning-failure-action>forward</bbf-l2-fwd:mac-learning-failure-action>
+                  <bbf-l2-fwd:max-number-mac-addresses>4294967295</bbf-l2-fwd:max-number-mac-addresses>
+                  <bbf-l2-fwd:number-committed-mac-addresses>1</bbf-l2-fwd:number-committed-mac-addresses>
+                </bbf-l2-fwd:mac-learning>
+                <bbf-if-pm:performance xmlns:bbf-if-pm="urn:bbf:yang:bbf-interfaces-performance-management">
+                  <bbf-if-pm:enable>false</bbf-if-pm:enable>
+                </bbf-if-pm:performance>
+                <nokia-itfstat:statistics xmlns:nokia-itfstat="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-interfaces-statistics">
+                  <nokia-itfstat:enable>best-effort</nokia-itfstat:enable>
+                </nokia-itfstat:statistics>
+                <bbf-subif:subif-lower-layer xmlns:bbf-subif="urn:bbf:yang:bbf-sub-interfaces"/>
+                <bbf-subprof:subscriber-profile xmlns:bbf-subprof="urn:bbf:yang:bbf-subscriber-profiles"/>
+                <bbf-qos-tm:tm-root xmlns:bbf-qos-tm="urn:bbf:yang:bbf-qos-traffic-mngt"/>
+              </if:interface>
+              <if:interface>
+                <if:name>inband-l2term</if:name>
+                <if:enabled>true</if:enabled>
+                <if:type xmlns:nokia-l2-ti="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-l2-forwarding-termination-itf">nokia-l2-ti:l2-termination-interface</if:type>
+                <nokia-l2-ti:l2-termination-interface xmlns:nokia-l2-ti="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-l2-forwarding-termination-itf">
+                  <nokia-l2-ti:interface-usage>user-port</nokia-l2-ti:interface-usage>
+                  <nokia-l2-ti:termination-port-receive>
+                    <nokia-l2-ti:pop-tags>0</nokia-l2-ti:pop-tags>
+                  </nokia-l2-ti:termination-port-receive>
+                  <nokia-l2-ti:termination-port-transmit>
+                    <nokia-l2-ti:push-tag>
+                      <nokia-l2-ti:index>0</nokia-l2-ti:index>
+                      <nokia-l2-ti:dot1q-tag>
+                        <nokia-l2-ti:dei-from-tag-index>0</nokia-l2-ti:dei-from-tag-index>
+                        <nokia-l2-ti:pbit-from-tag-index>0</nokia-l2-ti:pbit-from-tag-index>
+                        <nokia-l2-ti:tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</nokia-l2-ti:tag-type>
+                        <nokia-l2-ti:vlan-id>4093</nokia-l2-ti:vlan-id>
+                      </nokia-l2-ti:dot1q-tag>
+                    </nokia-l2-ti:push-tag>
+                  </nokia-l2-ti:termination-port-transmit>
+                </nokia-l2-ti:l2-termination-interface>
+                <bbf-if-pm:performance xmlns:bbf-if-pm="urn:bbf:yang:bbf-interfaces-performance-management">
+                  <bbf-if-pm:enable>false</bbf-if-pm:enable>
+                </bbf-if-pm:performance>
+                <nokia-itfstat:statistics xmlns:nokia-itfstat="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-interfaces-statistics">
+                  <nokia-itfstat:enable>best-effort</nokia-itfstat:enable>
+                </nokia-itfstat:statistics>
+                <bbf-qos-tm:tm-root xmlns:bbf-qos-tm="urn:bbf:yang:bbf-qos-traffic-mngt"/>
+              </if:interface>
+              <if:interface>
+                <if:name>LEMIITF</if:name>
+                <if:enabled>true</if:enabled>
+                <if:type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</if:type>
+                <bbf-if-port-ref:port-layer-if xmlns:bbf-if-port-ref="urn:bbf:yang:bbf-interface-port-reference">LEMI</bbf-if-port-ref:port-layer-if>
+                <eth:ethernet xmlns:eth="urn:ieee:params:xml:ns:yang:ethernet">
+                  <eth:auto-negotiation>
+                    <eth:status>enabled</eth:status>
+                  </eth:auto-negotiation>
+                </eth:ethernet>
+                <nokia-cpu-rate-limit:ingress-cpu-packets-rate-limit xmlns:nokia-cpu-rate-limit="urn:bbf:yang:nokia-ingress-cpu-packets-rate-limit"/>
+                <bbf-if-usg:interface-usage xmlns:bbf-if-usg="urn:bbf:yang:bbf-interface-usage"/>
+                <nokia-l2cp:l2cp xmlns:nokia-l2cp="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-l2cp"/>
+                <bbf-l2-fwd:mac-learning xmlns:bbf-l2-fwd="urn:bbf:yang:bbf-l2-forwarding">
+                  <bbf-l2-fwd:mac-learning-enable>true</bbf-l2-fwd:mac-learning-enable>
+                  <bbf-l2-fwd:mac-learning-failure-action>forward</bbf-l2-fwd:mac-learning-failure-action>
+                  <bbf-l2-fwd:max-number-mac-addresses>4294967295</bbf-l2-fwd:max-number-mac-addresses>
+                  <bbf-l2-fwd:number-committed-mac-addresses>1</bbf-l2-fwd:number-committed-mac-addresses>
+                </bbf-l2-fwd:mac-learning>
+                <bbf-if-pm:performance xmlns:bbf-if-pm="urn:bbf:yang:bbf-interfaces-performance-management">
+                  <bbf-if-pm:enable>false</bbf-if-pm:enable>
+                </bbf-if-pm:performance>
+                <nokia-itf-tm:speed-monitoring xmlns:nokia-itf-tm="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-interface-speed-monitoring">
+                  <nokia-itf-tm:enable>false</nokia-itf-tm:enable>
+                </nokia-itf-tm:speed-monitoring>
+                <nokia-itfstat:statistics xmlns:nokia-itfstat="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-interfaces-statistics">
+                  <nokia-itfstat:enable>best-effort</nokia-itfstat:enable>
+                </nokia-itfstat:statistics>
+                <bbf-qos-tm:tm-root xmlns:bbf-qos-tm="urn:bbf:yang:bbf-qos-traffic-mngt"/>
+              </if:interface>
+              <if:interface>
+                <if:name>CG_1</if:name>
+                <if:enabled>true</if:enabled>
+                <if:type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</if:type>
+                <bbf-xpon:channel-group xmlns:bbf-xpon="urn:bbf:yang:bbf-xpon">
+                  <bbf-xpon:polling-period>100</bbf-xpon:polling-period>
+                  <bbf-xpon:raman-mitigation>raman_none</bbf-xpon:raman-mitigation>
+                  <bbf-xpon:system-id>000000</bbf-xpon:system-id>
+                </bbf-xpon:channel-group>
+                <bbf-if-pm:performance xmlns:bbf-if-pm="urn:bbf:yang:bbf-interfaces-performance-management">
+                  <bbf-if-pm:enable>false</bbf-if-pm:enable>
+                </bbf-if-pm:performance>
+                <nokia-itfstat:statistics xmlns:nokia-itfstat="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-interfaces-statistics">
+                  <nokia-itfstat:enable>best-effort</nokia-itfstat:enable>
+                </nokia-itfstat:statistics>
+                <bbf-qos-tm:tm-root xmlns:bbf-qos-tm="urn:bbf:yang:bbf-qos-traffic-mngt"/>
+              </if:interface>
+              <if:interface>
+                <if:name>cg_cp1-ls</if:name>
+                <if:enabled>true</if:enabled>
+                <if:type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</if:type>
+                <bbf-xpon:channel-group xmlns:bbf-xpon="urn:bbf:yang:bbf-xpon">
+                  <bbf-xpon:polling-period>100</bbf-xpon:polling-period>
+                  <bbf-xpon:raman-mitigation>raman_none</bbf-xpon:raman-mitigation>
+                  <bbf-xpon:system-id>000000</bbf-xpon:system-id>
+                </bbf-xpon:channel-group>
+                <bbf-if-pm:performance xmlns:bbf-if-pm="urn:bbf:yang:bbf-interfaces-performance-management">
+                  <bbf-if-pm:enable>false</bbf-if-pm:enable>
+                </bbf-if-pm:performance>
+                <nokia-itfstat:statistics xmlns:nokia-itfstat="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-interfaces-statistics">
+                  <nokia-itfstat:enable>best-effort</nokia-itfstat:enable>
+                </nokia-itfstat:statistics>
+                <bbf-qos-tm:tm-root xmlns:bbf-qos-tm="urn:bbf:yang:bbf-qos-traffic-mngt"/>
+              </if:interface>
+              <if:interface>
+                <if:name>scg_cp1</if:name>
+                <if:enabled>true</if:enabled>
+                <if:type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-partition</if:type>
+                <bbf-xpon:channel-partition xmlns:bbf-xpon="urn:bbf:yang:bbf-xpon">
+                  <bbf-xpon:authentication-method>serial-number</bbf-xpon:authentication-method>
+                  <bbf-xpon:channel-group-ref>cg_cp1-ls</bbf-xpon:channel-group-ref>
+                  <bbf-xpon:channel-partition-index>1</bbf-xpon:channel-partition-index>
+                  <bbf-xpon:closest-onu-distance>0</bbf-xpon:closest-onu-distance>
+                  <bbf-xpon:fec-downstream>true</bbf-xpon:fec-downstream>
+                  <bbf-xpon:max-differential-xpon-distance>20</bbf-xpon:max-differential-xpon-distance>
+                  <bbf-xpon:multicast-aes-indicator>false</bbf-xpon:multicast-aes-indicator>
+                </bbf-xpon:channel-partition>
+                <bbf-if-pm:performance xmlns:bbf-if-pm="urn:bbf:yang:bbf-interfaces-performance-management">
+                  <bbf-if-pm:enable>false</bbf-if-pm:enable>
+                </bbf-if-pm:performance>
+                <nokia-itfstat:statistics xmlns:nokia-itfstat="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-interfaces-statistics">
+                  <nokia-itfstat:enable>best-effort</nokia-itfstat:enable>
+                </nokia-itfstat:statistics>
+                <bbf-qos-tm:tm-root xmlns:bbf-qos-tm="urn:bbf:yang:bbf-qos-traffic-mngt"/>
+              </if:interface>
+              <if:interface>
+                <if:name>cp1</if:name>
+                <if:enabled>true</if:enabled>
+                <if:type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-pair</if:type>
+                <bbf-xpon:channel-pair xmlns:bbf-xpon="urn:bbf:yang:bbf-xpon">
+                  <bbf-xpon:channel-group-ref>cg_cp1-ls</bbf-xpon:channel-group-ref>
+                  <bbf-xpon:channel-pair-type xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:xgs</bbf-xpon:channel-pair-type>
+                  <bbf-xpon:channel-partition-ref>scg_cp1</bbf-xpon:channel-partition-ref>
+                  <bbf-xpon:wavelength-prof-ref>xgspon-wave</bbf-xpon:wavelength-prof-ref>
+                </bbf-xpon:channel-pair>
+                <bbf-if-pm:performance xmlns:bbf-if-pm="urn:bbf:yang:bbf-interfaces-performance-management">
+                  <bbf-if-pm:enable>false</bbf-if-pm:enable>
+                </bbf-if-pm:performance>
+                <nokia-itfstat:statistics xmlns:nokia-itfstat="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-interfaces-statistics">
+                  <nokia-itfstat:enable>best-effort</nokia-itfstat:enable>
+                </nokia-itfstat:statistics>
+                <bbf-qos-tm:tm-root xmlns:bbf-qos-tm="urn:bbf:yang:bbf-qos-traffic-mngt"/>
+              </if:interface>
+              <if:interface>
+                <if:name>cp1_ont01</if:name>
+                <if:enabled>true</if:enabled>
+                <if:type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:v-ani</if:type>
+                <bbf-if-pm:performance xmlns:bbf-if-pm="urn:bbf:yang:bbf-interfaces-performance-management">
+                  <bbf-if-pm:enable>false</bbf-if-pm:enable>
+                </bbf-if-pm:performance>
+                <nokia-itfstat:statistics xmlns:nokia-itfstat="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-interfaces-statistics">
+                  <nokia-itfstat:enable>best-effort</nokia-itfstat:enable>
+                </nokia-itfstat:statistics>
+                <bbf-subprof:subscriber-profile xmlns:bbf-subprof="urn:bbf:yang:bbf-subscriber-profiles"/>
+                <bbf-qos-tm:tm-root xmlns:bbf-qos-tm="urn:bbf:yang:bbf-qos-traffic-mngt"/>
+                <bbf-xponvani:v-ani xmlns:bbf-xponvani="urn:bbf:yang:bbf-xponvani">
+                  <xponinfraAug:ber-interval xmlns:xponinfraAug="urn:broadband-forum-org:yang:bbf-xponinfra-augment-nodes">8000</xponinfraAug:ber-interval>
+                  <bbf-xponvani:expected-registration-id/>
+                  <bbf-xponvani:expected-serial-number>ALCLFA5FEA01</bbf-xponvani:expected-serial-number>
+                  <bbf-xponvani:management-gemport-aes-indicator>false</bbf-xponvani:management-gemport-aes-indicator>
+                  <bbf-xponvani:onu-id>1</bbf-xponvani:onu-id>
+                  <bbf-xponvani:parent-ref>scg_cp1</bbf-xponvani:parent-ref>
+                  <bbf-xponvani:preferred-chanpair>cp1</bbf-xponvani:preferred-chanpair>
+                  <xponinfraAug:upstream-fec-indicator xmlns:xponinfraAug="urn:broadband-forum-org:yang:bbf-xponinfra-augment-nodes">false</xponinfraAug:upstream-fec-indicator>
+                </bbf-xponvani:v-ani>
+              </if:interface>
+              <if:interface>
+                <if:name>cp1_ont01_uni1</if:name>
+                <if:enabled>true</if:enabled>
+                <if:type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</if:type>
+                <nokia-cpu-rate-limit:ingress-cpu-packets-rate-limit xmlns:nokia-cpu-rate-limit="urn:bbf:yang:nokia-ingress-cpu-packets-rate-limit"/>
+                <bbf-xponvani:olt-v-enet xmlns:bbf-xponvani="urn:bbf:yang:bbf-xponvani">
+                  <bbf-xponvani:lower-layer-interface>cp1_ont01</bbf-xponvani:lower-layer-interface>
+                </bbf-xponvani:olt-v-enet>
+                <bbf-if-pm:performance xmlns:bbf-if-pm="urn:bbf:yang:bbf-interfaces-performance-management">
+                  <bbf-if-pm:enable>false</bbf-if-pm:enable>
+                </bbf-if-pm:performance>
+                <nokia-itfstat:statistics xmlns:nokia-itfstat="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-interfaces-statistics">
+                  <nokia-itfstat:enable>best-effort</nokia-itfstat:enable>
+                </nokia-itfstat:statistics>
+                <bbf-qos-tm:tm-root xmlns:bbf-qos-tm="urn:bbf:yang:bbf-qos-traffic-mngt"/>
+              </if:interface>
+            </if:interfaces>
+            <ipfix:ipfix xmlns:ipfix="urn:ietf:params:xml:ns:yang:ietf-ipfix-psamp">
+              <nokia-ipfix:ipfix-exporting-enable xmlns:nokia-ipfix="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-ipfix">false</nokia-ipfix:ipfix-exporting-enable>
+            </ipfix:ipfix>
+            <ks:keystore xmlns:ks="urn:ietf:params:xml:ns:yang:ietf-keystore">
+              <ks:asymmetric-keys/>
+            </ks:keystore>
+            <bbf-l2-d4r:l2-dhcpv4-relay-profiles xmlns:bbf-l2-d4r="urn:bbf:yang:bbf-l2-dhcpv4-relay"/>
+            <dot1ax:lag-system xmlns:dot1ax="urn:ieee:std:802.1AX:yang:ieee802-dot1ax"/>
+            <bbf-lt:link-table xmlns:bbf-lt="urn:bbf:yang:bbf-link-table-body"/>
+            <log-app:loggers xmlns:log-app="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-logging-app"/>
+            <bbf-mgmd:multicast xmlns:bbf-mgmd="urn:bbf:yang:bbf-mgmd">
+              <bbf-mgmd:mgmd/>
+            </bbf-mgmd:multicast>
+            <bbf-xpon:multicast-distribution-set-config xmlns:bbf-xpon="urn:bbf:yang:bbf-xpon"/>
+            <bbf-xpon:multicast-gemports-config xmlns:bbf-xpon="urn:bbf:yang:bbf-xpon"/>
+            <nacm:nacm xmlns:nacm="urn:ietf:params:xml:ns:yang:ietf-netconf-acm">
+              <tacm:cmd-exec-default xmlns:tacm="http://tail-f.com/yang/acm">permit</tacm:cmd-exec-default>
+              <tacm:cmd-read-default xmlns:tacm="http://tail-f.com/yang/acm">permit</tacm:cmd-read-default>
+              <nacm:enable-external-groups>true</nacm:enable-external-groups>
+              <nacm:enable-nacm>true</nacm:enable-nacm>
+              <nacm:exec-default>permit</nacm:exec-default>
+              <tacm:log-if-default-permit xmlns:tacm="http://tail-f.com/yang/acm"/>
+              <nacm:read-default>permit</nacm:read-default>
+              <nacm:write-default>deny</nacm:write-default>
+              <nacm:rule-list>
+                <nacm:name>admin</nacm:name>
+                <nacm:group>admin</nacm:group>
+                <tacm:cmdrule xmlns:tacm="http://tail-f.com/yang/acm">
+                  <tacm:name>restrictedFileAccess</tacm:name>
+                  <tacm:access-operations>create read update delete exec</tacm:access-operations>
+                  <tacm:action>deny</tacm:action>
+                  <tacm:command>confdConfig cli restrictedFileAccess</tacm:command>
+                  <tacm:context>cli</tacm:context>
+                </tacm:cmdrule>
+                <tacm:cmdrule xmlns:tacm="http://tail-f.com/yang/acm">
+                  <tacm:name>restrictedFileRegexp</tacm:name>
+                  <tacm:access-operations>create read update delete exec</tacm:access-operations>
+                  <tacm:action>deny</tacm:action>
+                  <tacm:command>confdConfig cli restrictedFileRegexp</tacm:command>
+                  <tacm:context>cli</tacm:context>
+                </tacm:cmdrule>
+                <tacm:cmdrule xmlns:tacm="http://tail-f.com/yang/acm">
+                  <tacm:name>permit-logout-user</tacm:name>
+                  <tacm:access-operations>*</tacm:access-operations>
+                  <tacm:action>permit</tacm:action>
+                  <tacm:command>logout user</tacm:command>
+                  <tacm:context>cli</tacm:context>
+                </tacm:cmdrule>
+                <tacm:cmdrule xmlns:tacm="http://tail-f.com/yang/acm">
+                  <tacm:name>permit-logout-session</tacm:name>
+                  <tacm:access-operations>*</tacm:access-operations>
+                  <tacm:action>permit</tacm:action>
+                  <tacm:command>logout session</tacm:command>
+                  <tacm:context>cli</tacm:context>
+                </tacm:cmdrule>
+                <tacm:cmdrule xmlns:tacm="http://tail-f.com/yang/acm">
+                  <tacm:name>permit-config-exclusive</tacm:name>
+                  <tacm:access-operations>*</tacm:access-operations>
+                  <tacm:action>permit</tacm:action>
+                  <tacm:command>config exclusive</tacm:command>
+                  <tacm:context>cli</tacm:context>
+                </tacm:cmdrule>
+                <nacm:rule>
+                  <nacm:name>allow-delete-authorized-key</nacm:name>
+                  <nacm:access-operations>*</nacm:access-operations>
+                  <nacm:action>permit</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">*</tacm:context>
+                  <nacm:module-name>nokia-aaa</nacm:module-name>
+                  <nacm:path>/users/user[name='$USER']/authentication/authorized-key/</nacm:path>
+                </nacm:rule>
+                <nacm:rule>
+                  <nacm:name>deny-delete-current-user</nacm:name>
+                  <nacm:access-operations>delete</nacm:access-operations>
+                  <nacm:action>deny</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">*</tacm:context>
+                  <nacm:module-name>nokia-aaa</nacm:module-name>
+                  <nacm:path>/users/user[name='$USER']</nacm:path>
+                </nacm:rule>
+                <nacm:rule>
+                  <nacm:name>any-access</nacm:name>
+                  <nacm:access-operations>*</nacm:access-operations>
+                  <nacm:action>permit</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">*</tacm:context>
+                  <nacm:module-name>*</nacm:module-name>
+                </nacm:rule>
+              </nacm:rule-list>
+              <nacm:rule-list>
+                <nacm:name>default</nacm:name>
+                <nacm:group>defaultGroup</nacm:group>
+                <tacm:cmdrule xmlns:tacm="http://tail-f.com/yang/acm">
+                  <tacm:name>deny-logout</tacm:name>
+                  <tacm:access-operations>*</tacm:access-operations>
+                  <tacm:action>deny</tacm:action>
+                  <tacm:command>logout</tacm:command>
+                  <tacm:context>cli</tacm:context>
+                </tacm:cmdrule>
+                <tacm:cmdrule xmlns:tacm="http://tail-f.com/yang/acm">
+                  <tacm:name>deny-config</tacm:name>
+                  <tacm:access-operations>*</tacm:access-operations>
+                  <tacm:action>deny</tacm:action>
+                  <tacm:command>config</tacm:command>
+                  <tacm:context>cli</tacm:context>
+                </tacm:cmdrule>
+                <tacm:cmdrule xmlns:tacm="http://tail-f.com/yang/acm">
+                  <tacm:name>deny-all-cmd</tacm:name>
+                  <tacm:access-operations>create read update delete</tacm:access-operations>
+                  <tacm:action>deny</tacm:action>
+                  <tacm:command>*</tacm:command>
+                  <tacm:context>cli</tacm:context>
+                </tacm:cmdrule>
+                <nacm:rule>
+                  <nacm:name>deny-all</nacm:name>
+                  <nacm:access-operations>*</nacm:access-operations>
+                  <nacm:action>deny</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">*</tacm:context>
+                  <nacm:module-name>*</nacm:module-name>
+                  <nacm:path>*</nacm:path>
+                </nacm:rule>
+              </nacm:rule-list>
+              <nacm:rule-list>
+                <nacm:name>any-group</nacm:name>
+                <nacm:group>*</nacm:group>
+                <tacm:cmdrule xmlns:tacm="http://tail-f.com/yang/acm">
+                  <tacm:name>deny-logout-user</tacm:name>
+                  <tacm:access-operations>*</tacm:access-operations>
+                  <tacm:action>deny</tacm:action>
+                  <tacm:command>logout user</tacm:command>
+                  <tacm:context>cli</tacm:context>
+                </tacm:cmdrule>
+                <tacm:cmdrule xmlns:tacm="http://tail-f.com/yang/acm">
+                  <tacm:name>deny-logout-session</tacm:name>
+                  <tacm:access-operations>*</tacm:access-operations>
+                  <tacm:action>deny</tacm:action>
+                  <tacm:command>logout session</tacm:command>
+                  <tacm:context>cli</tacm:context>
+                </tacm:cmdrule>
+                <tacm:cmdrule xmlns:tacm="http://tail-f.com/yang/acm">
+                  <tacm:name>deny-config-exclusive</tacm:name>
+                  <tacm:access-operations>*</tacm:access-operations>
+                  <tacm:action>deny</tacm:action>
+                  <tacm:command>config exclusive</tacm:command>
+                  <tacm:context>cli</tacm:context>
+                </tacm:cmdrule>
+                <nacm:rule>
+                  <nacm:name>permit-change-password</nacm:name>
+                  <nacm:access-operations>create read update exec</nacm:access-operations>
+                  <nacm:action>permit</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">*</tacm:context>
+                  <nacm:module-name>nokia-aaa</nacm:module-name>
+                  <nacm:path>/users/user[name='$USER']/authentication/change-password</nacm:path>
+                </nacm:rule>
+                <nacm:rule>
+                  <nacm:name>permit-read-user-name</nacm:name>
+                  <nacm:access-operations>read</nacm:access-operations>
+                  <nacm:action>permit</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">*</tacm:context>
+                  <nacm:module-name>nokia-aaa</nacm:module-name>
+                  <nacm:path>/users/user[name='$USER']/name</nacm:path>
+                </nacm:rule>
+                <nacm:rule>
+                  <nacm:name>permit-hidden</nacm:name>
+                  <nacm:access-operations>create read update delete</nacm:access-operations>
+                  <nacm:action>permit</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">*</tacm:context>
+                  <nacm:module-name>nokia-aaa-hidden</nacm:module-name>
+                  <nacm:path>/login-user/user[name='$USER']</nacm:path>
+                </nacm:rule>
+                <nacm:rule>
+                  <nacm:name>permit-password</nacm:name>
+                  <nacm:access-operations>create read update delete</nacm:access-operations>
+                  <nacm:action>permit</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">*</tacm:context>
+                  <nacm:module-name>tailf-aaa</nacm:module-name>
+                  <nacm:path>/aaa/authentication/users/user[name='$USER']/password</nacm:path>
+                </nacm:rule>
+                <nacm:rule>
+                  <nacm:name>permit-show-pubkey</nacm:name>
+                  <nacm:access-operations>read</nacm:access-operations>
+                  <nacm:action>permit</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">*</tacm:context>
+                  <nacm:module-name>nokia-aaa</nacm:module-name>
+                  <nacm:path>/users/user[name='$USER']/authentication/authorized-key/</nacm:path>
+                </nacm:rule>
+                <nacm:rule>
+                  <nacm:name>deny-lock</nacm:name>
+                  <nacm:access-operations>*</nacm:access-operations>
+                  <nacm:action>deny</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">netconf</tacm:context>
+                  <nacm:module-name>*</nacm:module-name>
+                  <nacm:rpc-name>lock</nacm:rpc-name>
+                </nacm:rule>
+                <nacm:rule>
+                  <nacm:name>deny-kill-session</nacm:name>
+                  <nacm:access-operations>*</nacm:access-operations>
+                  <nacm:action>deny</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">netconf</tacm:context>
+                  <nacm:module-name>*</nacm:module-name>
+                  <nacm:rpc-name>kill-session</nacm:rpc-name>
+                </nacm:rule>
+                <nacm:rule>
+                  <nacm:name>permit-last-password-changed</nacm:name>
+                  <nacm:access-operations>read</nacm:access-operations>
+                  <nacm:action>permit</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">*</tacm:context>
+                  <nacm:module-name>nokia-aaa</nacm:module-name>
+                  <nacm:path>/users/user[name='$USER']/login/last-password-changed</nacm:path>
+                </nacm:rule>
+                <nacm:rule>
+                  <nacm:name>permit-last-login</nacm:name>
+                  <nacm:access-operations>read</nacm:access-operations>
+                  <nacm:action>permit</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">*</tacm:context>
+                  <nacm:module-name>nokia-aaa</nacm:module-name>
+                  <nacm:path>/users/user[name='$USER']/login/last-login</nacm:path>
+                </nacm:rule>
+                <nacm:rule>
+                  <nacm:name>permit-last-failed</nacm:name>
+                  <nacm:access-operations>read</nacm:access-operations>
+                  <nacm:action>permit</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">*</tacm:context>
+                  <nacm:module-name>nokia-aaa</nacm:module-name>
+                  <nacm:path>/users/user[name='$USER']/login/last-failed</nacm:path>
+                </nacm:rule>
+                <nacm:rule>
+                  <nacm:name>permit-failed-login</nacm:name>
+                  <nacm:access-operations>read</nacm:access-operations>
+                  <nacm:action>permit</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">*</tacm:context>
+                  <nacm:module-name>nokia-aaa</nacm:module-name>
+                  <nacm:path>/users/user[name='$USER']/login/failed-login</nacm:path>
+                </nacm:rule>
+                <nacm:rule>
+                  <nacm:name>deny-show-other-users</nacm:name>
+                  <nacm:access-operations>create read update delete</nacm:access-operations>
+                  <nacm:action>deny</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">*</tacm:context>
+                  <nacm:module-name>nokia-aaa</nacm:module-name>
+                  <nacm:path>/users/*</nacm:path>
+                </nacm:rule>
+                <nacm:rule>
+                  <nacm:name>deny-show-lockout</nacm:name>
+                  <nacm:access-operations>read</nacm:access-operations>
+                  <nacm:action>deny</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">*</tacm:context>
+                  <nacm:module-name>nokia-aaa</nacm:module-name>
+                  <nacm:path>/system-security/lockout</nacm:path>
+                </nacm:rule>
+                <nacm:rule>
+                  <nacm:name>deny-remove-lockout</nacm:name>
+                  <nacm:access-operations>create read update exec</nacm:access-operations>
+                  <nacm:action>deny</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">*</tacm:context>
+                  <nacm:module-name>nokia-aaa</nacm:module-name>
+                  <nacm:path>/system-security/remove-lockout</nacm:path>
+                </nacm:rule>
+                <nacm:rule>
+                  <nacm:name>deny-access-server-keys</nacm:name>
+                  <nacm:access-operations>*</nacm:access-operations>
+                  <nacm:action>deny</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">*</tacm:context>
+                  <nacm:module-name>nokia-aaa</nacm:module-name>
+                  <nacm:path>/system-security/server-identity</nacm:path>
+                </nacm:rule>
+              </nacm:rule-list>
+              <nacm:rule-list>
+                <nacm:name>loggers-nokia</nacm:name>
+                <nacm:group>nokia</nacm:group>
+                <nacm:rule>
+                  <nacm:name>permit-application-logger</nacm:name>
+                  <nacm:access-operations>*</nacm:access-operations>
+                  <nacm:action>permit</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">*</tacm:context>
+                  <nacm:module-name>nokia-logging-app</nacm:module-name>
+                  <nacm:path>/applications</nacm:path>
+                </nacm:rule>
+              </nacm:rule-list>
+              <nacm:rule-list>
+                <nacm:name>loggers-any-group</nacm:name>
+                <nacm:group>*</nacm:group>
+                <nacm:rule>
+                  <nacm:name>deny-application-logger</nacm:name>
+                  <nacm:access-operations>*</nacm:access-operations>
+                  <nacm:action>deny</nacm:action>
+                  <tacm:context xmlns:tacm="http://tail-f.com/yang/acm">*</tacm:context>
+                  <nacm:module-name>nokia-logging-app</nacm:module-name>
+                  <nacm:path>/applications</nacm:path>
+                </nacm:rule>
+              </nacm:rule-list>
+              <nacm:groups>
+                <nacm:group>
+                  <nacm:name>admin</nacm:name>
+                  <nacm:user-name>admin</nacm:user-name>
+                  <nacm:user-name>init_oper</nacm:user-name>
+                </nacm:group>
+                <nacm:group>
+                  <nacm:name>nokia</nacm:name>
+                  <nacm:user-name>nokia</nacm:user-name>
+                </nacm:group>
+                <nacm:group>
+                  <nacm:name>defaultGroup</nacm:name>
+                </nacm:group>
+              </nacm:groups>
+            </nacm:nacm>
+            <ncs:netconf-server xmlns:ncs="urn:ietf:params:xml:ns:yang:ietf-netconf-server">
+              <ncs:call-home>
+                <nokia-ncs:cli-timer xmlns:nokia-ncs="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-netconf-server">300</nokia-ncs:cli-timer>
+              </ncs:call-home>
+            </ncs:netconf-server>
+            <onu-extension:onu-number-name-map xmlns:onu-extension="urn:nokia:params:xml:ns:yang:nokia-onu-extension"/>
+            <onu:onus xmlns:onu="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount"/>
+            <bbf-qos-pol:policies xmlns:bbf-qos-pol="urn:bbf:yang:bbf-qos-policies">
+              <bbf-qos-pol:policy>
+                <bbf-qos-pol:name>obcRateLimitPol</bbf-qos-pol:name>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>obcRateLimitCla</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+              </bbf-qos-pol:policy>
+              <bbf-qos-pol:policy>
+                <bbf-qos-pol:name>copyInnerTagDei</bbf-qos-pol:name>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>innerDEI0</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>innerDEI1</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+              </bbf-qos-pol:policy>
+              <bbf-qos-pol:policy>
+                <bbf-qos-pol:name>copyInnerTagPbit</bbf-qos-pol:name>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>innerp0</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>innerp1</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>innerp2</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>innerp3</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>innerp4</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>innerp5</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>innerp6</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>innerp7</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+              </bbf-qos-pol:policy>
+              <bbf-qos-pol:policy>
+                <bbf-qos-pol:name>copyOuterTagDei</bbf-qos-pol:name>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>outerDEI0</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>outerDEI1</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+              </bbf-qos-pol:policy>
+              <bbf-qos-pol:policy>
+                <bbf-qos-pol:name>copyOuterTagPbit</bbf-qos-pol:name>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>outerp0</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>outerp1</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>outerp2</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>outerp3</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>outerp4</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>outerp5</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>outerp6</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+                <bbf-qos-pol:classifiers>
+                  <bbf-qos-pol:name>outerp7</bbf-qos-pol:name>
+                </bbf-qos-pol:classifiers>
+              </bbf-qos-pol:policy>
+            </bbf-qos-pol:policies>
+            <bbf-qos-plc:policing-profiles xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing"/>
+            <tfcp:policy xmlns:tfcp="http://tail-f.com/yang/configuration-policy"/>
+            <bbf-pppoe-ia:pppoe-profiles xmlns:bbf-pppoe-ia="urn:bbf:yang:bbf-pppoe-intermediate-agent"/>
+            <bbf-qos-pol:qos-policy-profiles xmlns:bbf-qos-pol="urn:bbf:yang:bbf-qos-policies">
+              <bbf-qos-pol:policy-profile>
+                <bbf-qos-pol:name>defaultCopyPbitDeiToMetadata</bbf-qos-pol:name>
+                <bbf-qos-pol:policy-list>
+                  <bbf-qos-pol:name>copyOuterTagPbit</bbf-qos-pol:name>
+                </bbf-qos-pol:policy-list>
+                <bbf-qos-pol:policy-list>
+                  <bbf-qos-pol:name>copyOuterTagDei</bbf-qos-pol:name>
+                </bbf-qos-pol:policy-list>
+                <bbf-qos-pol:policy-list>
+                  <bbf-qos-pol:name>copyInnerTagPbit</bbf-qos-pol:name>
+                </bbf-qos-pol:policy-list>
+                <bbf-qos-pol:policy-list>
+                  <bbf-qos-pol:name>copyInnerTagDei</bbf-qos-pol:name>
+                </bbf-qos-pol:policy-list>
+              </bbf-qos-pol:policy-profile>
+            </bbf-qos-pol:qos-policy-profiles>
+            <rt:routing xmlns:rt="urn:ietf:params:xml:ns:yang:ietf-routing">
+              <rt:control-plane-protocols/>
+              <rt:ribs/>
+            </rt:routing>
+            <bbf-subprof:subscriber-profiles xmlns:bbf-subprof="urn:bbf:yang:bbf-subscriber-profiles"/>
+            <sys:system xmlns:sys="urn:ietf:params:xml:ns:yang:ietf-system">
+              <sys:authentication/>
+              <sys:clock>
+                <sys:timezone-utc-offset>0</sys:timezone-utc-offset>
+              </sys:clock>
+              <sys:dns-resolver>
+                <sys:options>
+                  <sys:attempts>2</sys:attempts>
+                  <nokia-ietf-system-aug:ndots xmlns:nokia-ietf-system-aug="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-ietf-system-aug">1</nokia-ietf-system-aug:ndots>
+                  <sys:timeout>5</sys:timeout>
+                </sys:options>
+              </sys:dns-resolver>
+              <sys:ntp>
+                <sys:enabled>true</sys:enabled>
+                <nokia-ietf-system-aug:iburst xmlns:nokia-ietf-system-aug="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-ietf-system-aug">true</nokia-ietf-system-aug:iburst>
+                <nokia-ietf-system-aug:maxpoll xmlns:nokia-ietf-system-aug="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-ietf-system-aug">poll-17min4sec</nokia-ietf-system-aug:maxpoll>
+                <nokia-ietf-system-aug:minpoll xmlns:nokia-ietf-system-aug="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-ietf-system-aug">poll-1min4sec</nokia-ietf-system-aug:minpoll>
+              </sys:ntp>
+              <sys:radius>
+                <sys:options>
+                  <sys:attempts>2</sys:attempts>
+                  <sys:timeout>5</sys:timeout>
+                </sys:options>
+              </sys:radius>
+              <ip-aug:security xmlns:ip-aug="urn:ietf:params:xml:ns:yang:nokia-ip-aug">
+                <ip-aug:local-management>
+                  <ip-aug:access>open</ip-aug:access>
+                  <ip-aug:ip_forward>false</ip-aug:ip_forward>
+                </ip-aug:local-management>
+                <ip-aug:tech-support>
+                  <ip-aug:local-access>open</ip-aug:local-access>
+                  <ip-aug:passwd>default</ip-aug:passwd>
+                  <ip-aug:remote-access>closed</ip-aug:remote-access>
+                </ip-aug:tech-support>
+              </ip-aug:security>
+              <bbf-subprof:subscriber-management xmlns:bbf-subprof="urn:bbf:yang:bbf-subscriber-profiles">
+                <bbf-subprof:access-node-id>access-node-not-configured</bbf-subprof:access-node-id>
+              </bbf-subprof:subscriber-management>
+            </sys:system>
+            <nokia-aaa:system-security xmlns:nokia-aaa="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-aaa">
+              <nokia-aaa:lockout-duration>0</nokia-aaa:lockout-duration>
+              <nokia-aaa:lockout-type>ip-addr</nokia-aaa:lockout-type>
+              <nokia-aaa:max-retry-attempts>3</nokia-aaa:max-retry-attempts>
+              <nokia-aaa:client-authentication>
+                <nokia-aaa:supported-authentication-methods>
+                  <nokia-aaa:password/>
+                  <nokia-aaa:publickey/>
+                </nokia-aaa:supported-authentication-methods>
+              </nokia-aaa:client-authentication>
+              <nokia-aaa:password-policy>
+                <nokia-aaa:max-length>20</nokia-aaa:max-length>
+                <nokia-aaa:min-length>8</nokia-aaa:min-length>
+                <nokia-aaa:min-num-numeric-char>1</nokia-aaa:min-num-numeric-char>
+                <nokia-aaa:min-num-special-char>1</nokia-aaa:min-num-special-char>
+                <nokia-aaa:mixed-case>true</nokia-aaa:mixed-case>
+              </nokia-aaa:password-policy>
+              <nokia-aaa:server-identity>
+                <nokia-aaa:host-key>
+                  <nokia-aaa:name>ssh-rsa</nokia-aaa:name>
+                  <nokia-aaa:public-key>
+                    <nokia-aaa:local-definition/>
+                  </nokia-aaa:public-key>
+                </nokia-aaa:host-key>
+                <nokia-aaa:host-key>
+                  <nokia-aaa:name>ssh-dss</nokia-aaa:name>
+                  <nokia-aaa:public-key>
+                    <nokia-aaa:local-definition/>
+                  </nokia-aaa:public-key>
+                </nokia-aaa:host-key>
+              </nokia-aaa:server-identity>
+            </nokia-aaa:system-security>
+            <bbf-xpongemtcont:tconts-config xmlns:bbf-xpongemtcont="urn:bbf:yang:bbf-xpongemtcont"/>
+            <bbf-qos-tm:tm-profiles xmlns:bbf-qos-tm="urn:bbf:yang:bbf-qos-traffic-mngt"/>
+            <bbf-xpongemtcont:traffic-descriptor-profiles xmlns:bbf-xpongemtcont="urn:bbf:yang:bbf-xpongemtcont"/>
+            <ta:trust-anchors xmlns:ta="urn:ietf:params:xml:ns:yang:ietf-trust-anchors"/>
+            <nokia-aaa:users xmlns:nokia-aaa="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-aaa">
+              <nokia-aaa:user>
+                <nokia-aaa:name>admin</nokia-aaa:name>
+                <nokia-aaa:authentication>
+                  <nokia-aaa:homedir>/tmp/syslog</nokia-aaa:homedir>
+                  <nokia-aaa:password>$6$khVPrY1q6Q9RzKaD$K9vhjvduazVoNh6HbnDmszaMawSt2F0VJG3hBlFLog1vmiVaUFJ6NJYnGfO7VD26iwp1PzbXnoC8egIBCO/aF.</nokia-aaa:password>
+                  <nokia-aaa:authorized-key/>
+                </nokia-aaa:authentication>
+                <nokia-aaa:login>
+                  <nokia-aaa:disable>false</nokia-aaa:disable>
+                  <nokia-aaa:password-expiry>0</nokia-aaa:password-expiry>
+                  <nokia-aaa:password-expiry-notification>0</nokia-aaa:password-expiry-notification>
+                  <nokia-aaa:password-history-policy>3</nokia-aaa:password-history-policy>
+                </nokia-aaa:login>
+              </nokia-aaa:user>
+              <nokia-aaa:user>
+                <nokia-aaa:name>init_oper</nokia-aaa:name>
+                <nokia-aaa:authentication>
+                  <nokia-aaa:homedir>/tmp/syslog</nokia-aaa:homedir>
+                  <nokia-aaa:password>$6$MrAUy8IfX4B1i5LU$00qwhVJN497uBLhkbJyRcWBYHPTJOlVzl4Xw9IE3dO9ux1M1.MUZamx0Xie4fGfWWWWeAfLv.s12.yFUlQf9I0</nokia-aaa:password>
+                  <nokia-aaa:authorized-key/>
+                </nokia-aaa:authentication>
+                <nokia-aaa:login>
+                  <nokia-aaa:disable>false</nokia-aaa:disable>
+                  <nokia-aaa:password-expiry>0</nokia-aaa:password-expiry>
+                  <nokia-aaa:password-expiry-notification>0</nokia-aaa:password-expiry-notification>
+                  <nokia-aaa:password-history-policy>3</nokia-aaa:password-history-policy>
+                </nokia-aaa:login>
+              </nokia-aaa:user>
+              <nokia-aaa:user>
+                <nokia-aaa:name>nokia</nokia-aaa:name>
+                <nokia-aaa:authentication>
+                  <nokia-aaa:homedir>/tmp/syslog</nokia-aaa:homedir>
+                  <nokia-aaa:password>$6$VuElaLglb2URpSEx$2Wk9lgrCYMzJIm9qpbV6x9YFVhkejCJIMuBW6dJAehDJnTOPBfg9cDNKFKlKv.uRmU56xsy9./zvQxdIaOhe40</nokia-aaa:password>
+                  <nokia-aaa:authorized-key/>
+                </nokia-aaa:authentication>
+                <nokia-aaa:login>
+                  <nokia-aaa:disable>false</nokia-aaa:disable>
+                  <nokia-aaa:password-expiry>0</nokia-aaa:password-expiry>
+                  <nokia-aaa:password-expiry-notification>0</nokia-aaa:password-expiry-notification>
+                  <nokia-aaa:password-history-policy>3</nokia-aaa:password-history-policy>
+                </nokia-aaa:login>
+              </nokia-aaa:user>
+            </nokia-aaa:users>
+            <nokia-vnf:virtual-network-functions xmlns:nokia-vnf="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-virtual-network-function"/>
+            <bbf-xpon:wavelength-profiles xmlns:bbf-xpon="urn:bbf:yang:bbf-xpon">
+              <bbf-xpon:wavelength-profile>
+                <bbf-xpon:name>ngpon2-wave-1</bbf-xpon:name>
+                <bbf-xpon:downstream-channel-id>0</bbf-xpon:downstream-channel-id>
+                <bbf-xpon:downstream-wavelength>159634</bbf-xpon:downstream-wavelength>
+                <bbf-xpon:upstream-channel-id>0</bbf-xpon:upstream-channel-id>
+              </bbf-xpon:wavelength-profile>
+              <bbf-xpon:wavelength-profile>
+                <bbf-xpon:name>ngpon2-wave-2</bbf-xpon:name>
+                <bbf-xpon:downstream-channel-id>1</bbf-xpon:downstream-channel-id>
+                <bbf-xpon:downstream-wavelength>159719</bbf-xpon:downstream-wavelength>
+                <bbf-xpon:upstream-channel-id>1</bbf-xpon:upstream-channel-id>
+              </bbf-xpon:wavelength-profile>
+              <bbf-xpon:wavelength-profile>
+                <bbf-xpon:name>ngpon2-wave-3</bbf-xpon:name>
+                <bbf-xpon:downstream-channel-id>2</bbf-xpon:downstream-channel-id>
+                <bbf-xpon:downstream-wavelength>159804</bbf-xpon:downstream-wavelength>
+                <bbf-xpon:upstream-channel-id>2</bbf-xpon:upstream-channel-id>
+              </bbf-xpon:wavelength-profile>
+              <bbf-xpon:wavelength-profile>
+                <bbf-xpon:name>ngpon2-wave-4</bbf-xpon:name>
+                <bbf-xpon:downstream-channel-id>3</bbf-xpon:downstream-channel-id>
+                <bbf-xpon:downstream-wavelength>159889</bbf-xpon:downstream-wavelength>
+                <bbf-xpon:upstream-channel-id>3</bbf-xpon:upstream-channel-id>
+              </bbf-xpon:wavelength-profile>
+              <bbf-xpon:wavelength-profile>
+                <bbf-xpon:name>ngpon2-wave-5</bbf-xpon:name>
+                <bbf-xpon:downstream-channel-id>4</bbf-xpon:downstream-channel-id>
+                <bbf-xpon:downstream-wavelength>159975</bbf-xpon:downstream-wavelength>
+                <bbf-xpon:upstream-channel-id>4</bbf-xpon:upstream-channel-id>
+              </bbf-xpon:wavelength-profile>
+              <bbf-xpon:wavelength-profile>
+                <bbf-xpon:name>ngpon2-wave-6</bbf-xpon:name>
+                <bbf-xpon:downstream-channel-id>5</bbf-xpon:downstream-channel-id>
+                <bbf-xpon:downstream-wavelength>160060</bbf-xpon:downstream-wavelength>
+                <bbf-xpon:upstream-channel-id>5</bbf-xpon:upstream-channel-id>
+              </bbf-xpon:wavelength-profile>
+              <bbf-xpon:wavelength-profile>
+                <bbf-xpon:name>ngpon2-wave-7</bbf-xpon:name>
+                <bbf-xpon:downstream-channel-id>6</bbf-xpon:downstream-channel-id>
+                <bbf-xpon:downstream-wavelength>160146</bbf-xpon:downstream-wavelength>
+                <bbf-xpon:upstream-channel-id>6</bbf-xpon:upstream-channel-id>
+              </bbf-xpon:wavelength-profile>
+              <bbf-xpon:wavelength-profile>
+                <bbf-xpon:name>ngpon2-wave-8</bbf-xpon:name>
+                <bbf-xpon:downstream-channel-id>7</bbf-xpon:downstream-channel-id>
+                <bbf-xpon:downstream-wavelength>160231</bbf-xpon:downstream-wavelength>
+                <bbf-xpon:upstream-channel-id>7</bbf-xpon:upstream-channel-id>
+              </bbf-xpon:wavelength-profile>
+              <bbf-xpon:wavelength-profile>
+                <bbf-xpon:name>xgspon-wave</bbf-xpon:name>
+                <bbf-xpon:downstream-channel-id>0</bbf-xpon:downstream-channel-id>
+                <bbf-xpon:downstream-wavelength>157700</bbf-xpon:downstream-wavelength>
+                <bbf-xpon:upstream-channel-id>0</bbf-xpon:upstream-channel-id>
+              </bbf-xpon:wavelength-profile>
+            </bbf-xpon:wavelength-profiles>
+            <webui:webui xmlns:webui="http://tail-f.com/ns/webui">
+              <webui:data-stores/>
+              <webui:schematics>
+                <webui:assets/>
+                <webui:panels/>
+              </webui:schematics>
+            </webui:webui>
+
+
+          </device-specific-data>
+        </device>
+      </device-manager>
+    </config>
+  </edit-config>
+</rpc>

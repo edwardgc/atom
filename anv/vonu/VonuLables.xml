@@ -11,7 +11,7 @@
                     <configured-labels xmlns="http://www.nokia.com/management-solutions/anv-device-tag">
                       <label>
                         <name>channel-group</name>
-                        <value>cg_ont1</value>
+                        <value>cg_cp1_demo</value>
                       </label>
                        <label>
                         <name>xpon-type</name>

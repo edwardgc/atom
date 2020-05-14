@@ -22,6 +22,8 @@
             </label>
           </configured-labels>
         </device>
+
+
       </device-manager>
     </config>
   </edit-config>

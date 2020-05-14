@@ -1,0 +1,51 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="101" timeout="600">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>Demo</device-id>
+          <device-specific-data>
+              <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+      	        <onu xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      		         <name>vANI1</name>
+      		          <root>
+      		           <interfaces>
+      			           <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+      			            <name>cp1_ont01</name>
+                        <type>ani</type>
+      			            <ani>
+      				            <mgnt-gemport-aes-indicator>false</mgnt-gemport-aes-indicator>
+      				            <upstream-fec-indicator>true</upstream-fec-indicator>
+      				            <onu-id>1</onu-id>
+      			            </ani>
+      			           </interface>
+      		         </interfaces>
+
+                 <gemports-config>
+                   <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                     <name>gemport1_ont1</name>
+                       <traffic-class>0</traffic-class>
+                     <gemport-id>1024</gemport-id>
+                   </gemport>
+                  </gemports-config>
+
+                  <tconts-config>
+                    <tcont xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                     <name>tcont1_ont1</name>
+                      <alloc-id>1023</alloc-id>
+                      <interface-reference>cp1_ont01</interface-reference>
+                    </tcont>
+                  </tconts-config>
+                  </root>
+      	        </onu>
+              </onus>
+
+           </device-specific-data>
+        </device>
+      </device-manager>
+    </config>
+  </edit-config>
+</rpc>

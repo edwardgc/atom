@@ -1,11 +1,30 @@
-<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="101" timeout="600">
-  <edit-config>
-    <target>
-      <running/>
-    </target>
-    <config>
-      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
-        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="2">
+	<edit-config>
+		<target>
+			<running/>
+		</target>
+		<config>
+			<device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+				<device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+					<device-id>vonu1</device-id>
+					<push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+					<duid>vonu1</duid>
+					<hardware-type>VONU</hardware-type>
+					<interface-version>20A.03</interface-version>
+					<configured-labels xmlns="http://www.nokia.com/management-solutions/anv-device-tag">
+						<label>
+							<name>channel-group</name>
+							<value>cg_cp1_demo</value>
+						</label>
+						 <label>
+							<name>xpon-type</name>
+							<value>ngpon2-twdm</value>
+						</label>
+					</configured-labels>
+				</device>
+
+				<device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
           <device-id>Demo</device-id>
           <device-specific-data>
             <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
@@ -118,83 +137,11 @@
             <lower-layer-interface>cp1_ont01</lower-layer-interface>
           </olt-v-enet>
         </interface>
-        </interfaces>
-
-        <!-- olt-side traffic-descriptor-profile -->
-        <traffic-descriptor-profiles xmlns="urn:bbf:yang:bbf-xpongemtcont">
-          <traffic-descriptor-profile>
-            <name>TDP0</name>
-            <fixed-bandwidth>10000000</fixed-bandwidth>
-            <assured-bandwidth>10000000</assured-bandwidth>
-            <maximum-bandwidth>30000000</maximum-bandwidth>
-          </traffic-descriptor-profile>
-        </traffic-descriptor-profiles>
-
-        <tconts-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
-          <tcont>
-            <name>tcont1_ont1</name>
-            <alloc-id>256</alloc-id>
-            <interface-reference>cp1_ont01</interface-reference>
-            <traffic-descriptor-profile-ref>TDP0</traffic-descriptor-profile-ref>
-          </tcont>
-        </tconts-config>
-
-        <gemports-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
-          <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
-            <name>gemport1_ont1</name>
-            <itf-ref>cp1_ont01_uni1</itf-ref>
-            <tcont-ref>tcont1_ont1</tcont-ref>
-            <traffic-class>0</traffic-class>
-            <gemport-id>263</gemport-id>
-          </gemport>
-        </gemports-config>
-
-              <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
-      	        <onu xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
-      		         <name>vANI1</name>
-      		          <root>
-      		           <interfaces>
-      			           <interface >
-      			            <name>cp1_ont01</name>
-                        <type>ani</type>
-      			            <ani>
-      				            <mgnt-gemport-aes-indicator>false</mgnt-gemport-aes-indicator>
-      				            <upstream-fec-indicator>true</upstream-fec-indicator>
-      				            <onu-id>1</onu-id>
-      			            </ani>
-      			           </interface>
-      		         </interfaces>
-
-                 <gemports-config>
-                   <gemport>
-                     <name>gemport1_ont1</name>
-                       <traffic-class>0</traffic-class>
-                     <gemport-id>1024</gemport-id>
-                   </gemport>
-                  </gemports-config>
-
-                  <tconts-config>
-                    <tcont xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
-                     <name>tcont1_ont1</name>
-                      <alloc-id>1023</alloc-id>
-                      <interface-reference>cp1_ont01</interface-reference>
-                    </tcont>
-                  </tconts-config>
-                  </root>
-      	        </onu>
-              </onus>
-
-              <bbf-xpon:multicast-gemports-config xmlns:bbf-xpon="urn:bbf:yang:bbf-xpon">
-                            <bbf-xpon:multicast-gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
-                                <bbf-xpon:name>mcgemport1</bbf-xpon:name>
-                                <bbf-xpon:itf-ref>cp1</bbf-xpon:itf-ref>
-                                <bbf-xpon:gemport-id>2047</bbf-xpon:gemport-id>
-                            </bbf-xpon:multicast-gemport>
-              </bbf-xpon:multicast-gemports-config>
-
-           </device-specific-data>
+              </interfaces>
+              </device-specific-data>
         </device>
-      </device-manager>
-    </config>
-  </edit-config>
+
+			</device-manager>
+		</config>
+	</edit-config>
 </rpc>

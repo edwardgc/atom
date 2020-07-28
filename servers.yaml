@@ -41,3 +41,19 @@ fglt-b-slot-4:
   password: admin
   hostvars: host_vars/default.yaml
   keysfile:
+
+localhost:
+  host: "localhost"
+  port: 40830
+  username: admin
+  password: admin
+  hostvars: host_vars/default.yaml
+  keysfile:
+
+cloud-host:
+  host: "10.131.149.155"
+  port: 40830
+  username: admin
+  password: admin
+  hostvars: host_vars/default.yaml
+  keysfile:

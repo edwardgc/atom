@@ -1,0 +1,286 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+<edit-config>
+  <target>
+    <running/>
+  </target>
+  <config>
+
+<!-- olt-side  sfp -->
+    <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+      <component>
+        <name>SFP16</name>
+        <parent>C16</parent>
+        <parent-rel-pos>1</parent-rel-pos>
+       <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE53441AA</model-name>
+        <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+      </component>
+    </hardware>
+
+<!-- olt-side  port -->
+    <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+      <component>
+        <name>PORT16</name>
+        <parent>SFP16</parent>
+        <parent-rel-pos>1</parent-rel-pos>
+        <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+      </component>
+    </hardware>
+
+<!-- olt-side  channelgroup -->
+    <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+      <interface>
+        <name>cg1</name>
+        <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+        <channel-group xmlns="urn:bbf:yang:bbf-xpon">
+          <polling-period>100</polling-period>
+          <raman-mitigation>raman_none</raman-mitigation>
+          <system-id>000000</system-id>
+        </channel-group>
+      </interface>
+    </interfaces>
+
+<!-- olt-side  channel-partition -->
+    <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+      <interface>
+        <name>scg1</name>
+        <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-partition</type>
+        <channel-partition xmlns="urn:bbf:yang:bbf-xpon">
+          <channel-group-ref>cg1</channel-group-ref>
+          <channel-partition-index>1</channel-partition-index>
+          <fec-downstream>true</fec-downstream>
+          <multicast-aes-indicator>false</multicast-aes-indicator>
+          <authentication-method>serial-number</authentication-method>
+          <closest-onu-distance>0</closest-onu-distance>
+          <max-differential-xpon-distance>20</max-differential-xpon-distance>
+        </channel-partition>
+      </interface>
+    </interfaces>
+
+<!-- olt-side  channel-pair -->
+    <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+      <interface>
+        <name>cp1</name>
+        <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-pair</type>
+        <channel-pair xmlns="urn:bbf:yang:bbf-xpon">
+          <channel-group-ref>cg1</channel-group-ref>
+          <channel-partition-ref>scg1</channel-partition-ref>
+          <channel-pair-type xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:gpon</channel-pair-type>
+          <gpon-pon-id-interval>0</gpon-pon-id-interval>
+          <gpon-pon-id-odn-class>class-auto</gpon-pon-id-odn-class>
+        </channel-pair>
+      </interface>
+    </interfaces>
+
+<!-- olt-side channel-termination -->
+    <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+      <interface>
+        <name>ct1</name>
+        <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-termination</type>
+        <channel-termination xmlns="urn:bbf:yang:bbf-xpon">
+          <channel-pair-ref>cp1</channel-pair-ref>
+          <gpon-pon-id>0000000</gpon-pon-id>
+          <ber-calc-period>10</ber-calc-period>
+          <location xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:inside-olt</location>
+          <channel-termination-hw-port-ref>PORT16</channel-termination-hw-port-ref>
+        </channel-termination>
+      </interface>
+    </interfaces>
+
+
+      <!-- olt-side vani -->
+        <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+          <interface>
+            <name>vani1</name>
+            <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:v-ani</type>
+            <v-ani xmlns="urn:bbf:yang:bbf-xponvani">
+              <parent-ref>scg1</parent-ref>
+              <onu-id>1</onu-id>
+              <expected-serial-number>ALCLF8889FE3</expected-serial-number>
+              <preferred-chanpair>cp1</preferred-chanpair>
+            </v-ani>
+          </interface>
+        </interfaces>
+
+
+        <!-- olt-side venet -->
+        <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+          <interface>
+            <name>ont1_venet1</name>
+            <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
+            <olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
+              <lower-layer-interface>vani1</lower-layer-interface>
+            </olt-v-enet>
+          </interface>
+        </interfaces>
+
+    <!-- olt-side vlan sub-interface user-->
+        <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+          <interface>
+            <name>ont1_uni1_vsi1_user</name>
+            <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+            <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+              <interface>ont1_venet1</interface>
+            </subif-lower-layer>
+            <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+              <interface-usage>user-port</interface-usage>
+            </interface-usage>
+            <enabled>true</enabled>
+            <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+              <ingress-rule>
+                <rule>
+                  <name>rule_1</name>
+                  <priority>100</priority>
+                  <flexible-match>
+                    <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                      <tag>
+                        <index>0</index>
+                        <dot1q-tag>
+                          <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                          <vlan-id>100</vlan-id>
+                          <pbit>any</pbit>
+                          <dei>any</dei>
+                        </dot1q-tag>
+                      </tag>
+                    </match-criteria>
+                  </flexible-match>
+                  <ingress-rewrite>
+                    <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+                  </ingress-rewrite>
+                </rule>
+              </ingress-rule>
+              <egress-rewrite>
+                <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">0</pop-tags>
+                <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                                                                                <index>0</index>
+                                                                                <dot1q-tag>
+                                                                                  <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                                                                                  <vlan-id>100</vlan-id>
+                                                                                  <pbit-from-tag-index>0</pbit-from-tag-index>
+                                                                                  <dei-from-tag-index>0</dei-from-tag-index>
+                                                                                </dot1q-tag>
+                                                                  </push-tag>
+              </egress-rewrite>
+            </inline-frame-processing>
+          </interface>
+        </interfaces>
+
+    <!-- olt-side vlan sub-interface  qos -->
+        <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+          <interface>
+            <name>ont1_uni1_vsi1_user</name>
+            <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP0</ingress-qos-policy-profile>
+            <egress-tm-objects xmlns="urn:bbf:yang:bbf-qos-enhanced-scheduling">
+              <root-if-name>scg1</root-if-name>
+              <scheduler-node-name>NODE_DEF</scheduler-node-name>
+            </egress-tm-objects>
+          </interface>
+        </interfaces>
+
+<!-- olt-side QOS -->
+
+   <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+      <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+        <name>cls1</name>
+       <ipv4 xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+          <destination-ipv4-network>0.0.0.0/0</destination-ipv4-network>
+          <!-- <source-ipv4-network>0.0.0.0/0</source-ipv4-network> -->
+       </ipv4>
+       <ip-common xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+          <dscp xmlns:inet="urn:ietf:params:xml:ns:yang:ietf-inet-types">35</dscp>
+          <!-- <dscp-range xmlns:bbf-inet="urn:bbf:yang:bbf-inet-types">2,34-36,63</dscp-range>
+          <protocol>5</protocol> -->
+        </ip-common>
+       <!-- <ethernet-frame-type xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">5</ethernet-frame-type> -->
+        <classifier-action-entry-cfg>
+          <!--<action-type>pbit-marking</action-type>
+          <pbit-marking-cfg>
+            <pbit-marking-list>
+              <index>0</index>
+              <pbit-value>7</pbit-value>
+            </pbit-marking-list>
+          </pbit-marking-cfg>-->
+          <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:discard</action-type>
+          <discard xmlns="urn:bbf:yang:bbf-qos-policing"/>
+        </classifier-action-entry-cfg>
+      </classifier-entry>
+    </classifiers>
+
+    <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+      <policy>
+        <name>POLICY_ING</name>
+        <classifiers>
+          <name>cls1</name>
+        </classifiers>
+      </policy>
+    </policies>
+
+    <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+      <policy-profile>
+        <name>IPP0</name>
+        <policy-list>
+          <name>POLICY_ING</name>
+        </policy-list>
+      </policy-profile>
+    </qos-policy-profiles>
+
+    <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+      <interface>
+        <name>scg1</name>
+        <tm-root xmlns="urn:bbf:yang:bbf-qos-traffic-mngt">
+          <scheduler-node xmlns="urn:bbf:yang:bbf-qos-enhanced-scheduling">
+            <name>NODE_DEF</name>
+            <scheduling-level>1</scheduling-level>
+            <queue>
+              <local-queue-id>0</local-queue-id>
+            </queue>
+            <queue>
+              <local-queue-id>1</local-queue-id>
+            </queue>
+            <queue>
+              <local-queue-id>2</local-queue-id>
+            </queue>
+            <queue>
+              <local-queue-id>3</local-queue-id>
+            </queue>
+            <queue>
+              <local-queue-id>4</local-queue-id>
+            </queue>
+            <queue>
+              <local-queue-id>5</local-queue-id>
+            </queue>
+            <queue>
+              <local-queue-id>6</local-queue-id>
+            </queue>
+            <queue>
+              <local-queue-id>7</local-queue-id>
+            </queue>
+          </scheduler-node>
+        </tm-root>
+      </interface>
+    </interfaces>
+
+
+    <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+      <interface>
+        <name>scg1</name>
+        <tm-root xmlns="urn:bbf:yang:bbf-qos-traffic-mngt">
+          <child-scheduler-nodes xmlns="urn:bbf:yang:bbf-qos-enhanced-scheduling">
+            <name>NODE_DEF</name>
+          </child-scheduler-nodes>
+        </tm-root>
+      </interface>
+    </interfaces>
+
+    <!-- olt-side traffic-descriptor-profile -->
+    <traffic-descriptor-profiles xmlns="urn:bbf:yang:bbf-xpongemtcont">
+      <traffic-descriptor-profile>
+        <name>TDP0</name>
+        <fixed-bandwidth>10000000</fixed-bandwidth>
+        <assured-bandwidth>10000000</assured-bandwidth>
+        <maximum-bandwidth>30000000</maximum-bandwidth>
+      </traffic-descriptor-profile>
+    </traffic-descriptor-profiles>
+
+</config>
+</edit-config>
+</rpc>

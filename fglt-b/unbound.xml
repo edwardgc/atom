@@ -1,0 +1,28 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+<edit-config>
+  <target>
+    <running/>
+  </target>
+  <config>
+
+        <!-- olt-side vlan sub-interface  qos -->
+            <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+              <interface>
+                <name>ont1_uni1_vsi1_user</name>
+                <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies" xc:operation="delete">IPP0</ingress-qos-policy-profile>
+              </interface>
+                <!--
+              <interface>
+                <name>ont1_uni1_vsi1_user3</name>
+                <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP0</ingress-qos-policy-profile>
+              </interface>
+              <interface>
+                <name>ont1_uni1_vsi1_user4</name>
+                <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP0</ingress-qos-policy-profile>
+              </interface>
+            -->
+            </interfaces>
+
+</config>
+</edit-config>
+</rpc>

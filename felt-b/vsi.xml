@@ -16,8 +16,8 @@
                 <interface-usage>user-port</interface-usage>
               </interface-usage>
               <enabled>true</enabled>
-        <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">defaultCopyPbitDeiToMetadata</ingress-qos-policy-profile>
-
+              <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">defaultCopyPbitDeiToMetadata</ingress-qos-policy-profile>
+              <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">EPP0</egress-qos-policy-profile>
               <performance xmlns="urn:bbf:yang:bbf-interfaces-performance-management">
                 <enable>false</enable>
               </performance>
@@ -65,6 +65,7 @@
                 <interface-usage>network-port</interface-usage>
               </interface-usage>
               <enabled>true</enabled>
+              <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">EPP0</egress-qos-policy-profile>
               <performance xmlns="urn:bbf:yang:bbf-interfaces-performance-management">
                 <enable>false</enable>
               </performance>
@@ -120,9 +121,9 @@
 					  <dei-from-tag-index>0</dei-from-tag-index>
 					</dot1q-tag>
 				  </push-tag>
-                </egress-rewrite>
-              </inline-frame-processing>
-            </interface>
+          </egress-rewrite>
+          </inline-frame-processing>
+        </interface>
 		  </interfaces>
           <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
             <forwarders>

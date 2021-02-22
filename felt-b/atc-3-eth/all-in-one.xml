@@ -1,0 +1,761 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+<config>
+
+  <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+    <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>sfp1</name>
+      <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+      <parent>C1</parent>
+      <parent-rel-pos>1</parent-rel-pos>
+      <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE64927AA</model-name>
+    </component>
+    <component xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+      <name>sfp2</name>
+      <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+      <parent>C2</parent>
+      <parent-rel-pos>1</parent-rel-pos>
+      <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE64927AA</model-name>
+    </component>
+    <component xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+      <name>sfp3</name>
+      <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+      <parent>C3</parent>
+      <parent-rel-pos>1</parent-rel-pos>
+      <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE64927AA</model-name>
+    </component>
+  </hardware>
+
+  <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+ <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>port1</name>
+   <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:rj45</class>
+   <parent>sfp1</parent>
+   <parent-rel-pos>1</parent-rel-pos>
+ </component>
+ <component xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+   <name>port2</name>
+   <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:rj45</class>
+   <parent>sfp2</parent>
+   <parent-rel-pos>1</parent-rel-pos>
+ </component>
+ <component xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+   <name>port3</name>
+   <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:rj45</class>
+   <parent>sfp3</parent>
+   <parent-rel-pos>1</parent-rel-pos>
+ </component>
+</hardware>
+
+  <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+    <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>cls_eg0</name>
+      <filter-operation>match-all-filter</filter-operation>
+      <match-criteria>
+        <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+          <index>0</index>
+          <pbit-value>0</pbit-value>
+        </pbit-marking-list>
+      </match-criteria>
+      <classifier-action-entry-cfg>
+        <action-type>scheduling-traffic-class</action-type>
+        <scheduling-traffic-class>0</scheduling-traffic-class>
+      </classifier-action-entry-cfg>
+    </classifier-entry>
+  </classifiers>
+
+  <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>cls_eg1</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <match-criteria>
+      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+        <index>0</index>
+        <pbit-value>1</pbit-value>
+      </pbit-marking-list>
+    </match-criteria>
+    <classifier-action-entry-cfg>
+      <action-type>scheduling-traffic-class</action-type>
+      <scheduling-traffic-class>1</scheduling-traffic-class>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>cls_eg2</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <match-criteria>
+      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+        <index>0</index>
+        <pbit-value>2</pbit-value>
+      </pbit-marking-list>
+    </match-criteria>
+    <classifier-action-entry-cfg>
+      <action-type>scheduling-traffic-class</action-type>
+      <scheduling-traffic-class>2</scheduling-traffic-class>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>cls_eg3</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <match-criteria>
+      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+        <index>0</index>
+        <pbit-value>3</pbit-value>
+      </pbit-marking-list>
+    </match-criteria>
+    <classifier-action-entry-cfg>
+      <action-type>scheduling-traffic-class</action-type>
+      <scheduling-traffic-class>3</scheduling-traffic-class>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>cls_eg4</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <match-criteria>
+      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+        <index>0</index>
+        <pbit-value>4</pbit-value>
+      </pbit-marking-list>
+    </match-criteria>
+    <classifier-action-entry-cfg>
+      <action-type>scheduling-traffic-class</action-type>
+      <scheduling-traffic-class>4</scheduling-traffic-class>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+ <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>cls_eg5</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <match-criteria>
+     <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+       <index>0</index>
+       <pbit-value>5</pbit-value>
+     </pbit-marking-list>
+   </match-criteria>
+   <classifier-action-entry-cfg>
+     <action-type>scheduling-traffic-class</action-type>
+     <scheduling-traffic-class>5</scheduling-traffic-class>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+</classifiers>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+ <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>cls_eg6</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <match-criteria>
+     <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+       <index>0</index>
+       <pbit-value>6</pbit-value>
+     </pbit-marking-list>
+   </match-criteria>
+   <classifier-action-entry-cfg>
+     <action-type>scheduling-traffic-class</action-type>
+     <scheduling-traffic-class>6</scheduling-traffic-class>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+</classifiers>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>cls_eg7</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <match-criteria>
+      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+        <index>0</index>
+        <pbit-value>7</pbit-value>
+      </pbit-marking-list>
+    </match-criteria>
+    <classifier-action-entry-cfg>
+      <action-type>scheduling-traffic-class</action-type>
+      <scheduling-traffic-class>7</scheduling-traffic-class>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+  <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+    <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>POLICY_EG</name>
+      <classifiers>
+        <name>cls_eg0</name>
+      </classifiers>
+      <classifiers>
+        <name>cls_eg1</name>
+      </classifiers>
+      <classifiers>
+        <name>cls_eg2</name>
+      </classifiers>
+      <classifiers>
+        <name>cls_eg3</name>
+      </classifiers>
+      <classifiers>
+        <name>cls_eg4</name>
+      </classifiers>
+      <classifiers>
+        <name>cls_eg5</name>
+      </classifiers>
+      <classifiers>
+        <name>cls_eg6</name>
+      </classifiers>
+      <classifiers>
+        <name>cls_eg7</name>
+      </classifiers>
+    </policy>
+  </policies>
+
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>EPP0</name>
+    <policy-list>
+      <name>POLICY_EG</name>
+    </policy-list>
+  </policy-profile>
+</qos-policy-profiles>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>untagPbitDei</name>
+    <filter-operation>match-any-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <untagged/>
+    </vlans>
+    <classifier-action-entry-cfg>
+      <action-type>pbit-marking</action-type>
+      <pbit-marking-cfg>
+        <pbit-marking-list>
+          <index>0</index>
+          <pbit-value>2</pbit-value>
+        </pbit-marking-list>
+      </pbit-marking-cfg>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>untagPbitDei</name>
+    <filter-operation>match-any-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <untagged/>
+    </vlans>
+    <classifier-action-entry-cfg>
+      <action-type>dei-marking</action-type>
+      <dei-marking-cfg>
+        <dei-marking-list>
+          <index>0</index>
+          <dei-value>0</dei-value>
+        </dei-marking-list>
+      </dei-marking-cfg>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>untag_policy</name>
+    <classifiers>
+      <name>untagPbitDei</name>
+    </classifiers>
+  </policy>
+</policies>
+
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>untag_profile</name>
+    <policy-list>
+      <name>untag_policy</name>
+    </policy-list>
+  </policy-profile>
+</qos-policy-profiles>
+
+<tm-profiles xmlns="urn:bbf:yang:bbf-qos-traffic-mngt">
+  <bac-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>Bac-01</name>
+    <max-queue-size>10240</max-queue-size>
+    <taildrop>
+      <max-threshold>100</max-threshold>
+    </taildrop>
+  </bac-entry>
+</tm-profiles>
+
+<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+  <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>eth1</name>
+    <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+    <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">port1</port-layer-if>
+    <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+      <interface-usage>user-port</interface-usage>
+    </interface-usage>
+    <tm-root xmlns="urn:bbf:yang:bbf-qos-traffic-mngt">
+      <queue>
+        <local-queue-id>0</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>1</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>2</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>3</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>4</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>5</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>6</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>7</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+    </tm-root>
+    <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
+      <manual>
+        <duplex>full</duplex>
+        <speed>eth-if-speed-1gb</speed>
+      </manual>
+    </ethernet>
+  </interface>
+  <interface xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+    <name>eth2</name>
+    <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+    <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">port2</port-layer-if>
+    <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+      <interface-usage>user-port</interface-usage>
+    </interface-usage>
+    <tm-root xmlns="urn:bbf:yang:bbf-qos-traffic-mngt">
+      <queue>
+        <local-queue-id>0</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>1</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>2</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>3</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>4</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>5</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>6</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>7</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+    </tm-root>
+    <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
+      <manual>
+        <duplex>full</duplex>
+        <speed>eth-if-speed-1gb</speed>
+      </manual>
+    </ethernet>
+  </interface>
+  <interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+    <name>eth3</name>
+    <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+    <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">port3</port-layer-if>
+    <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+      <interface-usage>user-port</interface-usage>
+    </interface-usage>
+    <tm-root xmlns="urn:bbf:yang:bbf-qos-traffic-mngt">
+      <queue>
+        <local-queue-id>0</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>1</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>2</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>3</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>4</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>5</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>6</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+      <queue>
+        <local-queue-id>7</local-queue-id>
+        <bac-name>Bac-01</bac-name>
+        <priority>1</priority>
+        <weight>10</weight>
+      </queue>
+    </tm-root>
+    <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
+      <manual>
+        <duplex>full</duplex>
+        <speed>eth-if-speed-1gb</speed>
+      </manual>
+    </ethernet>
+  </interface>
+</interfaces>
+
+<forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+  <split-horizon-profiles>
+    <split-horizon-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>spl1</name>
+      <split-horizon>
+        <in-interface-usage>user-port</in-interface-usage>
+        <out-interface-usage>user-port</out-interface-usage>
+      </split-horizon>
+    </split-horizon-profile>
+  </split-horizon-profiles>
+</forwarding>
+
+<forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+  <mac-learning-control-profiles>
+    <mac-learning-control-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>prof1</name>
+    </mac-learning-control-profile>
+  </mac-learning-control-profiles>
+</forwarding>
+
+<forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+  <mac-learning-control-profiles>
+    <mac-learning-control-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>mac_move</name>
+      <mac-learning-rule>
+        <receiving-interface-usage>user-port</receiving-interface-usage>
+        <mac-can-not-move-to>user-port</mac-can-not-move-to>
+      </mac-learning-rule>
+    </mac-learning-control-profile>
+  </mac-learning-control-profiles>
+</forwarding>
+
+<forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+  <flooding-policies-profiles>
+    <flooding-policies-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>flood1</name>
+      <flooding-policy>
+        <name>fp1</name>
+        <in-interface-usages>
+          <interface-usages>network-port</interface-usages>
+        </in-interface-usages>
+        <destination-address>
+          <unicast-address/>
+        </destination-address>
+        <discard/>
+      </flooding-policy>
+    </flooding-policies-profile>
+    <flooding-policies-profile>
+      <name>flood1</name>
+      <flooding-policy>
+        <name>fp2</name>
+        <in-interface-usages>
+          <interface-usages>network-port</interface-usages>
+        </in-interface-usages>
+        <destination-address>
+          <broadcast-address/>
+        </destination-address>
+        <discard/>
+      </flooding-policy>
+    </flooding-policies-profile>
+    <flooding-policies-profile>
+      <name>flood1</name>
+      <flooding-policy>
+        <name>fp3</name>
+        <in-interface-usages>
+          <interface-usages>network-port</interface-usages>
+        </in-interface-usages>
+        <destination-address>
+          <any-multicast-mac-address/>
+        </destination-address>
+        <discard/>
+      </flooding-policy>
+    </flooding-policies-profile>
+    <flooding-policies-profile>
+      <name>flood1</name>
+      <flooding-policy>
+        <name>fp4</name>
+        <in-interface-usages>
+          <interface-usages>network-port</interface-usages>
+        </in-interface-usages>
+        <destination-address>
+          <ipv4-multicast-address/>
+        </destination-address>
+        <discard/>
+      </flooding-policy>
+    </flooding-policies-profile>
+  </flooding-policies-profiles>
+</forwarding>
+
+<forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+  <flooding-policies-profiles>
+    <flooding-policies-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>flood1_without_discard</name>
+      <flooding-policy>
+        <name>fp1</name>
+        <in-interface-usages>
+          <interface-usages>network-port</interface-usages>
+        </in-interface-usages>
+        <destination-address>
+          <unicast-address/>
+        </destination-address>
+      </flooding-policy>
+    </flooding-policies-profile>
+    <flooding-policies-profile>
+      <name>flood1_without_discard</name>
+      <flooding-policy>
+        <name>fp2</name>
+        <in-interface-usages>
+          <interface-usages>network-port</interface-usages>
+        </in-interface-usages>
+        <destination-address>
+          <broadcast-address/>
+        </destination-address>
+      </flooding-policy>
+    </flooding-policies-profile>
+    <flooding-policies-profile>
+      <name>flood1_without_discard</name>
+      <flooding-policy>
+        <name>fp3</name>
+        <in-interface-usages>
+          <interface-usages>network-port</interface-usages>
+        </in-interface-usages>
+        <destination-address>
+          <ipv4-multicast-address/>
+        </destination-address>
+      </flooding-policy>
+    </flooding-policies-profile>
+  </flooding-policies-profiles>
+</forwarding>
+
+<forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+  <forwarding-databases>
+    <forwarding-database xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>fdb1</name>
+      <max-number-mac-addresses>10</max-number-mac-addresses>
+      <aging-timer>60</aging-timer>
+      <mac-learning-control>
+        <mac-learning-control-profile>mac_move</mac-learning-control-profile>
+        <generate-mac-learning-alarm>true</generate-mac-learning-alarm>
+      </mac-learning-control>
+    </forwarding-database>
+  </forwarding-databases>
+</forwarding>
+
+<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+  <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>uni1_vsi1</name>
+    <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+    <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+      <interface>eth1</interface>
+    </subif-lower-layer>
+    <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+      <ingress-rule>
+        <rule>
+          <name>a</name>
+          <priority>100</priority>
+          <flexible-match>
+            <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+              <tag>
+                <index>0</index>
+                <dot1q-tag>
+                  <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                  <vlan-id>101</vlan-id>
+                  <pbit>any</pbit>
+                  <dei>any</dei>
+                </dot1q-tag>
+              </tag>
+            </match-criteria>
+          </flexible-match>
+          <ingress-rewrite>
+            <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+          </ingress-rewrite>
+        </rule>
+      </ingress-rule>
+      <egress-rewrite>
+        <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">0</pop-tags>
+        <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+          <index>0</index>
+          <dot1q-tag>
+            <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+            <vlan-id>101</vlan-id>
+            <pbit-from-tag-index>0</pbit-from-tag-index>
+            <dei-from-tag-index>0</dei-from-tag-index>
+          </dot1q-tag>
+        </push-tag>
+      </egress-rewrite>
+    </inline-frame-processing>
+    <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+      <interface-usage>inherit</interface-usage>
+    </interface-usage>
+    <mac-learning xmlns="urn:bbf:yang:bbf-l2-forwarding">
+      <max-number-mac-addresses>32</max-number-mac-addresses>
+      <number-committed-mac-addresses>32</number-committed-mac-addresses>
+      <mac-learning-enable>true</mac-learning-enable>
+      <mac-learning-failure-action>discard</mac-learning-failure-action>
+    </mac-learning>
+    <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">EPP0</egress-qos-policy-profile>
+  </interface>
+</interfaces>
+
+<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+  <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>net_cc_101</name>
+    <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+    <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+      <interface>BP_Eth</interface>
+    </subif-lower-layer>
+    <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+      <ingress-rule>
+        <rule>
+          <name>a</name>
+          <priority>100</priority>
+          <flexible-match>
+            <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+              <tag>
+                <index>0</index>
+                <dot1q-tag>
+                  <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                  <vlan-id>101</vlan-id>
+                  <pbit>any</pbit>
+                  <dei>any</dei>
+                </dot1q-tag>
+              </tag>
+            </match-criteria>
+          </flexible-match>
+          <ingress-rewrite>
+            <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+          </ingress-rewrite>
+        </rule>
+      </ingress-rule>
+      <egress-rewrite>
+        <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">0</pop-tags>
+        <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+          <index>0</index>
+          <dot1q-tag>
+            <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+            <vlan-id>101</vlan-id>
+            <pbit-from-tag-index>0</pbit-from-tag-index>
+            <dei-from-tag-index>0</dei-from-tag-index>
+          </dot1q-tag>
+        </push-tag>
+      </egress-rewrite>
+    </inline-frame-processing>
+    <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+      <interface-usage>inherit</interface-usage>
+    </interface-usage>
+  </interface>
+</interfaces>
+
+<forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+  <forwarders>
+    <forwarder xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>fwd_cc_101</name>
+      <ports>
+        <port>
+          <name>uni1_vsi1</name>
+          <sub-interface>uni1_vsi1</sub-interface>
+        </port>
+        <port>
+          <name>net_cc_101</name>
+          <sub-interface>net_cc_101</sub-interface>
+        </port>
+      </ports>
+      <l2-dhcpv4-relay xmlns="urn:bbf:yang:bbf-l2-dhcpv4-relay-forwarding">
+        <downstream-broadcast-flooding>false</downstream-broadcast-flooding>
+      </l2-dhcpv4-relay>
+    </forwarder>
+  </forwarders>
+</forwarding>
+
+</config>
+  </edit-config>
+</rpc>

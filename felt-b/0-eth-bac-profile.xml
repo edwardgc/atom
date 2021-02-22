@@ -1,0 +1,43 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+<config>
+
+<tm-profiles xmlns="urn:bbf:yang:bbf-qos-traffic-mngt">
+   <bac-entry>
+     <name>Bac-01</name>
+     <max-queue-size>10240</max-queue-size>
+     <wred>
+      <color>
+        <green>
+          <min-threshold>60</min-threshold>
+          <max-threshold>100</max-threshold>
+          <max-probability>100</max-probability>
+        </green>
+        <yellow>
+          <min-threshold>40</min-threshold>
+          <max-threshold>100</max-threshold>
+          <max-probability>100</max-probability>
+        </yellow>
+        <red>
+          <min-threshold>20</min-threshold>
+          <max-threshold>100</max-threshold>
+          <max-probability>100</max-probability>
+        </red>
+      </color>
+    </wred>
+   </bac-entry>
+   <bac-entry>
+     <name>Bac-02</name>
+     <max-queue-size>10240</max-queue-size>
+     <taildrop>
+       <max-threshold>100</max-threshold>
+     </taildrop>
+   </bac-entry>
+ </tm-profiles>
+
+</config>
+  </edit-config>
+</rpc>

@@ -1,0 +1,26 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="457">
+	<edit-config>
+		<target>
+			<running/>
+		</target>
+		<default-operation>none</default-operation>
+		<test-option>set</test-option>
+		<error-option>rollback-on-error</error-option>
+		<config>
+			<anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+				<adh:device xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+					<adh:device-id>HelloWorld</adh:device-id>
+					<adh:device-specific-data xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" nc:operation="merge">
+						<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+							<interface ns0:operation="merge" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0">
+								<name>venet-a</name>
+								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:onu-v-enet</type>
+								<enabled>true</enabled>
+							</interface>
+						</interfaces>
+					</adh:device-specific-data>
+				</adh:device>
+			</anv:device-manager>
+		</config>
+	</edit-config>
+</rpc>

@@ -1,0 +1,29 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="12" timeout="600">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>HelloWorld</device-id>
+          <device-specific-data>
+       <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>cp1_ont01</name>
+          <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:v-ani</type>
+          <v-ani xmlns="urn:bbf:yang:bbf-xponvani">
+            <parent-ref>scg_cp1</parent-ref>
+            <onu-id>1</onu-id>
+            <expected-serial-number>ALCLFA5FEA01</expected-serial-number>
+            <preferred-chanpair>cp1</preferred-chanpair>
+          </v-ani>
+        </interface>
+
+        </interfaces>
+      </device-specific-data>
+    </device>
+  </device-manager>
+</config>
+</edit-config>
+</rpc>

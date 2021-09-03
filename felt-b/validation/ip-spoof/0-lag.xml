@@ -1,0 +1,50 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+      <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+        <component>
+          <name>sfp2</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+          <parent>C3</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+          <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE64927AA</model-name>
+        </component>
+        <component>
+          <name>port2</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:rj45</class>
+          <parent>sfp2</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+        </component>
+     </hardware>
+
+     <lag-system xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+       <aggregating-system>
+         <agg-system>aggsys1</agg-system>
+         <system-id>01-02-03-04-05-06</system-id>
+         <system-priority>5</system-priority>
+       </aggregating-system>
+     </lag-system>
+
+     <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface>
+          <name>lag1</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>subtended-node-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg1</name>
+            <agg-system-name>aggsys1</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>11</actor-admin-key>
+            </aggregator-lacp>
+          </aggregator>
+        </interface>
+      </interfaces>
+    </config>
+  </edit-config>
+</rpc>

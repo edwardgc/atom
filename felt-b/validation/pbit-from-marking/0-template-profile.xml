@@ -1,0 +1,85 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <frame-processing-profiles xmlns="urn:bbf:yang:bbf-frame-processing-profile">
+        <frame-processing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>pbit-from-marking</name>
+          <priority>100</priority>
+          <match-criteria>
+            <tag>
+              <index>0</index>
+              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+              <vlan-id>parameter-vlan-id</vlan-id>
+              <pbit>any</pbit>
+              <dei>any</dei>
+            </tag>
+            <tag>
+              <index>1</index>
+              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+              <vlan-id>parameter-vlan-id</vlan-id>
+              <pbit>any</pbit>
+              <dei>any</dei>
+            </tag>
+          </match-criteria>
+          <egress-rewrite>
+            <push-tag>
+              <index>0</index>
+              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+              <vlan-id>vlan-id-from-match</vlan-id>
+              <pbit-marking-index>0</pbit-marking-index>
+              <dei-marking-index>0</dei-marking-index>
+            </push-tag>
+            <push-tag xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+              <index>1</index>
+              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+              <vlan-id>vlan-id-from-match</vlan-id>
+              <pbit-marking-index>1</pbit-marking-index>
+              <dei-marking-index>1</dei-marking-index>
+            </push-tag>
+          </egress-rewrite>
+        </frame-processing-profile>
+
+        <frame-processing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>no-pbit-from-marking</name>
+          <priority>100</priority>
+          <match-criteria>
+            <tag>
+              <index>0</index>
+              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+              <vlan-id>parameter-vlan-id</vlan-id>
+              <pbit>any</pbit>
+              <dei>any</dei>
+            </tag>
+            <tag>
+              <index>1</index>
+              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+              <vlan-id>parameter-vlan-id</vlan-id>
+              <pbit>any</pbit>
+              <dei>any</dei>
+            </tag>
+          </match-criteria>
+          <egress-rewrite>
+            <push-tag>
+              <index>0</index>
+              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+              <vlan-id>vlan-id-from-match</vlan-id>
+              <pbit-from-tag-index>0</pbit-from-tag-index>
+              <dei-from-tag-index>0</dei-from-tag-index>
+            </push-tag>
+            <push-tag>
+              <index>1</index>
+              <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+              <vlan-id>vlan-id-from-match</vlan-id>
+              <pbit-from-tag-index>1</pbit-from-tag-index>
+              <dei-from-tag-index>1</dei-from-tag-index>
+            </push-tag>
+          </egress-rewrite>
+        </frame-processing-profile>
+
+      </frame-processing-profiles>
+    </config>
+  </edit-config>
+</rpc>

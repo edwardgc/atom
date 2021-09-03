@@ -1,0 +1,21 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                 <name>uni1_vsi1</name>
+                 <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">indei</ingress-qos-policy-profile>
+                 <!--<egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">igmp</egress-qos-policy-profile>-->
+        </interface>
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                 <name>net_cc_101</name>
+                 <!--<egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">inpbit</egress-qos-policy-profile>-->
+        </interface>
+      </interfaces>
+    </config>
+  </edit-config>
+</rpc>

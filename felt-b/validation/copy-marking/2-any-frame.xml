@@ -1,0 +1,45 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+    <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+      <classifier-entry>
+        <name>any-mac</name>
+        <filter-operation>match-all-filter</filter-operation>
+        <ipv4 xmlns="urn:bbf:yang:bbf-qos-enhanced-filters"/>
+        <protocol xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">dot1x</protocol>
+        <classifier-action-entry-cfg>
+          <action-type>pass</action-type>
+        </classifier-action-entry-cfg>
+      </classifier-entry>
+    </classifiers>
+
+      <policies xmlns="urn:bbf:yang:bbf-qos-policies" xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0">
+        <policy>
+          <name>any-mac</name>
+          <classifiers ns2:operation="merge">
+            <name>any-mac</name>
+          </classifiers>
+<!--
+          <classifiers ns2:operation="merge">
+            <name>inpbit</name>
+          </classifiers>
+-->
+        </policy>
+      </policies>
+
+      <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy-profile>
+          <name>any-mac</name>
+          <policy-list>
+            <name>any-mac</name>
+          </policy-list>
+        </policy-profile>
+      </qos-policy-profiles>
+
+
+    </config>
+  </edit-config>
+</rpc>

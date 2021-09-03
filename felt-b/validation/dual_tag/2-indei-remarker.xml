@@ -1,0 +1,54 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+      <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+        <classifier-entry>
+          <name>indei</name>
+          <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+            <tag>
+              <index>0</index>
+              <in-dei>0</in-dei>
+            </tag>
+            <tag>
+              <index>1</index>
+              <in-dei>0</in-dei>
+            </tag>
+          </vlans>
+
+          <classifier-action-entry-cfg>
+          <action-type>dei-marking</action-type>
+            <dei-marking-cfg>
+              <dei-marking-list>
+                <index>0</index>
+                <dei-value>0</dei-value>
+              </dei-marking-list>
+            </dei-marking-cfg>
+          </classifier-action-entry-cfg>
+        </classifier-entry>
+      </classifiers>
+
+      <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy>
+          <name>indei</name>
+          <classifiers>
+            <name>indei</name>
+          </classifiers>
+        </policy>
+      </policies>
+
+      <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy-profile>
+          <name>indei</name>
+          <policy-list>
+            <name>indei</name>
+          </policy-list>
+        </policy-profile>
+      </qos-policy-profiles>
+
+    </config>
+  </edit-config>
+</rpc>

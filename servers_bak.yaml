@@ -4,15 +4,7 @@ default:
 
 av-k8s:
   host: "10.131.149.155"
-  port: 30075
-  username: adminuser
-  password: password
-  hostvars: host_vars/default.yaml
-  keysfile:
-
-av-docker:
-  host: "10.131.149.155"
-  port: 6515
+  port: 6514
   username: adminuser
   password: password
   hostvars: host_vars/default.yaml
@@ -23,22 +15,6 @@ obbaa:
   port: 9292
   username: admin
   password: password
-  hostvars: host_vars/default.yaml
-  keysfile:
-
-fglt-b-6:
-  host: "135.251.163.33"
-  port: 8830
-  username: admin
-  password: 1qaz!QAZ
-  hostvars: host_vars/default.yaml
-  keysfile:
-
-fglt-b-slot-4:
-  host: "135.251.163.33"
-  port: 6830
-  username: admin
-  password: admin
   hostvars: host_vars/default.yaml
   keysfile:
 
@@ -53,6 +29,22 @@ localhost:
 cloud-host:
   host: "10.131.149.155"
   port: 40830
+  username: admin
+  password: admin
+  hostvars: host_vars/default.yaml
+  keysfile:
+
+slot-4:
+  host: "135.251.163.97"
+  port: 836
+  username: admin
+  password: admin
+  hostvars: host_vars/default.yaml
+  keysfile:
+
+docker-host:
+  host: "135.251.206.246"
+  port: 49183
   username: admin
   password: admin
   hostvars: host_vars/default.yaml

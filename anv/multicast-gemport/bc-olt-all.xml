@@ -1,0 +1,85 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="101" timeout="600">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+			<adh:device xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+				<adh:device-id>HelloWorld</adh:device-id>
+				<device-specific-data xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+
+          <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+            <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+              <name>cg_cp1-ls</name>
+              <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+              <channel-group xmlns="urn:bbf:yang:bbf-xpon">
+                <polling-period>100</polling-period>
+                <raman-mitigation>raman_none</raman-mitigation>
+                <system-id>000000</system-id>
+              </channel-group>
+            </interface>
+            <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+              <name>scg_cp1</name>
+              <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-partition</type>
+              <channel-partition xmlns="urn:bbf:yang:bbf-xpon">
+                <channel-group-ref>cg_cp1-ls</channel-group-ref>
+                <channel-partition-index>1</channel-partition-index>
+                <fec-downstream>true</fec-downstream>
+                <multicast-aes-indicator>false</multicast-aes-indicator>
+                <authentication-method>serial-number</authentication-method>
+                <closest-onu-distance>0</closest-onu-distance>
+                <max-differential-xpon-distance>20</max-differential-xpon-distance>
+              </channel-partition>
+            </interface>
+            <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+              <name>cp1</name>
+              <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-pair</type>
+              <channel-pair xmlns="urn:bbf:yang:bbf-xpon">
+                <channel-group-ref>cg_cp1-ls</channel-group-ref>
+                <channel-partition-ref>scg_cp1</channel-partition-ref>
+                <channel-pair-type xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:gpon</channel-pair-type>
+              </channel-pair>
+            </interface>
+            <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+              <name>cp3</name>
+              <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-pair</type>
+              <channel-pair xmlns="urn:bbf:yang:bbf-xpon">
+                <channel-group-ref>cg_cp1-ls</channel-group-ref>
+                <channel-partition-ref>scg_cp1</channel-partition-ref>
+                <channel-pair-type xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:gpon</channel-pair-type>
+              </channel-pair>
+            </interface>
+            <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+              <name>cp1_ont01</name>
+              <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:v-ani</type>
+              <v-ani xmlns="urn:bbf:yang:bbf-xponvani">
+                <parent-ref>scg_cp1</parent-ref>
+                <onu-id>0</onu-id>
+                <expected-serial-number>ALCLFA5FEA01</expected-serial-number>
+                <preferred-chanpair>cp1</preferred-chanpair>
+              </v-ani>
+            </interface>
+            <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+              <name>cp1_ont01_uni1</name>
+              <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
+              <olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
+                <lower-layer-interface>cp1_ont01</lower-layer-interface>
+              </olt-v-enet>
+            </interface>
+          </interfaces>
+
+					<bbf-xpon:multicast-gemports-config xmlns:bbf-xpon="urn:bbf:yang:bbf-xpon">
+            <bbf-xpon:multicast-gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <bbf-xpon:name>mcgemport1</bbf-xpon:name>
+                <bbf-xpon:itf-ref>cp1</bbf-xpon:itf-ref>
+                <bbf-xpon:gemport-id>2046</bbf-xpon:gemport-id>
+                <bbf-xpon:is-broadcast>true</bbf-xpon:is-broadcast>
+            </bbf-xpon:multicast-gemport>
+          </bbf-xpon:multicast-gemports-config>
+				</device-specific-data>
+			</adh:device>
+		</anv:device-manager>
+  </config>
+</edit-config>
+</rpc>

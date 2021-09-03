@@ -1,0 +1,26 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="12" timeout="600">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>HelloWorld</device-id>
+          <device-specific-data>
+            <bbf-xpongemtcont:gemports-config xmlns:bbf-xpongemtcont="urn:bbf:yang:bbf-xpongemtcont">
+            		<bbf-xpongemtcont:gemport>
+            					<bbf-xpongemtcont:name>gemport5011</bbf-xpongemtcont:name>
+            					<bbf-xpongemtcont:downstream-aes-indicator>false</bbf-xpongemtcont:downstream-aes-indicator>
+            					<bbf-xpongemtcont:gemport-id>1025</bbf-xpongemtcont:gemport-id>
+            					<bbf-xpongemtcont:itf-ref>cp2_ont01_uni1</bbf-xpongemtcont:itf-ref>
+            					<bbf-xpongemtcont:traffic-class>0</bbf-xpongemtcont:traffic-class>
+            					<bbf-xpongemtcont:upstream-aes-indicator>false</bbf-xpongemtcont:upstream-aes-indicator>
+            		</bbf-xpongemtcont:gemport>
+            	</bbf-xpongemtcont:gemports-config>
+      </device-specific-data>
+    </device>
+  </device-manager>
+</config>
+</edit-config>
+</rpc>

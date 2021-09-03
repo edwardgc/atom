@@ -1,0 +1,110 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <tm-profiles xmlns="urn:bbf:yang:bbf-qos-traffic-mngt">
+        <bac-entry>
+          <name>BACKPLQ</name>
+          <max-queue-size>1048576</max-queue-size>
+          <wtaildrop>
+            <color>
+              <green>
+                <max-threshold>7</max-threshold>
+              </green>
+              <yellow>
+                <max-threshold>6</max-threshold>
+              </yellow>
+              <red>
+                <max-threshold>5</max-threshold>
+              </red>
+            </color>
+          </wtaildrop>
+        </bac-entry>
+        <bac-entry>
+          <name>Bac-02</name>
+          <max-queue-size>10240</max-queue-size>
+          <taildrop>
+            <max-threshold>100</max-threshold>
+          </taildrop>
+        </bac-entry>
+        <bac-entry>
+          <name>Bac-03</name>
+          <max-queue-size>20480</max-queue-size>
+          <taildrop>
+            <max-threshold>100</max-threshold>
+          </taildrop>
+        </bac-entry>
+      </tm-profiles>
+
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface>
+          <name>BP_Eth</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+          <enabled>true</enabled>
+          <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">BP_Logical_Port</port-layer-if>
+          <tm-root xmlns="urn:bbf:yang:bbf-qos-traffic-mngt" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <queue ns0:operation="merge">
+              <local-queue-id>0</local-queue-id>
+              <bac-name>BACKPLQ</bac-name>
+              <priority>1</priority>
+              <weight>10</weight>
+            </queue>
+            <queue>
+              <local-queue-id>1</local-queue-id>
+              <bac-name>BACKPLQ</bac-name>
+              <priority>1</priority>
+              <weight>10</weight>
+            </queue>
+            <queue>
+              <local-queue-id>2</local-queue-id>
+              <bac-name>BACKPLQ</bac-name>
+              <priority>1</priority>
+              <weight>10</weight>
+            </queue>
+            <queue>
+              <local-queue-id>3</local-queue-id>
+              <bac-name>BACKPLQ</bac-name>
+              <priority>1</priority>
+              <weight>10</weight>
+            </queue>
+            <queue>
+              <local-queue-id>4</local-queue-id>
+              <bac-name>BACKPLQ</bac-name>
+              <priority>1</priority>
+              <weight>10</weight>
+            </queue>
+            <queue>
+              <local-queue-id>5</local-queue-id>
+              <bac-name>BACKPLQ</bac-name>
+              <priority>1</priority>
+              <weight>10</weight>
+            </queue>
+            <queue>
+              <local-queue-id>6</local-queue-id>
+              <bac-name>BACKPLQ</bac-name>
+              <priority>1</priority>
+              <weight>10</weight>
+            </queue>
+            <queue>
+              <local-queue-id>7</local-queue-id>
+              <bac-name>BACKPLQ</bac-name>
+              <priority>1</priority>
+              <weight>10</weight>
+            </queue>
+            <queue-monitoring xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-queue-monitoring">
+              <enable-statistics>false</enable-statistics>
+              <enable-performance>false</enable-performance>
+            </queue-monitoring>
+          </tm-root>
+          <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
+            <auto-negotiation>
+              <status>enabled</status>
+            </auto-negotiation>
+          </ethernet>
+        </interface>
+      </interfaces>
+    </config>
+  </edit-config>
+</rpc>

@@ -60,6 +60,9 @@
         <name>eth1</name>
         <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
         <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">port2</port-layer-if>
+        <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+          <interface-usage>user-port</interface-usage>
+        </interface-usage>
         <tm-root xmlns="urn:bbf:yang:bbf-qos-traffic-mngt">
           <queue>
             <local-queue-id>0</local-queue-id>

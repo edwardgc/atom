@@ -1,0 +1,73 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+      <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+        <component>
+          <name>sfp1</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+          <parent>C1</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+          <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE64927AA</model-name>
+        </component>
+
+        <component>
+          <name>port1</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:rj45</class>
+          <parent>sfp1</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+        </component>
+
+        <component>
+          <name>sfp2</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+          <parent>C3</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+          <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE64927AA</model-name>
+        </component>
+
+        <component>
+          <name>port2</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:rj45</class>
+          <parent>sfp2</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+        </component>
+
+        <component>
+          <name>sfp3</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+          <parent>C5</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+          <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE64927AA</model-name>
+        </component>
+
+        <component>
+          <name>port3</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:rj45</class>
+          <parent>sfp3</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+        </component>
+      </hardware>
+
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+          <name>eth1</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+          <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">port2</port-layer-if>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
+            <manual>
+              <duplex>full</duplex>
+              <speed>eth-if-speed-2.5gb</speed>
+            </manual>
+          </ethernet>
+        </interface>
+      </interfaces>
+    </config>
+  </edit-config>
+</rpc>

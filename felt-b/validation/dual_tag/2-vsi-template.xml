@@ -1,0 +1,65 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+	<edit-config>
+		<target>
+			<running />
+		</target>
+		<config>
+    <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+      <interface>
+        <name>uni1_vsi2</name>
+        <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+				<ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">inpbit</ingress-qos-policy-profile>
+        <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">EPP0</egress-qos-policy-profile>
+        <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+          <interface-usage>inherit</interface-usage>
+        </interface-usage>
+        <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+          <interface>eth1</interface>
+        </subif-lower-layer>
+				<frame-processing-profile-ref xmlns="urn:bbf:yang:bbf-frame-processing-profile">two-two</frame-processing-profile-ref>
+				<tag-0 xmlns="urn:bbf:yang:bbf-frame-processing-profile">
+					<vlan-id>1001</vlan-id>
+				</tag-0>
+			  <tag-1 xmlns="urn:bbf:yang:bbf-frame-processing-profile">
+					<vlan-id>2001</vlan-id>
+				</tag-1>
+      </interface>
+      <interface>
+        <name>net_cc_101</name>
+        <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+        <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+          <interface-usage>inherit</interface-usage>
+        </interface-usage>
+				<subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+					<interface>BP_Eth</interface>
+				</subif-lower-layer>
+				<frame-processing-profile-ref xmlns="urn:bbf:yang:bbf-frame-processing-profile">two-two</frame-processing-profile-ref>
+				<tag-0 xmlns="urn:bbf:yang:bbf-frame-processing-profile">
+					<vlan-id>1001</vlan-id>
+				</tag-0>
+			  <tag-1 xmlns="urn:bbf:yang:bbf-frame-processing-profile">
+					<vlan-id>2001</vlan-id>
+				</tag-1>
+      </interface>
+    </interfaces>
+      <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+      <forwarders>
+      <forwarder>
+        <name>fwd_cc_102</name>
+        <ports>
+          <port>
+            <name>uni1_vsi2</name>
+            <sub-interface>uni1_vsi2</sub-interface>
+          </port>
+          <port>
+            <name>net_cc_101</name>
+            <sub-interface>net_cc_101</sub-interface>
+          </port>
+        </ports>
+      </forwarder>
+      </forwarders>
+      </forwarding>
+
+		</config>
+	</edit-config>
+</rpc>

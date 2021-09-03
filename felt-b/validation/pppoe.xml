@@ -1,0 +1,144 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+      <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+        <component>
+          <name>sfp1</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+          <parent>C1</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+          <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE64927AA</model-name>
+        </component>
+        <component>
+          <name>port1</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:rj45</class>
+          <parent>sfp1</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+        </component>
+        <component>
+          <name>sfp2</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+          <parent>C2</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+          <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE64927AA</model-name>
+        </component>
+        <component>
+          <name>port2</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:rj45</class>
+          <parent>sfp2</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+        </component>
+     </hardware>
+
+     <lag-system xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+       <aggregating-system>
+         <agg-system>aggsys1</agg-system>
+         <system-id>01-02-03-04-05-06</system-id>
+         <system-priority>5</system-priority>
+       </aggregating-system>
+     </lag-system>
+
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>eth1</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+          <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">port1</port-layer-if>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
+            <manual>
+              <duplex>full</duplex>
+              <speed>eth-if-speed-1gb</speed>
+            </manual>
+          </ethernet>
+        </interface>
+
+        <interface>
+          <name>eth2</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+          <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">port2</port-layer-if>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>subtended-node-port</interface-usage>
+          </interface-usage>
+          <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
+            <manual>
+              <duplex>full</duplex>
+              <speed>eth-if-speed-1gb</speed>
+            </manual>
+          </ethernet>
+          <aggregation-port xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <aggregation-port-lacp>
+              <actor-system-priority>4</actor-system-priority>
+              <actor-admin-key>11</actor-admin-key>
+              <actor-port-priority>18</actor-port-priority>
+            </aggregation-port-lacp>
+          </aggregation-port>
+        </interface>
+
+        <interface>
+          <name>lag1</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg1</name>
+            <agg-system-name>aggsys1</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>11</actor-admin-key>
+            </aggregator-lacp>
+          </aggregator>
+        </interface>
+
+        <interface>
+          <name>uni1_vsi1</name>
+          <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>inherit</interface-usage>
+          </interface-usage>
+          <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+            <interface>eth1</interface>
+          </subif-lower-layer>
+          <pppoe xmlns="urn:bbf:yang:bbf-pppoe-intermediate-agent">
+            <enable>false</enable>
+          </pppoe>
+        </interface>
+        <interface>
+          <name>uni1_vsi2</name>
+          <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>inherit</interface-usage>
+          </interface-usage>
+          <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+            <interface>eth1</interface>
+          </subif-lower-layer>
+          <pppoe xmlns="urn:bbf:yang:bbf-pppoe-intermediate-agent">
+            <enable>true</enable>
+            <profile-ref>pppoe1</profile-ref>
+          </pppoe>
+        </interface>
+      </interfaces>
+
+      <pppoe-profiles xmlns="urn:bbf:yang:bbf-pppoe-intermediate-agent">
+          <pppoe-profile>
+            <name>pppoe1</name>
+            <pppoe-vendor-specific-tag>
+              <subtag>circuit-id</subtag>
+              <subtag>remote-id</subtag>
+              <subtag>access-loop-characteristics</subtag>
+              <default-circuit-id-syntax>default_circuit-id_pppoe</default-circuit-id-syntax>
+              <default-remote-id-syntax>default_remote-id_pppoe</default-remote-id-syntax>
+              <access-loop-subtags>access-loop-encapsulation</access-loop-subtags>
+              <start-numbering-from-zero>true</start-numbering-from-zero>
+              <use-leading-zeroes>true</use-leading-zeroes>
+            </pppoe-vendor-specific-tag>
+          </pppoe-profile>
+        </pppoe-profiles>
+    </config>
+  </edit-config>
+</rpc>

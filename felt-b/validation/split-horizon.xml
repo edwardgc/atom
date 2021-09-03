@@ -1,0 +1,41 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="123456">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+        <split-horizon-profiles>
+          <split-horizon-profile>
+          <name>no-u2u-uninni</name>
+          <split-horizon>
+            <in-interface-usage>user-port</in-interface-usage>
+            <out-interface-usage>user-port</out-interface-usage>
+            <out-interface-usage>subtended-node-port</out-interface-usage>
+          </split-horizon>
+          <split-horizon>
+            <in-interface-usage>subtended-node-port</in-interface-usage>
+            <out-interface-usage>user-port</out-interface-usage>
+            <out-interface-usage>subtended-node-port</out-interface-usage>
+          </split-horizon>
+          </split-horizon-profile>
+        </split-horizon-profiles>
+        <mac-learning-control-profiles>
+          <mac-learning-control-profile>
+            <name>no-mac-movement-uninni</name>
+            <mac-learning-rule>
+              <receiving-interface-usage>user-port</receiving-interface-usage>
+              <mac-can-not-move-to>user-port</mac-can-not-move-to>
+              <mac-can-not-move-to>subtended-node-port</mac-can-not-move-to>
+            </mac-learning-rule>
+            <mac-learning-rule>
+              <receiving-interface-usage>subtended-node-port</receiving-interface-usage>
+              <mac-can-not-move-to>user-port</mac-can-not-move-to>
+              <mac-can-not-move-to>subtended-node-port</mac-can-not-move-to>
+            </mac-learning-rule>
+          </mac-learning-control-profile>
+        </mac-learning-control-profiles>
+      </forwarding>
+    </config>
+  </edit-config>
+</rpc>

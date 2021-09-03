@@ -22,7 +22,7 @@
         <name>PORT16</name>
         <parent>SFP16</parent>
         <parent-rel-pos>1</parent-rel-pos>
-        <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+        <class xmlns:nokia-hwt="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-hardware-identities">nokia-hwt:transceiver-link-gpon</class>
       </component>
     </hardware>
 

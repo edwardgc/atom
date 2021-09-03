@@ -493,6 +493,12 @@
       <split-horizon>
         <in-interface-usage>user-port</in-interface-usage>
         <out-interface-usage>user-port</out-interface-usage>
+        <out-interface-usage>subtended-node-port</out-interface-usage>
+      </split-horizon>
+      <split-horizon>
+        <in-interface-usage>subtended-node-port</in-interface-usage>
+        <out-interface-usage>user-port</out-interface-usage>
+        <out-interface-usage>subtended-node-port</out-interface-usage>
       </split-horizon>
     </split-horizon-profile>
   </split-horizon-profiles>
@@ -502,6 +508,16 @@
   <mac-learning-control-profiles>
     <mac-learning-control-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
       <name>prof1</name>
+      <mac-learning-rule>
+        <receiving-interface-usage>user-port</receiving-interface-usage>
+        <mac-can-not-move-to>user-port</mac-can-not-move-to>
+        <mac-can-not-move-to>subtended-node-port</mac-can-not-move-to>
+      </mac-learning-rule>
+      <mac-learning-rule>
+        <receiving-interface-usage>subtended-node-port</receiving-interface-usage>
+        <mac-can-not-move-to>user-port</mac-can-not-move-to>
+        <mac-can-not-move-to>subtended-node-port</mac-can-not-move-to>
+      </mac-learning-rule>
     </mac-learning-control-profile>
   </mac-learning-control-profiles>
 </forwarding>
@@ -513,6 +529,12 @@
       <mac-learning-rule>
         <receiving-interface-usage>user-port</receiving-interface-usage>
         <mac-can-not-move-to>user-port</mac-can-not-move-to>
+        <mac-can-not-move-to>subtended-node-port</mac-can-not-move-to>
+      </mac-learning-rule>
+      <mac-learning-rule>
+        <receiving-interface-usage>subtended-node-port</receiving-interface-usage>
+        <mac-can-not-move-to>user-port</mac-can-not-move-to>
+        <mac-can-not-move-to>subtended-node-port</mac-can-not-move-to>
       </mac-learning-rule>
     </mac-learning-control-profile>
   </mac-learning-control-profiles>
@@ -527,10 +549,12 @@
         <in-interface-usages>
           <interface-usages>network-port</interface-usages>
         </in-interface-usages>
+        <out-interface-usages>
+          <interface-usages>subtended-node-port</interface-usages>
+        </out-interface-usages>
         <destination-address>
           <unicast-address/>
         </destination-address>
-        <discard/>
       </flooding-policy>
     </flooding-policies-profile>
     <flooding-policies-profile>
@@ -540,10 +564,12 @@
         <in-interface-usages>
           <interface-usages>network-port</interface-usages>
         </in-interface-usages>
+        <out-interface-usages>
+          <interface-usages>subtended-node-port</interface-usages>
+        </out-interface-usages>
         <destination-address>
           <broadcast-address/>
         </destination-address>
-        <discard/>
       </flooding-policy>
     </flooding-policies-profile>
     <flooding-policies-profile>
@@ -553,10 +579,12 @@
         <in-interface-usages>
           <interface-usages>network-port</interface-usages>
         </in-interface-usages>
+        <out-interface-usages>
+          <interface-usages>subtended-node-port</interface-usages>
+        </out-interface-usages>
         <destination-address>
           <any-multicast-mac-address/>
         </destination-address>
-        <discard/>
       </flooding-policy>
     </flooding-policies-profile>
     <flooding-policies-profile>
@@ -566,10 +594,12 @@
         <in-interface-usages>
           <interface-usages>network-port</interface-usages>
         </in-interface-usages>
+        <out-interface-usages>
+          <interface-usages>subtended-node-port</interface-usages>
+        </out-interface-usages>
         <destination-address>
           <ipv4-multicast-address/>
         </destination-address>
-        <discard/>
       </flooding-policy>
     </flooding-policies-profile>
   </flooding-policies-profiles>
@@ -584,6 +614,10 @@
         <in-interface-usages>
           <interface-usages>network-port</interface-usages>
         </in-interface-usages>
+        <out-interface-usages>
+          <interface-usages>user-port</interface-usages>
+          <interface-usages>subtended-node-port</interface-usages>
+        </out-interface-usages>
         <destination-address>
           <unicast-address/>
         </destination-address>
@@ -596,6 +630,10 @@
         <in-interface-usages>
           <interface-usages>network-port</interface-usages>
         </in-interface-usages>
+        <out-interface-usages>
+          <interface-usages>user-port</interface-usages>
+          <interface-usages>subtended-node-port</interface-usages>
+        </out-interface-usages>
         <destination-address>
           <broadcast-address/>
         </destination-address>
@@ -608,6 +646,10 @@
         <in-interface-usages>
           <interface-usages>network-port</interface-usages>
         </in-interface-usages>
+        <out-interface-usages>
+          <interface-usages>user-port</interface-usages>
+          <interface-usages>subtended-node-port</interface-usages>
+        </out-interface-usages>
         <destination-address>
           <ipv4-multicast-address/>
         </destination-address>

@@ -1,0 +1,234 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+      <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+          <flooding-policies-profiles>
+            <flooding-policies-profile>
+              <name>flood1</name>
+              <flooding-policy>
+                <name>fp1</name>
+                <in-interface-usages>
+                  <interface-usages>network-port</interface-usages>
+                </in-interface-usages>
+                <destination-address>
+                  <broadcast-address/>
+                </destination-address>
+                <out-interface-usages>
+                  <interface-usages>subtended-node-port</interface-usages>
+                </out-interface-usages>
+              </flooding-policy>
+              <flooding-policy>
+                <name>fp2</name>
+                <in-interface-usages>
+                  <interface-usages>network-port</interface-usages>
+                </in-interface-usages>
+                <destination-address>
+                  <any-multicast-mac-address/>
+                </destination-address>
+                <out-interface-usages>
+                  <interface-usages>subtended-node-port</interface-usages>
+                </out-interface-usages>
+              </flooding-policy>
+              <flooding-policy>
+                <name>fp3</name>
+                <in-interface-usages>
+                  <interface-usages>network-port</interface-usages>
+                </in-interface-usages>
+                <destination-address>
+                  <unicast-address/>
+                </destination-address>
+                <out-interface-usages>
+                  <interface-usages>subtended-node-port</interface-usages>
+                </out-interface-usages>
+              </flooding-policy>
+            </flooding-policies-profile>
+          </flooding-policies-profiles>
+          <forwarders>
+            <forwarder>
+              <name>fwd_CC610</name>
+              <ports>
+                <port>
+                  <name>netport</name>
+                  <sub-interface>netvsi_CC610</sub-interface>
+                </port>
+                <port>
+                  <name>userport1</name>
+                  <sub-interface>vsi_CC610</sub-interface>
+                </port>
+              </ports>
+              <flooding-policies>
+                <flooding-policies-profile>flood1</flooding-policies-profile>
+              </flooding-policies>
+              <mac-learning>
+                <forwarding-database>fdb610</forwarding-database>
+              </mac-learning>
+              <split-horizon-profiles>
+                <split-horizon-profile>no-u2u-uninni</split-horizon-profile>
+              </split-horizon-profiles>
+            </forwarder>
+         </forwarders>
+          <forwarding-databases>
+            <forwarding-database>
+              <name>fdb610</name>
+              <max-number-mac-addresses>1000</max-number-mac-addresses>
+              <aging-timer>20</aging-timer>
+            </forwarding-database>
+          </forwarding-databases>
+       </forwarding>
+        <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+          <classifier-entry>
+            <name>filter_forward_same1</name>
+            <filter-operation>match-all-filter</filter-operation>
+            <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+              <tag>
+                <index>0</index>
+                <in-pbit-list>0-7</in-pbit-list>
+              </tag>
+            </vlans>
+            <classifier-action-entry-cfg>
+              <action-type>pbit-marking</action-type>
+              <pbit-marking-cfg>
+                <pbit-marking-list>
+                  <index>0</index>
+                  <pbit-value>3</pbit-value>
+                </pbit-marking-list>
+              </pbit-marking-cfg>
+            </classifier-action-entry-cfg>
+          </classifier-entry>
+        </classifiers>
+        <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+          <policy>
+            <name>PO_filter_forward_same1</name>
+            <classifiers>
+              <name>filter_forward_same1</name>
+            </classifiers>
+          </policy>
+        </policies>
+        <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+          <policy-profile>
+            <name>pbitmark_profile_forward_same1</name>
+            <policy-list>
+              <name>PO_filter_forward_same1</name>
+            </policy-list>
+          </policy-profile>
+        </qos-policy-profiles>
+
+        <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+          <interface>
+            <name>vsi_CC610</name>
+            <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+            <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+              <interface-usage>inherit</interface-usage>
+            </interface-usage>
+            <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">pbitmark_profile_forward_same1</ingress-qos-policy-profile>
+            <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+              <interface>eth1</interface>
+            </subif-lower-layer>
+            <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+              <ingress-rule>
+                <rule>
+                  <name>a</name>
+                  <priority>100</priority>
+                  <flexible-match>
+                    <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                      <tag>
+                        <index>0</index>
+                        <dot1q-tag>
+                          <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                          <vlan-id>610</vlan-id>
+                          <pbit>any</pbit>
+                          <dei>any</dei>
+                        </dot1q-tag>
+                      </tag>
+                    </match-criteria>
+                  </flexible-match>
+                  <ingress-rewrite>
+                    <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+                  </ingress-rewrite>
+                </rule>
+              </ingress-rule>
+              <egress-rewrite>
+                <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                  <index>0</index>
+                  <dot1q-tag>
+                    <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                    <vlan-id>610</vlan-id>
+                    <pbit-from-tag-index>0</pbit-from-tag-index>
+                    <dei-from-tag-index>0</dei-from-tag-index>
+                  </dot1q-tag>
+                </push-tag>
+              </egress-rewrite>
+            </inline-frame-processing>
+          </interface>
+          <interface>
+            <name>netvsi_CC610</name>
+            <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+            <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+              <interface-usage>inherit</interface-usage>
+            </interface-usage>
+            <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+              <interface>BP_Eth</interface>
+            </subif-lower-layer>
+            <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+              <ingress-rule>
+                <rule>
+                  <name>a</name>
+                  <priority>100</priority>
+                  <flexible-match>
+                    <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                      <tag>
+                        <index>0</index>
+                        <dot1q-tag>
+                          <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                          <vlan-id>611</vlan-id>
+                          <pbit>any</pbit>
+                          <dei>any</dei>
+                        </dot1q-tag>
+                      </tag>
+                      <tag>
+                        <index>1</index>
+                        <dot1q-tag>
+                          <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                          <vlan-id>1</vlan-id>
+                          <pbit>any</pbit>
+                          <dei>any</dei>
+                        </dot1q-tag>
+                      </tag>
+                    </match-criteria>
+                  </flexible-match>
+                  <ingress-rewrite>
+                    <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">2</pop-tags>
+                  </ingress-rewrite>
+                </rule>
+              </ingress-rule>
+              <egress-rewrite>
+                <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                  <index>0</index>
+                  <dot1q-tag>
+                    <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                    <vlan-id>611</vlan-id>
+                    <pbit-from-tag-index>0</pbit-from-tag-index>
+                    <dei-from-tag-index>0</dei-from-tag-index>
+                  </dot1q-tag>
+                </push-tag>
+                <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                  <index>1</index>
+                  <dot1q-tag>
+                    <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                    <vlan-id>1</vlan-id>
+                    <pbit-marking-index xmlns="urn:bbf:yang:bbf-qos-policies-sub-interfaces">0</pbit-marking-index>
+                    <dei-from-tag-index>0</dei-from-tag-index>
+                  </dot1q-tag>
+                </push-tag>
+              </egress-rewrite>
+            </inline-frame-processing>
+          </interface>
+        </interfaces>
+
+    </config>
+  </edit-config>
+</rpc>

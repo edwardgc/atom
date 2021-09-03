@@ -7,7 +7,7 @@
 		<filter type="subtree">
 			<ponid:xpon-tc-allocation xmlns:ponid="http://www.nokia.com/management-solutions/pon-id-allocation">
 				<ponid:channel-group>
-					<ponid:name>cg_cp1_demo</ponid:name>
+					<ponid:name>CG_1</ponid:name>
 				</ponid:channel-group>
 			</ponid:xpon-tc-allocation>
 		</filter>

@@ -1,0 +1,71 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1606" timeout="600">
+	<edit-config>
+		<target>
+			<running/>
+		</target>
+		<config>
+			<device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+				<device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+					<device-id>felt-b</device-id>
+					<device-specific-data>
+						<hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+			        <component>
+			          <name>sfp1</name>
+			          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+			          <parent>C1</parent>
+			          <parent-rel-pos>1</parent-rel-pos>
+			          <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE65106</model-name>
+			        </component>
+
+			        <component>
+			          <name>port1</name>
+			          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+			          <parent>sfp1</parent>
+			          <parent-rel-pos>1</parent-rel-pos>
+			        </component>
+
+			        <component>
+			          <name>port2</name>
+			          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+			          <parent>sfp1</parent>
+			          <parent-rel-pos>2</parent-rel-pos>
+			        </component>
+			      </hardware>
+
+			      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+			        <interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+			          <name>eth1</name>
+			          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+			          <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">port1</port-layer-if>
+			          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+			            <interface-usage>user-port</interface-usage>
+			          </interface-usage>
+			          <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
+			            <manual>
+			              <duplex>full</duplex>
+			              <speed>eth-if-speed-2.5gb</speed>
+			            </manual>
+			          </ethernet>
+			        </interface>
+
+			        <interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+			            <name>eth2</name>
+			            <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+			            <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">port2</port-layer-if>
+			            <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+			              <interface-usage>user-port</interface-usage>
+			            </interface-usage>
+			            <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
+			              <auto-negotiation>
+			                <duplex>full</duplex>
+			                <speed>eth-if-speed-1gb</speed>
+			              </auto-negotiation>
+			            </ethernet>
+			          </interface>
+			      </interfaces>
+					</device-specific-data>
+				</device>
+			</device-manager>
+		</config>
+	</edit-config>
+</rpc>

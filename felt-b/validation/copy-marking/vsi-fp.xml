@@ -1,0 +1,27 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+      	<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      		<name>user-vlan1-eth1</name>
+      		<type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+      		<subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+      			<interface>eth1</interface>
+      		</subif-lower-layer>
+          <frame-processing-profile-ref xmlns="urn:bbf:yang:bbf-frame-processing-profile">copy-marking</frame-processing-profile-ref>
+  				<tag-0 xmlns="urn:bbf:yang:bbf-frame-processing-profile">
+  					<vlan-id>1001</vlan-id>
+  				</tag-0>
+      		<interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+      			<interface-usage>inherit</interface-usage>
+      		</interface-usage>
+      		<ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">any-mac</ingress-qos-policy-profile>
+      	</interface>
+      </interfaces>
+
+    </config>
+  </edit-config>
+</rpc>

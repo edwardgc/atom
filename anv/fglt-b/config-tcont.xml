@@ -1,0 +1,41 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="10" timeout="600">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>HelloWorld</device-id>
+          <device-specific-data>
+            <traffic-descriptor-profiles xmlns="urn:bbf:yang:bbf-xpongemtcont">
+              <traffic-descriptor-profile>
+                <name>TDP0</name>
+                <fixed-bandwidth>10000000</fixed-bandwidth>
+                <maximum-bandwidth>30000000</maximum-bandwidth>
+                <assured-bandwidth>10000000</assured-bandwidth>
+                <xponinfraAug:jitter-tolerance xmlns:xponinfraAug="urn:broadband-forum-org:yang:bbf-xponinfra-augment-nodes">8</xponinfraAug:jitter-tolerance>
+              </traffic-descriptor-profile>
+            </traffic-descriptor-profiles>
+      			<bbf-xpongemtcont:tconts-config xmlns:bbf-xpongemtcont="urn:bbf:yang:bbf-xpongemtcont">
+      				<bbf-xpongemtcont:tcont>
+      					<bbf-xpongemtcont:name>tcont5011</bbf-xpongemtcont:name>
+      					<bbf-xpongemtcont:alloc-id>256</bbf-xpongemtcont:alloc-id>
+      					<bbf-xpongemtcont:interface-reference>cp1_ont01</bbf-xpongemtcont:interface-reference>
+      					<bbf-xpongemtcont:traffic-descriptor-profile-ref>TDP0</bbf-xpongemtcont:traffic-descriptor-profile-ref>
+      					<bbf-xpongemtcont:tm-root />
+      				</bbf-xpongemtcont:tcont>
+      				<bbf-xpongemtcont:tcont>
+      					<bbf-xpongemtcont:name>tcont5012</bbf-xpongemtcont:name>
+      					<bbf-xpongemtcont:alloc-id>256</bbf-xpongemtcont:alloc-id>
+      					<bbf-xpongemtcont:interface-reference>cp2_ont01</bbf-xpongemtcont:interface-reference>
+      					<bbf-xpongemtcont:traffic-descriptor-profile-ref>TDP0</bbf-xpongemtcont:traffic-descriptor-profile-ref>
+      					<bbf-xpongemtcont:tm-root />
+      				</bbf-xpongemtcont:tcont>
+      			</bbf-xpongemtcont:tconts-config>
+          </device-specific-data>
+        </device>
+      </device-manager>
+    </config>
+  </edit-config>
+</rpc>

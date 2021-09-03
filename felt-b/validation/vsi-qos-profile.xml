@@ -1,0 +1,45 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+      <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>POLICY_EG</name>
+        </policy>
+      </policies>
+
+      <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>IPP0</name>
+          <policy-list>
+            <name>POLICY_EG</name>
+          </policy-list>
+        </policy-profile>
+      </qos-policy-profiles>
+
+      <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>EPP0</name>
+          <policy-list>
+            <name>POLICY_EG</name>
+          </policy-list>
+        </policy-profile>
+      </qos-policy-profiles>
+
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>uni1_vsi1</name>
+          <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+          <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">EPP0</ingress-qos-policy-profile>
+          <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">EPP0</egress-qos-policy-profile>
+          <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+            <interface>BP_Eth</interface>
+          </subif-lower-layer>
+        </interface>
+      </interfaces>
+    </config>
+  </edit-config>
+</rpc>

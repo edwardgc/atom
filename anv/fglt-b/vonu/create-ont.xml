@@ -1,0 +1,48 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+	<edit-config>
+		<target>
+			<running/>
+		</target>
+		<config>
+			<anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+				<adh:device xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+					<adh:device-id>HelloWorld</adh:device-id>
+					<adh:device-specific-data>
+						<hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+							<component>
+								<name>ont_ont1-fglt-b</name>
+								<admin-state>unlocked</admin-state>
+								<class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:chassis</class>
+							</component>
+							<component>
+								<name>ontcard_ont1-fglt-b</name>
+								<admin-state>unlocked</admin-state>
+								<parent>ont_ont1-fglt-b</parent>
+								<parent-rel-pos>0</parent-rel-pos>
+								<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:board</class>
+							</component>
+							<component>
+								<name>ontcage_ont1-fglt-b</name>
+								<parent>ontcard_ont1-fglt-b</parent>
+								<parent-rel-pos>0</parent-rel-pos>
+								<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:cage</class>
+							</component>
+							<component>
+								<name>ontsfp_ont1-fglt-b</name>
+								<parent>ontcage_ont1-fglt-b</parent>
+								<parent-rel-pos>0</parent-rel-pos>
+								<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+							</component>
+							<component>
+								<name>ontaniport_ont1-fglt-b</name>
+								<parent>ontsfp_ont1-fglt-b</parent>
+								<parent-rel-pos>1</parent-rel-pos>
+								<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+							</component>
+						</hardware>
+					</adh:device-specific-data>
+				</adh:device>
+			</anv:device-manager>
+		</config>
+	</edit-config>
+</rpc>

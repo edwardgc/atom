@@ -1,0 +1,29 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+	<edit-config>
+		<target>
+			<running/>
+		</target>
+		<config>
+			<anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+				<adh:device xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+					<adh:device-id>HelloWorld</adh:device-id>
+					<adh:device-specific-data>
+						<tconts-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+							<tcont xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+								<name>tcont1_ont1-fglt-b</name>
+								<tm-root>
+									<queue>
+										<local-queue-id>0</local-queue-id>
+										<priority>0</priority>
+										<weight>1</weight>
+									</queue>
+                  <tc-id-2-queue-id-mapping-profile-name>tc2queue1_ont1-fglt-b</tc-id-2-queue-id-mapping-profile-name>
+								</tm-root>
+							</tcont>
+						</tconts-config>
+					</adh:device-specific-data>
+				</adh:device>
+			</anv:device-manager>
+		</config>
+	</edit-config>
+</rpc>

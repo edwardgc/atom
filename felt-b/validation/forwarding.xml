@@ -1,0 +1,99 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+   <config>
+
+
+
+      <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+        <flooding-policies-profiles>
+          <flooding-policies-profile>
+            <name>flood1</name>
+            <flooding-policy>
+              <name>fp1</name>
+              <in-interface-usages>
+                <interface-usages>network-port</interface-usages>
+              </in-interface-usages>
+              <destination-address>
+                <broadcast-address/>
+              </destination-address>
+              <discard/>
+            </flooding-policy>
+            <flooding-policy>
+              <name>fp2</name>
+              <in-interface-usages>
+                <interface-usages>network-port</interface-usages>
+              </in-interface-usages>
+              <destination-address>
+                <unicast-address/>
+              </destination-address>
+              <discard/>
+            </flooding-policy>
+            <flooding-policy>
+        <name>fp3</name>
+        <in-interface-usages>
+          <interface-usages>network-port</interface-usages>
+        </in-interface-usages>
+        <destination-address>
+          <any-multicast-mac-address/>
+        </destination-address>
+        <discard/>
+      </flooding-policy>
+      </flooding-policies-profile>
+        </flooding-policies-profiles>
+
+
+
+    <split-horizon-profiles>
+     <split-horizon-profile>
+       <name>spl1</name>
+       <split-horizon>
+         <in-interface-usage>user-port</in-interface-usage>
+         <out-interface-usage>user-port</out-interface-usage>
+       </split-horizon>
+     </split-horizon-profile>
+   </split-horizon-profiles>
+
+
+
+   <forwarding-databases>
+     <forwarding-database>
+       <name>fdb1</name>
+       <max-number-mac-addresses>10</max-number-mac-addresses>
+       <aging-timer>60</aging-timer>
+     </forwarding-database>
+   </forwarding-databases>
+  </forwarding>
+
+  <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+          <forwarders>
+            <forwarder>
+              <name>fwd_rb_101</name>
+              <ports>
+                <port>
+                  <name>uni1_vsi1</name>
+                  <sub-interface>uni1_vsi1</sub-interface>
+                </port>
+                <port>
+                  <name>net_cc_101</name>
+                  <sub-interface>net_cc_101</sub-interface>
+                </port>
+              </ports>
+              <flooding-policies>
+           <flooding-policies-profile>flood1</flooding-policies-profile>
+         </flooding-policies>
+         <mac-learning>
+           <forwarding-database>fdb1</forwarding-database>
+         </mac-learning>
+         <split-horizon-profiles>
+           <split-horizon-profile>spl1</split-horizon-profile>
+         </split-horizon-profiles>
+            </forwarder>
+          </forwarders>
+        </forwarding>
+
+    </config>
+  </edit-config>
+</rpc>

@@ -1,4 +1,4 @@
-<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="100" timeout="600">
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="101" timeout="600">
   <edit-config>
     <target>
       <running/>
@@ -6,13 +6,20 @@
     <config>
       <anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
 			<adh:device xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
-				<adh:device-id>Demo</adh:device-id>
+				<adh:device-id>HelloWorld</adh:device-id>
 				<device-specific-data xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
 					<bbf-xpon:multicast-gemports-config xmlns:bbf-xpon="urn:bbf:yang:bbf-xpon">
-            <bbf-xpon:multicast-gemport>
+            <bbf-xpon:multicast-gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
                 <bbf-xpon:name>mcgemport1</bbf-xpon:name>
                 <bbf-xpon:itf-ref>cp1</bbf-xpon:itf-ref>
-                <bbf-xpon:gemport-id>65534</bbf-xpon:gemport-id>
+                <bbf-xpon:gemport-id>2047</bbf-xpon:gemport-id>
+                <bbf-xpon:is-broadcast>false</bbf-xpon:is-broadcast>
+            </bbf-xpon:multicast-gemport>
+            <bbf-xpon:multicast-gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <bbf-xpon:name>mcgemport2</bbf-xpon:name>
+                <bbf-xpon:itf-ref>cp1</bbf-xpon:itf-ref>
+                <bbf-xpon:gemport-id>2047</bbf-xpon:gemport-id>
+                <bbf-xpon:is-broadcast>false</bbf-xpon:is-broadcast>
             </bbf-xpon:multicast-gemport>
           </bbf-xpon:multicast-gemports-config>
 				</device-specific-data>

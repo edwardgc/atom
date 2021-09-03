@@ -28,7 +28,7 @@
           <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
           <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">port1</port-layer-if>
           <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
-            <interface-usage>user-port</interface-usage>
+            <interface-usage>subtended-node-port</interface-usage>
           </interface-usage>
           <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
             <manual>

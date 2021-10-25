@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1527307907662">
+    <edit-config>
+        <target>
+            <running />
+        </target>
+        <config>
+<keystore xmlns="urn:ietf:params:xml:ns:yang:ietf-keystore">
+<private-keys>
+<private-key>
+<name>[use the same private key name from above here]</name>
+<certificate-chains>
+<certificate-chain>
+<name>[name the cert name]</name>
+<certificate>[Copy the contents of DPU1_certchain.crt here without the BEGIN and END]</certificate>
+</certificate-chain>
+</certificate-chains>
+</private-key>
+</private-keys>
+<trusted-certificates>
+<name>[name the trust list]</name>
+<trusted-certificate>
+<name>[name the trust ca]</name>
+<certificate>[Copy the contents of trustchain.pem here without the BEGIN and END]</certificate>
+</trusted-certificate>
+</trusted-certificates>
+</keystore>
+
+</config>
+</edit-config>
+</rpc>

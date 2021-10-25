@@ -9,12 +9,12 @@
       		<name>user-vlan1-eth1</name>
       		<type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
       		<subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
-      			<interface>lag1</interface>
+      			<interface>eth1</interface>
       		</subif-lower-layer>
       		<interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
       			<interface-usage>inherit</interface-usage>
       		</interface-usage>
-          <ipv4-security xmlns="uri:http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-ipv4-address-spoofing-prevention">
+          <ipv4-security xmlns="uri:http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-ipv4-address-spoofing-prevention" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
             <prevent-ipv4-address-spoofing>true</prevent-ipv4-address-spoofing>
           </ipv4-security>
       	</interface>

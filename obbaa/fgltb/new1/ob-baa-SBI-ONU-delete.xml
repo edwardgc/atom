@@ -2,41 +2,41 @@
     <target>
       <running/>
     </target>
-       
-    <config>    	    
-    	
-    <!-- olt-side vlan sub-interface  network--> 
+
+    <config>
+
+    <!-- olt-side vlan sub-interface  network-->
       <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
         <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
           <name>ont1_uni1_vsi1_network</name>
         </interface>
-      </interfaces>       
-          	
-    <!-- olt-side vani --> 
+      </interfaces>
+
+    <!-- olt-side vani -->
       <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
         <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
           <name>vani1</name>
         </interface>
-      </interfaces>   
-      
-     
-      <!-- olt-side venet --> 
+      </interfaces>
+
+
+      <!-- olt-side venet -->
       <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
         <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
           <name>ont1_venet1</name>
         </interface>
-      </interfaces>         
+      </interfaces>
 
 
-  <!-- olt-side vlan sub-interface user--> 
+  <!-- olt-side vlan sub-interface user-->
         <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
         <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
           <name>ont1_uni1_vsi1_user</name>
         </interface>
-      </interfaces>  
+      </interfaces>
 
 
-  <!-- olt-side l2fwd forwarder --> 
+  <!-- olt-side l2fwd forwarder -->
       <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
         <forwarders>
           <forwarder  xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
@@ -45,30 +45,30 @@
         </forwarders>
       </forwarding>
 
-    	    
-      <!-- olt-side tcont --> 
+
+      <!-- olt-side tcont -->
       <tconts-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
         <tcont  xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
           <name>tcont1_ont1</name>
         </tcont>
       </tconts-config>
-      
-      
-    
-  <!-- olt-side gemport --> 
+
+
+
+  <!-- olt-side gemport -->
       <gemports-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
         <gemport  xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
           <name>gemport1_ont1</name>
         </gemport>
       </gemports-config>
-          	
-          	
-	<!-- onu-side configuration --> 
+
+
+	<!-- onu-side configuration -->
       <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
         <onu   xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
           <name>ont1</name>
         </onu>
       </onus>
-     
+
 </config>
 </edit-config>

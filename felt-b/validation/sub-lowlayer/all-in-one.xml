@@ -1,0 +1,138 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+      <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+        <component>
+          <name>sfp1</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+          <parent>C1</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+          <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE64927AA</model-name>
+        </component>
+
+        <component>
+          <name>port1</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:rj45</class>
+          <parent>sfp1</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+        </component>
+      </hardware>
+
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+          <name>eth1</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+          <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">port1</port-layer-if>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
+            <manual>
+              <duplex>full</duplex>
+              <speed>eth-if-speed-2.5gb</speed>
+            </manual>
+          </ethernet>
+        </interface>
+      </interfaces>
+
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+      	<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      		<name>user-vlan1-eth1</name>
+      		<type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+      		<subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+      			<interface>eth1</interface>
+      		</subif-lower-layer>
+      		<interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+      			<interface-usage>inherit</interface-usage>
+      		</interface-usage>
+          <ipv4-security xmlns="uri:http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-ipv4-address-spoofing-prevention">
+            <prevent-ipv4-address-spoofing>true</prevent-ipv4-address-spoofing>
+          </ipv4-security>
+      	</interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      		<name>user-vlan1-eth2</name>
+      		<type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+      		<subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+      			<interface>user-vlan1-eth3</interface>
+      		</subif-lower-layer>
+      		<interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+      			<interface-usage>inherit</interface-usage>
+      		</interface-usage>
+      	</interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>user-vlan1-eth3</name>
+          <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+          <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+            <interface>user-vlan1-eth2</interface>
+          </subif-lower-layer>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>inherit</interface-usage>
+          </interface-usage>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>net-user-vlan1-eth1</name>
+          <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+          <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+            <interface>BP_Eth</interface>
+          </subif-lower-layer>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>inherit</interface-usage>
+          </interface-usage>
+        </interface>
+
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>net-user-vlan1-eth2</name>
+          <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+          <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+            <interface>BP_Eth</interface>
+          </subif-lower-layer>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>inherit</interface-usage>
+          </interface-usage>
+        </interface>
+        </interfaces>
+
+        <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+        <forwarders>
+          <forwarder xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <name>fwd_user-vlan1-eth1</name>
+            <ports>
+              <port>
+                <name>user-vlan1-eth1</name>
+                <sub-interface>user-vlan1-eth1</sub-interface>
+              </port>
+              <port xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>net-user-vlan1-eth1</name>
+                <sub-interface>net-user-vlan1-eth1</sub-interface>
+              </port>
+            </ports>
+          </forwarder>
+
+          <forwarder xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <name>fwd_user-vlan1-eth2</name>
+            <ports>
+              <port>
+                <name>user-vlan1-eth2</name>
+                <sub-interface>user-vlan1-eth2</sub-interface>
+              </port>
+              <port xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>net-user-vlan1-eth2</name>
+                <sub-interface>net-user-vlan1-eth2</sub-interface>
+              </port>
+            </ports>
+          </forwarder>
+
+        </forwarders>
+        </forwarding>
+
+    </config>
+  </edit-config>
+</rpc>

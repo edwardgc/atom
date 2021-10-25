@@ -1,0 +1,748 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+      <lag-system xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+      <aggregating-system>
+        <agg-system>aggsys1</agg-system>
+        <system-id>01-01-01-01-01-01</system-id>
+        <system-priority>5</system-priority>
+      </aggregating-system>
+      <aggregating-system>
+        <agg-system>aggsys2</agg-system>
+        <system-id>02-02-02-02-02-02</system-id>
+        <system-priority>5</system-priority>
+      </aggregating-system>
+      <aggregating-system>
+        <agg-system>aggsys3</agg-system>
+        <system-id>03-03-03-03-03-03</system-id>
+        <system-priority>5</system-priority>
+      </aggregating-system>
+      <aggregating-system>
+        <agg-system>aggsys4</agg-system>
+        <system-id>04-04-04-04-04-04</system-id>
+        <system-priority>5</system-priority>
+      </aggregating-system>
+      </lag-system>
+
+      <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+        <component>
+          <name>sfp1</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+          <parent>C1</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+          <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE64927AA</model-name>
+        </component>
+
+        <component>
+          <name>port1</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:rj45</class>
+          <parent>sfp1</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+        </component>
+
+        <component>
+          <name>sfp2</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+          <parent>C3</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+          <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE64927AA</model-name>
+        </component>
+
+        <component>
+          <name>port2</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:rj45</class>
+          <parent>sfp2</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+        </component>
+
+        <component>
+          <name>sfp3</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+          <parent>C5</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+          <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE64927AA</model-name>
+        </component>
+
+        <component>
+          <name>port3</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:rj45</class>
+          <parent>sfp3</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+        </component>
+      </hardware>
+
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+          <name>eth1</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+          <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">port2</port-layer-if>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
+            <manual>
+              <duplex>full</duplex>
+              <speed>eth-if-speed-2.5gb</speed>
+            </manual>
+          </ethernet>
+        </interface>
+
+        <interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+          <name>eth2</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+          <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">port2</port-layer-if>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
+            <manual>
+              <duplex>full</duplex>
+              <speed>eth-if-speed-2.5gb</speed>
+            </manual>
+          </ethernet>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag1</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag2</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag3</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag4</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag5</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag6</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag7</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag8</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag9</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag10</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag11</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag12</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag13</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag14</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag15</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag16</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag17</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag18</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag19</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag20</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag21</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag22</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag23</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag24</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag25</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag26</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag27</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag28</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag29</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag30</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag31</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag32</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag33</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag34</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag35</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag36</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag37</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag38</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag39</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>lag40</name>
+          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+          <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+            <interface-usage>user-port</interface-usage>
+          </interface-usage>
+          <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
+            <name>agg2</name>
+            <agg-system-name>aggsys2</agg-system-name>
+            <aggregator-lacp>
+              <actor-admin-key>2</actor-admin-key>
+            </aggregator-lacp>
+            <mode xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax-extension">dynamic</mode>
+          </aggregator>
+        </interface>
+
+      </interfaces>
+    </config>
+  </edit-config>
+</rpc>

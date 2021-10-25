@@ -1,0 +1,21 @@
+[cguo005@FNSHA246 /repo/cguo005/felt-b/sw/vobs/dsl/yang/IACM]$ hg diff -c 470019
+diff --git a/vobs/dsl/yang/IACM/BBF/L2-forwarding/bbf-l2-forwarding-forwarders.yang b/vobs/dsl/yang/IACM/BBF/L2-forwarding/bbf-l2-forwarding-forwarders.yang
+--- a/vobs/dsl/yang/IACM/BBF/L2-forwarding/bbf-l2-forwarding-forwarders.yang
++++ b/vobs/dsl/yang/IACM/BBF/L2-forwarding/bbf-l2-forwarding-forwarders.yang
+@@ -282,6 +282,16 @@ submodule bbf-l2-forwarding-forwarders {
+                   "The type of interface being referenced MUST be a
+                    vlan-sub-interface.";
+               }
++              must
++                "count(/bbf-l2-fwd:forwarding
++                       /bbf-l2-fwd:forwarders
++                       /bbf-l2-fwd:forwarder
++                       /bbf-l2-fwd:ports/bbf-l2-fwd:port
++                       [bbf-l2-fwd:sub-interface = current()])< 2" {
++                description
++                  "No two forwarder ports can refer to the same
++                   sub-interface.";
++              }
+               description
+                 "The VLAN sub-interface associated with this port.";
+             }

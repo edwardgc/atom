@@ -1,0 +1,116 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+<edit-config>
+<target>
+<running/>
+</target>
+<config>
+
+   <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+            <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+              <name>cls3</name>
+              <filter-operation>match-all-filter</filter-operation>
+              <match-criteria>
+                <nokia-qos-filt:unmetered xmlns:nokia-qos-filt="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext"/>
+              </match-criteria>
+              <classifier-action-entry-cfg>
+                <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+                <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+                  <policing-profile>policing2</policing-profile>
+                </policing>
+              </classifier-action-entry-cfg>
+      </classifier-entry>
+   </classifiers>
+
+   <policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+         <policing-profile>
+           <name>policing2</name>
+           <scope xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:vlan-sub-interface</scope>
+           <two-rate-three-color-marker-with-cos xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+             <cir>20000000</cir>
+             <cbs>10240</cbs>
+             <cbs-tc-threshold>
+               <policing-tc-threshold>
+                 <tc>0</tc>
+                 <threshold>10</threshold>
+               </policing-tc-threshold>
+               <policing-tc-threshold>
+                 <tc>1</tc>
+                 <threshold>20</threshold>
+               </policing-tc-threshold>
+               <policing-tc-threshold>
+                 <tc>2</tc>
+                 <threshold>30</threshold>
+               </policing-tc-threshold>
+               <policing-tc-threshold>
+                 <tc>3</tc>
+                 <threshold>40</threshold>
+               </policing-tc-threshold>
+               <policing-tc-threshold>
+                 <tc>4</tc>
+                 <threshold>50</threshold>
+               </policing-tc-threshold>
+               <policing-tc-threshold>
+                 <tc>5</tc>
+                 <threshold>60</threshold>
+               </policing-tc-threshold>
+               <policing-tc-threshold>
+                 <tc>6</tc>
+                 <threshold>70</threshold>
+               </policing-tc-threshold>
+               <policing-tc-threshold>
+                 <tc>7</tc>
+                 <threshold>80</threshold>
+               </policing-tc-threshold>
+             </cbs-tc-threshold>
+             <pir>10000000</pir>
+             <pbs>10240</pbs>
+             <pbs-tc-threshold>
+               <policing-tc-threshold>
+                 <tc>0</tc>
+                 <threshold>10</threshold>
+               </policing-tc-threshold>
+               <policing-tc-threshold>
+                 <tc>1</tc>
+                 <threshold>20</threshold>
+               </policing-tc-threshold>
+               <policing-tc-threshold>
+                 <tc>2</tc>
+                 <threshold>30</threshold>
+               </policing-tc-threshold>
+               <policing-tc-threshold>
+                 <tc>3</tc>
+                 <threshold>40</threshold>
+               </policing-tc-threshold>
+               <policing-tc-threshold>
+                 <tc>4</tc>
+                 <threshold>50</threshold>
+               </policing-tc-threshold>
+               <policing-tc-threshold>
+                 <tc>5</tc>
+                 <threshold>60</threshold>
+               </policing-tc-threshold>
+               <policing-tc-threshold>
+                 <tc>6</tc>
+                 <threshold>70</threshold>
+               </policing-tc-threshold>
+               <policing-tc-threshold>
+                 <tc>7</tc>
+                 <threshold>80</threshold>
+               </policing-tc-threshold>
+             </pbs-tc-threshold>
+           </two-rate-three-color-marker-with-cos>
+         </policing-profile>
+   </policing-profiles>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+     <policy>
+        <name>policy5</name>
+          <classifiers>
+            <name>cls3</name>
+          </classifiers>
+     </policy>
+</policies>
+
+</config>
+</edit-config>
+</rpc>

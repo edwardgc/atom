@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="2">
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="3">
 	<edit-config>
 		<target>
 			<running/>
@@ -22,9 +22,6 @@
 								<name>vANI1</name>
 								<type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:ani</type>
 								<port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">ontaniport_ont1-cfmb-a</port-layer-if>
-								<ani xmlns="urn:bbf:yang:bbf-xponani">
-									<onu-id>100</onu-id>
-								</ani>
 							</interface>
 						</interfaces>
 					</device-specific-data>

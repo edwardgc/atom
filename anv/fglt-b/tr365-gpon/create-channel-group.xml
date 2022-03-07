@@ -1,0 +1,44 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="457">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <default-operation>none</default-operation>
+    <test-option>set</test-option>
+    <error-option>rollback-on-error</error-option>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>HelloWorld</device-id>
+          <device-specific-data>
+
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>cg_ont1</name>
+          <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:channel-group</type>
+          <enabled>true</enabled>
+          <channel-group xmlns="urn:bbf:yang:bbf-xpon">
+            <polling-period>100</polling-period>
+            <raman-mitigation>raman-none</raman-mitigation>
+            <system-id>00000</system-id>
+          </channel-group>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>cg_ont4</name>
+          <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:channel-group</type>
+          <enabled>true</enabled>
+          <channel-group xmlns="urn:bbf:yang:bbf-xpon">
+            <polling-period>100</polling-period>
+            <raman-mitigation>raman-none</raman-mitigation>
+            <system-id>00000</system-id>
+          </channel-group>
+        </interface>
+      </interfaces>
+
+          </device-specific-data>
+        </device>
+      </device-manager>
+    </config>
+  </edit-config>
+</rpc>

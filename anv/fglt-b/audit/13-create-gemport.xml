@@ -1,0 +1,27 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="457">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <default-operation>none</default-operation>
+    <test-option>set</test-option>
+    <error-option>rollback-on-error</error-option>
+    <config>
+      <anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+        <adh:device xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+          <adh:device-id>LS-FX</adh:device-id>
+          <adh:device-specific-data xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" nc:operation="merge">
+            <gemports-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+              <gemport>
+                <name>gem_ont1_uni1</name>
+                <gemport-id>256</gemport-id>
+                <itf-ref>venet-a</itf-ref>
+                <traffic-class>0</traffic-class>
+              </gemport>
+            </gemports-config>
+          </adh:device-specific-data>
+        </adh:device>
+      </anv:device-manager>
+    </config>
+  </edit-config>
+</rpc>

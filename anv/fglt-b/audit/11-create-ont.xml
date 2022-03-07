@@ -1,0 +1,31 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="457">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <default-operation>none</default-operation>
+    <test-option>set</test-option>
+    <error-option>rollback-on-error</error-option>
+    <config>
+      <anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+        <adh:device xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+          <adh:device-id>LS-FX</adh:device-id>
+          <adh:device-specific-data xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" nc:operation="merge">
+            <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+              <interface>
+                <name>ont1</name>
+                <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:v-ani</type>
+                <v-ani xmlns="urn:bbf:yang:bbf-xponvani">
+                  <onu-id>0</onu-id>
+                  <parent-ref>scg_pon2</parent-ref>
+                  <expected-serial-number>ALCLFAF390D1</expected-serial-number>
+                  <preferred-chanpair>cp_pon2</preferred-chanpair>
+                </v-ani>
+              </interface>
+            </interfaces>
+          </adh:device-specific-data>
+        </adh:device>
+      </anv:device-manager>
+    </config>
+  </edit-config>
+</rpc>

@@ -1,0 +1,163 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+   <config>
+
+  <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+    <classifier-entry>
+      <name>policing_tc_0</name>
+          <filter-operation>match-all-filter</filter-operation>
+      <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+        <tag>
+          <index>0</index>
+          <in-pbit-list>0</in-pbit-list>
+        </tag>
+      </vlans>
+      <classifier-action-entry-cfg>
+      <action-type xmlns:nokia-qos-cls-ext="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension">nokia-qos-cls-ext:policing-traffic-class</action-type>
+      <policing-traffic-class xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension">0</policing-traffic-class>
+    </classifier-action-entry-cfg>
+    </classifier-entry>
+
+    <classifier-entry>
+      <name>policing_tc_1</name>
+          <filter-operation>match-all-filter</filter-operation>
+      <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+        <tag>
+          <index>0</index>
+          <in-pbit-list>1</in-pbit-list>
+        </tag>
+      </vlans>
+      <classifier-action-entry-cfg>
+        <action-type xmlns:nokia-qos-cls-ext="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension">nokia-qos-cls-ext:policing-traffic-class</action-type>
+        <policing-traffic-class xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension">1</policing-traffic-class>
+      </classifier-action-entry-cfg>
+    </classifier-entry>
+
+  <classifier-entry>
+    <name>policing_tc_2</name>
+        <filter-operation>match-all-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <tag>
+        <index>0</index>
+        <in-pbit-list>2</in-pbit-list>
+      </tag>
+    </vlans>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:nokia-qos-cls-ext="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension">nokia-qos-cls-ext:policing-traffic-class</action-type>
+      <policing-traffic-class xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension">2</policing-traffic-class>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+
+  <classifier-entry>
+    <name>policing_tc_3</name>
+        <filter-operation>match-all-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <tag>
+        <index>0</index>
+        <in-pbit-list>3</in-pbit-list>
+      </tag>
+    </vlans>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:nokia-qos-cls-ext="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension">nokia-qos-cls-ext:policing-traffic-class</action-type>
+      <policing-traffic-class xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension">3</policing-traffic-class>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+
+  <classifier-entry>
+    <name>policing_tc_4</name>
+        <filter-operation>match-all-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <tag>
+        <index>0</index>
+        <in-pbit-list>4</in-pbit-list>
+      </tag>
+    </vlans>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:nokia-qos-cls-ext="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension">nokia-qos-cls-ext:policing-traffic-class</action-type>
+      <policing-traffic-class xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension">4</policing-traffic-class>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+
+  <classifier-entry>
+    <name>policing_tc_5</name>
+        <filter-operation>match-all-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <tag>
+        <index>0</index>
+        <in-pbit-list>5</in-pbit-list>
+      </tag>
+    </vlans>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:nokia-qos-cls-ext="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension">nokia-qos-cls-ext:policing-traffic-class</action-type>
+      <policing-traffic-class xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension">5</policing-traffic-class>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+
+  <classifier-entry>
+    <name>policing_tc_6</name>
+        <filter-operation>match-all-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <tag>
+        <index>0</index>
+        <in-pbit-list>6</in-pbit-list>
+      </tag>
+    </vlans>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:nokia-qos-cls-ext="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension">nokia-qos-cls-ext:policing-traffic-class</action-type>
+      <policing-traffic-class xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension">6</policing-traffic-class>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+
+  <classifier-entry>
+    <name>policing_tc_7</name>
+        <filter-operation>match-all-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <tag>
+        <index>0</index>
+        <in-pbit-list>7</in-pbit-list>
+      </tag>
+    </vlans>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:nokia-qos-cls-ext="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension">nokia-qos-cls-ext:policing-traffic-class</action-type>
+      <policing-traffic-class xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension">7</policing-traffic-class>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+
+  </classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy>
+    <name>policy3</name>
+    <classifiers>
+      <name>policing_tc_0</name>
+    </classifiers>
+    <classifiers>
+      <name>policing_tc_1</name>
+    </classifiers>
+    <classifiers>
+      <name>policing_tc_2</name>
+    </classifiers>
+    <classifiers>
+      <name>policing_tc_3</name>
+    </classifiers>
+    <classifiers>
+      <name>policing_tc_4</name>
+    </classifiers>
+    <classifiers>
+      <name>policing_tc_5</name>
+    </classifiers>
+    <classifiers>
+      <name>policing_tc_6</name>
+    </classifiers>
+    <classifiers>
+      <name>policing_tc_7</name>
+    </classifiers>
+  </policy>
+</policies>
+
+</config>
+</edit-config>
+</rpc>

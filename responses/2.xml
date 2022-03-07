@@ -1,0 +1,63 @@
+<rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="2">
+  <data>
+    <anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+      <adh:device xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+        <adh:device-id>vonu1</adh:device-id>
+        <device-specific-data xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <alarms:alarms xmlns:alarms="urn:bbf:yang:bbf-alarm-management">
+            <control xmlns="urn:bbf:yang:bbf-alarm-management">
+              <shelved-alarms/>
+            </control>
+          </alarms:alarms>
+          <dot1q-cfm:cfm xmlns:dot1q-cfm="urn:ieee:std:802.1Q:yang:ieee802-dot1q-cfm"/>
+          <bbf-qos-cls:classifiers xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers"/>
+          <clock-frequency:clock-ssm-out-vlan-profiles xmlns:clock-frequency="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-conf-clock-frequency"/>
+          <bbf-xpongemtcont:gemports-config xmlns:bbf-xpongemtcont="urn:bbf:yang:bbf-xpongemtcont"/>
+          <hw:hardware xmlns:hw="urn:ietf:params:xml:ns:yang:ietf-hardware"/>
+          <if:interfaces xmlns:if="urn:ietf:params:xml:ns:yang:ietf-interfaces"/>
+          <bbf-sip-voip:media-forwarders xmlns:bbf-sip-voip="urn:bbf:yang:bbf-sip-voip"/>
+          <bbf-sip-voip:media-profiles xmlns:bbf-sip-voip="urn:bbf:yang:bbf-sip-voip">
+            <media-codec-profiles xmlns="urn:bbf:yang:bbf-sip-voip"/>
+            <media-voice-call-profiles xmlns="urn:bbf:yang:bbf-sip-voip"/>
+            <media-transport-profiles xmlns="urn:bbf:yang:bbf-sip-voip"/>
+          </bbf-sip-voip:media-profiles>
+          <bbf-mgmd:multicast xmlns:bbf-mgmd="urn:bbf:yang:bbf-mgmd">
+            <mgmd xmlns="urn:bbf:yang:bbf-mgmd"/>
+          </bbf-mgmd:multicast>
+          <nacm:nacm xmlns:nacm="urn:ietf:params:xml:ns:yang:ietf-netconf-acm">
+            <nacm:enable-external-groups>true</nacm:enable-external-groups>
+            <nacm:enable-nacm>true</nacm:enable-nacm>
+            <nacm:exec-default>permit</nacm:exec-default>
+            <nacm:read-default>permit</nacm:read-default>
+            <nacm:write-default>deny</nacm:write-default>
+            <groups xmlns="urn:ietf:params:xml:ns:yang:ietf-netconf-acm"/>
+          </nacm:nacm>
+          <bbf-qos-pol:policies xmlns:bbf-qos-pol="urn:bbf:yang:bbf-qos-policies"/>
+          <bbf-sip-voip:pots-interworking-nodes xmlns:bbf-sip-voip="urn:bbf:yang:bbf-sip-voip"/>
+          <bbf-sip-voip:pots-profiles xmlns:bbf-sip-voip="urn:bbf:yang:bbf-sip-voip">
+            <pots-uni-characteristics-profiles xmlns="urn:bbf:yang:bbf-sip-voip"/>
+          </bbf-sip-voip:pots-profiles>
+          <bbf-qos-pol:qos-policy-profiles xmlns:bbf-qos-pol="urn:bbf:yang:bbf-qos-policies"/>
+          <bbf-sip-voip:sip-profiles xmlns:bbf-sip-voip="urn:bbf:yang:bbf-sip-voip">
+            <supplementary-services-profiles xmlns="urn:bbf:yang:bbf-sip-voip"/>
+            <dialplan-digitmap-profiles xmlns="urn:bbf:yang:bbf-sip-voip"/>
+            <subscription-profiles xmlns="urn:bbf:yang:bbf-sip-voip"/>
+            <feature-access-codes-profiles xmlns="urn:bbf:yang:bbf-sip-voip"/>
+            <sip-registerchar-profiles xmlns="urn:bbf:yang:bbf-sip-voip"/>
+          </bbf-sip-voip:sip-profiles>
+          <bbf-sip-voip:sip-signaling xmlns:bbf-sip-voip="urn:bbf:yang:bbf-sip-voip">
+            <sip-user-agents xmlns="urn:bbf:yang:bbf-sip-voip"/>
+            <voip-service-gateways xmlns="urn:bbf:yang:bbf-sip-voip"/>
+            <sip-terminations xmlns="urn:bbf:yang:bbf-sip-voip"/>
+            <voip-access-gateways xmlns="urn:bbf:yang:bbf-sip-voip"/>
+            <sip-server-pools xmlns="urn:bbf:yang:bbf-sip-voip"/>
+            <voip-service-providers xmlns="urn:bbf:yang:bbf-sip-voip"/>
+          </bbf-sip-voip:sip-signaling>
+          <bbf-xpongemtcont:tconts-config xmlns:bbf-xpongemtcont="urn:bbf:yang:bbf-xpongemtcont"/>
+          <bbf-qos-tm:tm-profiles xmlns:bbf-qos-tm="urn:bbf:yang:bbf-qos-traffic-mngt"/>
+          <bbf-xpongemtcont:traffic-descriptor-profiles xmlns:bbf-xpongemtcont="urn:bbf:yang:bbf-xpongemtcont"/>
+        </device-specific-data>
+      </adh:device>
+    </anv:device-manager>
+  </data>
+</rpc-reply>

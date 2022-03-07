@@ -8,6 +8,7 @@
       <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
         <classifier-entry>
           <name>igmp</name>
+          <filter-operation>match-all-filter</filter-operation>
           <protocol xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">igmp</protocol>
           <classifier-action-entry-cfg>
             <action-type>pbit-marking</action-type>

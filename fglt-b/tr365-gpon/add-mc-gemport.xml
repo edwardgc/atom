@@ -1,0 +1,19 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="101" timeout="600">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <xpon xmlns="urn:bbf:yang:bbf-xpon">
+					<multicast-gemports xmlns="urn:bbf:yang:bbf-xpon">
+            <multicast-gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>mcgemport1</name>
+                <interface>cp_pon2</interface>
+                <gemport-id>2047</gemport-id>
+                <is-broadcast>false</is-broadcast>
+            </multicast-gemport>
+          </multicast-gemports>
+      </xpon>
+  </config>
+</edit-config>
+</rpc>

@@ -1,0 +1,58 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+<config>
+
+<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+
+<!-- <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>user-vlan1-eth1</name>
+  <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+  <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+    <interface>eth1</interface>
+  </subif-lower-layer>
+  <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+    <interface-usage>inherit</interface-usage>
+  </interface-usage>
+</interface> -->
+
+<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>user-vlan1-lag1</name>
+  <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+  <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+    <interface>lag1</interface>
+  </subif-lower-layer>
+  <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+    <interface-usage>inherit</interface-usage>
+  </interface-usage>
+</interface>
+
+<interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+  <name>eth1</name>
+  <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+  <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">port2</port-layer-if>
+  <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+    <interface-usage>user-port</interface-usage>
+  </interface-usage>
+  <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
+    <manual>
+      <duplex>full</duplex>
+      <speed>eth-if-speed-1gb</speed>
+    </manual>
+  </ethernet>
+
+  <aggregation-port>
+    <aggregation-port-lacp>
+      <actor-system-priority>4</actor-system-priority>
+      <actor-admin-key>11</actor-admin-key>
+      <actor-port-priority>18</actor-port-priority>
+    </aggregation-port-lacp>
+  </aggregation-port>
+</interface>
+
+</interfaces>
+</config>
+</edit-config>
+</rpc>

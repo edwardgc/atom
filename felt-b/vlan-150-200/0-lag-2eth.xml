@@ -24,7 +24,7 @@
     <component>
       <name>sfp2</name>
       <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
-      <parent>C2</parent>
+      <parent>C3</parent>
       <parent-rel-pos>1</parent-rel-pos>
       <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE64927AA</model-name>
     </component>
@@ -83,6 +83,9 @@
       <name>eth1</name>
       <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
       <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">port2</port-layer-if>
+      <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+        <interface-usage>user-port</interface-usage>
+      </interface-usage>
       <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
         <manual>
           <duplex>full</duplex>
@@ -102,6 +105,9 @@
       <name>eth2</name>
       <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
       <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">port1</port-layer-if>
+      <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+        <interface-usage>user-port</interface-usage>
+      </interface-usage>
       <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
         <manual>
           <duplex>full</duplex>
@@ -120,6 +126,9 @@
     <interface>
       <name>lag1</name>
       <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ieee8023adLag</type>
+      <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+        <interface-usage>user-port</interface-usage>
+      </interface-usage>
       <aggregator xmlns="urn:ieee:std:802.1AX:yang:ieee802-dot1ax">
         <name>agg1</name>
         <agg-system-name>aggsys1</agg-system-name>

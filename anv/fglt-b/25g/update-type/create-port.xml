@@ -1,0 +1,27 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="457">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <default-operation>none</default-operation>
+    <test-option>set</test-option>
+    <error-option>rollback-on-error</error-option>
+    <config>
+      <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+        <component>
+          <name>SFP2</name>
+          <bbf-hw-ext:model-name xmlns:bbf-hw-ext="urn:bbf:yang:bbf-hardware-extension">NOKIA_25GSPON</bbf-hw-ext:model-name>
+          <parent>C2</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+        </component>
+        <component>
+          <name>PORT2</name>
+          <parent>SFP2</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+          <class xmlns:nokia-hwi="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-hardware-identities">nokia-hwi:transceiver-link-twentyfivegspon</class>
+        </component>
+      </hardware>
+    </config>
+  </edit-config>
+</rpc>

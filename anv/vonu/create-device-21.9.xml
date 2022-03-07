@@ -1,0 +1,30 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="12345">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+	  <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>vonu1</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <duid>vonu1</duid>
+          <hardware-type>VONU</hardware-type>
+          <interface-version>21.9</interface-version>
+          <configured-labels xmlns="http://www.nokia.com/management-solutions/anv-device-tag">
+            <label>
+              <name>channel-group</name>
+              <value>cg_cp1_demo</value>
+            </label>
+             <label>
+              <name>xpon-type</name>
+              <value>ngpon2-twdm</value>
+            </label>
+          </configured-labels>
+        </device>
+
+
+      </device-manager>
+    </config>
+  </edit-config>
+</rpc>

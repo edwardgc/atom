@@ -1,0 +1,27 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="457">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <default-operation>none</default-operation>
+    <test-option>set</test-option>
+    <error-option>rollback-on-error</error-option>
+    <config>
+      <anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+        <adh:device xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+          <adh:device-id>LS-FX</adh:device-id>
+          <adh:device-specific-data xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" nc:operation="merge">
+            <wavelength-profiles xmlns="urn:bbf:yang:bbf-xpon">
+              <wavelength-profile nc:operation="create">
+                <name>ngpon2-wave-11</name>
+                <upstream-channel-id>1</upstream-channel-id>
+                <downstream-channel-id>0</downstream-channel-id>
+                <downstream-wavelength>159634</downstream-wavelength>
+              </wavelength-profile>
+            </wavelength-profiles>
+          </adh:device-specific-data>
+        </adh:device>
+      </anv:device-manager>
+    </config>
+  </edit-config>
+</rpc>

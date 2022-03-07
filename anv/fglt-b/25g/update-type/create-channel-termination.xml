@@ -1,0 +1,25 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="457">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <default-operation>none</default-operation>
+    <test-option>set</test-option>
+    <error-option>rollback-on-error</error-option>
+    <config>
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>ct_cp_pon2</name>
+          <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:channel-termination</type>
+          <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">PORT2</port-layer-if>
+          <channel-termination xmlns="urn:bbf:yang:bbf-xpon">
+            <ber-calc-period>10</ber-calc-period>
+            <channel-pair-ref>cp_pon2</channel-pair-ref>
+            <location xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:inside-olt</location>
+            <channel-termination-hw-port-ref>PORT2</channel-termination-hw-port-ref>
+          </channel-termination>
+        </interface>
+      </interfaces>
+    </config>
+  </edit-config>
+</rpc>

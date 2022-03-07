@@ -1,0 +1,34 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="457">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <default-operation>none</default-operation>
+    <test-option>set</test-option>
+    <error-option>rollback-on-error</error-option>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>HelloWorld</device-id>
+          <device-specific-data>
+
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>ct_cp_ont1</name>
+          <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:channel-termination</type>
+          <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">PORT2</port-layer-if>
+          <channel-termination xmlns="urn:bbf:yang:bbf-xpon">
+            <ber-calc-period>10</ber-calc-period>
+            <channel-pair-ref>cp_ont1</channel-pair-ref>
+            <location xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:inside-olt</location>
+            <channel-termination-type xmlns:xpon-types="urn:bbf:yang:bbf-xpon-types">xpon-types:gpon</channel-termination-type>
+          </channel-termination>
+        </interface>
+      </interfaces>
+
+          </device-specific-data>
+        </device>
+      </device-manager>
+    </config>
+  </edit-config>
+</rpc>

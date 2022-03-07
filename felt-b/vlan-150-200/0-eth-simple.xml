@@ -9,7 +9,7 @@
     <component>
       <name>sfp2</name>
       <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
-      <parent>C2</parent>
+      <parent>C3</parent>
       <parent-rel-pos>1</parent-rel-pos>
       <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE64927AA</model-name>
     </component>

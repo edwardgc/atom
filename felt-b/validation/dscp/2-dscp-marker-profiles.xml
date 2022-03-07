@@ -1,0 +1,119 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="100">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+      <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+        <classifier-entry>
+          <name>dscp-marker</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <ip-common xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+            <dscp-range>0-63</dscp-range>
+          </ip-common>
+
+          <classifier-action-entry-cfg>
+            <action-type>pbit-marking</action-type>
+            <pbit-marking-cfg>
+              <pbit-marking-list>
+                <index>0</index>
+                <pbit-value>0</pbit-value>
+              </pbit-marking-list>
+              <pbit-marking-list>
+                <index>1</index>
+                <pbit-value>0</pbit-value>
+              </pbit-marking-list>
+            </pbit-marking-cfg>
+          </classifier-action-entry-cfg>
+        </classifier-entry>
+      </classifiers>
+
+      <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy>
+          <name>dscp-maker-policy</name>
+          <classifiers>
+            <name>dscp-marker</name>
+          </classifiers>
+        </policy>
+      </policies>
+
+      <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy-profile>
+          <name>dscp-test</name>
+          <policy-list>
+            <name>dscp-maker-policy</name>
+          </policy-list>
+        </policy-profile>
+      </qos-policy-profiles>
+
+      <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+        <classifier-entry>
+          <name>dscp-marker-other</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <ip-common xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+            <dscp-range>0-62</dscp-range>
+          </ip-common>
+
+          <classifier-action-entry-cfg>
+            <action-type>pbit-marking</action-type>
+            <pbit-marking-cfg>
+              <pbit-marking-list>
+                <index>0</index>
+                <pbit-value>0</pbit-value>
+              </pbit-marking-list>
+              <pbit-marking-list>
+                <index>1</index>
+                <pbit-value>0</pbit-value>
+              </pbit-marking-list>
+            </pbit-marking-cfg>
+          </classifier-action-entry-cfg>
+        </classifier-entry>
+
+        <classifier-entry>
+          <name>dscp-marker-other-2</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <ip-common xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+            <dscp>63</dscp>
+          </ip-common>
+
+          <classifier-action-entry-cfg>
+            <action-type>pbit-marking</action-type>
+            <pbit-marking-cfg>
+              <pbit-marking-list>
+                <index>0</index>
+                <pbit-value>0</pbit-value>
+              </pbit-marking-list>
+              <pbit-marking-list>
+                <index>1</index>
+                <pbit-value>0</pbit-value>
+              </pbit-marking-list>
+            </pbit-marking-cfg>
+          </classifier-action-entry-cfg>
+        </classifier-entry>
+      </classifiers>
+
+      <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy>
+          <name>dscp-policy-other</name>
+          <classifiers>
+            <name>dscp-marker-other</name>
+          </classifiers>
+          <classifiers>
+            <name>dscp-marker-other-2</name>
+          </classifiers>
+        </policy>
+      </policies>
+
+      <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy-profile>
+          <name>dscp-test-other</name>
+          <policy-list>
+            <name>dscp-policy-other</name>
+          </policy-list>
+        </policy-profile>
+      </qos-policy-profiles>
+
+    </config>
+  </edit-config>
+</rpc>

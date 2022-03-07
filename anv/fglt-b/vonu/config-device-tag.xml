@@ -6,11 +6,11 @@
 		<config>
 			<device-manager xmlns="http://www.nokia.com/management-solutions/anv">
 				<device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
-					<device-id>HelloWorld</device-id>
+					<device-id>vonu1</device-id>
 					<configured-labels xmlns="http://www.nokia.com/management-solutions/anv-device-tag">
 						<label>
 							<name>channel-group</name>
-							<value>cg_pon2</value>
+							<value>cg_ont1</value>
 						</label>
 						<label>
 							<name>xpon-type</name>

@@ -1,0 +1,6 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:ctx="http://www.nokia.com/management-solutions/netconf-extensions" ctx:session-id="0cb08e74-025b-41f4-855a-9d6628c36217" ctx:user-context="adminuser" message-id="1">
+  <get-free-broadcast-gemport-id xmlns="http://www.nokia.com/management-solutions/pon-id-allocation">
+     <channel-group-name>cg_cp1-ls</channel-group-name>
+     <xpon-type xmlns:xpon-types="urn:bbf:yang:bbf-xpon-types">xpon-types:twentyfivegs</xpon-type>
+  </get-free-broadcast-gemport-id>
+</rpc>

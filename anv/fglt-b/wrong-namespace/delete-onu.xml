@@ -1,0 +1,19 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="457">
+	<edit-config>
+		<target>
+			<running/>
+		</target>
+		<config>
+			<anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+				<adh:device xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0"
+					ns0:operation="delete">
+					<adh:device-id>ont1-fglt-b</adh:device-id>
+					<adh:hardware-type>VONU</adh:hardware-type>
+					<adh:interface-version>21.9</adh:interface-version>
+					<adh:duid>ALCLFAF390D1</adh:duid>
+					<adh:push-nav-configuration-to-device>true</adh:push-nav-configuration-to-device>
+				</adh:device>
+			</anv:device-manager>
+		</config>
+	</edit-config>
+</rpc>

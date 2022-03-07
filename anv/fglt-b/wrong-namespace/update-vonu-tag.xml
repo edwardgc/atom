@@ -1,0 +1,24 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+	<edit-config>
+		<target>
+			<running/>
+		</target>
+		<config>
+			<device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+				<device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+					<device-id>ont1-fglt-b</device-id>
+					<configured-labels xmlns="http://www.nokia.com/management-solutions/anv-device-tag">
+						<label>
+							<name>channel-group</name>
+							<value>cg_pon2</value>
+						</label>
+						<label>
+							<name>xpon-type</name>
+							<value>gpon</value>
+						</label>
+					</configured-labels>
+				</device>
+			</device-manager>
+		</config>
+	</edit-config>
+</rpc>

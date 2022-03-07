@@ -1,0 +1,36 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="457">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <default-operation>none</default-operation>
+    <test-option>set</test-option>
+    <error-option>rollback-on-error</error-option>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>HelloWorld</device-id>
+          <device-specific-data>
+
+            <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+              <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>PORT2</name>
+                <parent>SFP2</parent>
+                <parent-rel-pos>1</parent-rel-pos>
+                <class xmlns:nokia-hwi="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-hardware-identities">nokia-hwi:transceiver-link-gpon</class>
+              </component>
+              <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>SFP2</name>
+                <parent>C2</parent>
+                <parent-rel-pos>1</parent-rel-pos>
+                <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types" xmlns:nokia-hwi="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-hardware-identities">bbf-hwt:transceiver</class>
+                <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">NOKIA_GPON</model-name>
+              </component>
+            </hardware>
+
+          </device-specific-data>
+        </device>
+      </device-manager>
+    </config>
+  </edit-config>
+</rpc>

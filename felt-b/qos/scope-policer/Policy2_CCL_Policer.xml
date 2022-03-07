@@ -1,0 +1,67 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+<edit-config>
+<target>
+<running/>
+</target>
+<config>
+
+     <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+            <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+              <name>cls1</name>
+              <filter-operation>match-all-filter</filter-operation>
+              <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter1</enhanced-filter-name>
+              <classifier-action-entry-cfg>
+                <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+                <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+                  <policing-profile>policing1</policing-profile>
+                </policing>
+              </classifier-action-entry-cfg>
+      </classifier-entry>
+   </classifiers>
+
+      <filters xmlns="urn:bbf:yang:bbf-qos-filters">
+            <enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+            <name>enhanced-filter1</name>
+            <filter-operation xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:match-any-filter</filter-operation>
+            <filter xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <name>enhfilter11</name>
+            <ipv4 xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+             <source-ipv4-network>192.85.1.2/32</source-ipv4-network>
+            </ipv4>
+            </filter>
+            <filter xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <name>enhfilter12</name>
+            <ipv4 xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+             <source-ipv4-network>192.85.1.3/32</source-ipv4-network>
+            </ipv4>
+            </filter>
+            </enhanced-filter>
+      </filters>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+      <policing-profile>
+        <name>policing1</name>
+        <scope xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:vlan-sub-interface</scope>
+        <two-rate-three-color-marker-mef>
+          <cir>20000000</cir>
+          <cbs>10240</cbs>
+          <eir>10000000</eir>
+          <ebs>10240</ebs>
+          <couple-flag>0</couple-flag>
+          <color-mode>color-aware</color-mode>
+        </two-rate-three-color-marker-mef>
+      </policing-profile>
+</policing-profiles>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+     <policy>
+        <name>policies2</name>
+          <classifiers>
+            <name>cls1</name>
+          </classifiers>
+     </policy>
+</policies>
+
+</config>
+</edit-config>
+</rpc>

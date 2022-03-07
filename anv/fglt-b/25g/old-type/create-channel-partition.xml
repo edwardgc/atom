@@ -1,0 +1,27 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="457">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <default-operation>none</default-operation>
+    <test-option>set</test-option>
+    <error-option>rollback-on-error</error-option>
+    <config>
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+        <interface>
+          <name>scg_pon2</name>
+          <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:channel-partition</type>
+          <channel-partition xmlns="urn:bbf:yang:bbf-xpon">
+            <authentication-method>serial-number</authentication-method>
+            <channel-group-ref>cg_pon2</channel-group-ref>
+            <channel-partition-index>1</channel-partition-index>
+            <closest-onu-distance>0</closest-onu-distance>
+            <max-differential-xpon-distance>20</max-differential-xpon-distance>
+            <fec-downstream>true</fec-downstream>
+            <multicast-aes-indicator>false</multicast-aes-indicator>
+          </channel-partition>
+        </interface>
+      </interfaces>
+    </config>
+  </edit-config>
+</rpc>

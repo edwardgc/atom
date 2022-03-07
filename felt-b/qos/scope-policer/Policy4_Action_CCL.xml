@@ -1,0 +1,113 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+<edit-config>
+<target>
+<running/>
+</target>
+<config>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>cls4</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter2</enhanced-filter-name>
+    <classifier-action-entry-cfg>
+      <action-type>pbit-marking</action-type>
+        <pbit-marking-cfg>
+          <pbit-marking-list>
+            <index>0</index>
+            <pbit-value>7</pbit-value>
+          </pbit-marking-list>
+        </pbit-marking-cfg>
+    </classifier-action-entry-cfg>
+    </classifier-entry>
+
+    <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>cls5</name>
+      <filter-operation>match-all-filter</filter-operation>
+      <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter3</enhanced-filter-name>
+      <classifier-action-entry-cfg>
+        <action-type>pbit-marking</action-type>
+          <pbit-marking-cfg>
+            <pbit-marking-list>
+              <index>0</index>
+              <pbit-value>6</pbit-value>
+            </pbit-marking-list>
+          </pbit-marking-cfg>
+      </classifier-action-entry-cfg>
+      </classifier-entry>
+
+      <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+        <name>cls6</name>
+        <filter-operation>match-all-filter</filter-operation>
+        <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter4</enhanced-filter-name>
+        <classifier-action-entry-cfg>
+<action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:discard</action-type>
+<discard xmlns="urn:bbf:yang:bbf-qos-policing"/>
+</classifier-action-entry-cfg>
+            </classifier-entry>
+
+</classifiers>
+
+<filters xmlns="urn:bbf:yang:bbf-qos-filters">
+             <enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+               <!-- default filter-operation is match-any-filter-->
+               <name>enhanced-filter2</name>
+               <filter-operation xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:match-all-filter</filter-operation>
+                <filter xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                 <name>enhfilter21</name>
+                 <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter1</enhanced-filter-name>
+                 </filter>
+                 <filter xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                 <name>enhfilter22</name>
+                 <flow-color xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">green</flow-color>
+               </filter>
+             </enhanced-filter>
+
+             <enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+               <!-- default filter-operation is match-any-filter-->
+               <name>enhanced-filter3</name>
+               <filter-operation xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:match-all-filter</filter-operation>
+                <filter xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                 <name>enhfilter31</name>
+                 <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter1</enhanced-filter-name>
+                 </filter>
+                 <filter xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                 <name>enhfilter32</name>
+                 <flow-color xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">yellow</flow-color>
+               </filter>
+             </enhanced-filter>
+
+             <enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+               <!-- default filter-operation is match-any-filter-->
+               <name>enhanced-filter4</name>
+               <filter-operation xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:match-all-filter</filter-operation>
+                <filter xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                 <name>enhfilter41</name>
+                 <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter1</enhanced-filter-name>
+                 </filter>
+                 <filter xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                 <name>enhfilter42</name>
+                 <flow-color xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">red</flow-color>
+               </filter>
+             </enhanced-filter>
+
+</filters>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy>
+           <name>policies4</name>
+           <classifiers xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+             <name>cls4</name>
+           </classifiers>
+           <classifiers xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+             <name>cls5</name>
+           </classifiers>
+           <classifiers xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+             <name>cls6</name>
+           </classifiers>
+  </policy>
+</policies>
+
+</config>
+</edit-config>
+</rpc>

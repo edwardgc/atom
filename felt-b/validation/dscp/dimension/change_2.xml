@@ -1,0 +1,171 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+<edit-config>
+<target>
+<running/>
+</target>
+<config>
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+<name>dscp_enhance_range_S+C_0</name>
+<filter-operation>match-all-filter</filter-operation>
+<ip-common xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+<dscp-range>0-7</dscp-range>
+</ip-common>
+<classifier-action-entry-cfg>
+<action-type>pbit-marking</action-type>
+<pbit-marking-cfg>
+<pbit-marking-list>
+<index>0</index>
+<pbit-value>1</pbit-value>
+</pbit-marking-list>
+<pbit-marking-list>
+<index>1</index>
+<pbit-value>1</pbit-value>
+</pbit-marking-list>
+</pbit-marking-cfg>
+</classifier-action-entry-cfg>
+</classifier-entry>
+<classifier-entry xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+<name>dscp_enhance_range_S+C_1</name>
+<filter-operation>match-all-filter</filter-operation>
+<ip-common xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+<dscp-range>8-15</dscp-range>
+</ip-common>
+<classifier-action-entry-cfg>
+<action-type>pbit-marking</action-type>
+<pbit-marking-cfg>
+<pbit-marking-list>
+<index>0</index>
+<pbit-value>1</pbit-value>
+</pbit-marking-list>
+<pbit-marking-list>
+<index>1</index>
+<pbit-value>1</pbit-value>
+</pbit-marking-list>
+</pbit-marking-cfg>
+</classifier-action-entry-cfg>
+</classifier-entry>
+<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+<name>dscp_enhance_range_S+C_2</name>
+<filter-operation>match-all-filter</filter-operation>
+<ip-common xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+<dscp-range>16-23</dscp-range>
+</ip-common>
+<classifier-action-entry-cfg>
+<action-type>pbit-marking</action-type>
+<pbit-marking-cfg>
+<pbit-marking-list>
+<index>0</index>
+<pbit-value>2</pbit-value>
+</pbit-marking-list>
+<pbit-marking-list>
+<index>1</index>
+<pbit-value>2</pbit-value>
+</pbit-marking-list>
+</pbit-marking-cfg>
+</classifier-action-entry-cfg>
+</classifier-entry>
+<classifier-entry xmlns:ns3="urn:ietf:params:xml:ns:netconf:base:1.0" ns3:operation="merge">
+<name>dscp_enhance_range_S+C_3</name>
+<filter-operation>match-all-filter</filter-operation>
+<ip-common xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+<dscp-range>24-31</dscp-range>
+</ip-common>
+<classifier-action-entry-cfg>
+<action-type>pbit-marking</action-type>
+<pbit-marking-cfg>
+<pbit-marking-list>
+<index>0</index>
+<pbit-value>3</pbit-value>
+</pbit-marking-list>
+<pbit-marking-list>
+<index>1</index>
+<pbit-value>3</pbit-value>
+</pbit-marking-list>
+</pbit-marking-cfg>
+</classifier-action-entry-cfg>
+</classifier-entry>
+<classifier-entry xmlns:ns4="urn:ietf:params:xml:ns:netconf:base:1.0" ns4:operation="merge">
+<name>dscp_enhance_range_S+C_4</name>
+<filter-operation>match-all-filter</filter-operation>
+<ip-common xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+<dscp-range>32-39</dscp-range>
+</ip-common>
+<classifier-action-entry-cfg>
+<action-type>pbit-marking</action-type>
+<pbit-marking-cfg>
+<pbit-marking-list>
+<index>0</index>
+<pbit-value>4</pbit-value>
+</pbit-marking-list>
+<pbit-marking-list>
+<index>1</index>
+<pbit-value>4</pbit-value>
+</pbit-marking-list>
+</pbit-marking-cfg>
+</classifier-action-entry-cfg>
+</classifier-entry>
+<classifier-entry xmlns:ns5="urn:ietf:params:xml:ns:netconf:base:1.0" ns5:operation="merge">
+<name>dscp_enhance_range_S+C_5</name>
+<filter-operation>match-all-filter</filter-operation>
+<ip-common xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+<dscp-range>40-47</dscp-range>
+</ip-common>
+<classifier-action-entry-cfg>
+<action-type>pbit-marking</action-type>
+<pbit-marking-cfg>
+<pbit-marking-list>
+<index>0</index>
+<pbit-value>5</pbit-value>
+</pbit-marking-list>
+<pbit-marking-list>
+<index>1</index>
+<pbit-value>5</pbit-value>
+</pbit-marking-list>
+</pbit-marking-cfg>
+</classifier-action-entry-cfg>
+</classifier-entry>
+<classifier-entry xmlns:ns6="urn:ietf:params:xml:ns:netconf:base:1.0" ns6:operation="merge">
+<name>dscp_enhance_range_S+C_6</name>
+<filter-operation>match-all-filter</filter-operation>
+<ip-common xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+<dscp-range>48-55</dscp-range>
+</ip-common>
+<classifier-action-entry-cfg>
+<action-type>pbit-marking</action-type>
+<pbit-marking-cfg>
+<pbit-marking-list>
+<index>0</index>
+<pbit-value>6</pbit-value>
+</pbit-marking-list>
+<pbit-marking-list>
+<index>1</index>
+<pbit-value>6</pbit-value>
+</pbit-marking-list>
+</pbit-marking-cfg>
+</classifier-action-entry-cfg>
+</classifier-entry>
+<classifier-entry xmlns:ns7="urn:ietf:params:xml:ns:netconf:base:1.0" ns7:operation="merge">
+<name>dscp_enhance_range_S+C_7</name>
+<filter-operation>match-all-filter</filter-operation>
+<ip-common xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+<dscp-range>56-63</dscp-range>
+</ip-common>
+<classifier-action-entry-cfg>
+<action-type>pbit-marking</action-type>
+<pbit-marking-cfg>
+<pbit-marking-list>
+<index>0</index>
+<pbit-value>7</pbit-value>
+</pbit-marking-list>
+<pbit-marking-list>
+<index>1</index>
+<pbit-value>7</pbit-value>
+</pbit-marking-list>
+</pbit-marking-cfg>
+</classifier-action-entry-cfg>
+</classifier-entry>
+</classifiers>
+</config>
+</edit-config>
+</rpc>

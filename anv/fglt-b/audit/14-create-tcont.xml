@@ -1,0 +1,27 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="457">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <default-operation>none</default-operation>
+    <test-option>set</test-option>
+    <error-option>rollback-on-error</error-option>
+    <config>
+      <anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+        <adh:device xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+          <adh:device-id>LS-FX</adh:device-id>
+          <adh:device-specific-data xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" nc:operation="merge">
+            <tconts-config xmlns="urn:bbf:yang:bbf-xpongemtcont">
+              <tcont>
+                <name>tcont_ont1</name>
+                <alloc-id>256</alloc-id>
+                <interface-reference>ont1</interface-reference>
+                <traffic-descriptor-profile-ref>TDP0</traffic-descriptor-profile-ref>
+              </tcont>
+            </tconts-config>
+          </adh:device-specific-data>
+        </adh:device>
+      </anv:device-manager>
+    </config>
+  </edit-config>
+</rpc>

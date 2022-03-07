@@ -562,41 +562,33 @@
 							 <in-interface-usages>
 								 <interface-usages>network-port</interface-usages>
 							 </in-interface-usages>
-							 <!--
-							 							 <out-interface-usages>
-							 								 <interface-usages>subtended-node-port</interface-usages>
-							 							 </out-interface-usages>
-							 -->
+ 							 <out-interface-usages>
+ 								 <interface-usages>subtended-node-port</interface-usages>
+ 							 </out-interface-usages>
 							 <destination-address>
 								 <broadcast-address/>
 							 </destination-address>
-							 <discard/>
 						 </flooding-policy>
 						 <flooding-policy>
 							 <name>fp2</name>
 							 <in-interface-usages>
 								 <interface-usages>network-port</interface-usages>
 							 </in-interface-usages>
-<!--
 							 <out-interface-usages>
 								 <interface-usages>subtended-node-port</interface-usages>
 							 </out-interface-usages>
--->
 							 <destination-address>
 								 <unicast-address/>
 							 </destination-address>
-							 <discard/>
 						 </flooding-policy>
 						 <flooding-policy>
 							 <name>fp3</name>
 							 <in-interface-usages>
 								 <interface-usages>network-port</interface-usages>
 							 </in-interface-usages>
-							 <!--
-							 							 <out-interface-usages>
-							 								 <interface-usages>subtended-node-port</interface-usages>
-							 							 </out-interface-usages>
-							 -->
+ 							 <out-interface-usages>
+ 								 <interface-usages>subtended-node-port</interface-usages>
+ 							 </out-interface-usages>
 							 <destination-address>
 								 <any-multicast-mac-address/>
 							 </destination-address>

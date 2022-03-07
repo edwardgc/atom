@@ -1,0 +1,54 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+      <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+        <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>dscp-marker</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <ip-common xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+            <dscp-range>2-3</dscp-range>
+            <dscp>1</dscp>
+          </ip-common>
+
+          <classifier-action-entry-cfg>
+            <action-type>pbit-marking</action-type>
+            <pbit-marking-cfg>
+              <pbit-marking-list>
+                <index>0</index>
+                <pbit-value>0</pbit-value>
+              </pbit-marking-list>
+              <pbit-marking-list>
+                <index>1</index>
+                <pbit-value>1</pbit-value>
+              </pbit-marking-list>
+            </pbit-marking-cfg>
+          </classifier-action-entry-cfg>
+        </classifier-entry>
+      </classifiers>
+
+      <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>dscp-maker-policy</name>
+          <classifiers>
+            <name>dscp-marker</name>
+          </classifiers>
+        </policy>
+      </policies>
+
+      <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>dscp-test</name>
+          <policy-list>
+            <name>dscp-maker-policy</name>
+          </policy-list>
+        </policy-profile>
+      </qos-policy-profiles>
+
+
+    </config>
+  </edit-config>
+</rpc>

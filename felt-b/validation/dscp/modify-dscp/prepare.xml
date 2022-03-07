@@ -1,0 +1,64 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+	<edit-config>
+		<target>
+			<running/>
+		</target>
+		<config>
+			<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+				<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+					<name>dscp_enhance_range_C_6</name>
+					<filter-operation>match-all-filter</filter-operation>
+					<ip-common xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+						<dscp-range>48-55</dscp-range>
+					</ip-common>
+					<classifier-action-entry-cfg>
+						<action-type>pbit-marking</action-type>
+						<pbit-marking-cfg>
+							<pbit-marking-list>
+								<index>0</index>
+								<pbit-value>6</pbit-value>
+							</pbit-marking-list>
+						</pbit-marking-cfg>
+					</classifier-action-entry-cfg>
+				</classifier-entry>
+				<classifier-entry xmlns:ns3="urn:ietf:params:xml:ns:netconf:base:1.0" ns3:operation="merge">
+					<name>dscp_enhance_range_S+C_6</name>
+					<filter-operation>match-all-filter</filter-operation>
+					<ip-common xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+						<dscp-range>48-55</dscp-range>
+					</ip-common>
+					<classifier-action-entry-cfg>
+						<action-type>pbit-marking</action-type>
+						<pbit-marking-cfg>
+							<pbit-marking-list>
+								<index>0</index>
+								<pbit-value>6</pbit-value>
+							</pbit-marking-list>
+							<pbit-marking-list>
+								<index>1</index>
+								<pbit-value>6</pbit-value>
+							</pbit-marking-list>
+						</pbit-marking-cfg>
+					</classifier-action-entry-cfg>
+				</classifier-entry>
+			</classifiers>
+			<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+				<policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+					<name>policy1_dscp_enhance_range_C</name>
+					<classifiers>
+						<name>dscp_enhance_range_C_6</name>
+					</classifiers>
+				</policy>
+				<policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+					<name>policy1_dscp_enhance_range_S+C</name>
+					<classifiers>
+						<name>dscp_enhance_range_S+C_6</name>
+					</classifiers>
+					<classifiers>
+						<name>untagPbitDei2</name>
+					</classifiers>
+				</policy>
+			</policies>
+		</config>
+	</edit-config>
+</rpc>

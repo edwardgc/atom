@@ -1,0 +1,74 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+   <config>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry>
+    <name>dscp_mark1</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <tag>
+        <index>0</index>
+        <in-pbit-list>0-7</in-pbit-list>
+      </tag>
+    </vlans>
+    <classifier-action-entry-cfg>
+      <action-type>pbit-marking</action-type>
+      <pbit-marking-cfg>
+        <pbit-marking-list>
+          <index>0</index>
+          <pbit-value>4</pbit-value>
+        </pbit-marking-list>
+      </pbit-marking-cfg>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry>
+    <name>dscp_mark2</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <tag>
+        <index>0</index>
+        <in-pbit-list>0-7</in-pbit-list>
+      </tag>
+    </vlans>
+    <classifier-action-entry-cfg>
+      <action-type>pbit-marking</action-type>
+      <pbit-marking-cfg>
+        <pbit-marking-list>
+          <index>0</index>
+          <pbit-value>2</pbit-value>
+        </pbit-marking-list>
+        <pbit-marking-list>
+          <index>1</index>
+          <pbit-value>2</pbit-value>
+        </pbit-marking-list>
+      </pbit-marking-cfg>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy>
+    <name>Po_dscp_mark</name>
+    <classifiers>
+      <name>dscp_mark1</name>
+    </classifiers>
+    <classifiers>
+      <name>dscp_mark2</name>
+    </classifiers>
+  </policy>
+</policies>
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy-profile>
+    <name>Profile_Po_dscp_mark</name>
+    <policy-list>
+      <name>Po_dscp_mark</name>
+    </policy-list>
+  </policy-profile>
+</qos-policy-profiles>
+
+</config>
+</edit-config>
+</rpc>

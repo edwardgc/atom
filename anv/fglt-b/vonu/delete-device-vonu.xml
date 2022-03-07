@@ -5,12 +5,8 @@
     </target>
     <config>
 	  <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
-        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
           <device-id>vonu1</device-id>
-          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
-          <duid>456</duid>
-          <hardware-type>VONU</hardware-type>
-          <interface-version>22.3</interface-version>
         </device>
       </device-manager>
     </config>

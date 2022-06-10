@@ -18,7 +18,7 @@
           <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
           <olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
             <lower-layer-interface>ont_5011</lower-layer-interface>
-          </olt-v-enet>
+          </olt-v-enet> 
         </interface>
 
         <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">

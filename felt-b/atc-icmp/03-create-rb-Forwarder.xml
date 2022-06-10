@@ -1,0 +1,38 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="104">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+  <forwarders>
+    <forwarder xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>fwd_rb_svlan1_102</name>
+      <ports>
+        <port>
+          <name>uni1_vsi1</name>
+          <sub-interface>uni1_vsi1</sub-interface>
+        </port>
+        <port>
+          <name>net_rb_svlan1_102</name>
+          <sub-interface>net_rb_svlan1_102</sub-interface>
+        </port>
+      </ports>
+      <flooding-policies>
+        <flooding-policies-profile>flood1</flooding-policies-profile>
+      </flooding-policies>
+      <mac-learning>
+        <forwarding-database>fdb1</forwarding-database>
+      </mac-learning>
+      <split-horizon-profiles>
+        <split-horizon-profile>spl1</split-horizon-profile>
+      </split-horizon-profiles>
+      <l2-dhcpv4-relay xmlns="urn:bbf:yang:bbf-l2-dhcpv4-relay-forwarding">
+        <downstream-broadcast-flooding>false</downstream-broadcast-flooding>
+      </l2-dhcpv4-relay>
+    </forwarder>
+  </forwarders>
+</forwarding>
+    </config>
+  </edit-config>
+</rpc>

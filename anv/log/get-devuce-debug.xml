@@ -1,0 +1,19 @@
+
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="3">
+  <get-config>
+     <source>
+			<running/>
+		</source>
+    	<filter type="subtree">
+
+      <platform:platform xmlns:platform="http://www.nokia.com/management-solutions/anv-platform">
+        <anvlog:logging xmlns:anvlog="http://www.nokia.com/management-solutions/anv-logging">
+          <anvlog:logger-config>
+            <anvlog:application>ponid.manager</anvlog:application>
+          </anvlog:logger-config>
+        </anvlog:logging>
+      </platform:platform>
+
+    </filter>
+	</get-config>
+</rpc>

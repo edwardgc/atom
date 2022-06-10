@@ -14,21 +14,18 @@
 
       <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
         <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
-          <name>ct_cp_ont1</name>
-          <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:channel-termination</type>
-          <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">PORT2</port-layer-if>
-          <channel-termination xmlns="urn:bbf:yang:bbf-xpon">
-            <ber-calc-period>10</ber-calc-period>
-            <channel-pair-ref>cp_ont1</channel-pair-ref>
-            <location xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:inside-olt</location>
-            <channel-termination-type xmlns:xpon-types="urn:bbf:yang:bbf-xpon-types">xpon-types:gpon</channel-termination-type>
-          </channel-termination>
+          <name>ont1_venet1</name>
+          <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
+          <olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
+            <lower-layer-interface>ont_5011</lower-layer-interface>
+          </olt-v-enet>
         </interface>
+
       </interfaces>
 
-          </device-specific-data>
-        </device>
-      </device-manager>
+    </device-specific-data>
+  </device>
+</device-manager>
     </config>
   </edit-config>
 </rpc>

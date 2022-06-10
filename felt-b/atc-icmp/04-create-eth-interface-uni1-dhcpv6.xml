@@ -1,0 +1,17 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="105">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+  <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>uni1_vsi1</name>
+    <icmpv6 xmlns="urn:bbf:yang:bbf-icmpv6">
+      <icmpv6-filter>true</icmpv6-filter>
+    </icmpv6>
+  </interface>
+</interfaces>
+    </config>
+  </edit-config>
+</rpc>

@@ -7,7 +7,7 @@
     	<filter type="subtree">
 			<anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
 				<adh:device xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
-					<adh:device-id>HelloWorld</adh:device-id>
+					<adh:device-id>LS-FX.LT3</adh:device-id>
 				</adh:device>
 			</anv:device-manager>
     </filter>

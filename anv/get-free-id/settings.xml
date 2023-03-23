@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+	<edit-config>
+		<target>
+			<running/>
+		</target>
+      <config>
+		<ponid:xpon-tc-allocation xmlns:ponid="http://www.nokia.com/management-solutions/pon-id-allocation">
+			<ponid:settings>
+				<ponid:id-reservation-time>600</ponid:id-reservation-time>
+			</ponid:settings>
+		</ponid:xpon-tc-allocation>
+        </config>
+	</edit-config>
+</rpc>

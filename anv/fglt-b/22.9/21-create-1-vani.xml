@@ -1,0 +1,43 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="460">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <default-operation>none</default-operation>
+    <test-option>set</test-option>
+    <error-option>rollback-on-error</error-option>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>HelloWorld</device-id>
+          <device-specific-data>
+
+            <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>ont_5011</name>
+                <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:v-ani</type>
+                <v-ani xmlns="urn:bbf:yang:bbf-xponvani">
+                  <onu-id>1</onu-id>
+                  <channel-partition>scg_ont1</channel-partition>
+                  <expected-serial-number>ALCLFAF390D1</expected-serial-number>
+                  <preferred-channel-pair>cp_ont1</preferred-channel-pair>
+                </v-ani>
+              </interface>
+              <!-- <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>ont_5012</name>
+                <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:v-ani</type>
+                <v-ani xmlns="urn:bbf:yang:bbf-xponvani">
+                  <onu-id>4</onu-id>
+                  <channel-partition>scg_ont4</channel-partition>
+                  <expected-serial-number>ALCLFAF390D1</expected-serial-number>
+                  <preferred-channel-pair>cp_ont4</preferred-channel-pair>
+                </v-ani>
+              </interface> -->
+            </interfaces>
+
+          </device-specific-data>
+        </device>
+      </device-manager>
+    </config>
+  </edit-config>
+</rpc>

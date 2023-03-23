@@ -1,0 +1,33 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+<edit-config>
+<target>
+<running/>
+</target>
+<config>
+
+     <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+            <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+              <name>cls_port_inner_in_pbit_trtcm_aware_dual_pbit_marker_1</name>
+              <filter-operation>match-all-filter</filter-operation>
+              <metered-flow xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-flow>
+              <classifier-action-entry-cfg>
+                <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+                <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+                  <policing-profile>pol_port_inner_in_pbit_trtcm_aware_dual_pbit_marker_1</policing-profile>
+                </policing>
+              </classifier-action-entry-cfg>
+      </classifier-entry>
+   </classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+     <policy>
+        <name>port_inner_in_pbit_trtcm_aware_dual_pbit_marker</name>
+          <classifiers>
+            <name>cls_port_inner_in_pbit_trtcm_aware_dual_pbit_marker_1</name>
+          </classifiers>
+     </policy>
+</policies>
+
+</config>
+</edit-config>
+</rpc>

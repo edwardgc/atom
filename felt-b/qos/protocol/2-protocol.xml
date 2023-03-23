@@ -1,0 +1,81 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+      <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+        <classifier-entry>
+          <name>ccl-cls-with-UDP-filter</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">ccl-enhanced-UDP-filter</enhanced-filter-name>
+          <classifier-action-entry-cfg>
+            <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:discard</action-type>
+            <discard xmlns="urn:bbf:yang:bbf-qos-policing"/>
+          </classifier-action-entry-cfg>
+        </classifier-entry>
+
+        <classifier-entry>
+          <name>test-cls-filter</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">test-filter</enhanced-filter-name>
+          <classifier-action-entry-cfg>
+            <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:discard</action-type>
+            <discard xmlns="urn:bbf:yang:bbf-qos-policing"/>
+          </classifier-action-entry-cfg>
+        </classifier-entry>
+      </classifiers>
+
+      <filters xmlns="urn:bbf:yang:bbf-qos-filters">
+        <enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+          <name>ccl-enhanced-UDP-filter</name>
+          <filter-operation xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:match-all-filter</filter-operation>
+          <filter>
+            <name>enhfilter-UDP</name>
+            <ipv4>
+              <source-ipv4-network>0.0.0.0/0</source-ipv4-network>
+            </ipv4>
+            <ip-common>
+              <dscp-range>0-63</dscp-range>
+              <protocol>17</protocol>
+            </ip-common>
+          </filter>
+        </enhanced-filter>
+
+        <enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+          <name>test-filter</name>
+          <filter-operation xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:match-all-filter</filter-operation>
+          <filter>
+            <name>enhfilter-UDP</name>
+            <ipv4>
+              <source-ipv4-network>0.0.0.0/0</source-ipv4-network>
+            </ipv4>
+            <ip-common>
+              <protocol>17</protocol>
+            </ip-common>
+          </filter>
+        </enhanced-filter>
+      </filters>
+
+      <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy>
+          <name>policy-protocol</name>
+          <classifiers>
+            <name>ccl-cls-with-UDP-filter</name>
+          </classifiers>
+        </policy>
+      </policies>
+
+      <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy-profile>
+          <name>protocol</name>
+          <policy-list>
+            <name>policy-protocol</name>
+          </policy-list>
+        </policy-profile>
+      </qos-policy-profiles>
+
+    </config>
+  </edit-config>
+</rpc>

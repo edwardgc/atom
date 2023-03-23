@@ -1,0 +1,123 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="12345">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>Device1</device-id>
+          <device-specific-data>
+            <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+              <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>PORT2</name>
+                <parent>SFP2</parent>
+                <parent-rel-pos>1</parent-rel-pos>
+                <class xmlns:nokia-hwi="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-hardware-identities">nokia-hwi:transceiver-link-gpon</class>
+              </component>
+              <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>SFP2</name>
+                <parent>C2</parent>
+                <parent-rel-pos>1</parent-rel-pos>
+                <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types" xmlns:nokia-hwi="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-hardware-identities">bbf-hwt:transceiver</class>
+                <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">NOKIA_GPON</model-name>
+              </component>
+            </hardware>
+            <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cg_ont1</name>
+                <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:channel-group</type>
+                <enabled>true</enabled>
+                <channel-group xmlns="urn:bbf:yang:bbf-xpon">
+                  <polling-period>100</polling-period>
+                  <raman-mitigation>raman-none</raman-mitigation>
+                  <system-id>00000</system-id>
+                </channel-group>
+              </interface>
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>cg_ont4</name>
+                <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:channel-group</type>
+                <enabled>true</enabled>
+                <channel-group xmlns="urn:bbf:yang:bbf-xpon">
+                  <polling-period>100</polling-period>
+                  <raman-mitigation>raman-none</raman-mitigation>
+                  <system-id>00000</system-id>
+                </channel-group>
+              </interface>
+              <interface ns0:operation="merge" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0">
+                <name>scg_ont1</name>
+                <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:channel-partition</type>
+                <channel-partition xmlns="urn:bbf:yang:bbf-xpon">
+                  <authentication-method>serial-number</authentication-method>
+                  <channel-group-ref>cg_ont1</channel-group-ref>
+                  <channel-partition-index>1</channel-partition-index>
+                  <closest-onu-distance>0</closest-onu-distance>
+                  <maximum-differential-xpon-distance>20</maximum-differential-xpon-distance>
+                  <downstream-fec>true</downstream-fec>
+                  <multicast-aes-indicator>false</multicast-aes-indicator>
+                </channel-partition>
+              </interface>
+              <interface ns0:operation="merge" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0">
+                <name>scg_ont4</name>
+                <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:channel-partition</type>
+                <channel-partition xmlns="urn:bbf:yang:bbf-xpon">
+                  <authentication-method>serial-number</authentication-method>
+                  <channel-group-ref>cg_ont4</channel-group-ref>
+                  <channel-partition-index>1</channel-partition-index>
+                  <closest-onu-distance>0</closest-onu-distance>
+                  <maximum-differential-xpon-distance>20</maximum-differential-xpon-distance>
+                  <downstream-fec>true</downstream-fec>
+                  <multicast-aes-indicator>false</multicast-aes-indicator>
+                </channel-partition>
+              </interface>
+              <interface ns0:operation="merge" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0">
+                <name>cp_ont1</name>
+                <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:channel-pair</type>
+                <channel-pair xmlns="urn:bbf:yang:bbf-xpon">
+                  <channel-group-ref>cg_ont1</channel-group-ref>
+                  <channel-pair-type xmlns:xpon-types="urn:bbf:yang:bbf-xpon-types">xpon-types:gpon</channel-pair-type>
+                  <channel-partition-ref>scg_ont1</channel-partition-ref>
+                </channel-pair>
+              </interface>
+              <interface ns0:operation="merge" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0">
+                <name>cp_ont4</name>
+                <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:channel-pair</type>
+                <channel-pair xmlns="urn:bbf:yang:bbf-xpon">
+                  <channel-group-ref>cg_ont4</channel-group-ref>
+                  <channel-pair-type xmlns:xpon-types="urn:bbf:yang:bbf-xpon-types">xpon-types:gpon</channel-pair-type>
+                  <channel-partition-ref>scg_ont4</channel-partition-ref>
+                </channel-pair>
+              </interface>
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>ont_5011</name>
+                <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:v-ani</type>
+                <v-ani xmlns="urn:bbf:yang:bbf-xponvani">
+                  <onu-id>1</onu-id>
+                  <channel-partition>scg_ont1</channel-partition>
+                  <expected-serial-number>ALCLFAF390D1</expected-serial-number>
+                  <preferred-channel-pair>cp_ont1</preferred-channel-pair>
+                </v-ani>
+              </interface>
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>ont_5012</name>
+                <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:v-ani</type>
+                <v-ani xmlns="urn:bbf:yang:bbf-xponvani">
+                  <onu-id>4</onu-id>
+                  <channel-partition>scg_ont4</channel-partition>
+                  <expected-serial-number>ALCLFAF390D1</expected-serial-number>
+                  <preferred-channel-pair>cp_ont4</preferred-channel-pair>
+                </v-ani>
+              </interface>
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>venet1</name>
+                <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
+                <olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
+                  <lower-layer-interface>ont_5012</lower-layer-interface>
+                </interface>
+              </interfaces>
+            </device-specific-data>
+          </device>
+        </device-manager>
+      </config>
+    </edit-config>
+  </rpc>

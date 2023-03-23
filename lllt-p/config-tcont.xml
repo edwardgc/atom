@@ -1,0 +1,34 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="10" timeout="600">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <xpongemtcont xmlns="urn:bbf:yang:bbf-xpongemtcont">
+            <traffic-descriptor-profiles>
+              <traffic-descriptor-profile>
+                <name>TDP0</name>
+                <fixed-bandwidth>10000000</fixed-bandwidth>
+                <maximum-bandwidth>30000000</maximum-bandwidth>
+                <assured-bandwidth>10000000</assured-bandwidth>
+                <!-- <xponinfraAug:jitter-tolerance xmlns:xponinfraAug="urn:broadband-forum-org:yang:bbf-xponinfra-augment-nodes">8</xponinfraAug:jitter-tolerance> -->
+              </traffic-descriptor-profile>
+            </traffic-descriptor-profiles>
+      			<tconts>
+      				<tcont>
+      					<name>tcont5011</name>
+      					<alloc-id>256</alloc-id>
+      					<interface-reference>ont1</interface-reference>
+      					<traffic-descriptor-profile-ref>TDP0</traffic-descriptor-profile-ref>
+      				</tcont>
+      				<tcont>
+      					<name>tcont5012</name>
+      					<alloc-id>257</alloc-id>
+      					<interface-reference>ont1</interface-reference>
+      					<traffic-descriptor-profile-ref>TDP0</traffic-descriptor-profile-ref>
+      				</tcont>
+      			</tconts>
+        </xpongemtcont>
+    </config>
+  </edit-config>
+</rpc>

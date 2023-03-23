@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <action xmlns="urn:ietf:params:xml:ns:yang:1">
+  		<ponid:xpon-tc-allocation xmlns:ponid="http://www.nokia.com/management-solutions/pon-id-allocation">
+  			<ponid:channel-group>
+  				<ponid:name>cg_ont1</ponid:name>
+  				<ponid:per-xpon-technology-id-pool>
+  					<ponid:xpon-pool-type>hs-pon</ponid:xpon-pool-type>
+  					<ponid:onu-id-pool>
+  						<ponid:get-consumed-onu-ids/>
+  					</ponid:onu-id-pool>
+  				</ponid:per-xpon-technology-id-pool>
+  			</ponid:channel-group>
+  		</ponid:xpon-tc-allocation>
+  	</action>
+</rpc>

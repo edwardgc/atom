@@ -1,0 +1,41 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="457">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <default-operation>none</default-operation>
+    <test-option>set</test-option>
+    <error-option>rollback-on-error</error-option>
+    <config>
+      <anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+        <adh:device xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+          <adh:device-id>ont1-fglt-b</adh:device-id>
+          <adh:device-specific-data xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" nc:operation="merge">
+            <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>uni1_ont1-fglt-b</name>
+                <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+                <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">ontuni_uni1_ont1-fglt-b</port-layer-if>
+                <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
+                  <auto-negotiation>
+                    <status>enabled</status>
+                    <speed>eth-if-speed-1gb</speed>
+                    <duplex>full</duplex>
+                  </auto-negotiation>
+                </ethernet>
+              </interface>
+              <interface>
+                <name>enet_uni1_ont1-fglt-b-user</name>
+                <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+                <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+                  <interface>uni1_ont1-fglt-b</interface>
+                </subif-lower-layer>
+                <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP0</ingress-qos-policy-profile>
+              </interface>
+            </interfaces>
+          </adh:device-specific-data>
+        </adh:device>
+      </anv:device-manager>
+    </config>
+  </edit-config>
+</rpc>

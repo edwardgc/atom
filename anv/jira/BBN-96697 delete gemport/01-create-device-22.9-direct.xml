@@ -1,0 +1,26 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="12345">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+	  <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <device-id>R2_DF16GM_32.218</device-id>
+          <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
+          <hardware-type>LS-DF-CFXR-E</hardware-type>
+          <interface-version>22.9</interface-version>
+          <configured-device-properties>
+            <ip-address>135.251.206.246</ip-address>
+            <ip-port>49281</adh:ip-port>
+            <password>$-0$/G0p7cc/DABlHgNCBLtWvqLRYR/KLDsAau0k3CZS6Ko=</password>
+            <pma-authentication-method>username-and-password</pma-authentication-method>
+            <ssh-host-key-handling>learned</ssh-host-key-handling>
+            <transport-protocol>ssh</transport-protocol>
+            <username>admin</username>
+          </configured-device-properties>
+        </device>
+      </device-manager>
+    </config>
+  </edit-config>
+</rpc>

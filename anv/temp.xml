@@ -1,8 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
-	<get>
-		<source>
-			<running/>
-		</source>
-	</get>
+<get-config xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+  <source>
+      <running/>
+  </source>
+  <filter type="subtree">
+      <anv:device-manager xmlns:anv="http://www.nokia.com/management-solutions/anv">
+          <adh:device xmlns:adh="http://www.nokia.com/management-solutions/anv-device-holders">
+              <adh:device-id>HelloWorld</adh:device-id>
+              <adh:device-specific-data>
+                   <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+                        <interface>
+                            <name>BP_Eth</name>
+                        </interface>
+                    </interfaces>
+              </adh:device-specific-data>
+          </adh:device>
+      </anv:device-manager>
+  </filter>
+</get-config>
 </rpc>

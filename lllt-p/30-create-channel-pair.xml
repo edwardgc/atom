@@ -1,0 +1,23 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="457">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <default-operation>none</default-operation>
+    <test-option>set</test-option>
+    <error-option>rollback-on-error</error-option>
+    <config>
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface ns0:operation="merge" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0">
+          <name>cp_pon2</name>
+          <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:channel-pair</type>
+          <channel-pair xmlns="urn:bbf:yang:bbf-xpon">
+            <channel-group-ref>cg_pon2</channel-group-ref>
+            <channel-pair-type xmlns:xpon-types="urn:bbf:yang:bbf-xpon-types">xpon-types:gpon</channel-pair-type>
+            <channel-partition-ref>scg_pon2</channel-partition-ref>
+          </channel-pair>
+        </interface>
+      </interfaces>
+    </config>
+  </edit-config>
+</rpc>

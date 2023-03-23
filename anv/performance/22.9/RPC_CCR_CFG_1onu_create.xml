@@ -1,0 +1,558 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>HelloWorld</device-id>
+          <device-specific-data>
+
+  <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+    <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>cp1_onu01</name>
+      <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:v-ani</type>
+      <v-ani xmlns="urn:bbf:yang:bbf-xponvani">
+        <onu-id>1</onu-id>
+        <channel-partition>scg_cp1</channel-partition>
+        <expected-serial-number>ALCLF0191001</expected-serial-number>
+        <preferred-channel-pair>cp1</preferred-channel-pair>
+        <onu-name xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-if-xponvani-aug">cp1_onu01</onu-name>
+      </v-ani>
+    </interface>
+    <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>cp1_onu01_uni1</name>
+      <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
+      <olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
+        <lower-layer-interface>cp1_onu01</lower-layer-interface>
+      </olt-v-enet>
+      <egress-tm-objects xmlns="urn:bbf:yang:bbf-qos-enhanced-scheduling">
+        <root-if-name>scg_cp1</root-if-name>
+        <scheduler-node-name>cp1_onu01_uni1-node</scheduler-node-name>
+      </egress-tm-objects>
+      <subscriber-profile xmlns="urn:bbf:yang:bbf-subscriber-profiles">
+        <profile>sub_pro_cp1_onu01_uni1</profile>
+      </subscriber-profile>
+    </interface>
+    <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>cp1_onu01_uni1_user1</name>
+      <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+      <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+        <interface>cp1_onu01_uni1</interface>
+      </subif-lower-layer>
+      <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP0</ingress-qos-policy-profile>
+      <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">QPP0</egress-qos-policy-profile>
+      <vector-profile xmlns="urn:bbf:yang:bbf-vlan-sub-interface-vector">vector_cp1_user1</vector-profile>
+      <performance xmlns="urn:bbf:yang:bbf-interfaces-performance-management">
+        <enable>true</enable>
+      </performance>
+    </interface>
+    <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>cp1_onu01_uni1_user2</name>
+      <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+      <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+        <interface>cp1_onu01_uni1</interface>
+      </subif-lower-layer>
+      <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP1</ingress-qos-policy-profile>
+      <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">QPP1</egress-qos-policy-profile>
+      <vector-profile xmlns="urn:bbf:yang:bbf-vlan-sub-interface-vector">vector_cp1_user2</vector-profile>
+      <performance xmlns="urn:bbf:yang:bbf-interfaces-performance-management">
+        <enable>true</enable>
+      </performance>
+    </interface>
+    <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>cp1_onu01_uni1_user3</name>
+      <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+      <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+        <interface>cp1_onu01_uni1</interface>
+      </subif-lower-layer>
+      <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP2</ingress-qos-policy-profile>
+      <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">QPP2</egress-qos-policy-profile>
+      <vector-profile xmlns="urn:bbf:yang:bbf-vlan-sub-interface-vector">vector_cp1_user3</vector-profile>
+      <performance xmlns="urn:bbf:yang:bbf-interfaces-performance-management">
+        <enable>true</enable>
+      </performance>
+    </interface>
+    <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>cp1_onu01_uni1_user4</name>
+      <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+      <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+        <interface>cp1_onu01_uni1</interface>
+      </subif-lower-layer>
+      <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP3</ingress-qos-policy-profile>
+      <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">QPP3</egress-qos-policy-profile>
+      <vector-profile xmlns="urn:bbf:yang:bbf-vlan-sub-interface-vector">vector_cp1_user4</vector-profile>
+      <performance xmlns="urn:bbf:yang:bbf-interfaces-performance-management">
+        <enable>true</enable>
+      </performance>
+    </interface>
+    <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>cp1_onu01_uni1_user5</name>
+      <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+      <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+        <interface>cp1_onu01_uni1</interface>
+      </subif-lower-layer>
+      <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP4</ingress-qos-policy-profile>
+      <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">QPP4</egress-qos-policy-profile>
+      <vector-profile xmlns="urn:bbf:yang:bbf-vlan-sub-interface-vector">vector_cp1_user5</vector-profile>
+      <performance xmlns="urn:bbf:yang:bbf-interfaces-performance-management">
+        <enable>true</enable>
+      </performance>
+    </interface>
+    <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>cp1_onu01_uni1_user6</name>
+      <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+      <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+        <interface>cp1_onu01_uni1</interface>
+      </subif-lower-layer>
+      <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP5</ingress-qos-policy-profile>
+      <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">QPP5</egress-qos-policy-profile>
+      <vector-profile xmlns="urn:bbf:yang:bbf-vlan-sub-interface-vector">vector_cp1_user6</vector-profile>
+      <performance xmlns="urn:bbf:yang:bbf-interfaces-performance-management">
+        <enable>true</enable>
+      </performance>
+      <ipv4-security xmlns="uri:http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-ipv4-address-spoofing-prevention">
+        <prevent-ipv4-address-spoofing>true</prevent-ipv4-address-spoofing>
+        <address>
+          <ip>192.1.1.6</ip>
+          <prefix-length>24</prefix-length>
+        </address>
+      </ipv4-security>
+      <ipv6-security xmlns="uri:http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-ipv6-address-spoofing-prevention">
+        <prevent-ipv6-address-spoofing>true</prevent-ipv6-address-spoofing>
+        <static-ipv6-address>
+          <ip>2000:1:1::6</ip>
+          <prefix-length>64</prefix-length>
+        </static-ipv6-address>
+      </ipv6-security>
+    </interface>
+    <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>cp1_onu01_uni1_user7</name>
+      <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+      <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+        <interface>cp1_onu01_uni1</interface>
+      </subif-lower-layer>
+      <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP6</ingress-qos-policy-profile>
+      <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">QPP6</egress-qos-policy-profile>
+      <vector-profile xmlns="urn:bbf:yang:bbf-vlan-sub-interface-vector">vector_cp1_user7</vector-profile>
+      <performance xmlns="urn:bbf:yang:bbf-interfaces-performance-management">
+        <enable>true</enable>
+      </performance>
+    </interface>
+    <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>cp1_onu01_univoip</name>
+      <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
+      <egress-tm-objects xmlns="urn:bbf:yang:bbf-qos-enhanced-scheduling">
+        <root-if-name>scg_cp1</root-if-name>
+        <scheduler-node-name>cp1_onu01_uni1-node</scheduler-node-name>
+      </egress-tm-objects>
+      <subscriber-profile xmlns="urn:bbf:yang:bbf-subscriber-profiles">
+        <profile>sub_pro_cp1_onu01_uni1</profile>
+      </subscriber-profile>
+      <olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
+        <lower-layer-interface>cp1_onu01</lower-layer-interface>
+      </olt-v-enet>
+    </interface>
+    <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>cp1_onu01_univoip_user1</name>
+      <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+      <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+        <interface>cp1_onu01_univoip</interface>
+      </subif-lower-layer>
+      <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP7</ingress-qos-policy-profile>
+      <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">QPP7</egress-qos-policy-profile>
+      <vector-profile xmlns="urn:bbf:yang:bbf-vlan-sub-interface-vector">vector_cp1_voip</vector-profile>
+      <performance xmlns="urn:bbf:yang:bbf-interfaces-performance-management">
+        <enable>true</enable>
+      </performance>
+    </interface>
+    <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>cp1_onu01_uni2</name>
+      <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
+      <olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
+        <lower-layer-interface>cp1_onu01</lower-layer-interface>
+      </olt-v-enet>
+    </interface>
+    <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>cp1_onu01_uni3</name>
+      <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
+      <olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
+        <lower-layer-interface>cp1_onu01</lower-layer-interface>
+      </olt-v-enet>
+    </interface>
+    <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>cp1_onu01_uni4</name>
+      <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:olt-v-enet</type>
+      <olt-v-enet xmlns="urn:bbf:yang:bbf-xponvani">
+        <lower-layer-interface>cp1_onu01</lower-layer-interface>
+      </olt-v-enet>
+    </interface>
+  </interfaces>
+  <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+    <onu xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>cp1_onu01</name>
+      <usage xmlns:template-common="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-template-common">template-common:node-from-template-usage</usage>
+      <template-parameters xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/onus-from-template">
+        <template-ref>onu_template</template-ref>
+        <tconts>
+          <tcont ns0:operation="merge">
+            <template-ref>onu_template_tcont1</template-ref>
+            <id>256</id>
+          </tcont>
+          <tcont ns0:operation="merge">
+            <template-ref>onu_template_tcont2</template-ref>
+            <id>257</id>
+          </tcont>
+          <tcont ns0:operation="merge">
+            <template-ref>onu_template_tcont3</template-ref>
+            <id>258</id>
+          </tcont>
+          <tcont ns0:operation="merge">
+            <template-ref>onu_template_tcont4</template-ref>
+            <id>259</id>
+          </tcont>
+          <tcont ns0:operation="merge">
+            <template-ref>onu_template_tcont5</template-ref>
+            <id>260</id>
+          </tcont>
+        </tconts>
+        <gemports>
+          <gemport ns0:operation="merge">
+            <template-ref>onu_template_uni1_user1_gemport1</template-ref>
+            <id>256</id>
+          </gemport>
+          <gemport ns0:operation="merge">
+            <template-ref>onu_template_uni1_user2_gemport1</template-ref>
+            <id>257</id>
+          </gemport>
+          <gemport ns0:operation="merge">
+            <template-ref>onu_template_uni1_user3_gemport1</template-ref>
+            <id>258</id>
+          </gemport>
+          <gemport ns0:operation="merge">
+            <template-ref>onu_template_uni1_user4_gemport1</template-ref>
+            <id>259</id>
+          </gemport>
+          <gemport ns0:operation="merge">
+            <template-ref>onu_template_uni1_user5_gemport1</template-ref>
+            <id>260</id>
+          </gemport>
+          <gemport ns0:operation="merge">
+            <template-ref>onu_template_uni1_user6_gemport1</template-ref>
+            <id>261</id>
+          </gemport>
+          <gemport ns0:operation="merge">
+            <template-ref>onu_template_uni1_user7_gemport1</template-ref>
+            <id>262</id>
+          </gemport>
+          <gemport ns0:operation="merge">
+            <template-ref>onu_template_univoip_user1_gemport1</template-ref>
+            <id>263</id>
+          </gemport>
+        </gemports>
+        <voip>
+          <sip-server-pools>
+            <name>sip-agent</name>
+            <sip-servers>
+              <name>proxy</name>
+              <fully-qualified-domain-name>qd.lucentlab.com</fully-qualified-domain-name>
+            </sip-servers>
+            <sip-servers>
+              <name>outboundproxy</name>
+              <fully-qualified-domain-name>qd.lucentlab.com</fully-qualified-domain-name>
+            </sip-servers>
+            <sip-servers>
+              <name>registrar</name>
+              <fully-qualified-domain-name>qd.lucentlab.com</fully-qualified-domain-name>
+            </sip-servers>
+          </sip-server-pools>
+          <sip-user-agent>
+            <name>sip-agent</name>
+            <sip-user-agent-domain>qd.lucentlab.com</sip-user-agent-domain>
+          </sip-user-agent>
+          <sip-termination>
+            <name>onu_template_voip-card_userpots1_term</name>
+            <sip-uni-display-name>13200000001</sip-uni-display-name>
+            <sip-uni-uri>+13200000001</sip-uni-uri>
+            <auth-user-name>13200000001</auth-user-name>
+            <digest-password>passwordlss</digest-password>
+          </sip-termination>
+          <sip-termination>
+            <name>onu_template_voip-card_userpots2_term</name>
+            <sip-uni-display-name>13200000002</sip-uni-display-name>
+            <sip-uni-uri>+13200000002</sip-uni-uri>
+            <auth-user-name>13200000002</auth-user-name>
+            <digest-password>passwordlss</digest-password>
+          </sip-termination>
+        </voip>
+      </template-parameters>
+    </onu>
+  </onus>
+  <xpongemtcont xmlns="urn:bbf:yang:bbf-xpongemtcont">
+    <tconts>
+      <tcont xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+        <name>cp1_onu01_tcont1</name>
+        <alloc-id>256</alloc-id>
+        <interface-reference>cp1_onu01</interface-reference>
+        <traffic-descriptor-profile-ref>TDP0</traffic-descriptor-profile-ref>
+      </tcont>
+      <tcont xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+        <name>cp1_onu01_tcont2</name>
+        <alloc-id>257</alloc-id>
+        <interface-reference>cp1_onu01</interface-reference>
+        <traffic-descriptor-profile-ref>TDP1</traffic-descriptor-profile-ref>
+      </tcont>
+      <tcont xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+        <name>cp1_onu01_tcont3</name>
+        <alloc-id>258</alloc-id>
+        <interface-reference>cp1_onu01</interface-reference>
+        <traffic-descriptor-profile-ref>TDP2</traffic-descriptor-profile-ref>
+      </tcont>
+      <tcont xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+        <name>cp1_onu01_tcont4</name>
+        <alloc-id>259</alloc-id>
+        <interface-reference>cp1_onu01</interface-reference>
+        <traffic-descriptor-profile-ref>TDP3</traffic-descriptor-profile-ref>
+      </tcont>
+      <tcont xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+        <name>cp1_onu01_tcont5</name>
+        <alloc-id>260</alloc-id>
+        <interface-reference>cp1_onu01</interface-reference>
+        <traffic-descriptor-profile-ref>TDP4</traffic-descriptor-profile-ref>
+      </tcont>
+    </tconts>
+    <gemports>
+      <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+        <name>cp1_onu01_uni1_user1_gemport1</name>
+        <gemport-id>256</gemport-id>
+        <interface>cp1_onu01_uni1_user1</interface>
+        <traffic-class>0</traffic-class>
+        <downstream-aes-indicator>true</downstream-aes-indicator>
+      </gemport>
+      <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+        <name>cp1_onu01_uni1_user2_gemport1</name>
+        <gemport-id>257</gemport-id>
+        <interface>cp1_onu01_uni1_user2</interface>
+        <traffic-class>1</traffic-class>
+        <downstream-aes-indicator>true</downstream-aes-indicator>
+      </gemport>
+      <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+        <name>cp1_onu01_uni1_user3_gemport1</name>
+        <gemport-id>258</gemport-id>
+        <interface>cp1_onu01_uni1_user3</interface>
+        <traffic-class>2</traffic-class>
+        <downstream-aes-indicator>true</downstream-aes-indicator>
+      </gemport>
+      <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+        <name>cp1_onu01_uni1_user4_gemport1</name>
+        <gemport-id>259</gemport-id>
+        <interface>cp1_onu01_uni1_user4</interface>
+        <traffic-class>3</traffic-class>
+        <downstream-aes-indicator>true</downstream-aes-indicator>
+      </gemport>
+      <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+        <name>cp1_onu01_uni1_user5_gemport1</name>
+        <gemport-id>260</gemport-id>
+        <interface>cp1_onu01_uni1_user5</interface>
+        <traffic-class>4</traffic-class>
+        <downstream-aes-indicator>true</downstream-aes-indicator>
+      </gemport>
+      <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+        <name>cp1_onu01_uni1_user6_gemport1</name>
+        <gemport-id>261</gemport-id>
+        <interface>cp1_onu01_uni1_user6</interface>
+        <traffic-class>5</traffic-class>
+        <downstream-aes-indicator>true</downstream-aes-indicator>
+      </gemport>
+      <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+        <name>cp1_onu01_uni1_user7_gemport1</name>
+        <gemport-id>262</gemport-id>
+        <interface>cp1_onu01_uni1_user7</interface>
+        <traffic-class>6</traffic-class>
+        <downstream-aes-indicator>true</downstream-aes-indicator>
+      </gemport>
+      <gemport xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+        <name>cp1_onu01_univoip_user1_gemport1</name>
+        <gemport-id>263</gemport-id>
+        <interface>cp1_onu01_univoip_user1</interface>
+        <traffic-class>7</traffic-class>
+        <downstream-aes-indicator>true</downstream-aes-indicator>
+      </gemport>
+    </gemports>
+  </xpongemtcont>
+  <subscriber-profiles xmlns="urn:bbf:yang:bbf-subscriber-profiles">
+    <subscriber-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+      <name>sub_pro_cp1_onu01_uni1</name>
+      <remote-id>Name:Customer1.Phone:99999999999999.MAC:AABBCCDDEEFF</remote-id>
+    </subscriber-profile>
+  </subscriber-profiles>
+  <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+    <forwarders>
+      <forwarder>
+        <name>cp1_fwd-hsi1</name>
+        <ports>
+          <port xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <name>cp1_onu01_uni1_user1_port</name>
+            <sub-interface>cp1_onu01_uni1_user1</sub-interface>
+          </port>
+        </ports>
+      </forwarder>
+      <forwarder>
+        <name>cp1_fwd-hsi2</name>
+        <ports>
+          <port xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <name>cp1_onu01_uni1_user2_port</name>
+            <sub-interface>cp1_onu01_uni1_user2</sub-interface>
+          </port>
+        </ports>
+      </forwarder>
+      <forwarder>
+        <name>cp1_fwd-hsi3</name>
+        <ports>
+          <port xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <name>cp1_onu01_uni1_user3_port</name>
+            <sub-interface>cp1_onu01_uni1_user3</sub-interface>
+          </port>
+        </ports>
+      </forwarder>
+      <forwarder>
+        <name>cp1_fwd-hsi4</name>
+        <ports>
+          <port xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <name>cp1_onu01_uni1_user4_port</name>
+            <sub-interface>cp1_onu01_uni1_user4</sub-interface>
+          </port>
+        </ports>
+      </forwarder>
+      <forwarder>
+        <name>cp1_fwd-hsi5</name>
+        <ports>
+          <port xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <name>cp1_onu01_uni1_user5_port</name>
+            <sub-interface>cp1_onu01_uni1_user5</sub-interface>
+          </port>
+        </ports>
+      </forwarder>
+      <forwarder>
+        <name>cp1_fwd-hsi6</name>
+        <ports>
+          <port xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <name>cp1_onu01_uni1_user6_port</name>
+            <sub-interface>cp1_onu01_uni1_user6</sub-interface>
+          </port>
+        </ports>
+      </forwarder>
+      <forwarder>
+        <name>fwd_mcast</name>
+        <ports>
+          <port xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <name>cp1_onu01_uni1_user7_port</name>
+            <sub-interface>cp1_onu01_uni1_user7</sub-interface>
+          </port>
+        </ports>
+      </forwarder>
+      <forwarder>
+        <name>fwd_voip</name>
+        <ports>
+          <port xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <name>cp1_onu01_univoip_user1_port</name>
+            <sub-interface>cp1_onu01_univoip_user1</sub-interface>
+          </port>
+        </ports>
+      </forwarder>
+    </forwarders>
+    <forwarding-databases>
+      <forwarding-database>
+        <name>cp1_fdb-hsi1</name>
+        <max-number-mac-addresses>1024</max-number-mac-addresses>
+        <aging-timer>300</aging-timer>
+        <static-mac-address xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <mac-address>00:11:00:01:01:01</mac-address>
+          <static-forwarder-port-ref>
+            <forwarder>cp1_fwd-hsi1</forwarder>
+            <port>cp1_onu01_uni1_user1_port</port>
+          </static-forwarder-port-ref>
+        </static-mac-address>
+      </forwarding-database>
+      <forwarding-database>
+        <name>cp1_fdb-hsi2</name>
+        <max-number-mac-addresses>1024</max-number-mac-addresses>
+        <aging-timer>300</aging-timer>
+        <static-mac-address xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <mac-address>00:11:00:01:01:02</mac-address>
+          <static-forwarder-port-ref>
+            <forwarder>cp1_fwd-hsi2</forwarder>
+            <port>cp1_onu01_uni1_user2_port</port>
+          </static-forwarder-port-ref>
+        </static-mac-address>
+      </forwarding-database>
+      <forwarding-database>
+        <name>cp1_fdb-hsi3</name>
+        <max-number-mac-addresses>1024</max-number-mac-addresses>
+        <aging-timer>300</aging-timer>
+        <static-mac-address xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <mac-address>00:11:00:01:01:03</mac-address>
+          <static-forwarder-port-ref>
+            <forwarder>cp1_fwd-hsi3</forwarder>
+            <port>cp1_onu01_uni1_user3_port</port>
+          </static-forwarder-port-ref>
+        </static-mac-address>
+      </forwarding-database>
+      <forwarding-database>
+        <name>cp1_fdb-hsi4</name>
+        <max-number-mac-addresses>1024</max-number-mac-addresses>
+        <aging-timer>300</aging-timer>
+        <static-mac-address xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <mac-address>00:11:00:01:01:04</mac-address>
+          <static-forwarder-port-ref>
+            <forwarder>cp1_fwd-hsi4</forwarder>
+            <port>cp1_onu01_uni1_user4_port</port>
+          </static-forwarder-port-ref>
+        </static-mac-address>
+      </forwarding-database>
+      <forwarding-database>
+        <name>cp1_fdb-hsi5</name>
+        <max-number-mac-addresses>1024</max-number-mac-addresses>
+        <aging-timer>300</aging-timer>
+        <static-mac-address xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <mac-address>00:11:00:01:01:05</mac-address>
+          <static-forwarder-port-ref>
+            <forwarder>cp1_fwd-hsi5</forwarder>
+            <port>cp1_onu01_uni1_user5_port</port>
+          </static-forwarder-port-ref>
+        </static-mac-address>
+      </forwarding-database>
+      <forwarding-database>
+        <name>cp1_fdb-hsi6</name>
+        <max-number-mac-addresses>1024</max-number-mac-addresses>
+        <aging-timer>300</aging-timer>
+        <static-mac-address xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <mac-address>00:11:00:01:01:06</mac-address>
+          <static-forwarder-port-ref>
+            <forwarder>cp1_fwd-hsi6</forwarder>
+            <port>cp1_onu01_uni1_user6_port</port>
+          </static-forwarder-port-ref>
+        </static-mac-address>
+      </forwarding-database>
+    </forwarding-databases>
+  </forwarding>
+  <multicast xmlns="urn:bbf:yang:bbf-mgmd">
+    <mgmd>
+      <multicast-vpn>
+        <name>vpn</name>
+        <multicast-interface-to-host xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>mc-cp1_onu01_uni1_user7</name>
+          <vlan-sub-interface>cp1_onu01_uni1_user7</vlan-sub-interface>
+          <max-group-number>32</max-group-number>
+          <multicast-package>Pkg</multicast-package>
+        </multicast-interface-to-host>
+      </multicast-vpn>
+    </mgmd>
+  </multicast>
+</device-specific-data>
+</device>
+</device-manager>
+</config>
+</edit-config>
+</rpc>

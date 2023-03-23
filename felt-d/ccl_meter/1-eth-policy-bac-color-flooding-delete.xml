@@ -1,0 +1,74 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+	<edit-config>
+		<target>
+			<running />
+		</target>
+		<config>
+			<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>classifier_eg0</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>classifier_eg1</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>classifier_eg2</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>classifier_eg3</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>classifier_eg4</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>classifier_eg5</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>classifier_eg6</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>classifier_eg7</name>
+				</classifier-entry>
+			</classifiers>
+
+      <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+          <name>POLICY_EG</name>
+        </policy>
+      </policies>
+
+      <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>EPP0</name>
+        </policy-profile>
+      </qos-policy-profiles>
+
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+	      <interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+	        <name>uni1_vsi1</name>
+	      </interface>
+	      <interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+	        <name>net_cc_101</name>
+        </interface>
+      </interfaces>
+      <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+	      <forwarders>
+		      <forwarder xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+		        <name>fwd_cc_101</name>
+		        <ports>
+		          <port>
+		            <name>uni1_vsi1</name>
+		            <sub-interface>uni1_vsi1</sub-interface>
+		          </port>
+		          <port>
+		            <name>net_cc_101</name>
+		            <sub-interface>net_cc_101</sub-interface>
+		          </port>
+		        </ports>
+		      </forwarder>
+	      </forwarders>
+      </forwarding>
+
+		</config>
+	</edit-config>
+</rpc>

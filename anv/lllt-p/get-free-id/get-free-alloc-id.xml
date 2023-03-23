@@ -1,0 +1,9 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="100">
+  <get-free-alloc-ids xmlns="http://www.nokia.com/management-solutions/pon-id-allocation">
+     <channel-group-name>cg_ont1</channel-group-name>
+     <xpon-type xmlns:nokia-sdan-hspon-types="urn:broadband-forum-org:yang:nokia-sdan-hspon-types">nokia-sdan-hspon-types:hs-pon</xpon-type>
+     <tcont-name>tcont1</tcont-name>
+     <tcont-name>tcont2</tcont-name>
+     <tcont-name>tcont3</tcont-name>
+  </get-free-alloc-ids>
+</rpc>

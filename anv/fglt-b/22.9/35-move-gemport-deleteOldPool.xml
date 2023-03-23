@@ -1,0 +1,62 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="10" timeout="600">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>HelloWorld</device-id>
+          <device-specific-data>
+            <xpongemtcont xmlns="urn:bbf:yang:bbf-xpongemtcont">
+              <gemports>
+            		<gemport>
+            					<name>gemport5011</name>
+            					<downstream-aes-indicator>false</downstream-aes-indicator>
+            					<gemport-id>1024</gemport-id>
+            					<interface>ont1_venet2</interface>
+            					<traffic-class>0</traffic-class>
+            					<upstream-aes-indicator>false</upstream-aes-indicator>
+            		</gemport>
+            	</gemports>
+            </xpongemtcont>
+
+            <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                <name>cg_ont1</name>
+                <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:channel-group</type>
+                <enabled>true</enabled>
+                <channel-group xmlns="urn:bbf:yang:bbf-xpon">
+                  <polling-period>100</polling-period>
+                  <raman-mitigation>raman-none</raman-mitigation>
+                  <system-id>00000</system-id>
+                </channel-group>
+              </interface>
+
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                <name>scg_ont1</name>
+              </interface>
+
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                <name>cp_ont1</name>
+              </interface>
+
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                <name>ont1_venet1</name>
+              </interface>
+
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                <name>ont_5011</name>
+              </interface>
+
+              <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                <name>ont1_uni1_vsi1_user</name>
+              </interface>
+            </interfaces>
+
+          </device-specific-data>
+        </device>
+      </device-manager>
+    </config>
+  </edit-config>
+</rpc>

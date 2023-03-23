@@ -1,0 +1,29 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="10" timeout="600">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <xpongemtcont xmlns="urn:bbf:yang:bbf-xpongemtcont">
+        <gemports>
+          <gemport>
+            <name>gemport5011</name>
+            <downstream-aes-indicator>false</downstream-aes-indicator>
+            <gemport-id>1024</gemport-id>
+            <interface>cp_pon2</interface>
+            <traffic-class>0</traffic-class>
+            <upstream-aes-indicator>false</upstream-aes-indicator>
+          </gemport>
+          <gemport>
+            <name>gemport5012</name>
+            <downstream-aes-indicator>false</downstream-aes-indicator>
+            <gemport-id>1024</gemport-id>
+            <interface>cp_pon2</interface>
+            <traffic-class>1</traffic-class>
+            <upstream-aes-indicator>false</upstream-aes-indicator>
+          </gemport>
+        </gemports>
+      </xpongemtcont>
+    </config>
+  </edit-config>
+</rpc>

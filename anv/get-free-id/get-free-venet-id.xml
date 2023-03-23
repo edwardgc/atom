@@ -1,0 +1,20 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="100">
+  <get-free-venet-ids xmlns="http://www.nokia.com/management-solutions/pon-id-allocation">
+     <device-id>device1</device-id>
+     <venet-name>venet1</venet-name>
+     <venet-name>venet2</venet-name>
+  </get-free-venet-ids>
+</rpc>
+
+<!--
+<rpc-reply message-id="100" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+  <ponid:v-enet-and-venet-id xmlns:ponid="http://www.nokia.com/management-solutions/pon-id-allocation">
+		<ponid:venet-name>venet1</ponid:venet-name>
+		<ponid:venet-id>1</ponid:venet-id>
+	</ponid:v-enet-and-venet-id>
+	<ponid:v-enet-and-venet-id xmlns:ponid="http://www.nokia.com/management-solutions/pon-id-allocation">
+		<ponid:venet-name>venet2</ponid:venet-name>
+		<ponid:venet-id>2</ponid:venet-id>
+	</ponid:v-enet-and-venet-id>
+</rpc-reply>
+-->

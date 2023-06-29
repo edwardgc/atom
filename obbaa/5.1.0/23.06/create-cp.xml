@@ -1,0 +1,103 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="34566754">
+   <edit-config xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+      <target>
+         <running />
+      </target>
+      <config>
+         <network-manager xmlns="urn:bbf:yang:obbaa:network-manager">
+            <managed-devices>
+               <device>
+                  <name>deviceA</name>
+                  <root>
+
+<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+    <interface>
+      <name>cg_pon1_gpon</name>
+      <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group</type>
+      <channel-group xmlns="urn:bbf:yang:bbf-xpon">
+        <polling-period>100</polling-period>
+        <raman-mitigation>raman-none</raman-mitigation>
+        <system-id>00000</system-id>
+      </channel-group>
+    </interface>
+    <interface>
+      <name>scg_pon1_gpon</name>
+      <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-partition</type>
+      <tm-root xmlns="urn:bbf:yang:bbf-qos-traffic-mngt">
+        <scheduler-node xmlns="urn:bbf:yang:bbf-qos-enhanced-scheduling">
+          <name>node11</name>
+          <scheduling-level>1</scheduling-level>
+          <queue>
+            <local-queue-id>0</local-queue-id>
+          </queue>
+          <queue>
+            <local-queue-id>1</local-queue-id>
+          </queue>
+          <queue>
+            <local-queue-id>2</local-queue-id>
+          </queue>
+          <queue>
+            <local-queue-id>3</local-queue-id>
+          </queue>
+          <queue>
+            <local-queue-id>4</local-queue-id>
+          </queue>
+          <queue>
+            <local-queue-id>5</local-queue-id>
+          </queue>
+          <queue>
+            <local-queue-id>6</local-queue-id>
+          </queue>
+          <queue>
+            <local-queue-id>7</local-queue-id>
+          </queue>
+        </scheduler-node>
+        <child-scheduler-nodes xmlns="urn:bbf:yang:bbf-qos-enhanced-scheduling">
+          <name>node11</name>
+        </child-scheduler-nodes>
+        <tc-id-2-queue-id-mapping-profile-name>DEFAULT_TC_TO_8Queues</tc-id-2-queue-id-mapping-profile-name>
+      </tm-root>
+      <channel-partition xmlns="urn:bbf:yang:bbf-xpon">
+        <channel-group-ref>cg_pon1_gpon</channel-group-ref>
+        <channel-partition-index>1</channel-partition-index>
+        <downstream-fec>true</downstream-fec>
+        <closest-onu-distance>0</closest-onu-distance>
+        <maximum-differential-xpon-distance>20</maximum-differential-xpon-distance>
+        <authentication-method>serial-number</authentication-method>
+        <multicast-aes-indicator>false</multicast-aes-indicator>
+      </channel-partition>
+    </interface>
+
+    <interface>
+      <name>ct_cp_pon1_gpon</name>
+      <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-termination</type>
+      <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">PORT1gpon</port-layer-if>
+      <channel-termination xmlns="urn:bbf:yang:bbf-xpon">
+        <channel-pair-ref>cp_pon1_gpon</channel-pair-ref>
+        <channel-termination-type xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:gpon</channel-termination-type>
+        <gpon-pon-id>12345712345670</gpon-pon-id>
+        <location xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:inside-olt</location>
+      </channel-termination>
+    </interface>
+
+    <interface>
+      <name>cp_pon1_gpon</name>
+      <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-pair</type>
+      <channel-pair xmlns="urn:bbf:yang:bbf-xpon">
+        <channel-group-ref>cg_pon1_gpon</channel-group-ref>
+        <channel-partition-ref>scg_pon1_gpon</channel-partition-ref>
+        <channel-pair-type xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:gpon</channel-pair-type>
+        <gpon-pon-id-interval>0</gpon-pon-id-interval>
+      </channel-pair>
+    </interface>
+    
+</interfaces>
+
+
+</root>
+</device>
+</managed-devices>
+</network-manager>
+</config>
+</edit-config>
+</rpc>

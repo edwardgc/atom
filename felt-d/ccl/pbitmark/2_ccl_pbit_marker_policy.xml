@@ -1,0 +1,71 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+<edit-config>
+<target>
+<running/>
+</target>
+<config>
+
+     <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+        <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+              <name>cls_ccl_outer_in_pbit_pbit_marker_1</name>
+              <filter-operation>match-all-filter</filter-operation>
+              <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter1</enhanced-filter-name>
+              <classifier-action-entry-cfg>
+                <action-type>pbit-marking</action-type>
+                <pbit-marking-cfg>
+                  <pbit-marking-list>
+                    <index>0</index>
+                    <pbit-value>1</pbit-value>
+                  </pbit-marking-list>
+                </pbit-marking-cfg>
+              </classifier-action-entry-cfg>
+        </classifier-entry>
+     </classifiers>
+
+      <filters xmlns="urn:bbf:yang:bbf-qos-filters">
+          <enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+            <name>enhanced-filter1</name>
+            <filter-operation xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:match-any-filter</filter-operation>
+            <!-- <filter xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <name>enhfilter11</name>
+            <ipv4 xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+             <source-ipv4-network>192.85.1.2/32</source-ipv4-network>
+            </ipv4>
+            </filter>
+            <filter xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+            <name>enhfilter12</name>
+            <ipv4 xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+             <source-ipv4-network>192.85.1.3/32</source-ipv4-network>
+            </ipv4>
+            </filter> -->
+
+            <filter xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+              <name>enhfilter11</name>
+              <pbit-marking-list>
+              <index>0</index>
+              <pbit-value>2</pbit-value>
+              </pbit-marking-list>
+            </filter>
+            <filter xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+              <name>enhfilter12</name>
+              <pbit-marking-list>
+              <index>0</index>
+              <pbit-value>5</pbit-value>
+              </pbit-marking-list>
+            </filter>
+          </enhanced-filter>
+      </filters>
+
+
+  <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+       <policy>
+          <name>ccl_pbit_marker_policy</name>
+            <classifiers>
+              <name>cls_ccl_outer_in_pbit_pbit_marker_1</name>
+            </classifiers>
+       </policy>
+  </policies>
+
+</config>
+</edit-config>
+</rpc>

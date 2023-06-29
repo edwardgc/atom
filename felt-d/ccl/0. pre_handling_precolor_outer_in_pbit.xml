@@ -1,0 +1,112 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+<edit-config>
+<target>
+<running/>
+</target>
+<config>
+
+  <policing-pre-handling-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+    <pre-handling-profile>
+      <name>pre_handling_precolor_outer_in_pbit_1</name>
+      <pre-handling-entry>
+        <name>precolor_pbit0</name>
+        <match-params>
+          <vlans>
+            <tag>
+              <index>0</index>
+              <in-pbit-list>0</in-pbit-list>
+            </tag>
+          </vlans>
+        </match-params>
+        <flow-color>red</flow-color>
+      </pre-handling-entry>
+      <pre-handling-entry>
+        <name>precolor_pbit1</name>
+        <match-params>
+          <vlans>
+            <tag>
+              <index>0</index>
+              <in-pbit-list>1</in-pbit-list>
+            </tag>
+          </vlans>
+        </match-params>
+        <flow-color>red</flow-color>
+      </pre-handling-entry>
+      <pre-handling-entry>
+        <name>precolor_pbit2</name>
+        <match-params>
+          <vlans>
+            <tag>
+              <index>0</index>
+              <in-pbit-list>2</in-pbit-list>
+            </tag>
+          </vlans>
+        </match-params>
+        <flow-color>yellow</flow-color>
+      </pre-handling-entry>
+      <pre-handling-entry>
+        <name>precolor_pbit3</name>
+        <match-params>
+          <vlans>
+            <tag>
+              <index>0</index>
+              <in-pbit-list>3</in-pbit-list>
+            </tag>
+          </vlans>
+        </match-params>
+        <flow-color>yellow</flow-color>
+      </pre-handling-entry>
+      <pre-handling-entry>
+        <name>precolor_pbit4</name>
+        <match-params>
+          <vlans>
+            <tag>
+              <index>0</index>
+              <in-pbit-list>4</in-pbit-list>
+            </tag>
+          </vlans>
+        </match-params>
+        <flow-color>yellow</flow-color>
+      </pre-handling-entry>
+      <pre-handling-entry>
+        <name>precolor_pbit5</name>
+        <match-params>
+          <vlans>
+            <tag>
+              <index>0</index>
+              <in-pbit-list>5</in-pbit-list>
+            </tag>
+          </vlans>
+        </match-params>
+        <flow-color>green</flow-color>
+      </pre-handling-entry>
+      <pre-handling-entry>
+        <name>precolor_pbit6</name>
+        <match-params>
+          <vlans>
+            <tag>
+              <index>0</index>
+              <in-pbit-list>6</in-pbit-list>
+            </tag>
+          </vlans>
+        </match-params>
+        <flow-color>green</flow-color>
+      </pre-handling-entry>
+      <pre-handling-entry>
+        <name>precolor_pbit7</name>
+        <match-params>
+          <vlans>
+            <tag>
+              <index>0</index>
+              <in-pbit-list>7</in-pbit-list>
+            </tag>
+          </vlans>
+        </match-params>
+        <flow-color>green</flow-color>
+      </pre-handling-entry>
+    </pre-handling-profile>
+  </policing-pre-handling-profiles>
+
+</config>
+</edit-config>
+</rpc>

@@ -55,16 +55,6 @@
 	      <forwarders>
 		      <forwarder xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
 		        <name>fwd_cc_101</name>
-		        <ports>
-		          <port>
-		            <name>uni1_vsi1</name>
-		            <sub-interface>uni1_vsi1</sub-interface>
-		          </port>
-		          <port>
-		            <name>net_cc_101</name>
-		            <sub-interface>net_cc_101</sub-interface>
-		          </port>
-		        </ports>
 		      </forwarder>
 	      </forwarders>
       </forwarding>

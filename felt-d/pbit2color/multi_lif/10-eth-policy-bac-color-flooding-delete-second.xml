@@ -1,0 +1,24 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+	<edit-config>
+		<target>
+			<running />
+		</target>
+		<config>
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+	      <interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+	        <name>uni1_vsi2</name>
+	      </interface>
+	      <interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+	        <name>net_cc_102</name>
+        </interface>
+      </interfaces>
+      <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+	      <forwarders>
+		      <forwarder xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+		        <name>fwd_cc_102</name>
+		      </forwarder>
+	      </forwarders>
+      </forwarding>
+		</config>
+	</edit-config>
+</rpc>

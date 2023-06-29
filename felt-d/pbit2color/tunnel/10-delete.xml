@@ -1,0 +1,119 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+	<edit-config>
+		<target>
+			<running />
+		</target>
+		<config>
+			<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>classifier_eg0</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>classifier_eg1</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>classifier_eg2</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>classifier_eg3</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>classifier_eg4</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>classifier_eg5</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>classifier_eg6</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>classifier_eg7</name>
+				</classifier-entry>
+
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>upmarker_C_C_cls0</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>upmarker_C_C_cls1</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>upmarker_C_C_cls2</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>upmarker_C_C_cls3</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>upmarker_C_C_cls4</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>upmarker_C_C_cls5</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>upmarker_C_C_cls6</name>
+				</classifier-entry>
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>upmarker_C_C_cls7</name>
+				</classifier-entry>
+
+				<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>untagPbitDei</name>
+				</classifier-entry>
+			</classifiers>
+
+      <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+          <name>POLICY_EG</name>
+        </policy>
+				<policy xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<name>policy1_upmarker_C_C</name>
+				</policy>
+      </policies>
+
+      <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>EPP0</name>
+        </policy-profile>
+				<policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+					<name>us_inner_in_pbit_trtcm_aware_dual_pbit_marker</name>
+				</policy-profile>
+      </qos-policy-profiles>
+
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+	      <interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+	        <name>uni1_vsi1</name>
+	      </interface>
+	      <interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+	        <name>net_cc_1001</name>
+        </interface>
+      </interfaces>
+      <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+	      <forwarders>
+		      <forwarder xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+		        <name>fwd_cc_1001</name>
+		        <ports>
+		          <port>
+		            <name>uni1_vsi1</name>
+		            <sub-interface>uni1_vsi1</sub-interface>
+		          </port>
+		          <port>
+		            <name>net_cc_1001</name>
+		            <sub-interface>net_cc_101</sub-interface>
+		          </port>
+		        </ports>
+		      </forwarder>
+	      </forwarders>
+      </forwarding>
+
+    <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+			<interface>
+				<name>eth1</name>
+				<type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+				<l2cp xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-l2cp"  xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
+					<l2cp-address-service>l2cp-pass-00-02to0f-10-2x</l2cp-address-service>
+				</l2cp>
+			</interface>
+		</interfaces>
+
+		</config>
+	</edit-config>
+</rpc>

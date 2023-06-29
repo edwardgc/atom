@@ -51,7 +51,7 @@
                     <index>0</index>
                     <dot1q-tag>
                       <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
-                      <vlan-id>2001</vlan-id>
+                      <vlan-id>1001</vlan-id>
                       <pbit>any</pbit>
                       <dei>any</dei>
                     </dot1q-tag>
@@ -68,7 +68,7 @@
 					<index>0</index>
 					<dot1q-tag>
 					  <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
-					  <vlan-id>2001</vlan-id>
+					  <vlan-id>1001</vlan-id>
 					  <pbit-marking-index xmlns="urn:bbf:yang:bbf-qos-policies-sub-interfaces">0</pbit-marking-index>
 					  <dei-marking-index xmlns="urn:bbf:yang:bbf-qos-policies-sub-interfaces">0</dei-marking-index>
 					</dot1q-tag>

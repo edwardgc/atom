@@ -1,0 +1,6 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="12">
+  <anvlog:configure-log-level xmlns:anvlog="http://www.nokia.com/management-solutions/anv-logging">
+    <anvlog:log-category>com.nokia.netconf.persistence.jpa</anvlog:log-category>
+    <anvlog:log-level>debug</anvlog:log-level>
+  </anvlog:configure-log-level>
+</rpc>

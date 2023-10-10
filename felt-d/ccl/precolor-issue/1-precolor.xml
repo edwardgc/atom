@@ -1,0 +1,169 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+      <policing-pre-handling-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+        <pre-handling-profile>
+          <name>pre_handling_precolor_outer_in_dei_1</name>
+          <pre-handling-entry>
+            <name>precolor_dei0</name>
+            <match-params>
+              <vlans>
+                <tag>
+                  <index>0</index>
+                  <in-dei>0</in-dei>
+                </tag>
+              </vlans>
+            </match-params>
+            <flow-color>green</flow-color>
+          </pre-handling-entry>
+          <pre-handling-entry>
+            <name>precolor_dei1</name>
+            <match-params>
+              <vlans>
+                <tag>
+                  <index>0</index>
+                  <in-dei>1</in-dei>
+                </tag>
+              </vlans>
+            </match-params>
+            <flow-color>yellow</flow-color>
+          </pre-handling-entry>
+        </pre-handling-profile>
+      </policing-pre-handling-profiles>
+
+      <policing-action-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+        <action-profile>
+          <name>policing_action_dual_dei_marker_1</name>
+          <action>
+            <flow-color>green</flow-color>
+            <bac-color>copy-from-flow-color</bac-color>
+            <metered-flow>true</metered-flow>
+            <metered-color>true</metered-color>
+          </action>
+          <action>
+            <flow-color>yellow</flow-color>
+            <dei-marking-list>
+              <index>0</index>
+              <dei-value>1</dei-value>
+            </dei-marking-list>
+            <dei-marking-list>
+              <index>1</index>
+              <dei-value>1</dei-value>
+            </dei-marking-list>
+            <bac-color>copy-from-flow-color</bac-color>
+            <metered-flow>true</metered-flow>
+            <metered-color>true</metered-color>
+          </action>
+          <action>
+            <flow-color>red</flow-color>
+            <discard/>
+          </action>
+        </action-profile>
+      </policing-action-profiles>
+
+      <policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+        <policing-profile>
+          <name>pol_ccl_outer_in_dei_trtcm_aware_dual_dei_marker_1</name>
+          <two-rate-three-color-marker-mef>
+            <cir>20000000</cir>
+            <cbs>10240</cbs>
+            <eir>10000000</eir>
+            <ebs>10240</ebs>
+            <couple-flag>0</couple-flag>
+            <color-mode>color-aware</color-mode>
+          </two-rate-three-color-marker-mef>
+          <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_in_dei_1</policing-pre-handling-profile>
+          <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_dual_dei_marker_1</policing-action-profile>
+        </policing-profile>
+        <policing-profile>
+          <name>pol_port_outer_in_dei_trtcm_aware_dual_dei_marker_1</name>
+          <two-rate-three-color-marker-mef>
+            <cir>40000000</cir>
+            <cbs>10240</cbs>
+            <eir>20000000</eir>
+            <ebs>10240</ebs>
+            <couple-flag>0</couple-flag>
+            <color-mode>color-aware</color-mode>
+          </two-rate-three-color-marker-mef>
+          <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_in_dei_1</policing-pre-handling-profile>
+          <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_dual_dei_marker_1</policing-action-profile>
+        </policing-profile>
+      </policing-profiles>
+
+      <filters xmlns="urn:bbf:yang:bbf-qos-filters">
+        <enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+          <name>enhanced-filter1</name>
+          <filter-operation xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:match-any-filter</filter-operation>
+          <filter>
+            <name>enhfilter11</name>
+            <ipv4>
+              <source-ipv4-network>192.85.1.2/32</source-ipv4-network>
+            </ipv4>
+          </filter>
+          <filter>
+            <name>enhfilter12</name>
+            <ipv4>
+              <source-ipv4-network>192.85.1.3/32</source-ipv4-network>
+            </ipv4>
+          </filter>
+        </enhanced-filter>
+      </filters>
+
+      <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+        <classifier-entry>
+          <name>cls_ccl_outer_in_dei_trtcm_aware_dual_dei_marker_1</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter1</enhanced-filter-name>
+          <classifier-action-entry-cfg>
+            <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+            <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+              <policing-profile>pol_ccl_outer_in_dei_trtcm_aware_dual_dei_marker_1</policing-profile>
+            </policing>
+          </classifier-action-entry-cfg>
+        </classifier-entry>
+        <classifier-entry>
+          <name>cls_port_outer_in_dei_trtcm_aware_dual_dei_marker_1</name>
+          <filter-operation>match-all-filter</filter-operation>
+          <metered-flow xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-flow>
+          <classifier-action-entry-cfg>
+            <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+            <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+              <policing-profile>pol_port_outer_in_dei_trtcm_aware_dual_dei_marker_1</policing-profile>
+            </policing>
+          </classifier-action-entry-cfg>
+        </classifier-entry>
+      </classifiers>
+
+      <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy>
+          <name>ccl_outer_in_dei_trtcm_aware_dual_dei_marker</name>
+          <classifiers>
+            <name>cls_ccl_outer_in_dei_trtcm_aware_dual_dei_marker_1</name>
+          </classifiers>
+        </policy>
+        <policy>
+          <name>port_outer_in_dei_trtcm_aware_dual_dei_marker</name>
+          <classifiers>
+            <name>cls_port_outer_in_dei_trtcm_aware_dual_dei_marker_1</name>
+          </classifiers>
+        </policy>
+      </policies>
+
+      <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy-profile>
+          <name>us_outer_in_dei_trtcm_aware_dual_dei_marker</name>
+          <policy-list>
+            <name>ccl_outer_in_dei_trtcm_aware_dual_dei_marker</name>
+          </policy-list>
+          <policy-list>
+            <name>port_outer_in_dei_trtcm_aware_dual_dei_marker</name>
+          </policy-list>
+        </policy-profile>
+      </qos-policy-profiles>
+    </config>
+  </edit-config>
+</rpc>

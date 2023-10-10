@@ -1,0 +1,50 @@
+<rpc message-id="1" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+<edit-config>
+<target>
+<running/>
+</target>
+<config>
+<mds:manager-directory xmlns:mds="http://www.nokia.com/management-solutions/manager-directory-service">
+<mds:manager-info xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="create">
+<mds:name>Altiplano_AV</mds:name>
+<mds:ip>10.131.149.155</mds:ip>
+<mds:protocol>https</mds:protocol>
+<mds:netconf-port>6514</mds:netconf-port>
+<mds:manager-type>NAV</mds:manager-type>
+<mds:user-name>adminuser</mds:user-name>
+<mds:password>password</mds:password>
+<mds:socket-read-timeout>600</mds:socket-read-timeout>
+<mds:max-connections>5</mds:max-connections>
+<mds:http-url>https://10.131.149.155/nokia-altiplano-av</mds:http-url>
+<mds:vonumgmt-address>tcp://10.131.149.155:30802/</mds:vonumgmt-address>
+</mds:manager-info>
+</mds:manager-directory>
+</config>
+</edit-config>
+</rpc>
+
+
+<!-- <rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+<edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <mds:manager-directory xmlns:mds="http://www.nokia.com/management-solutions/manager-directory-service">
+        <mds:manager-info xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0" xc:operation="create">
+          <mds:name>Altiplano_AV</mds:name>
+          <mds:ip>10.131.149.155</mds:ip>
+          <mds:port>30091</mds:port>
+          <mds:protocol>http</mds:protocol>
+          <mds:netconf-port>30075</mds:netconf-port>
+          <mds:manager-type>NAV</mds:manager-type>
+          <mds:user-name>adminuser</mds:user-name>
+          <mds:password>password</mds:password>
+          <mds:max-connections>5</mds:max-connections>
+          <mds:http-url>https://10.131.149.155/automation-altiplano-av</mds:http-url>
+          <mds:vonumgmt-address>tcp://10.131.149.155:30802/</mds:vonumgmt-address>
+        </mds:manager-info>
+      </mds:manager-directory>
+    </config>
+  </edit-config>
+   </rpc> -->

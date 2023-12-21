@@ -1,0 +1,81 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+<config>
+
+    <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+      <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+        <name>uni1_vsi1</name>
+      </interface>
+
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>uni1_vsi2</name>
+        </interface>
+
+      <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+        <name>demo_net_cc_1001_1001</name>
+      </interface>
+		</interfaces>
+
+
+    <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+        <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>sfp1</name>
+        </component>
+
+        <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>port1</name>
+        </component>
+    </hardware>
+
+        <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+          <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+            <name>eth1</name>
+          </interface>
+        </interfaces>
+
+      <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+        <forwarders>
+          <forwarder xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+            <name>demo_fwd_cc_1001_1001</name>
+          </forwarder>
+        </forwarders>
+      </forwarding>
+
+
+           <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+              <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                    <name>cls_ccl_outer_in_pbit_pbit_marker_1</name>
+              </classifier-entry>
+           </classifiers>
+
+            <filters xmlns="urn:bbf:yang:bbf-qos-filters">
+                <enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                  <name>enhanced-filter1</name>
+                </enhanced-filter>
+            </filters>
+
+        <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+             <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+                <name>ccl_pbit_marker_policy</name>
+             </policy>
+        </policies>
+
+        <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+          <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+            <name>ccl_pbit_marker</name>
+          </policy-profile>
+        </qos-policy-profiles>
+
+        <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+          <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+            <name>ccl_pbit_marker1</name>
+          </policy-profile>
+        </qos-policy-profiles>
+
+</config>
+  </edit-config>
+</rpc>

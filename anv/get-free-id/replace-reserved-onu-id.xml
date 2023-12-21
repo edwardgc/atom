@@ -1,0 +1,8 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1775">
+   <replace-reserved-onu-id xmlns="http://www.nokia.com/management-solutions/pon-id-allocation">
+      <channel-group-name>cg_ont1</channel-group-name>
+      <xpon-type xmlns:xpon-types="urn:bbf:yang:bbf-xpon-types">xpon-types:gpon</xpon-type>
+      <v-ani-name>my-vani</v-ani-name>
+      <replace-v-ani-name>my-vani-1</replace-v-ani-name>
+   </replace-reserved-onu-id>
+</rpc>

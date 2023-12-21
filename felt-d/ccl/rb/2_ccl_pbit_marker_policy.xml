@@ -49,7 +49,7 @@
             <filter xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
               <name>enhfilter12</name>
               <pbit-marking-list>
-              <index>1</index>
+              <index>0</index>
               <pbit-value>5</pbit-value>
               </pbit-marking-list>
             </filter>

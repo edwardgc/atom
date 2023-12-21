@@ -1,0 +1,48 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+<edit-config>
+<target>
+<running/>
+</target>
+<config>
+
+  <policing-action-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+    <action-profile>
+      <name>policing_action_port_dual_pbit_marker_1</name>
+      <action>
+        <flow-color>green</flow-color>
+        <pbit-marking-list>
+          <index>0</index>
+          <pbit-value>4</pbit-value>
+        </pbit-marking-list>
+        <pbit-marking-list>
+          <index>1</index>
+          <pbit-value>4</pbit-value>
+        </pbit-marking-list>
+        <bac-color>copy-from-flow-color</bac-color>
+        <metered-flow>true</metered-flow>
+        <metered-color>true</metered-color>
+      </action>
+      <action>
+        <flow-color>yellow</flow-color>
+        <pbit-marking-list>
+          <index>0</index>
+          <pbit-value>3</pbit-value>
+        </pbit-marking-list>
+        <pbit-marking-list>
+          <index>1</index>
+          <pbit-value>3</pbit-value>
+        </pbit-marking-list>
+        <bac-color>copy-from-flow-color</bac-color>
+        <metered-flow>true</metered-flow>
+        <metered-color>true</metered-color>
+      </action>
+      <action>
+        <flow-color>red</flow-color>
+        <discard/>
+      </action>
+    </action-profile>
+  </policing-action-profiles>
+
+</config>
+</edit-config>
+</rpc>

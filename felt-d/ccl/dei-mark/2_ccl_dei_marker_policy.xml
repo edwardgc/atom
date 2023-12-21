@@ -41,17 +41,17 @@
 
             <filter xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
               <name>enhfilter11</name>
-              <pbit-marking-list>
-              <index>0</index>
-              <pbit-value>2</pbit-value>
-              </pbit-marking-list>
+              <dei-marking-list>
+                <index>1</index>
+                <dei-value>0</dei-value>
+              </dei-marking-list>
             </filter>
             <filter xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
               <name>enhfilter12</name>
-              <pbit-marking-list>
-              <index>1</index>
-              <pbit-value>5</pbit-value>
-              </pbit-marking-list>
+              <dei-marking-list>
+                <index>0</index>
+                <dei-value>1</dei-value>
+              </dei-marking-list>
             </filter>
           </enhanced-filter>
       </filters>

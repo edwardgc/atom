@@ -17,8 +17,7 @@
 								</if:type>
 								<bbf-xpon:channel-group xmlns:bbf-xpon="urn:bbf:yang:bbf-xpon">
 									<bbf-xpon:polling-period>100</bbf-xpon:polling-period>
-									<bbf-xpon:raman-mitigation>raman_none</bbf-xpon:raman-mitigation>
-									<bbf-xpon:system-id>000000</bbf-xpon:system-id>
+									<bbf-xpon:raman-mitigation>raman-none</bbf-xpon:raman-mitigation>
 								</bbf-xpon:channel-group>
 								<bbf-if-pm:performance xmlns:bbf-if-pm="urn:bbf:yang:bbf-interfaces-performance-management">
 									<bbf-if-pm:enable>false</bbf-if-pm:enable>

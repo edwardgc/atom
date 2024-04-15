@@ -1,0 +1,96 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+<edit-config>
+<target>
+<running/>
+</target>
+<config>
+
+  <policing-pre-handling-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+    <pre-handling-profile>
+      <name>pre_handling_precolor_inner_pbit_marking_1</name>
+      <pre-handling-entry>
+        <name>precolor_pbit0</name>
+        <match-params>
+          <pbit-marking-list>
+            <index>1</index>
+            <pbit-value>0</pbit-value>
+          </pbit-marking-list>
+        </match-params>
+        <flow-color>red</flow-color>
+      </pre-handling-entry>
+      <pre-handling-entry>
+        <name>precolor_pbit1</name>
+        <match-params>
+          <pbit-marking-list>
+            <index>1</index>
+            <pbit-value>1</pbit-value>
+          </pbit-marking-list>
+        </match-params>
+        <flow-color>red</flow-color>
+      </pre-handling-entry>
+      <pre-handling-entry>
+        <name>precolor_pbit2</name>
+        <match-params>
+          <pbit-marking-list>
+            <index>1</index>
+            <pbit-value>2</pbit-value>
+          </pbit-marking-list>
+        </match-params>
+        <flow-color>yellow</flow-color>
+      </pre-handling-entry>
+      <pre-handling-entry>
+        <name>precolor_pbit3</name>
+        <match-params>
+          <pbit-marking-list>
+            <index>1</index>
+            <pbit-value>3</pbit-value>
+          </pbit-marking-list>
+        </match-params>
+        <flow-color>yellow</flow-color>
+      </pre-handling-entry>
+      <pre-handling-entry>
+        <name>precolor_pbit4</name>
+        <match-params>
+          <pbit-marking-list>
+            <index>1</index>
+            <pbit-value>4</pbit-value>
+          </pbit-marking-list>
+        </match-params>
+        <flow-color>yellow</flow-color>
+      </pre-handling-entry>
+      <pre-handling-entry>
+        <name>precolor_pbit5</name>
+        <match-params>
+          <pbit-marking-list>
+            <index>1</index>
+            <pbit-value>5</pbit-value>
+          </pbit-marking-list>
+        </match-params>
+        <flow-color>green</flow-color>
+      </pre-handling-entry>
+      <pre-handling-entry>
+        <name>precolor_pbit6</name>
+        <match-params>
+          <pbit-marking-list>
+            <index>1</index>
+            <pbit-value>6</pbit-value>
+          </pbit-marking-list>
+        </match-params>
+        <flow-color>green</flow-color>
+      </pre-handling-entry>
+      <pre-handling-entry>
+        <name>precolor_pbit7</name>
+        <match-params>
+          <pbit-marking-list>
+            <index>1</index>
+            <pbit-value>7</pbit-value>
+          </pbit-marking-list>
+        </match-params>
+        <flow-color>green</flow-color>
+      </pre-handling-entry>
+    </pre-handling-profile>
+  </policing-pre-handling-profiles>
+
+</config>
+</edit-config>
+</rpc>

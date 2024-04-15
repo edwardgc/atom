@@ -1,0 +1,3319 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="113">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+<!-- pre_handling_precolor_inner_in_pbit -->
+      <policing-pre-handling-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+  <pre-handling-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>pre_handling_precolor_inner_in_pbit_1</name>
+    <pre-handling-entry>
+      <name>precolor_pbit0</name>
+      <match-params>
+        <vlans>
+          <tag>
+            <index>1</index>
+            <in-pbit-list>0</in-pbit-list>
+          </tag>
+        </vlans>
+      </match-params>
+      <flow-color>red</flow-color>
+    </pre-handling-entry>
+    <pre-handling-entry>
+      <name>precolor_pbit1</name>
+      <match-params>
+        <vlans>
+          <tag>
+            <index>1</index>
+            <in-pbit-list>1</in-pbit-list>
+          </tag>
+        </vlans>
+      </match-params>
+      <flow-color>red</flow-color>
+    </pre-handling-entry>
+    <pre-handling-entry>
+      <name>precolor_pbit2</name>
+      <match-params>
+        <vlans>
+          <tag>
+            <index>1</index>
+            <in-pbit-list>2</in-pbit-list>
+          </tag>
+        </vlans>
+      </match-params>
+      <flow-color>yellow</flow-color>
+    </pre-handling-entry>
+    <pre-handling-entry>
+      <name>precolor_pbit3</name>
+      <match-params>
+        <vlans>
+          <tag>
+            <index>1</index>
+            <in-pbit-list>3</in-pbit-list>
+          </tag>
+        </vlans>
+      </match-params>
+      <flow-color>yellow</flow-color>
+    </pre-handling-entry>
+    <pre-handling-entry>
+      <name>precolor_pbit4</name>
+      <match-params>
+        <vlans>
+          <tag>
+            <index>1</index>
+            <in-pbit-list>4</in-pbit-list>
+          </tag>
+        </vlans>
+      </match-params>
+      <flow-color>yellow</flow-color>
+    </pre-handling-entry>
+    <pre-handling-entry>
+      <name>precolor_pbit5</name>
+      <match-params>
+        <vlans>
+          <tag>
+            <index>1</index>
+            <in-pbit-list>5</in-pbit-list>
+          </tag>
+        </vlans>
+      </match-params>
+      <flow-color>green</flow-color>
+    </pre-handling-entry>
+    <pre-handling-entry>
+      <name>precolor_pbit6</name>
+      <match-params>
+        <vlans>
+          <tag>
+            <index>1</index>
+            <in-pbit-list>6</in-pbit-list>
+          </tag>
+        </vlans>
+      </match-params>
+      <flow-color>green</flow-color>
+    </pre-handling-entry>
+    <pre-handling-entry>
+      <name>precolor_pbit7</name>
+      <match-params>
+        <vlans>
+          <tag>
+            <index>1</index>
+            <in-pbit-list>7</in-pbit-list>
+          </tag>
+        </vlans>
+      </match-params>
+      <flow-color>green</flow-color>
+    </pre-handling-entry>
+  </pre-handling-profile>
+</policing-pre-handling-profiles>
+
+<policing-pre-handling-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+ <pre-handling-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pre_handling_precolor_outer_in_pbit_1</name>
+   <pre-handling-entry>
+     <name>precolor_pbit0</name>
+     <match-params>
+       <vlans>
+         <tag>
+           <index>0</index>
+           <in-pbit-list>0</in-pbit-list>
+         </tag>
+       </vlans>
+     </match-params>
+     <flow-color>red</flow-color>
+   </pre-handling-entry>
+   <pre-handling-entry>
+     <name>precolor_pbit1</name>
+     <match-params>
+       <vlans>
+         <tag>
+           <index>0</index>
+           <in-pbit-list>1</in-pbit-list>
+         </tag>
+       </vlans>
+     </match-params>
+     <flow-color>red</flow-color>
+   </pre-handling-entry>
+   <pre-handling-entry>
+     <name>precolor_pbit2</name>
+     <match-params>
+       <vlans>
+         <tag>
+           <index>0</index>
+           <in-pbit-list>2</in-pbit-list>
+         </tag>
+       </vlans>
+     </match-params>
+     <flow-color>yellow</flow-color>
+   </pre-handling-entry>
+   <pre-handling-entry>
+     <name>precolor_pbit3</name>
+     <match-params>
+       <vlans>
+         <tag>
+           <index>0</index>
+           <in-pbit-list>3</in-pbit-list>
+         </tag>
+       </vlans>
+     </match-params>
+     <flow-color>yellow</flow-color>
+   </pre-handling-entry>
+   <pre-handling-entry>
+     <name>precolor_pbit4</name>
+     <match-params>
+       <vlans>
+         <tag>
+           <index>0</index>
+           <in-pbit-list>4</in-pbit-list>
+         </tag>
+       </vlans>
+     </match-params>
+     <flow-color>yellow</flow-color>
+   </pre-handling-entry>
+   <pre-handling-entry>
+     <name>precolor_pbit5</name>
+     <match-params>
+       <vlans>
+         <tag>
+           <index>0</index>
+           <in-pbit-list>5</in-pbit-list>
+         </tag>
+       </vlans>
+     </match-params>
+     <flow-color>green</flow-color>
+   </pre-handling-entry>
+   <pre-handling-entry>
+     <name>precolor_pbit6</name>
+     <match-params>
+       <vlans>
+         <tag>
+           <index>0</index>
+           <in-pbit-list>6</in-pbit-list>
+         </tag>
+       </vlans>
+     </match-params>
+     <flow-color>green</flow-color>
+   </pre-handling-entry>
+   <pre-handling-entry>
+     <name>precolor_pbit7</name>
+     <match-params>
+       <vlans>
+         <tag>
+           <index>0</index>
+           <in-pbit-list>7</in-pbit-list>
+         </tag>
+       </vlans>
+     </match-params>
+     <flow-color>green</flow-color>
+   </pre-handling-entry>
+ </pre-handling-profile>
+</policing-pre-handling-profiles>
+
+<policing-pre-handling-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+<pre-handling-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>pre_handling_precolor_inner_pbit_marking_1</name>
+  <pre-handling-entry>
+    <name>precolor_pbit0</name>
+    <match-params>
+      <pbit-marking-list>
+        <index>1</index>
+        <pbit-value>0</pbit-value>
+      </pbit-marking-list>
+    </match-params>
+    <flow-color>red</flow-color>
+  </pre-handling-entry>
+  <pre-handling-entry>
+    <name>precolor_pbit1</name>
+    <match-params>
+      <pbit-marking-list>
+        <index>1</index>
+        <pbit-value>1</pbit-value>
+      </pbit-marking-list>
+    </match-params>
+    <flow-color>red</flow-color>
+  </pre-handling-entry>
+  <pre-handling-entry>
+    <name>precolor_pbit2</name>
+    <match-params>
+      <pbit-marking-list>
+        <index>1</index>
+        <pbit-value>2</pbit-value>
+      </pbit-marking-list>
+    </match-params>
+    <flow-color>yellow</flow-color>
+  </pre-handling-entry>
+  <pre-handling-entry>
+    <name>precolor_pbit3</name>
+    <match-params>
+      <pbit-marking-list>
+        <index>1</index>
+        <pbit-value>3</pbit-value>
+      </pbit-marking-list>
+    </match-params>
+    <flow-color>yellow</flow-color>
+  </pre-handling-entry>
+  <pre-handling-entry>
+    <name>precolor_pbit4</name>
+    <match-params>
+      <pbit-marking-list>
+        <index>1</index>
+        <pbit-value>4</pbit-value>
+      </pbit-marking-list>
+    </match-params>
+    <flow-color>yellow</flow-color>
+  </pre-handling-entry>
+  <pre-handling-entry>
+    <name>precolor_pbit5</name>
+    <match-params>
+      <pbit-marking-list>
+        <index>1</index>
+        <pbit-value>5</pbit-value>
+      </pbit-marking-list>
+    </match-params>
+    <flow-color>green</flow-color>
+  </pre-handling-entry>
+  <pre-handling-entry>
+    <name>precolor_pbit6</name>
+    <match-params>
+      <pbit-marking-list>
+        <index>1</index>
+        <pbit-value>6</pbit-value>
+      </pbit-marking-list>
+    </match-params>
+    <flow-color>green</flow-color>
+  </pre-handling-entry>
+  <pre-handling-entry>
+    <name>precolor_pbit7</name>
+    <match-params>
+      <pbit-marking-list>
+        <index>1</index>
+        <pbit-value>7</pbit-value>
+      </pbit-marking-list>
+    </match-params>
+    <flow-color>green</flow-color>
+  </pre-handling-entry>
+</pre-handling-profile>
+</policing-pre-handling-profiles>
+
+<policing-pre-handling-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+ <pre-handling-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pre_handling_precolor_outer_pbit_marking_1</name>
+   <pre-handling-entry>
+     <name>precolor_pbit0</name>
+     <match-params>
+       <pbit-marking-list>
+         <index>0</index>
+         <pbit-value>0</pbit-value>
+       </pbit-marking-list>
+     </match-params>
+     <flow-color>red</flow-color>
+   </pre-handling-entry>
+   <pre-handling-entry>
+     <name>precolor_pbit1</name>
+     <match-params>
+       <pbit-marking-list>
+         <index>0</index>
+         <pbit-value>1</pbit-value>
+       </pbit-marking-list>
+     </match-params>
+     <flow-color>red</flow-color>
+   </pre-handling-entry>
+   <pre-handling-entry>
+     <name>precolor_pbit2</name>
+     <match-params>
+       <pbit-marking-list>
+         <index>0</index>
+         <pbit-value>2</pbit-value>
+       </pbit-marking-list>
+     </match-params>
+     <flow-color>yellow</flow-color>
+   </pre-handling-entry>
+   <pre-handling-entry>
+     <name>precolor_pbit3</name>
+     <match-params>
+       <pbit-marking-list>
+         <index>0</index>
+         <pbit-value>3</pbit-value>
+       </pbit-marking-list>
+     </match-params>
+     <flow-color>yellow</flow-color>
+   </pre-handling-entry>
+   <pre-handling-entry>
+     <name>precolor_pbit4</name>
+     <match-params>
+       <pbit-marking-list>
+         <index>0</index>
+         <pbit-value>4</pbit-value>
+       </pbit-marking-list>
+     </match-params>
+     <flow-color>yellow</flow-color>
+   </pre-handling-entry>
+   <pre-handling-entry>
+     <name>precolor_pbit5</name>
+     <match-params>
+       <pbit-marking-list>
+         <index>0</index>
+         <pbit-value>5</pbit-value>
+       </pbit-marking-list>
+     </match-params>
+     <flow-color>green</flow-color>
+   </pre-handling-entry>
+   <pre-handling-entry>
+     <name>precolor_pbit6</name>
+     <match-params>
+       <pbit-marking-list>
+         <index>0</index>
+         <pbit-value>6</pbit-value>
+       </pbit-marking-list>
+     </match-params>
+     <flow-color>green</flow-color>
+   </pre-handling-entry>
+   <pre-handling-entry>
+     <name>precolor_pbit7</name>
+     <match-params>
+       <pbit-marking-list>
+         <index>0</index>
+         <pbit-value>7</pbit-value>
+       </pbit-marking-list>
+     </match-params>
+     <flow-color>green</flow-color>
+   </pre-handling-entry>
+ </pre-handling-profile>
+</policing-pre-handling-profiles>
+
+<policing-pre-handling-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+ <pre-handling-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pre_handling_precolor_inner_in_dei_1</name>
+   <pre-handling-entry>
+     <name>precolor_dei0</name>
+     <match-params>
+       <vlans>
+         <tag>
+           <index>1</index>
+           <in-dei>0</in-dei>
+         </tag>
+       </vlans>
+     </match-params>
+     <flow-color>green</flow-color>
+   </pre-handling-entry>
+   <pre-handling-entry>
+     <name>precolor_dei1</name>
+     <match-params>
+       <vlans>
+         <tag>
+           <index>1</index>
+           <in-dei>1</in-dei>
+         </tag>
+       </vlans>
+     </match-params>
+     <flow-color>yellow</flow-color>
+   </pre-handling-entry>
+ </pre-handling-profile>
+</policing-pre-handling-profiles>
+
+<policing-pre-handling-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+<pre-handling-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>pre_handling_precolor_outer_in_dei_1</name>
+  <pre-handling-entry>
+    <name>precolor_dei0</name>
+    <match-params>
+      <vlans>
+        <tag>
+          <index>0</index>
+          <in-dei>0</in-dei>
+        </tag>
+      </vlans>
+    </match-params>
+    <flow-color>green</flow-color>
+  </pre-handling-entry>
+  <pre-handling-entry>
+    <name>precolor_dei1</name>
+    <match-params>
+      <vlans>
+        <tag>
+          <index>0</index>
+          <in-dei>1</in-dei>
+        </tag>
+      </vlans>
+    </match-params>
+    <flow-color>yellow</flow-color>
+  </pre-handling-entry>
+</pre-handling-profile>
+</policing-pre-handling-profiles>
+
+<policing-pre-handling-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+ <pre-handling-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pre_handling_precolor_inner_dei_marking_1</name>
+   <pre-handling-entry>
+     <name>precolor_dei0</name>
+     <match-params>
+       <dei-marking-list>
+         <index>1</index>
+         <dei-value>0</dei-value>
+       </dei-marking-list>
+     </match-params>
+     <flow-color>green</flow-color>
+   </pre-handling-entry>
+   <pre-handling-entry>
+     <name>precolor_dei1</name>
+     <match-params>
+       <dei-marking-list>
+         <index>1</index>
+         <dei-value>1</dei-value>
+       </dei-marking-list>
+     </match-params>
+     <flow-color>yellow</flow-color>
+   </pre-handling-entry>
+ </pre-handling-profile>
+</policing-pre-handling-profiles>
+
+<policing-pre-handling-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+ <pre-handling-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pre_handling_precolor_outer_dei_marking_1</name>
+   <pre-handling-entry>
+     <name>precolor_dei0</name>
+     <match-params>
+       <dei-marking-list>
+         <index>0</index>
+         <dei-value>0</dei-value>
+       </dei-marking-list>
+     </match-params>
+     <flow-color>green</flow-color>
+   </pre-handling-entry>
+   <pre-handling-entry>
+     <name>precolor_dei1</name>
+     <match-params>
+       <dei-marking-list>
+         <index>0</index>
+         <dei-value>1</dei-value>
+       </dei-marking-list>
+     </match-params>
+     <flow-color>yellow</flow-color>
+   </pre-handling-entry>
+ </pre-handling-profile>
+</policing-pre-handling-profiles>
+
+<policing-action-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+  <action-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>policing_action_srtcm_1</name>
+    <action>
+      <flow-color>green</flow-color>
+      <metered-flow>true</metered-flow>
+    </action>
+    <action>
+      <flow-color>red</flow-color>
+      <discard/>
+    </action>
+  </action-profile>
+</policing-action-profiles>
+
+<policing-action-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+<action-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>policing_action_ccl_single_pbit_marker_1</name>
+  <action>
+    <flow-color>green</flow-color>
+    <pbit-marking-list>
+      <index>0</index>
+      <pbit-value>7</pbit-value>
+    </pbit-marking-list>
+    <bac-color>copy-from-flow-color</bac-color>
+    <metered-flow>true</metered-flow>
+    <metered-color>true</metered-color>
+  </action>
+  <action>
+    <flow-color>yellow</flow-color>
+    <pbit-marking-list>
+      <index>0</index>
+      <pbit-value>6</pbit-value>
+    </pbit-marking-list>
+    <bac-color>copy-from-flow-color</bac-color>
+    <metered-flow>true</metered-flow>
+    <metered-color>true</metered-color>
+  </action>
+  <action>
+    <flow-color>red</flow-color>
+    <discard/>
+  </action>
+</action-profile>
+</policing-action-profiles>
+
+<policing-action-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+ <action-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>policing_action_ccl_dual_pbit_marker_1</name>
+   <action>
+     <flow-color>green</flow-color>
+     <pbit-marking-list>
+       <index>0</index>
+       <pbit-value>7</pbit-value>
+     </pbit-marking-list>
+     <pbit-marking-list>
+       <index>1</index>
+       <pbit-value>7</pbit-value>
+     </pbit-marking-list>
+     <bac-color>copy-from-flow-color</bac-color>
+     <metered-flow>true</metered-flow>
+     <metered-color>true</metered-color>
+   </action>
+   <action>
+     <flow-color>yellow</flow-color>
+     <pbit-marking-list>
+       <index>0</index>
+       <pbit-value>6</pbit-value>
+     </pbit-marking-list>
+     <pbit-marking-list>
+       <index>1</index>
+       <pbit-value>6</pbit-value>
+     </pbit-marking-list>
+     <bac-color>copy-from-flow-color</bac-color>
+     <metered-flow>true</metered-flow>
+     <metered-color>true</metered-color>
+   </action>
+   <action>
+     <flow-color>red</flow-color>
+     <discard/>
+   </action>
+ </action-profile>
+</policing-action-profiles>
+
+<policing-action-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+ <action-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>policing_action_port_single_pbit_marker_1</name>
+   <action>
+     <flow-color>green</flow-color>
+     <pbit-marking-list>
+       <index>0</index>
+       <pbit-value>4</pbit-value>
+     </pbit-marking-list>
+     <bac-color>copy-from-flow-color</bac-color>
+     <metered-flow>true</metered-flow>
+     <metered-color>true</metered-color>
+   </action>
+   <action>
+     <flow-color>yellow</flow-color>
+     <pbit-marking-list>
+       <index>0</index>
+       <pbit-value>3</pbit-value>
+     </pbit-marking-list>
+     <bac-color>copy-from-flow-color</bac-color>
+     <metered-flow>true</metered-flow>
+     <metered-color>true</metered-color>
+   </action>
+   <action>
+     <flow-color>red</flow-color>
+     <discard/>
+   </action>
+ </action-profile>
+</policing-action-profiles>
+
+<policing-action-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+<action-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>policing_action_port_dual_pbit_marker_1</name>
+  <action>
+    <flow-color>green</flow-color>
+    <pbit-marking-list>
+      <index>0</index>
+      <pbit-value>4</pbit-value>
+    </pbit-marking-list>
+    <pbit-marking-list>
+      <index>1</index>
+      <pbit-value>4</pbit-value>
+    </pbit-marking-list>
+    <bac-color>copy-from-flow-color</bac-color>
+    <metered-flow>true</metered-flow>
+    <metered-color>true</metered-color>
+  </action>
+  <action>
+    <flow-color>yellow</flow-color>
+    <pbit-marking-list>
+      <index>0</index>
+      <pbit-value>3</pbit-value>
+    </pbit-marking-list>
+    <pbit-marking-list>
+      <index>1</index>
+      <pbit-value>3</pbit-value>
+    </pbit-marking-list>
+    <bac-color>copy-from-flow-color</bac-color>
+    <metered-flow>true</metered-flow>
+    <metered-color>true</metered-color>
+  </action>
+  <action>
+    <flow-color>red</flow-color>
+    <discard/>
+  </action>
+</action-profile>
+</policing-action-profiles>
+
+<policing-action-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+ <action-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>policing_action_single_dei_marker_1</name>
+   <action>
+     <flow-color>green</flow-color>
+     <bac-color>copy-from-flow-color</bac-color>
+     <metered-flow>true</metered-flow>
+     <metered-color>true</metered-color>
+   </action>
+   <action>
+     <flow-color>yellow</flow-color>
+     <dei-marking-list>
+       <index>0</index>
+       <dei-value>1</dei-value>
+     </dei-marking-list>
+     <bac-color>copy-from-flow-color</bac-color>
+     <metered-flow>true</metered-flow>
+     <metered-color>true</metered-color>
+   </action>
+   <action>
+     <flow-color>red</flow-color>
+     <discard/>
+   </action>
+ </action-profile>
+</policing-action-profiles>
+
+<policing-action-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+ <action-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>policing_action_dual_dei_marker_1</name>
+   <action>
+     <flow-color>green</flow-color>
+     <bac-color>copy-from-flow-color</bac-color>
+     <metered-flow>true</metered-flow>
+     <metered-color>true</metered-color>
+   </action>
+   <action>
+     <flow-color>yellow</flow-color>
+     <dei-marking-list>
+       <index>0</index>
+       <dei-value>1</dei-value>
+     </dei-marking-list>
+     <dei-marking-list>
+       <index>1</index>
+       <dei-value>1</dei-value>
+     </dei-marking-list>
+     <bac-color>copy-from-flow-color</bac-color>
+     <metered-flow>true</metered-flow>
+     <metered-color>true</metered-color>
+   </action>
+   <action>
+     <flow-color>red</flow-color>
+     <discard/>
+   </action>
+ </action-profile>
+</policing-action-profiles>
+
+<policing-action-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+<action-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+ <name>policing_action_dual_outer_dei_marker_1</name>
+ <action>
+   <flow-color>green</flow-color>
+   <bac-color>copy-from-flow-color</bac-color>
+   <metered-flow>true</metered-flow>
+   <metered-color>true</metered-color>
+ </action>
+ <action>
+   <flow-color>yellow</flow-color>
+   <dei-marking-list>
+     <index>0</index>
+     <dei-value>1</dei-value>
+   </dei-marking-list>
+   <bac-color>copy-from-flow-color</bac-color>
+   <metered-flow>true</metered-flow>
+   <metered-color>true</metered-color>
+ </action>
+ <action>
+   <flow-color>red</flow-color>
+   <discard/>
+ </action>
+</action-profile>
+</policing-action-profiles>
+
+
+<policing-action-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+  <action-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>policing_action_pass</name>
+    <action>
+      <flow-color>green</flow-color>
+      <bac-color>copy-from-flow-color</bac-color>
+      <metered-flow>true</metered-flow>
+      <metered-color>true</metered-color>
+    </action>
+    <action>
+      <flow-color>yellow</flow-color>
+      <bac-color>copy-from-flow-color</bac-color>
+      <metered-flow>true</metered-flow>
+      <metered-color>true</metered-color>
+    </action>
+    <action>
+      <flow-color>red</flow-color>
+      <discard/>
+    </action>
+  </action-profile>
+</policing-action-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+<policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>pol_ccl_srtcm_1</name>
+  <single-rate-two-color-marker>
+    <cir>20000000</cir>
+    <cbs>10240</cbs>
+  </single-rate-two-color-marker>
+  <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_srtcm_1</policing-action-profile>
+</policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_ccl_trtcm_blind_single_pbit_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>20000000</cir>
+     <cbs>10240</cbs>
+     <eir>10000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-blind</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_ccl_single_pbit_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_ccl_trtcm_blind_dual_pbit_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>20000000</cir>
+     <cbs>10240</cbs>
+     <eir>10000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-blind</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_ccl_dual_pbit_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_ccl_trtcm_blind_single_dei_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>20000000</cir>
+     <cbs>10240</cbs>
+     <eir>10000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-blind</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_single_dei_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+  <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>pol_ccl_trtcm_blind_dual_dei_marker_1</name>
+    <two-rate-three-color-marker-mef>
+      <cir>20000000</cir>
+      <cbs>10240</cbs>
+      <eir>10000000</eir>
+      <ebs>10240</ebs>
+      <couple-flag>0</couple-flag>
+      <color-mode>color-blind</color-mode>
+    </two-rate-three-color-marker-mef>
+    <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_dual_dei_marker_1</policing-action-profile>
+  </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+  <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>pol_ccl_inner_in_pbit_trtcm_aware_single_pbit_marker_1</name>
+    <two-rate-three-color-marker-mef>
+      <cir>20000000</cir>
+      <cbs>10240</cbs>
+      <eir>10000000</eir>
+      <ebs>10240</ebs>
+      <couple-flag>0</couple-flag>
+      <color-mode>color-aware</color-mode>
+    </two-rate-three-color-marker-mef>
+    <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_inner_in_pbit_1</policing-pre-handling-profile>
+    <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_ccl_single_pbit_marker_1</policing-action-profile>
+  </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+<policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>pol_ccl_inner_in_pbit_trtcm_aware_dual_pbit_marker_1</name>
+  <two-rate-three-color-marker-mef>
+    <cir>20000000</cir>
+    <cbs>10240</cbs>
+    <eir>10000000</eir>
+    <ebs>10240</ebs>
+    <couple-flag>0</couple-flag>
+    <color-mode>color-aware</color-mode>
+  </two-rate-three-color-marker-mef>
+  <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_inner_in_pbit_1</policing-pre-handling-profile>
+  <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_ccl_dual_pbit_marker_1</policing-action-profile>
+</policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+<policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>pol_ccl_inner_in_dei_trtcm_aware_single_dei_marker_1</name>
+  <two-rate-three-color-marker-mef>
+    <cir>20000000</cir>
+    <cbs>10240</cbs>
+    <eir>10000000</eir>
+    <ebs>10240</ebs>
+    <couple-flag>0</couple-flag>
+    <color-mode>color-aware</color-mode>
+  </two-rate-three-color-marker-mef>
+  <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_inner_in_dei_1</policing-pre-handling-profile>
+  <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_single_dei_marker_1</policing-action-profile>
+</policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+<policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>pol_ccl_inner_in_dei_trtcm_aware_dual_dei_marker_1</name>
+  <two-rate-three-color-marker-mef>
+    <cir>20000000</cir>
+    <cbs>10240</cbs>
+    <eir>10000000</eir>
+    <ebs>10240</ebs>
+    <couple-flag>0</couple-flag>
+    <color-mode>color-aware</color-mode>
+  </two-rate-three-color-marker-mef>
+  <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_inner_in_dei_1</policing-pre-handling-profile>
+  <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_dual_dei_marker_1</policing-action-profile>
+</policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_ccl_outer_in_pbit_trtcm_aware_single_pbit_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>20000000</cir>
+     <cbs>10240</cbs>
+     <eir>10000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-aware</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_in_pbit_1</policing-pre-handling-profile>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_ccl_single_pbit_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_ccl_outer_in_pbit_trtcm_aware_dual_pbit_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>20000000</cir>
+     <cbs>10240</cbs>
+     <eir>10000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-aware</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_in_pbit_1</policing-pre-handling-profile>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_ccl_dual_pbit_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+  <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>pol_ccl_outer_in_dei_trtcm_aware_single_dei_marker_1</name>
+    <two-rate-three-color-marker-mef>
+      <cir>20000000</cir>
+      <cbs>10240</cbs>
+      <eir>10000000</eir>
+      <ebs>10240</ebs>
+      <couple-flag>0</couple-flag>
+      <color-mode>color-aware</color-mode>
+    </two-rate-three-color-marker-mef>
+    <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_in_dei_1</policing-pre-handling-profile>
+    <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_single_dei_marker_1</policing-action-profile>
+  </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_ccl_outer_in_dei_trtcm_aware_dual_dei_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>20000000</cir>
+     <cbs>10240</cbs>
+     <eir>10000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-aware</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_in_dei_1</policing-pre-handling-profile>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_dual_dei_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_ccl_inner_pbit_marking_trtcm_aware_single_pbit_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>20000000</cir>
+     <cbs>10240</cbs>
+     <eir>10000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-aware</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_inner_pbit_marking_1</policing-pre-handling-profile>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_ccl_single_pbit_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+  <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>pol_ccl_inner_pbit_marking_trtcm_aware_single_pbit_marker_2</name>
+    <two-rate-three-color-marker-mef>
+      <cir>40000000</cir>
+      <cbs>10240</cbs>
+      <eir>20000000</eir>
+      <ebs>10240</ebs>
+      <couple-flag>0</couple-flag>
+      <color-mode>color-aware</color-mode>
+    </two-rate-three-color-marker-mef>
+    <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_inner_pbit_marking_1</policing-pre-handling-profile>
+    <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_ccl_single_pbit_marker_1</policing-action-profile>
+  </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+  <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>pol_ccl_inner_pbit_marking_trtcm_aware_dual_pbit_marker_1</name>
+    <two-rate-three-color-marker-mef>
+      <cir>20000000</cir>
+      <cbs>10240</cbs>
+      <eir>10000000</eir>
+      <ebs>10240</ebs>
+      <couple-flag>0</couple-flag>
+      <color-mode>color-aware</color-mode>
+    </two-rate-three-color-marker-mef>
+    <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_inner_pbit_marking_1</policing-pre-handling-profile>
+    <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_ccl_dual_pbit_marker_1</policing-action-profile>
+  </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_ccl_inner_dei_marking_trtcm_aware_single_dei_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>20000000</cir>
+     <cbs>10240</cbs>
+     <eir>10000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-aware</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_inner_dei_marking_1</policing-pre-handling-profile>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_single_dei_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+<policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>pol_ccl_inner_dei_marking_trtcm_aware_dual_dei_marker_1</name>
+  <two-rate-three-color-marker-mef>
+    <cir>20000000</cir>
+    <cbs>10240</cbs>
+    <eir>10000000</eir>
+    <ebs>10240</ebs>
+    <couple-flag>0</couple-flag>
+    <color-mode>color-aware</color-mode>
+  </two-rate-three-color-marker-mef>
+  <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_inner_dei_marking_1</policing-pre-handling-profile>
+  <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_dual_dei_marker_1</policing-action-profile>
+</policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+<policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>pol_ccl_outer_pbit_marking_trtcm_aware_single_pbit_marker_1</name>
+  <two-rate-three-color-marker-mef>
+    <cir>20000000</cir>
+    <cbs>10240</cbs>
+    <eir>10000000</eir>
+    <ebs>10240</ebs>
+    <couple-flag>0</couple-flag>
+    <color-mode>color-aware</color-mode>
+  </two-rate-three-color-marker-mef>
+  <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_pbit_marking_1</policing-pre-handling-profile>
+  <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_ccl_single_pbit_marker_1</policing-action-profile>
+</policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+  <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>pol_ccl_outer_pbit_marking_trtcm_aware_dual_pbit_marker_1</name>
+    <two-rate-three-color-marker-mef>
+      <cir>20000000</cir>
+      <cbs>10240</cbs>
+      <eir>10000000</eir>
+      <ebs>10240</ebs>
+      <couple-flag>0</couple-flag>
+      <color-mode>color-aware</color-mode>
+    </two-rate-three-color-marker-mef>
+    <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_pbit_marking_1</policing-pre-handling-profile>
+    <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_ccl_dual_pbit_marker_1</policing-action-profile>
+  </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_ccl_outer_dei_marking_trtcm_aware_single_dei_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>20000000</cir>
+     <cbs>10240</cbs>
+     <eir>10000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-aware</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_dei_marking_1</policing-pre-handling-profile>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_single_dei_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+  <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>pol_ccl_outer_dei_marking_trtcm_aware_dual_dei_marker_1</name>
+    <two-rate-three-color-marker-mef>
+      <cir>20000000</cir>
+      <cbs>10240</cbs>
+      <eir>10000000</eir>
+      <ebs>10240</ebs>
+      <couple-flag>0</couple-flag>
+      <color-mode>color-aware</color-mode>
+    </two-rate-three-color-marker-mef>
+    <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_dei_marking_1</policing-pre-handling-profile>
+    <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_dual_dei_marker_1</policing-action-profile>
+  </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_port_srtcm_1</name>
+   <single-rate-two-color-marker>
+     <cir>40000000</cir>
+     <cbs>10240</cbs>
+   </single-rate-two-color-marker>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_srtcm_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_port_trtcm_blind_single_pbit_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>40000000</cir>
+     <cbs>10240</cbs>
+     <eir>20000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-blind</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_port_single_pbit_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_port_trtcm_blind_dual_pbit_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>40000000</cir>
+     <cbs>10240</cbs>
+     <eir>20000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-blind</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_port_dual_pbit_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_port_trtcm_blind_single_dei_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>40000000</cir>
+     <cbs>10240</cbs>
+     <eir>20000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-blind</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_single_dei_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+<policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>pol_port_trtcm_blind_dual_dei_marker_1</name>
+  <two-rate-three-color-marker-mef>
+    <cir>40000000</cir>
+    <cbs>10240</cbs>
+    <eir>20000000</eir>
+    <ebs>10240</ebs>
+    <couple-flag>0</couple-flag>
+    <color-mode>color-blind</color-mode>
+  </two-rate-three-color-marker-mef>
+  <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_dual_dei_marker_1</policing-action-profile>
+</policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+<policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>pol_port_inner_in_pbit_trtcm_aware_single_pbit_marker_1</name>
+  <two-rate-three-color-marker-mef>
+    <cir>40000000</cir>
+    <cbs>10240</cbs>
+    <eir>20000000</eir>
+    <ebs>10240</ebs>
+    <couple-flag>0</couple-flag>
+    <color-mode>color-aware</color-mode>
+  </two-rate-three-color-marker-mef>
+  <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_inner_in_pbit_1</policing-pre-handling-profile>
+  <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_port_single_pbit_marker_1</policing-action-profile>
+</policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+<policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>pol_port_inner_in_pbit_trtcm_aware_dual_pbit_marker_1</name>
+  <two-rate-three-color-marker-mef>
+    <cir>40000000</cir>
+    <cbs>10240</cbs>
+    <eir>20000000</eir>
+    <ebs>10240</ebs>
+    <couple-flag>0</couple-flag>
+    <color-mode>color-aware</color-mode>
+  </two-rate-three-color-marker-mef>
+  <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_inner_in_pbit_1</policing-pre-handling-profile>
+  <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_port_dual_pbit_marker_1</policing-action-profile>
+</policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+  <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>pol_port_inner_in_dei_trtcm_aware_single_dei_marker_1</name>
+    <two-rate-three-color-marker-mef>
+      <cir>40000000</cir>
+      <cbs>10240</cbs>
+      <eir>20000000</eir>
+      <ebs>10240</ebs>
+      <couple-flag>0</couple-flag>
+      <color-mode>color-aware</color-mode>
+    </two-rate-three-color-marker-mef>
+    <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_inner_in_dei_1</policing-pre-handling-profile>
+    <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_single_dei_marker_1</policing-action-profile>
+  </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_port_inner_in_dei_trtcm_aware_dual_dei_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>40000000</cir>
+     <cbs>10240</cbs>
+     <eir>20000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-aware</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_inner_in_dei_1</policing-pre-handling-profile>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_dual_dei_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_port_outer_in_pbit_trtcm_aware_single_pbit_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>40000000</cir>
+     <cbs>10240</cbs>
+     <eir>20000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-aware</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_in_pbit_1</policing-pre-handling-profile>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_port_single_pbit_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_port_outer_in_pbit_trtcm_aware_dual_pbit_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>40000000</cir>
+     <cbs>10240</cbs>
+     <eir>20000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-aware</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_in_pbit_1</policing-pre-handling-profile>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_port_dual_pbit_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_port_outer_in_dei_trtcm_aware_single_dei_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>40000000</cir>
+     <cbs>10240</cbs>
+     <eir>20000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-aware</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_in_dei_1</policing-pre-handling-profile>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_single_dei_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+  <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>pol_port_outer_in_dei_trtcm_aware_dual_dei_marker_1</name>
+    <two-rate-three-color-marker-mef>
+      <cir>40000000</cir>
+      <cbs>10240</cbs>
+      <eir>20000000</eir>
+      <ebs>10240</ebs>
+      <couple-flag>0</couple-flag>
+      <color-mode>color-aware</color-mode>
+    </two-rate-three-color-marker-mef>
+    <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_in_dei_1</policing-pre-handling-profile>
+    <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_dual_dei_marker_1</policing-action-profile>
+  </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+  <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>pol_port_inner_pbit_marking_trtcm_aware_single_pbit_marker_1</name>
+    <two-rate-three-color-marker-mef>
+      <cir>40000000</cir>
+      <cbs>10240</cbs>
+      <eir>20000000</eir>
+      <ebs>10240</ebs>
+      <couple-flag>0</couple-flag>
+      <color-mode>color-aware</color-mode>
+    </two-rate-three-color-marker-mef>
+    <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_inner_pbit_marking_1</policing-pre-handling-profile>
+    <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_port_single_pbit_marker_1</policing-action-profile>
+  </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+  <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>pol_port_inner_pbit_marking_trtcm_aware_dual_pbit_marker_1</name>
+    <two-rate-three-color-marker-mef>
+      <cir>40000000</cir>
+      <cbs>10240</cbs>
+      <eir>20000000</eir>
+      <ebs>10240</ebs>
+      <couple-flag>0</couple-flag>
+      <color-mode>color-aware</color-mode>
+    </two-rate-three-color-marker-mef>
+    <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_inner_pbit_marking_1</policing-pre-handling-profile>
+    <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_port_dual_pbit_marker_1</policing-action-profile>
+  </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_port_inner_dei_marking_trtcm_aware_single_dei_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>40000000</cir>
+     <cbs>10240</cbs>
+     <eir>20000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-aware</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_inner_dei_marking_1</policing-pre-handling-profile>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_single_dei_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+<policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>pol_port_inner_dei_marking_trtcm_aware_dual_dei_marker_1</name>
+  <two-rate-three-color-marker-mef>
+    <cir>40000000</cir>
+    <cbs>10240</cbs>
+    <eir>20000000</eir>
+    <ebs>10240</ebs>
+    <couple-flag>0</couple-flag>
+    <color-mode>color-aware</color-mode>
+  </two-rate-three-color-marker-mef>
+  <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_inner_dei_marking_1</policing-pre-handling-profile>
+  <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_dual_dei_marker_1</policing-action-profile>
+</policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_port_outer_pbit_marking_trtcm_aware_single_pbit_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>40000000</cir>
+     <cbs>10240</cbs>
+     <eir>20000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-aware</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_pbit_marking_1</policing-pre-handling-profile>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_port_single_pbit_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+  <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>pol_port_outer_pbit_marking_trtcm_aware_dual_pbit_marker_1</name>
+    <two-rate-three-color-marker-mef>
+      <cir>40000000</cir>
+      <cbs>10240</cbs>
+      <eir>20000000</eir>
+      <ebs>10240</ebs>
+      <couple-flag>0</couple-flag>
+      <color-mode>color-aware</color-mode>
+    </two-rate-three-color-marker-mef>
+    <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_pbit_marking_1</policing-pre-handling-profile>
+    <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_port_dual_pbit_marker_1</policing-action-profile>
+  </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_port_outer_dei_marking_trtcm_aware_single_dei_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>40000000</cir>
+     <cbs>10240</cbs>
+     <eir>20000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-aware</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_dei_marking_1</policing-pre-handling-profile>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_single_dei_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+  <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>pol_port_outer_dei_marking_trtcm_aware_dual_dei_marker_1</name>
+    <two-rate-three-color-marker-mef>
+      <cir>40000000</cir>
+      <cbs>10240</cbs>
+      <eir>20000000</eir>
+      <ebs>10240</ebs>
+      <couple-flag>0</couple-flag>
+      <color-mode>color-aware</color-mode>
+    </two-rate-three-color-marker-mef>
+    <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_dei_marking_1</policing-pre-handling-profile>
+    <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_dual_dei_marker_1</policing-action-profile>
+  </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+<policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+ <name>pol_ccl_outer_dei_marking_trtcm_aware_dual_outerdei_marker_1</name>
+ <two-rate-three-color-marker-mef>
+   <cir>20000000</cir>
+   <cbs>10240</cbs>
+   <eir>10000000</eir>
+   <ebs>10240</ebs>
+   <couple-flag>0</couple-flag>
+   <color-mode>color-aware</color-mode>
+ </two-rate-three-color-marker-mef>
+ <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_dei_marking_1</policing-pre-handling-profile>
+ <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_dual_outer_dei_marker_1</policing-action-profile>
+</policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+<policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+<name>pol_port_outer_dei_marking_trtcm_aware_dual_outerdei_marker_1</name>
+<two-rate-three-color-marker-mef>
+  <cir>40000000</cir>
+  <cbs>10240</cbs>
+  <eir>20000000</eir>
+  <ebs>10240</ebs>
+  <couple-flag>0</couple-flag>
+  <color-mode>color-aware</color-mode>
+</two-rate-three-color-marker-mef>
+<policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_dei_marking_1</policing-pre-handling-profile>
+<policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_dual_outer_dei_marker_1</policing-action-profile>
+</policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_ccl_trtcm_blind_pass_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>20000000</cir>
+     <cbs>10240</cbs>
+     <eir>10000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-blind</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_pass</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+<policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>pol_port_trtcm_blind_pass_1</name>
+  <two-rate-three-color-marker-mef>
+    <cir>40000000</cir>
+    <cbs>10240</cbs>
+    <eir>20000000</eir>
+    <ebs>10240</ebs>
+    <couple-flag>0</couple-flag>
+    <color-mode>color-blind</color-mode>
+  </two-rate-three-color-marker-mef>
+  <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_pass</policing-action-profile>
+</policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+  <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>pol_ccl_outer_in_dei_trtcm_aware_dual_outerdei_marker_1</name>
+    <two-rate-three-color-marker-mef>
+      <cir>20000000</cir>
+      <cbs>10240</cbs>
+      <eir>10000000</eir>
+      <ebs>10240</ebs>
+      <couple-flag>0</couple-flag>
+      <color-mode>color-aware</color-mode>
+    </two-rate-three-color-marker-mef>
+    <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_in_dei_1</policing-pre-handling-profile>
+    <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_dual_outer_dei_marker_1</policing-action-profile>
+  </policing-profile>
+</policing-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+ <policing-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>pol_port_outer_in_dei_trtcm_aware_dual_outerdei_marker_1</name>
+   <two-rate-three-color-marker-mef>
+     <cir>40000000</cir>
+     <cbs>10240</cbs>
+     <eir>20000000</eir>
+     <ebs>10240</ebs>
+     <couple-flag>0</couple-flag>
+     <color-mode>color-aware</color-mode>
+   </two-rate-three-color-marker-mef>
+   <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pre_handling_precolor_outer_in_dei_1</policing-pre-handling-profile>
+   <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">policing_action_dual_outer_dei_marker_1</policing-action-profile>
+ </policing-profile>
+</policing-profiles>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>classifier_marker_copy_single</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <tag>
+        <index>0</index>
+        <in-pbit-list>0-7</in-pbit-list>
+      </tag>
+    </vlans>
+    <classifier-action-entry-cfg>
+      <action-type>pbit-marking</action-type>
+      <pbit-marking-cfg>
+        <pbit-marking-list>
+          <index>0</index>
+          <pbit-from-frame-tag xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension">0</pbit-from-frame-tag>
+        </pbit-marking-list>
+      </pbit-marking-cfg>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+ <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>classifier_marker_copy_single</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+     <tag>
+       <index>0</index>
+       <in-pbit-list>0-7</in-pbit-list>
+     </tag>
+   </vlans>
+   <classifier-action-entry-cfg>
+     <action-type>dei-marking</action-type>
+     <dei-marking-cfg>
+       <dei-marking-list>
+         <index>0</index>
+         <dei-from-frame-tag xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension-dei">0</dei-from-frame-tag>
+       </dei-marking-list>
+     </dei-marking-cfg>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+</classifiers>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>classifier_marker_copy_dual</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <tag>
+        <index>0</index>
+        <in-pbit-list>0-7</in-pbit-list>
+      </tag>
+    </vlans>
+    <classifier-action-entry-cfg>
+      <action-type>pbit-marking</action-type>
+      <pbit-marking-cfg>
+        <pbit-marking-list>
+          <index>0</index>
+          <pbit-from-frame-tag xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension">0</pbit-from-frame-tag>
+        </pbit-marking-list>
+      </pbit-marking-cfg>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>classifier_marker_copy_dual</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <tag>
+        <index>0</index>
+        <in-pbit-list>0-7</in-pbit-list>
+      </tag>
+    </vlans>
+    <classifier-action-entry-cfg>
+      <action-type>pbit-marking</action-type>
+      <pbit-marking-cfg>
+        <pbit-marking-list>
+          <index>1</index>
+          <pbit-from-frame-tag xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension">1</pbit-from-frame-tag>
+        </pbit-marking-list>
+      </pbit-marking-cfg>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>classifier_marker_copy_dual</name>
+  <filter-operation>match-all-filter</filter-operation>
+  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+    <tag>
+      <index>0</index>
+      <in-pbit-list>0-7</in-pbit-list>
+    </tag>
+  </vlans>
+  <classifier-action-entry-cfg>
+    <action-type>dei-marking</action-type>
+    <dei-marking-cfg>
+      <dei-marking-list>
+        <index>0</index>
+        <dei-from-frame-tag xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension-dei">0</dei-from-frame-tag>
+      </dei-marking-list>
+    </dei-marking-cfg>
+  </classifier-action-entry-cfg>
+</classifier-entry>
+</classifiers>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>classifier_marker_copy_dual</name>
+  <filter-operation>match-all-filter</filter-operation>
+  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+    <tag>
+      <index>0</index>
+      <in-pbit-list>0-7</in-pbit-list>
+    </tag>
+  </vlans>
+  <classifier-action-entry-cfg>
+    <action-type>dei-marking</action-type>
+    <dei-marking-cfg>
+      <dei-marking-list>
+        <index>1</index>
+        <dei-from-frame-tag xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-classifier-extension-dei">1</dei-from-frame-tag>
+      </dei-marking-list>
+    </dei-marking-cfg>
+  </classifier-action-entry-cfg>
+</classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+<policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>policy_marker_copy_single</name>
+  <classifiers>
+    <name>classifier_marker_copy_single</name>
+  </classifiers>
+</policy>
+</policies>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>policy_marker_copy_dual</name>
+   <classifiers>
+     <name>classifier_marker_copy_dual</name>
+   </classifiers>
+ </policy>
+</policies>
+
+<filters xmlns="urn:bbf:yang:bbf-qos-filters">
+<enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>enhanced-filter1</name>
+  <filter-operation>match-any-filter</filter-operation>
+  <filter>
+    <name>enhfilter11</name>
+    <ipv4>
+      <source-ipv4-network>192.85.1.2/32</source-ipv4-network>
+    </ipv4>
+  </filter>
+</enhanced-filter>
+</filters>
+
+<filters xmlns="urn:bbf:yang:bbf-qos-filters">
+<enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>enhanced-filter1</name>
+  <filter-operation>match-any-filter</filter-operation>
+  <filter>
+    <name>enhfilter12</name>
+    <ipv4>
+      <source-ipv4-network>192.85.1.3/32</source-ipv4-network>
+    </ipv4>
+  </filter>
+</enhanced-filter>
+</filters>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+ <name>cls_ccl_srtcm_1</name>
+ <filter-operation>match-all-filter</filter-operation>
+ <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter1</enhanced-filter-name>
+ <classifier-action-entry-cfg>
+   <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+   <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+     <policing-profile>pol_ccl_srtcm_1</policing-profile>
+   </policing>
+ </classifier-action-entry-cfg>
+</classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+<policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>ccl_srtcm</name>
+  <classifiers>
+    <name>cls_ccl_srtcm_1</name>
+  </classifiers>
+</policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+ <name>cls_ccl_trtcm_blind_dual_pbit_marker_1</name>
+ <filter-operation>match-all-filter</filter-operation>
+ <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter1</enhanced-filter-name>
+ <classifier-action-entry-cfg>
+   <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+   <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+     <policing-profile>pol_ccl_trtcm_blind_dual_pbit_marker_1</policing-profile>
+   </policing>
+ </classifier-action-entry-cfg>
+</classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+<policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+ <name>ccl_trtcm_blind_dual_pbit_marker</name>
+ <classifiers>
+   <name>cls_ccl_trtcm_blind_dual_pbit_marker_1</name>
+ </classifiers>
+</policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+ <name>cls_ccl_trtcm_blind_single_pbit_marker_1</name>
+ <filter-operation>match-all-filter</filter-operation>
+ <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter1</enhanced-filter-name>
+ <classifier-action-entry-cfg>
+   <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+   <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+     <policing-profile>pol_ccl_trtcm_blind_single_pbit_marker_1</policing-profile>
+   </policing>
+ </classifier-action-entry-cfg>
+</classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>ccl_trtcm_blind_single_pbit_marker</name>
+   <classifiers>
+     <name>cls_ccl_trtcm_blind_single_pbit_marker_1</name>
+   </classifiers>
+ </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>cls_ccl_outer_in_pbit_trtcm_aware_dual_pbit_marker_1</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter1</enhanced-filter-name>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+      <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+        <policing-profile>pol_ccl_outer_in_pbit_trtcm_aware_dual_pbit_marker_1</policing-profile>
+      </policing>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+<policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>ccl_outer_in_pbit_trtcm_aware_dual_pbit_marker</name>
+  <classifiers>
+    <name>cls_ccl_outer_in_pbit_trtcm_aware_dual_pbit_marker_1</name>
+  </classifiers>
+</policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>cls_ccl_inner_pbit_marking_trtcm_aware_single_pbit_marker_1</name>
+  <filter-operation>match-all-filter</filter-operation>
+  <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter1</enhanced-filter-name>
+  <classifier-action-entry-cfg>
+    <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+    <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+      <policing-profile>pol_ccl_inner_pbit_marking_trtcm_aware_single_pbit_marker_1</policing-profile>
+    </policing>
+  </classifier-action-entry-cfg>
+</classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>ccl_inner_pbit_marking_trtcm_aware_single_pbit_marker</name>
+    <classifiers>
+      <name>cls_ccl_inner_pbit_marking_trtcm_aware_single_pbit_marker_1</name>
+    </classifiers>
+  </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>cls_ccl_inner_dei_marking_trtcm_aware_single_dei_marker_1</name>
+  <filter-operation>match-all-filter</filter-operation>
+  <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter1</enhanced-filter-name>
+  <classifier-action-entry-cfg>
+    <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+    <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+      <policing-profile>pol_ccl_inner_dei_marking_trtcm_aware_single_dei_marker_1</policing-profile>
+    </policing>
+  </classifier-action-entry-cfg>
+</classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>ccl_inner_dei_marking_trtcm_aware_single_dei_marker</name>
+   <classifiers>
+     <name>cls_ccl_inner_dei_marking_trtcm_aware_single_dei_marker_1</name>
+   </classifiers>
+ </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>cls_ccl_trtcm_blind_pass_1</name>
+  <filter-operation>match-all-filter</filter-operation>
+  <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter1</enhanced-filter-name>
+  <classifier-action-entry-cfg>
+    <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+    <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+      <policing-profile>pol_ccl_trtcm_blind_pass_1</policing-profile>
+    </policing>
+  </classifier-action-entry-cfg>
+</classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+<policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>ccl_trtcm_blind_pass</name>
+  <classifiers>
+    <name>cls_ccl_trtcm_blind_pass_1</name>
+  </classifiers>
+</policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+ <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>cls_ccl_outer_in_dei_trtcm_aware_dual_dei_marker_1</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter1</enhanced-filter-name>
+   <classifier-action-entry-cfg>
+     <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+     <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+       <policing-profile>pol_ccl_outer_in_dei_trtcm_aware_dual_dei_marker_1</policing-profile>
+     </policing>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>ccl_outer_in_dei_trtcm_aware_dual_dei_marker</name>
+   <classifiers>
+     <name>cls_ccl_outer_in_dei_trtcm_aware_dual_dei_marker_1</name>
+   </classifiers>
+ </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>cls_ccl_outer_in_dei_trtcm_aware_dual_outerdei_marker_1</name>
+  <filter-operation>match-all-filter</filter-operation>
+  <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter1</enhanced-filter-name>
+  <classifier-action-entry-cfg>
+    <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+    <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+      <policing-profile>pol_ccl_outer_dei_marking_trtcm_aware_dual_outerdei_marker_1</policing-profile>
+    </policing>
+  </classifier-action-entry-cfg>
+</classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>ccl_outer_in_dei_trtcm_aware_dual_outerdei_marker</name>
+   <classifiers>
+     <name>cls_ccl_outer_in_dei_trtcm_aware_dual_outerdei_marker_1</name>
+   </classifiers>
+ </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>cls_ccl_outer_dei_marking_trtcm_aware_dual_outerdei_marker_1</name>
+  <filter-operation>match-all-filter</filter-operation>
+  <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter1</enhanced-filter-name>
+  <classifier-action-entry-cfg>
+    <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+    <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+      <policing-profile>pol_ccl_outer_dei_marking_trtcm_aware_dual_outerdei_marker_1</policing-profile>
+    </policing>
+  </classifier-action-entry-cfg>
+</classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>ccl_outer_dei_marking_trtcm_aware_dual_outerdei_marker</name>
+   <classifiers>
+     <name>cls_ccl_outer_dei_marking_trtcm_aware_dual_outerdei_marker_1</name>
+   </classifiers>
+ </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+ <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>cls_ccl_outer_dei_marking_trtcm_aware_dual_dei_marker_1</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced-filter1</enhanced-filter-name>
+   <classifier-action-entry-cfg>
+     <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+     <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+       <policing-profile>pol_ccl_outer_dei_marking_trtcm_aware_dual_dei_marker_1</policing-profile>
+     </policing>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+<policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+ <name>ccl_outer_dei_marking_trtcm_aware_dual_dei_marker</name>
+ <classifiers>
+   <name>cls_ccl_outer_dei_marking_trtcm_aware_dual_dei_marker_1</name>
+ </classifiers>
+</policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>cls_port_srtcm_1</name>
+  <filter-operation>match-all-filter</filter-operation>
+  <metered-flow xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-flow>
+  <classifier-action-entry-cfg>
+    <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+    <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+      <policing-profile>pol_port_srtcm_1</policing-profile>
+    </policing>
+  </classifier-action-entry-cfg>
+</classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>port_srtcm</name>
+    <classifiers>
+      <name>cls_port_srtcm_1</name>
+    </classifiers>
+  </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+ <name>cls_port_trtcm_blind_dual_pbit_marker_1</name>
+ <filter-operation>match-all-filter</filter-operation>
+ <metered-flow xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-flow>
+ <classifier-action-entry-cfg>
+   <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+   <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+     <policing-profile>pol_port_trtcm_blind_dual_pbit_marker_1</policing-profile>
+   </policing>
+ </classifier-action-entry-cfg>
+</classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>port_trtcm_blind_dual_pbit_marker</name>
+    <classifiers>
+      <name>cls_port_trtcm_blind_dual_pbit_marker_1</name>
+    </classifiers>
+  </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>cls_port_trtcm_blind_single_pbit_marker_1</name>
+  <filter-operation>match-all-filter</filter-operation>
+  <metered-flow xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-flow>
+  <classifier-action-entry-cfg>
+    <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+    <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+      <policing-profile>pol_port_trtcm_blind_single_pbit_marker_1</policing-profile>
+    </policing>
+  </classifier-action-entry-cfg>
+</classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+<policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+ <name>port_trtcm_blind_single_pbit_marker</name>
+ <classifiers>
+   <name>cls_port_trtcm_blind_single_pbit_marker_1</name>
+ </classifiers>
+</policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+ <name>cls_port_outer_in_pbit_trtcm_aware_dual_pbit_marker_1</name>
+ <filter-operation>match-all-filter</filter-operation>
+ <metered-flow xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-flow>
+ <classifier-action-entry-cfg>
+   <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+   <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+     <policing-profile>pol_port_outer_in_pbit_trtcm_aware_dual_pbit_marker_1</policing-profile>
+   </policing>
+ </classifier-action-entry-cfg>
+</classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>port_outer_in_pbit_trtcm_aware_dual_pbit_marker</name>
+    <classifiers>
+      <name>cls_port_outer_in_pbit_trtcm_aware_dual_pbit_marker_1</name>
+    </classifiers>
+  </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>cls_port_inner_pbit_marking_trtcm_aware_single_pbit_marker_1</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <metered-flow xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-flow>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+      <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+        <policing-profile>pol_port_inner_pbit_marking_trtcm_aware_single_pbit_marker_1</policing-profile>
+      </policing>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>port_inner_pbit_marking_trtcm_aware_single_pbit_marker</name>
+   <classifiers>
+     <name>cls_port_inner_pbit_marking_trtcm_aware_single_pbit_marker_1</name>
+   </classifiers>
+ </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>cls_port_inner_dei_marking_trtcm_aware_single_dei_marker_1</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <metered-flow xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-flow>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+      <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+        <policing-profile>pol_port_inner_dei_marking_trtcm_aware_single_dei_marker_1</policing-profile>
+      </policing>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>port_inner_dei_marking_trtcm_aware_single_dei_marker</name>
+    <classifiers>
+      <name>cls_port_inner_dei_marking_trtcm_aware_single_dei_marker_1</name>
+    </classifiers>
+  </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+ <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>cls_port_trtcm_blind_pass_1</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <metered-flow xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-flow>
+   <classifier-action-entry-cfg>
+     <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+     <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+       <policing-profile>pol_port_trtcm_blind_pass_1</policing-profile>
+     </policing>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>port_trtcm_blind_pass</name>
+    <classifiers>
+      <name>cls_port_trtcm_blind_pass_1</name>
+    </classifiers>
+  </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+ <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>cls_port_outer_in_dei_trtcm_aware_dual_dei_marker_1</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <metered-flow xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-flow>
+   <classifier-action-entry-cfg>
+     <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+     <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+       <policing-profile>pol_port_outer_in_dei_trtcm_aware_dual_dei_marker_1</policing-profile>
+     </policing>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>port_outer_in_dei_trtcm_aware_dual_dei_marker</name>
+    <classifiers>
+      <name>cls_port_outer_in_dei_trtcm_aware_dual_dei_marker_1</name>
+    </classifiers>
+  </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>cls_port_outer_in_dei_trtcm_aware_dual_outerdei_marker_1</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <metered-flow xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-flow>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+      <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+        <policing-profile>pol_port_outer_in_dei_trtcm_aware_dual_outerdei_marker_1</policing-profile>
+      </policing>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+<policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>port_outer_in_dei_trtcm_aware_dual_outerdei_marker</name>
+  <classifiers>
+    <name>cls_port_outer_in_dei_trtcm_aware_dual_outerdei_marker_1</name>
+  </classifiers>
+</policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+ <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>cls_port_outer_dei_marking_trtcm_aware_dual_outerdei_marker_1</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <metered-flow xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-flow>
+   <classifier-action-entry-cfg>
+     <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+     <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+       <policing-profile>pol_port_outer_dei_marking_trtcm_aware_dual_outerdei_marker_1</policing-profile>
+     </policing>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+<policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>port_outer_dei_marking_trtcm_aware_dual_outerdei_marker</name>
+  <classifiers>
+    <name>cls_port_outer_dei_marking_trtcm_aware_dual_outerdei_marker_1</name>
+  </classifiers>
+</policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+ <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>cls_schedule_inner_pbit_marking_0</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <match-criteria>
+     <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+       <index>1</index>
+       <pbit-value>0</pbit-value>
+     </pbit-marking-list>
+   </match-criteria>
+   <classifier-action-entry-cfg>
+     <action-type>scheduling-traffic-class</action-type>
+     <scheduling-traffic-class>0</scheduling-traffic-class>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+ <classifier-entry xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+   <name>cls_schedule_inner_pbit_marking_1</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <match-criteria>
+     <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+       <index>1</index>
+       <pbit-value>1</pbit-value>
+     </pbit-marking-list>
+   </match-criteria>
+   <classifier-action-entry-cfg>
+     <action-type>scheduling-traffic-class</action-type>
+     <scheduling-traffic-class>1</scheduling-traffic-class>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+ <classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+   <name>cls_schedule_inner_pbit_marking_2</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <match-criteria>
+     <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+       <index>1</index>
+       <pbit-value>2</pbit-value>
+     </pbit-marking-list>
+   </match-criteria>
+   <classifier-action-entry-cfg>
+     <action-type>scheduling-traffic-class</action-type>
+     <scheduling-traffic-class>2</scheduling-traffic-class>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+ <classifier-entry xmlns:ns3="urn:ietf:params:xml:ns:netconf:base:1.0" ns3:operation="merge">
+   <name>cls_schedule_inner_pbit_marking_3</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <match-criteria>
+     <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+       <index>1</index>
+       <pbit-value>3</pbit-value>
+     </pbit-marking-list>
+   </match-criteria>
+   <classifier-action-entry-cfg>
+     <action-type>scheduling-traffic-class</action-type>
+     <scheduling-traffic-class>3</scheduling-traffic-class>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+ <classifier-entry xmlns:ns4="urn:ietf:params:xml:ns:netconf:base:1.0" ns4:operation="merge">
+   <name>cls_schedule_inner_pbit_marking_4</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <match-criteria>
+     <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+       <index>1</index>
+       <pbit-value>4</pbit-value>
+     </pbit-marking-list>
+   </match-criteria>
+   <classifier-action-entry-cfg>
+     <action-type>scheduling-traffic-class</action-type>
+     <scheduling-traffic-class>4</scheduling-traffic-class>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+ <classifier-entry xmlns:ns5="urn:ietf:params:xml:ns:netconf:base:1.0" ns5:operation="merge">
+   <name>cls_schedule_inner_pbit_marking_5</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <match-criteria>
+     <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+       <index>1</index>
+       <pbit-value>5</pbit-value>
+     </pbit-marking-list>
+   </match-criteria>
+   <classifier-action-entry-cfg>
+     <action-type>scheduling-traffic-class</action-type>
+     <scheduling-traffic-class>5</scheduling-traffic-class>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+ <classifier-entry xmlns:ns6="urn:ietf:params:xml:ns:netconf:base:1.0" ns6:operation="merge">
+   <name>cls_schedule_inner_pbit_marking_6</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <match-criteria>
+     <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+       <index>1</index>
+       <pbit-value>6</pbit-value>
+     </pbit-marking-list>
+   </match-criteria>
+   <classifier-action-entry-cfg>
+     <action-type>scheduling-traffic-class</action-type>
+     <scheduling-traffic-class>6</scheduling-traffic-class>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+ <classifier-entry xmlns:ns7="urn:ietf:params:xml:ns:netconf:base:1.0" ns7:operation="merge">
+   <name>cls_schedule_inner_pbit_marking_7</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <match-criteria>
+     <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+       <index>1</index>
+       <pbit-value>7</pbit-value>
+     </pbit-marking-list>
+   </match-criteria>
+   <classifier-action-entry-cfg>
+     <action-type>scheduling-traffic-class</action-type>
+     <scheduling-traffic-class>7</scheduling-traffic-class>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+<policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>schedule_inner_pbit_marking</name>
+  <classifiers>
+    <name>cls_schedule_inner_pbit_marking_0</name>
+  </classifiers>
+  <classifiers>
+    <name>cls_schedule_inner_pbit_marking_1</name>
+  </classifiers>
+  <classifiers>
+    <name>cls_schedule_inner_pbit_marking_2</name>
+  </classifiers>
+  <classifiers>
+    <name>cls_schedule_inner_pbit_marking_3</name>
+  </classifiers>
+  <classifiers>
+    <name>cls_schedule_inner_pbit_marking_4</name>
+  </classifiers>
+  <classifiers>
+    <name>cls_schedule_inner_pbit_marking_5</name>
+  </classifiers>
+  <classifiers>
+    <name>cls_schedule_inner_pbit_marking_6</name>
+  </classifiers>
+  <classifiers>
+    <name>cls_schedule_inner_pbit_marking_7</name>
+  </classifiers>
+</policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>cls_schedule_outer_in_pbit_0</name>
+  <filter-operation>match-all-filter</filter-operation>
+  <match-criteria>
+    <tag>
+      <index>0</index>
+      <in-pbit-list>0</in-pbit-list>
+    </tag>
+  </match-criteria>
+  <classifier-action-entry-cfg>
+    <action-type>scheduling-traffic-class</action-type>
+    <scheduling-traffic-class>0</scheduling-traffic-class>
+  </classifier-action-entry-cfg>
+</classifier-entry>
+<classifier-entry xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+  <name>cls_schedule_outer_in_pbit_1</name>
+  <filter-operation>match-all-filter</filter-operation>
+  <match-criteria>
+    <tag>
+      <index>0</index>
+      <in-pbit-list>1</in-pbit-list>
+    </tag>
+  </match-criteria>
+  <classifier-action-entry-cfg>
+    <action-type>scheduling-traffic-class</action-type>
+    <scheduling-traffic-class>1</scheduling-traffic-class>
+  </classifier-action-entry-cfg>
+</classifier-entry>
+<classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+  <name>cls_schedule_outer_in_pbit_2</name>
+  <filter-operation>match-all-filter</filter-operation>
+  <match-criteria>
+    <tag>
+      <index>0</index>
+      <in-pbit-list>2</in-pbit-list>
+    </tag>
+  </match-criteria>
+  <classifier-action-entry-cfg>
+    <action-type>scheduling-traffic-class</action-type>
+    <scheduling-traffic-class>2</scheduling-traffic-class>
+  </classifier-action-entry-cfg>
+</classifier-entry>
+<classifier-entry xmlns:ns3="urn:ietf:params:xml:ns:netconf:base:1.0" ns3:operation="merge">
+  <name>cls_schedule_outer_in_pbit_3</name>
+  <filter-operation>match-all-filter</filter-operation>
+  <match-criteria>
+    <tag>
+      <index>0</index>
+      <in-pbit-list>3</in-pbit-list>
+    </tag>
+  </match-criteria>
+  <classifier-action-entry-cfg>
+    <action-type>scheduling-traffic-class</action-type>
+    <scheduling-traffic-class>3</scheduling-traffic-class>
+  </classifier-action-entry-cfg>
+</classifier-entry>
+<classifier-entry xmlns:ns4="urn:ietf:params:xml:ns:netconf:base:1.0" ns4:operation="merge">
+  <name>cls_schedule_outer_in_pbit_4</name>
+  <filter-operation>match-all-filter</filter-operation>
+  <match-criteria>
+    <tag>
+      <index>0</index>
+      <in-pbit-list>4</in-pbit-list>
+    </tag>
+  </match-criteria>
+  <classifier-action-entry-cfg>
+    <action-type>scheduling-traffic-class</action-type>
+    <scheduling-traffic-class>4</scheduling-traffic-class>
+  </classifier-action-entry-cfg>
+</classifier-entry>
+<classifier-entry xmlns:ns5="urn:ietf:params:xml:ns:netconf:base:1.0" ns5:operation="merge">
+  <name>cls_schedule_outer_in_pbit_5</name>
+  <filter-operation>match-all-filter</filter-operation>
+  <match-criteria>
+    <tag>
+      <index>0</index>
+      <in-pbit-list>5</in-pbit-list>
+    </tag>
+  </match-criteria>
+  <classifier-action-entry-cfg>
+    <action-type>scheduling-traffic-class</action-type>
+    <scheduling-traffic-class>5</scheduling-traffic-class>
+  </classifier-action-entry-cfg>
+</classifier-entry>
+<classifier-entry xmlns:ns6="urn:ietf:params:xml:ns:netconf:base:1.0" ns6:operation="merge">
+  <name>cls_schedule_outer_in_pbit_6</name>
+  <filter-operation>match-all-filter</filter-operation>
+  <match-criteria>
+    <tag>
+      <index>0</index>
+      <in-pbit-list>6</in-pbit-list>
+    </tag>
+  </match-criteria>
+  <classifier-action-entry-cfg>
+    <action-type>scheduling-traffic-class</action-type>
+    <scheduling-traffic-class>6</scheduling-traffic-class>
+  </classifier-action-entry-cfg>
+</classifier-entry>
+<classifier-entry xmlns:ns7="urn:ietf:params:xml:ns:netconf:base:1.0" ns7:operation="merge">
+  <name>cls_schedule_outer_in_pbit_7</name>
+  <filter-operation>match-all-filter</filter-operation>
+  <match-criteria>
+    <tag>
+      <index>0</index>
+      <in-pbit-list>7</in-pbit-list>
+    </tag>
+  </match-criteria>
+  <classifier-action-entry-cfg>
+    <action-type>scheduling-traffic-class</action-type>
+    <scheduling-traffic-class>7</scheduling-traffic-class>
+  </classifier-action-entry-cfg>
+</classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>schedule_outer_in_pbit</name>
+    <classifiers>
+      <name>cls_schedule_outer_in_pbit_0</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_schedule_outer_in_pbit_1</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_schedule_outer_in_pbit_2</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_schedule_outer_in_pbit_3</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_schedule_outer_in_pbit_4</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_schedule_outer_in_pbit_5</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_schedule_outer_in_pbit_6</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_schedule_outer_in_pbit_7</name>
+    </classifiers>
+  </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>cls_schedule_outer_pbit_marking_0</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <match-criteria>
+      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+        <index>0</index>
+        <pbit-value>0</pbit-value>
+      </pbit-marking-list>
+    </match-criteria>
+    <classifier-action-entry-cfg>
+      <action-type>scheduling-traffic-class</action-type>
+      <scheduling-traffic-class>0</scheduling-traffic-class>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+    <name>cls_schedule_outer_pbit_marking_1</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <match-criteria>
+      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+        <index>0</index>
+        <pbit-value>1</pbit-value>
+      </pbit-marking-list>
+    </match-criteria>
+    <classifier-action-entry-cfg>
+      <action-type>scheduling-traffic-class</action-type>
+      <scheduling-traffic-class>1</scheduling-traffic-class>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+    <name>cls_schedule_outer_pbit_marking_2</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <match-criteria>
+      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+        <index>0</index>
+        <pbit-value>2</pbit-value>
+      </pbit-marking-list>
+    </match-criteria>
+    <classifier-action-entry-cfg>
+      <action-type>scheduling-traffic-class</action-type>
+      <scheduling-traffic-class>2</scheduling-traffic-class>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns3="urn:ietf:params:xml:ns:netconf:base:1.0" ns3:operation="merge">
+    <name>cls_schedule_outer_pbit_marking_3</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <match-criteria>
+      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+        <index>0</index>
+        <pbit-value>3</pbit-value>
+      </pbit-marking-list>
+    </match-criteria>
+    <classifier-action-entry-cfg>
+      <action-type>scheduling-traffic-class</action-type>
+      <scheduling-traffic-class>3</scheduling-traffic-class>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns4="urn:ietf:params:xml:ns:netconf:base:1.0" ns4:operation="merge">
+    <name>cls_schedule_outer_pbit_marking_4</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <match-criteria>
+      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+        <index>0</index>
+        <pbit-value>4</pbit-value>
+      </pbit-marking-list>
+    </match-criteria>
+    <classifier-action-entry-cfg>
+      <action-type>scheduling-traffic-class</action-type>
+      <scheduling-traffic-class>4</scheduling-traffic-class>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns5="urn:ietf:params:xml:ns:netconf:base:1.0" ns5:operation="merge">
+    <name>cls_schedule_outer_pbit_marking_5</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <match-criteria>
+      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+        <index>0</index>
+        <pbit-value>5</pbit-value>
+      </pbit-marking-list>
+    </match-criteria>
+    <classifier-action-entry-cfg>
+      <action-type>scheduling-traffic-class</action-type>
+      <scheduling-traffic-class>5</scheduling-traffic-class>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns6="urn:ietf:params:xml:ns:netconf:base:1.0" ns6:operation="merge">
+    <name>cls_schedule_outer_pbit_marking_6</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <match-criteria>
+      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+        <index>0</index>
+        <pbit-value>6</pbit-value>
+      </pbit-marking-list>
+    </match-criteria>
+    <classifier-action-entry-cfg>
+      <action-type>scheduling-traffic-class</action-type>
+      <scheduling-traffic-class>6</scheduling-traffic-class>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns7="urn:ietf:params:xml:ns:netconf:base:1.0" ns7:operation="merge">
+    <name>cls_schedule_outer_pbit_marking_7</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <match-criteria>
+      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+        <index>0</index>
+        <pbit-value>7</pbit-value>
+      </pbit-marking-list>
+    </match-criteria>
+    <classifier-action-entry-cfg>
+      <action-type>scheduling-traffic-class</action-type>
+      <scheduling-traffic-class>7</scheduling-traffic-class>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>schedule_outer_pbit_marking</name>
+    <classifiers>
+      <name>cls_schedule_outer_pbit_marking_0</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_schedule_outer_pbit_marking_1</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_schedule_outer_pbit_marking_2</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_schedule_outer_pbit_marking_3</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_schedule_outer_pbit_marking_4</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_schedule_outer_pbit_marking_5</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_schedule_outer_pbit_marking_6</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_schedule_outer_pbit_marking_7</name>
+    </classifiers>
+  </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>cls_queue_color_inner_pbit_marking_0</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <index>1</index>
+      <pbit-value>0</pbit-value>
+    </pbit-marking-list>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">red</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+    <name>cls_queue_color_inner_pbit_marking_1</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <index>1</index>
+      <pbit-value>1</pbit-value>
+    </pbit-marking-list>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">red</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+    <name>cls_queue_color_inner_pbit_marking_2</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <index>1</index>
+      <pbit-value>2</pbit-value>
+    </pbit-marking-list>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">yellow</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns3="urn:ietf:params:xml:ns:netconf:base:1.0" ns3:operation="merge">
+    <name>cls_queue_color_inner_pbit_marking_3</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <index>1</index>
+      <pbit-value>3</pbit-value>
+    </pbit-marking-list>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">yellow</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns4="urn:ietf:params:xml:ns:netconf:base:1.0" ns4:operation="merge">
+    <name>cls_queue_color_inner_pbit_marking_4</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <index>1</index>
+      <pbit-value>4</pbit-value>
+    </pbit-marking-list>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">yellow</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns5="urn:ietf:params:xml:ns:netconf:base:1.0" ns5:operation="merge">
+    <name>cls_queue_color_inner_pbit_marking_5</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <index>1</index>
+      <pbit-value>5</pbit-value>
+    </pbit-marking-list>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">green</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns6="urn:ietf:params:xml:ns:netconf:base:1.0" ns6:operation="merge">
+    <name>cls_queue_color_inner_pbit_marking_6</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <index>1</index>
+      <pbit-value>6</pbit-value>
+    </pbit-marking-list>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">green</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns7="urn:ietf:params:xml:ns:netconf:base:1.0" ns7:operation="merge">
+    <name>cls_queue_color_inner_pbit_marking_7</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <index>1</index>
+      <pbit-value>7</pbit-value>
+    </pbit-marking-list>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">green</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>queue_color_inner_pbit_marking</name>
+   <classifiers>
+     <name>cls_queue_color_inner_pbit_marking_0</name>
+   </classifiers>
+   <classifiers>
+     <name>cls_queue_color_inner_pbit_marking_1</name>
+   </classifiers>
+   <classifiers>
+     <name>cls_queue_color_inner_pbit_marking_2</name>
+   </classifiers>
+   <classifiers>
+     <name>cls_queue_color_inner_pbit_marking_3</name>
+   </classifiers>
+   <classifiers>
+     <name>cls_queue_color_inner_pbit_marking_4</name>
+   </classifiers>
+   <classifiers>
+     <name>cls_queue_color_inner_pbit_marking_5</name>
+   </classifiers>
+   <classifiers>
+     <name>cls_queue_color_inner_pbit_marking_6</name>
+   </classifiers>
+   <classifiers>
+     <name>cls_queue_color_inner_pbit_marking_7</name>
+   </classifiers>
+ </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+ <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>cls_queue_color_outer_pbit_marking_0</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+     <index>0</index>
+     <pbit-value>0</pbit-value>
+   </pbit-marking-list>
+   <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+   <classifier-action-entry-cfg>
+     <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+     <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">red</bac-color>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+ <classifier-entry xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+   <name>cls_queue_color_outer_pbit_marking_1</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+     <index>0</index>
+     <pbit-value>1</pbit-value>
+   </pbit-marking-list>
+   <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+   <classifier-action-entry-cfg>
+     <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+     <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">red</bac-color>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+ <classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+   <name>cls_queue_color_outer_pbit_marking_2</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+     <index>0</index>
+     <pbit-value>2</pbit-value>
+   </pbit-marking-list>
+   <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+   <classifier-action-entry-cfg>
+     <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+     <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">yellow</bac-color>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+ <classifier-entry xmlns:ns3="urn:ietf:params:xml:ns:netconf:base:1.0" ns3:operation="merge">
+   <name>cls_queue_color_outer_pbit_marking_3</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+     <index>0</index>
+     <pbit-value>3</pbit-value>
+   </pbit-marking-list>
+   <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+   <classifier-action-entry-cfg>
+     <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+     <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">yellow</bac-color>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+ <classifier-entry xmlns:ns4="urn:ietf:params:xml:ns:netconf:base:1.0" ns4:operation="merge">
+   <name>cls_queue_color_outer_pbit_marking_4</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+     <index>0</index>
+     <pbit-value>4</pbit-value>
+   </pbit-marking-list>
+   <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+   <classifier-action-entry-cfg>
+     <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+     <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">yellow</bac-color>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+ <classifier-entry xmlns:ns5="urn:ietf:params:xml:ns:netconf:base:1.0" ns5:operation="merge">
+   <name>cls_queue_color_outer_pbit_marking_5</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+     <index>0</index>
+     <pbit-value>5</pbit-value>
+   </pbit-marking-list>
+   <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+   <classifier-action-entry-cfg>
+     <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+     <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">green</bac-color>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+ <classifier-entry xmlns:ns6="urn:ietf:params:xml:ns:netconf:base:1.0" ns6:operation="merge">
+   <name>cls_queue_color_outer_pbit_marking_6</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+     <index>0</index>
+     <pbit-value>6</pbit-value>
+   </pbit-marking-list>
+   <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+   <classifier-action-entry-cfg>
+     <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+     <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">green</bac-color>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+ <classifier-entry xmlns:ns7="urn:ietf:params:xml:ns:netconf:base:1.0" ns7:operation="merge">
+   <name>cls_queue_color_outer_pbit_marking_7</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+     <index>0</index>
+     <pbit-value>7</pbit-value>
+   </pbit-marking-list>
+   <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+   <classifier-action-entry-cfg>
+     <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+     <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">green</bac-color>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>queue_color_outer_pbit_marking</name>
+   <classifiers>
+     <name>cls_queue_color_outer_pbit_marking_0</name>
+   </classifiers>
+   <classifiers>
+     <name>cls_queue_color_outer_pbit_marking_1</name>
+   </classifiers>
+   <classifiers>
+     <name>cls_queue_color_outer_pbit_marking_2</name>
+   </classifiers>
+   <classifiers>
+     <name>cls_queue_color_outer_pbit_marking_3</name>
+   </classifiers>
+   <classifiers>
+     <name>cls_queue_color_outer_pbit_marking_4</name>
+   </classifiers>
+   <classifiers>
+     <name>cls_queue_color_outer_pbit_marking_5</name>
+   </classifiers>
+   <classifiers>
+     <name>cls_queue_color_outer_pbit_marking_6</name>
+   </classifiers>
+   <classifiers>
+     <name>cls_queue_color_outer_pbit_marking_7</name>
+   </classifiers>
+ </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>cls_queue_color_outer_in_pbit_0</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <tag>
+        <index>0</index>
+        <in-pbit-list>0</in-pbit-list>
+      </tag>
+    </vlans>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">red</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+    <name>cls_queue_color_outer_in_pbit_1</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <tag>
+        <index>0</index>
+        <in-pbit-list>1</in-pbit-list>
+      </tag>
+    </vlans>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">red</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+    <name>cls_queue_color_outer_in_pbit_2</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <tag>
+        <index>0</index>
+        <in-pbit-list>2</in-pbit-list>
+      </tag>
+    </vlans>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">yellow</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns3="urn:ietf:params:xml:ns:netconf:base:1.0" ns3:operation="merge">
+    <name>cls_queue_color_outer_in_pbit_3</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <tag>
+        <index>0</index>
+        <in-pbit-list>3</in-pbit-list>
+      </tag>
+    </vlans>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">yellow</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns4="urn:ietf:params:xml:ns:netconf:base:1.0" ns4:operation="merge">
+    <name>cls_queue_color_outer_in_pbit_4</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <tag>
+        <index>0</index>
+        <in-pbit-list>4</in-pbit-list>
+      </tag>
+    </vlans>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">yellow</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns5="urn:ietf:params:xml:ns:netconf:base:1.0" ns5:operation="merge">
+    <name>cls_queue_color_outer_in_pbit_5</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <tag>
+        <index>0</index>
+        <in-pbit-list>5</in-pbit-list>
+      </tag>
+    </vlans>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">green</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns6="urn:ietf:params:xml:ns:netconf:base:1.0" ns6:operation="merge">
+    <name>cls_queue_color_outer_in_pbit_6</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <tag>
+        <index>0</index>
+        <in-pbit-list>6</in-pbit-list>
+      </tag>
+    </vlans>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">green</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns7="urn:ietf:params:xml:ns:netconf:base:1.0" ns7:operation="merge">
+    <name>cls_queue_color_outer_in_pbit_7</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <tag>
+        <index>0</index>
+        <in-pbit-list>7</in-pbit-list>
+      </tag>
+    </vlans>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">green</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>queue_color_outer_in_pbit</name>
+    <classifiers>
+      <name>cls_queue_color_outer_in_pbit_0</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_queue_color_outer_in_pbit_1</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_queue_color_outer_in_pbit_2</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_queue_color_outer_in_pbit_3</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_queue_color_outer_in_pbit_4</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_queue_color_outer_in_pbit_5</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_queue_color_outer_in_pbit_6</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_queue_color_outer_in_pbit_7</name>
+    </classifiers>
+  </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+ <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>cls_queue_color_inner_dei_marking_0</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <dei-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+     <index>1</index>
+     <dei-value>0</dei-value>
+   </dei-marking-list>
+   <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+   <classifier-action-entry-cfg>
+     <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+     <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">green</bac-color>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+ <classifier-entry xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+   <name>cls_queue_color_inner_dei_marking_1</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <dei-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+     <index>1</index>
+     <dei-value>1</dei-value>
+   </dei-marking-list>
+   <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+   <classifier-action-entry-cfg>
+     <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+     <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">yellow</bac-color>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>queue_color_inner_dei_marking</name>
+   <classifiers>
+     <name>cls_queue_color_inner_dei_marking_0</name>
+   </classifiers>
+   <classifiers>
+     <name>cls_queue_color_inner_dei_marking_1</name>
+   </classifiers>
+ </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>cls_queue_color_outer_dei_marking_0</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <dei-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <index>0</index>
+      <dei-value>0</dei-value>
+    </dei-marking-list>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">green</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+    <name>cls_queue_color_outer_dei_marking_1</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <dei-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <index>0</index>
+      <dei-value>1</dei-value>
+    </dei-marking-list>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">yellow</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>queue_color_outer_dei_marking</name>
+    <classifiers>
+      <name>cls_queue_color_outer_dei_marking_0</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_queue_color_outer_dei_marking_1</name>
+    </classifiers>
+  </policy>
+</policies>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+ <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>cls_queue_color_outer_in_dei_0</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+     <tag>
+       <index>0</index>
+       <in-dei>0</in-dei>
+     </tag>
+   </vlans>
+   <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+   <classifier-action-entry-cfg>
+     <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+     <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">green</bac-color>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+ <classifier-entry xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+   <name>cls_queue_color_outer_in_dei_1</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+     <tag>
+       <index>0</index>
+       <in-dei>1</in-dei>
+     </tag>
+   </vlans>
+   <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+   <classifier-action-entry-cfg>
+     <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+     <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">yellow</bac-color>
+   </classifier-action-entry-cfg>
+ </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>queue_color_outer_in_dei</name>
+    <classifiers>
+      <name>cls_queue_color_outer_in_dei_0</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_queue_color_outer_in_dei_1</name>
+    </classifiers>
+  </policy>
+</policies>
+
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>us_srtcm</name>
+   <policy-list>
+     <name>ccl_srtcm</name>
+   </policy-list>
+   <policy-list>
+     <name>port_srtcm</name>
+   </policy-list>
+ </policy-profile>
+</qos-policy-profiles>
+
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>us_trtcm_blind_dual_pbit_marker</name>
+   <policy-list>
+     <name>ccl_trtcm_blind_dual_pbit_marker</name>
+   </policy-list>
+   <policy-list>
+     <name>port_trtcm_blind_dual_pbit_marker</name>
+   </policy-list>
+ </policy-profile>
+</qos-policy-profiles>
+
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>us_outer_in_pbit_trtcm_aware_dual_pbit_marker</name>
+   <policy-list>
+     <name>ccl_outer_in_pbit_trtcm_aware_dual_pbit_marker</name>
+   </policy-list>
+   <policy-list>
+     <name>port_outer_in_pbit_trtcm_aware_dual_pbit_marker</name>
+   </policy-list>
+ </policy-profile>
+</qos-policy-profiles>
+
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>us_outer_in_dei_trtcm_aware_dual_dei_marker</name>
+   <policy-list>
+     <name>ccl_outer_in_dei_trtcm_aware_dual_dei_marker</name>
+   </policy-list>
+   <policy-list>
+     <name>port_outer_in_dei_trtcm_aware_dual_dei_marker</name>
+   </policy-list>
+ </policy-profile>
+</qos-policy-profiles>
+
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>us_outer_dei_marking_trtcm_aware_dual_outerdei_marker</name>
+    <policy-list>
+      <name>policy_marker_copy_dual</name>
+    </policy-list>
+    <policy-list>
+      <name>ccl_outer_dei_marking_trtcm_aware_dual_outerdei_marker</name>
+    </policy-list>
+    <policy-list>
+      <name>port_outer_dei_marking_trtcm_aware_dual_outerdei_marker</name>
+    </policy-list>
+  </policy-profile>
+</qos-policy-profiles>
+
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+<policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>ds_srtcm_outer_sch</name>
+  <policy-list>
+    <name>ccl_srtcm</name>
+  </policy-list>
+  <policy-list>
+    <name>port_srtcm</name>
+  </policy-list>
+  <policy-list>
+    <name>schedule_outer_pbit_marking</name>
+  </policy-list>
+  <policy-list>
+    <name>queue_color_outer_pbit_marking</name>
+  </policy-list>
+</policy-profile>
+</qos-policy-profiles>
+
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>ds_srtcm_inner_sch</name>
+   <policy-list>
+     <name>ccl_srtcm</name>
+   </policy-list>
+   <policy-list>
+     <name>port_srtcm</name>
+   </policy-list>
+   <policy-list>
+     <name>schedule_inner_pbit_marking</name>
+   </policy-list>
+   <policy-list>
+     <name>queue_color_inner_pbit_marking</name>
+   </policy-list>
+ </policy-profile>
+</qos-policy-profiles>
+
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>ds_trtcm_blind_single_pbit_marker_outer_sch</name>
+   <policy-list>
+     <name>ccl_trtcm_blind_single_pbit_marker</name>
+   </policy-list>
+   <policy-list>
+     <name>port_trtcm_blind_single_pbit_marker</name>
+   </policy-list>
+   <policy-list>
+     <name>schedule_outer_pbit_marking</name>
+   </policy-list>
+   <policy-list>
+     <name>queue_color_outer_pbit_marking</name>
+   </policy-list>
+ </policy-profile>
+</qos-policy-profiles>
+
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>ds_trtcm_blind_pass_outer_sch</name>
+   <policy-list>
+     <name>ccl_trtcm_blind_pass</name>
+   </policy-list>
+   <policy-list>
+     <name>port_trtcm_blind_pass</name>
+   </policy-list>
+   <policy-list>
+     <name>schedule_outer_pbit_marking</name>
+   </policy-list>
+   <policy-list>
+     <name>queue_color_outer_pbit_marking</name>
+   </policy-list>
+ </policy-profile>
+</qos-policy-profiles>
+
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+<policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>ds_trtcm_blind_pass_inner_sch</name>
+  <policy-list>
+    <name>ccl_trtcm_blind_pass</name>
+  </policy-list>
+  <policy-list>
+    <name>port_trtcm_blind_pass</name>
+  </policy-list>
+  <policy-list>
+    <name>schedule_inner_pbit_marking</name>
+  </policy-list>
+  <policy-list>
+    <name>queue_color_inner_pbit_marking</name>
+  </policy-list>
+</policy-profile>
+</qos-policy-profiles>
+
+    </config>
+  </edit-config>
+</rpc>

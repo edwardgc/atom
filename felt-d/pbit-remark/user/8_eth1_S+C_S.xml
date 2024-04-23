@@ -69,6 +69,14 @@
 							</push-tag>
 						</egress-rewrite>
 				</inline-frame-processing>
+        <ipv4-security xmlns="uri:http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-ipv4-address-spoofing-prevention">
+          <prevent-ipv4-address-spoofing>true</prevent-ipv4-address-spoofing>
+          <learn-addresses-from-dhcp/>
+        </ipv4-security>
+        <l2-dhcpv4-relay xmlns="urn:bbf:yang:bbf-l2-dhcpv4-relay">
+          <enable>true</enable>
+          <profile-ref>uni41_vsi_dhcp</profile-ref>
+        </l2-dhcpv4-relay>
     </interface>
 
     <interface>
@@ -95,42 +103,24 @@
                       <pbit>any</pbit>
                       <dei>any</dei>
                     </dot1q-tag>
-                    </tag>
-                    <tag>
-                    <index>1</index>
-                    <dot1q-tag>
-                      <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
-                      <vlan-id>1001</vlan-id>
-                      <pbit>any</pbit>
-                      <dei>any</dei>
-                    </dot1q-tag>
                   </tag>
                 </match-criteria>
               </flexible-match>
 		        <ingress-rewrite>
-              <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">2</pop-tags>
+              <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
             </ingress-rewrite>
             </rule>
           </ingress-rule>
           <egress-rewrite>
-				  <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
-					<index>0</index>
-					<dot1q-tag>
-					  <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
-					  <vlan-id>1001</vlan-id>
-					  <pbit-marking-index xmlns="urn:bbf:yang:bbf-qos-policies-sub-interfaces">0</pbit-marking-index>
-					  <dei-marking-index xmlns="urn:bbf:yang:bbf-qos-policies-sub-interfaces">0</dei-marking-index>
-					</dot1q-tag>
-          </push-tag>
-          <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
-          <index>1</index>
-					<dot1q-tag>
-					  <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
-					  <vlan-id>1001</vlan-id>
-					  <pbit-marking-index xmlns="urn:bbf:yang:bbf-qos-policies-sub-interfaces">1</pbit-marking-index>
-					  <dei-marking-index xmlns="urn:bbf:yang:bbf-qos-policies-sub-interfaces">1</dei-marking-index>
-					</dot1q-tag>
-				  </push-tag>
+  				  <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+    					<index>0</index>
+    					<dot1q-tag>
+    					  <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+    					  <vlan-id>1001</vlan-id>
+    					  <pbit-marking-index xmlns="urn:bbf:yang:bbf-qos-policies-sub-interfaces">0</pbit-marking-index>
+    					  <dei-marking-index xmlns="urn:bbf:yang:bbf-qos-policies-sub-interfaces">0</dei-marking-index>
+    					</dot1q-tag>
+            </push-tag>
           </egress-rewrite>
           </inline-frame-processing>
           </interface>
@@ -150,6 +140,9 @@
                 <sub-interface>demo_net_cc_1001_1001</sub-interface>
               </port>
             </ports>
+            <l2-dhcpv4-relay xmlns="urn:bbf:yang:bbf-l2-dhcpv4-relay-forwarding">
+              <downstream-broadcast-flooding>false</downstream-broadcast-flooding>
+            </l2-dhcpv4-relay>
           </forwarder>
         </forwarders>
       </forwarding>
@@ -307,6 +300,21 @@
         </policy-list>
       </policy-profile>
     </qos-policy-profiles>
+
+    <l2-dhcpv4-relay-profiles xmlns="urn:bbf:yang:bbf-l2-dhcpv4-relay">
+      <l2-dhcpv4-relay-profile>
+        <name>uni41_vsi_dhcp</name>
+        <max-packet-size>1200</max-packet-size>
+        <option82-format>
+          <suboptions>circuit-id</suboptions>
+          <suboptions>remote-id</suboptions>
+          <default-circuit-id-syntax>Telecom</default-circuit-id-syntax>
+          <default-remote-id-syntax>Telecom</default-remote-id-syntax>
+          <start-numbering-from-zero>true</start-numbering-from-zero>
+          <use-leading-zeroes>true</use-leading-zeroes>
+        </option82-format>
+      </l2-dhcpv4-relay-profile>
+    </l2-dhcpv4-relay-profiles>
 
 </config>
   </edit-config>

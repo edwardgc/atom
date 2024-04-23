@@ -12,7 +12,6 @@
         <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
           <interface-usage>inherit</interface-usage>
         </interface-usage>
-        <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">my-pbit-remarker-profile</ingress-qos-policy-profile>
         <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">EPP0</egress-qos-policy-profile>
         <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
           <interface>eth1</interface>

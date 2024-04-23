@@ -1,0 +1,30 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+	<edit-config>
+		<target>
+			<running />
+		</target>
+		<config>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+    <name>inpbit</name>
+  </classifier-entry>
+  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+    <name>inpbit1</name>
+  </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+    <name>my-pbit-remarker-policy</name>
+  </policy>
+</policies>
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+    <name>my-pbit-remarker-profile</name>
+  </policy-profile>
+</qos-policy-profiles>
+
+</config>
+</edit-config>
+</rpc>

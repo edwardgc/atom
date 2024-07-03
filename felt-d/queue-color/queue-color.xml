@@ -1,0 +1,157 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+	<edit-config>
+		<target>
+			<running />
+		</target>
+		<config>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+	<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>cls_queue_color_inner_pbit_marking_0</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <index>1</index>
+      <pbit-value>0</pbit-value>
+    </pbit-marking-list>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">red</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+    <name>cls_queue_color_inner_pbit_marking_1</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <index>1</index>
+      <pbit-value>1</pbit-value>
+    </pbit-marking-list>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">red</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+    <name>cls_queue_color_inner_pbit_marking_2</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <index>1</index>
+      <pbit-value>2</pbit-value>
+    </pbit-marking-list>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">yellow</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns3="urn:ietf:params:xml:ns:netconf:base:1.0" ns3:operation="merge">
+    <name>cls_queue_color_inner_pbit_marking_3</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <index>1</index>
+      <pbit-value>3</pbit-value>
+    </pbit-marking-list>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">yellow</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns4="urn:ietf:params:xml:ns:netconf:base:1.0" ns4:operation="merge">
+    <name>cls_queue_color_inner_pbit_marking_4</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <index>1</index>
+      <pbit-value>4</pbit-value>
+    </pbit-marking-list>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">yellow</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns5="urn:ietf:params:xml:ns:netconf:base:1.0" ns5:operation="merge">
+    <name>cls_queue_color_inner_pbit_marking_5</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <index>1</index>
+      <pbit-value>5</pbit-value>
+    </pbit-marking-list>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">green</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns6="urn:ietf:params:xml:ns:netconf:base:1.0" ns6:operation="merge">
+    <name>cls_queue_color_inner_pbit_marking_6</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <index>1</index>
+      <pbit-value>6</pbit-value>
+    </pbit-marking-list>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">green</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+  <classifier-entry xmlns:ns7="urn:ietf:params:xml:ns:netconf:base:1.0" ns7:operation="merge">
+    <name>cls_queue_color_inner_pbit_marking_7</name>
+    <filter-operation>match-all-filter</filter-operation>
+    <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+      <index>1</index>
+      <pbit-value>7</pbit-value>
+    </pbit-marking-list>
+    <metered-color xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-color>
+    <classifier-action-entry-cfg>
+      <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:bac-color</action-type>
+      <bac-color xmlns="urn:bbf:yang:bbf-qos-policing">green</bac-color>
+    </classifier-action-entry-cfg>
+  </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+	<policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>queue_color_inner_pbit_marking</name>
+    <classifiers>
+      <name>cls_queue_color_inner_pbit_marking_0</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_queue_color_inner_pbit_marking_1</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_queue_color_inner_pbit_marking_2</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_queue_color_inner_pbit_marking_3</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_queue_color_inner_pbit_marking_4</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_queue_color_inner_pbit_marking_5</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_queue_color_inner_pbit_marking_6</name>
+    </classifiers>
+    <classifiers>
+      <name>cls_queue_color_inner_pbit_marking_7</name>
+    </classifiers>
+  </policy>
+</policies>
+
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>ds_srtcm_inner_sch</name>
+   <policy-list>
+     <name>queue_color_inner_pbit_marking</name>
+   </policy-list>
+ </policy-profile>
+</qos-policy-profiles>
+
+
+</config>
+</edit-config>
+</rpc>

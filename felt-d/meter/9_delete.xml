@@ -1,0 +1,65 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>VSI_ETH5_ss_cc</name>
+        </interface>
+
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>NTW_VSI_rb</name>
+        </interface>
+      </interfaces>
+
+      <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+        <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>sfp1</name>
+        </component>
+
+        <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>port1</name>
+        </component>
+      </hardware>
+
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>eth1</name>
+        </interface>
+      </interfaces>
+
+      <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+        <forwarders>
+          <forwarder xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+            <name>FWD_rb</name>
+          </forwarder>
+        </forwarders>
+      </forwarding>
+
+      <!-- <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+        <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>inpbit</name>
+        </classifier-entry>
+        <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>inpbit1</name>
+        </classifier-entry>
+      </classifiers>
+
+      <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>my-pbit-remarker-policy</name>
+        </policy>
+      </policies>
+
+      <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+        <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+          <name>my-pbit-remarker-profile</name>
+        </policy-profile>
+      </qos-policy-profiles> -->
+
+    </config>
+  </edit-config>
+</rpc>

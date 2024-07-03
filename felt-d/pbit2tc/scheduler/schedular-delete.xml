@@ -1,0 +1,50 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+<config>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+    <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+      <name>classifier_eg0_1</name>
+    </classifier-entry>
+    <classifier-entry>
+      <name>classifier_eg1_1</name>
+    </classifier-entry>
+    <classifier-entry>
+      <name>classifier_eg2_1</name>
+    </classifier-entry>
+    <classifier-entry>
+      <name>classifier_eg3_1</name>
+    </classifier-entry>
+    <classifier-entry>
+      <name>classifier_eg4_1</name>
+    </classifier-entry>
+    <classifier-entry>
+      <name>classifier_eg5_1</name>
+    </classifier-entry>
+    <classifier-entry>
+      <name>classifier_eg6_1</name>
+    </classifier-entry>
+    <classifier-entry>
+      <name>classifier_eg7_1</name>
+    </classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+<policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+  <name>POLICY_EG_1</name>
+</policy>
+</policies>
+
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+<policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">
+  <name>EPP0_1</name>
+</policy-profile>
+</qos-policy-profiles>
+
+
+</config>
+  </edit-config>
+</rpc>

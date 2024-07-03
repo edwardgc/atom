@@ -8,13 +8,13 @@
 				<filter type="subtree">
 					<ponid:xpon-tc-allocation xmlns:ponid="http://www.nokia.com/management-solutions/pon-id-allocation">
 						<ponid:channel-group>
-							<ponid:name>FX_1.LT10_F1</ponid:name>
-							<ponid:per-xpon-technology-id-pool>
-								<ponid:xpon-pool-type>gpon</ponid:xpon-pool-type>
+							<ponid:name>MF-2_73.LT1.PON2</ponid:name>
+							<!-- <ponid:per-xpon-technology-id-pool>
+								<ponid:xpon-pool-type>xgs</ponid:xpon-pool-type>
 								<ponid:onu-id-pool>
 									<ponid:reserved-onu-ids/>
 								</ponid:onu-id-pool>
-							</ponid:per-xpon-technology-id-pool>
+							</ponid:per-xpon-technology-id-pool> -->
 						</ponid:channel-group>
 					</ponid:xpon-tc-allocation>
 				</filter>

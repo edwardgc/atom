@@ -12,6 +12,8 @@
         <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
           <interface-usage>inherit</interface-usage>
         </interface-usage>
+        <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">my-pbit-remarker-profile</ingress-qos-policy-profile>
+        <!-- <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="delete">my-pbit-remarker-profile</ingress-qos-policy-profile> -->
         <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">EPP0</egress-qos-policy-profile>
         <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
           <interface>eth1</interface>
@@ -160,7 +162,7 @@
             <filter-operation>match-all-filter</filter-operation>
             <match-criteria>
               <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
-                <index>1</index>
+                <index>0</index>
                 <pbit-value>0</pbit-value>
               </pbit-marking-list>
             </match-criteria>

@@ -328,6 +328,7 @@
           <l2-dhcpv4-relay xmlns="urn:bbf:yang:bbf-l2-dhcpv4-relay-forwarding">
             <downstream-broadcast-flooding>false</downstream-broadcast-flooding>
           </l2-dhcpv4-relay>
+
         </forwarder>
       </forwarders>
       <forwarding-databases>
@@ -3110,6 +3111,9 @@
           <max-number-mac-addresses>4</max-number-mac-addresses>
           <mac-learning-enable>true</mac-learning-enable>
         </mac-learning>
+        <ipv4-security xmlns="uri:http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-ipv4-address-spoofing-prevention">
+          <prevent-ipv4-address-spoofing>false</prevent-ipv4-address-spoofing>
+        </ipv4-security>
         <frame-processing-profile-ref xmlns="urn:bbf:yang:bbf-frame-processing-profile">SINGLE-VLAN-PROFILE</frame-processing-profile-ref>
         <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">DEI_TRTCM</ingress-qos-policy-profile>
         <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">DEI_TRTCM</egress-qos-policy-profile>

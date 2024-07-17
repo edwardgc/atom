@@ -1,0 +1,42 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="459">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <default-operation>none</default-operation>
+    <test-option>set</test-option>
+    <error-option>rollback-on-error</error-option>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+        <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+          <device-id>HelloWorld</device-id>
+          <device-specific-data>
+
+            <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+              <interface ns0:operation="merge" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0">
+                <name>cp_ont1</name>
+                <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:channel-pair</type>
+                <channel-pair xmlns="urn:bbf:yang:bbf-xpon">
+                  <channel-group-ref>cg_ont1</channel-group-ref>
+                  <channel-pair-type xmlns:xpon-types="urn:bbf:yang:bbf-xpon-types">xpon-types:fiftyg-tdm</channel-pair-type>
+                  <channel-partition-ref>scg_ont1</channel-partition-ref>
+                </channel-pair>
+              </interface>
+
+              <interface ns0:operation="merge" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0">
+                <name>cp_ont4</name>
+                <type xmlns:bbfxponift="urn:bbf:yang:bbf-xpon-if-type">bbfxponift:channel-pair</type>
+                <channel-pair xmlns="urn:bbf:yang:bbf-xpon">
+                  <channel-group-ref>cg_ont4</channel-group-ref>
+                  <channel-pair-type xmlns:xpon-types="urn:bbf:yang:bbf-xpon-types">xpon-types:fiftyg-tdm</channel-pair-type>
+                  <channel-partition-ref>scg_ont4</channel-partition-ref>
+                </channel-pair>
+              </interface>
+            </interfaces>
+
+          </device-specific-data>
+        </device>
+      </device-manager>
+    </config>
+  </edit-config>
+</rpc>

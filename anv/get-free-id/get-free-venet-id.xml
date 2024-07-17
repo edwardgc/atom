@@ -1,6 +1,6 @@
 <rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="100">
   <get-free-venet-ids xmlns="http://www.nokia.com/management-solutions/pon-id-allocation">
-     <device-id>device1</device-id>
+     <device-id>LT_1</device-id>
      <venet-name>venet1</venet-name>
      <venet-name>venet2</venet-name>
   </get-free-venet-ids>

@@ -7,7 +7,7 @@
 		<config>
 			<device-manager xmlns="http://www.nokia.com/management-solutions/anv">
 				<device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
-					<device-id>HelloWorld</device-id>
+					<device-id>LT_1</device-id>
 					<device-specific-data>
 						<if:interfaces xmlns:if="urn:ietf:params:xml:ns:yang:ietf-interfaces">
 							<if:interface>

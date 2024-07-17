@@ -132,6 +132,9 @@
                 <sub-interface>demo_net_cc_1001_1001</sub-interface>
               </port>
             </ports>
+            <l2-dhcpv4-relay xmlns="urn:bbf:yang:bbf-l2-dhcpv4-relay-forwarding">
+              <downstream-broadcast-flooding>false</downstream-broadcast-flooding>
+            </l2-dhcpv4-relay>
           </forwarder>
         </forwarders>
       </forwarding>

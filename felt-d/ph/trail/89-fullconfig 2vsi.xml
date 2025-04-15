@@ -1,0 +1,157 @@
+<rpc message-id="1" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+
+<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+<interface>
+  <name>net2_vsi</name>
+  <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+  <enabled>true</enabled>
+  <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+    <interface-usage>inherit</interface-usage>
+  </interface-usage>
+  <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+    <interface>BP_Eth</interface>
+  </subif-lower-layer>
+  <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+    <ingress-rule>
+      <rule>
+        <name>rule_1</name>
+        <priority>100</priority>
+        <flexible-match>
+          <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+            <tag>
+              <index>0</index>
+              <dot1q-tag>
+                <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                <vlan-id>61</vlan-id>
+                <pbit>any</pbit>
+                <dei>any</dei>
+              </dot1q-tag>
+            </tag>
+          </match-criteria>
+        </flexible-match>
+        <ingress-rewrite>
+          <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+        </ingress-rewrite>
+      </rule>
+    </ingress-rule>
+    <egress-rewrite>
+      <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+        <index>0</index>
+        <dot1q-tag>
+          <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+          <vlan-id>61</vlan-id>
+          <pbit-marking-index xmlns="urn:bbf:yang:bbf-qos-policies-sub-interfaces">0</pbit-marking-index>
+          <dei-marking-index xmlns="urn:bbf:yang:bbf-qos-policies-sub-interfaces">0</dei-marking-index>
+        </dot1q-tag>
+      </push-tag>
+    </egress-rewrite>
+  </inline-frame-processing>
+</interface>
+<interface>
+  <name>uni2_vsi</name>
+  <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+  <enabled>true</enabled>
+  <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+    <interface-usage>inherit</interface-usage>
+  </interface-usage>
+  <mac-learning xmlns="urn:bbf:yang:bbf-l2-forwarding">
+    <max-number-mac-addresses>32</max-number-mac-addresses>
+    <mac-learning-enable>true</mac-learning-enable>
+  </mac-learning>
+  <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">QPP0</egress-qos-policy-profile>
+  <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+    <interface>eth1</interface>
+  </subif-lower-layer>
+  <ipv4-security xmlns="uri:http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-ipv4-address-spoofing-prevention">
+    <prevent-ipv4-address-spoofing>true</prevent-ipv4-address-spoofing>
+    <learn-addresses-from-dhcp/>
+    <address>
+      <ip>192.85.2.2</ip>
+      <prefix-length>24</prefix-length>
+    </address>
+  </ipv4-security>
+  <l2-dhcpv4-relay xmlns="urn:bbf:yang:bbf-l2-dhcpv4-relay">
+    <enable>true</enable>
+    <profile-ref>dhcp1</profile-ref>
+  </l2-dhcpv4-relay>
+  <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+    <ingress-rule>
+      <rule>
+        <name>rule_1</name>
+        <priority>100</priority>
+        <flexible-match>
+          <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+            <tag>
+              <index>0</index>
+              <dot1q-tag>
+                <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                <vlan-id>210</vlan-id>
+                <pbit>any</pbit>
+                <dei>any</dei>
+              </dot1q-tag>
+            </tag>
+          </match-criteria>
+        </flexible-match>
+        <ingress-rewrite>
+          <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+        </ingress-rewrite>
+      </rule>
+    </ingress-rule>
+    <egress-rewrite>
+      <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+        <index>0</index>
+        <dot1q-tag>
+          <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+          <vlan-id>210</vlan-id>
+          <pbit-from-tag-index>0</pbit-from-tag-index>
+          <dei-from-tag-index>0</dei-from-tag-index>
+        </dot1q-tag>
+      </push-tag>
+    </egress-rewrite>
+  </inline-frame-processing>
+</interface>
+</interfaces>
+
+<forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+<forwarders>
+  <forwarder>
+    <name>fwd2</name>
+    <ports>
+      <port>
+        <name>net2_vsi_port</name>
+        <sub-interface>net2_vsi</sub-interface>
+      </port>
+      <port>
+        <name>uni2_vsi_port</name>
+        <sub-interface>uni2_vsi</sub-interface>
+      </port>
+    </ports>
+    <flooding-policies>
+      <flooding-policies-profile>drop_all</flooding-policies-profile>
+    </flooding-policies>
+    <mac-learning>
+      <forwarding-database>fdb2</forwarding-database>
+    </mac-learning>
+    <split-horizon-profiles>
+      <split-horizon-profile>spl1</split-horizon-profile>
+    </split-horizon-profiles>
+  </forwarder>
+</forwarders>
+<forwarding-databases>
+  <forwarding-database>
+    <name>fdb2</name>
+    <max-number-mac-addresses>1024</max-number-mac-addresses>
+    <aging-timer>300</aging-timer>
+  </forwarding-database>
+</forwarding-databases>
+
+</forwarding>
+
+  </config>
+</edit-config>
+</rpc>

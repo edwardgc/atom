@@ -7,7 +7,7 @@
       <config>
 		<ponid:xpon-tc-allocation xmlns:ponid="http://www.nokia.com/management-solutions/pon-id-allocation">
 			<ponid:settings>
-				<ponid:id-reservation-time>600</ponid:id-reservation-time>
+				<ponid:id-reservation-time>300</ponid:id-reservation-time>
 			</ponid:settings>
 		</ponid:xpon-tc-allocation>
         </config>

@@ -1,0 +1,84 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+ <edit-config>
+   <target>
+     <running/>
+   </target>
+<config>
+
+  <policing-action-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+    <action-profile>
+      <name>P_fc-x_to_bac-x/fc-red_to_discard</name>
+      <action>
+        <flow-color>green</flow-color>
+        <bac-color>green</bac-color>
+        <metered-flow>true</metered-flow>
+        <metered-color>true</metered-color>
+      </action>
+      <action>
+        <flow-color>yellow</flow-color>
+        <bac-color>yellow</bac-color>
+        <metered-flow>true</metered-flow>
+        <metered-color>true</metered-color>
+      </action>
+      <action>
+        <flow-color>red</flow-color>
+        <discard/>
+      </action>
+    </action-profile>
+  </policing-action-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+  <policing-profile>
+    <name>0M-1000M-vsi-coloring</name>
+    <two-rate-three-color-marker-mef>
+      <cir>0</cir>
+      <cbs>1024</cbs>
+      <eir>1000000000</eir>
+      <ebs>125000</ebs>
+      <couple-flag>0</couple-flag>
+      <color-mode>color-blind</color-mode>
+    </two-rate-three-color-marker-mef>
+    <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">P_fc-x_to_bac-x/fc-red_to_discard</policing-action-profile>
+  </policing-profile>
+</policing-profiles>
+
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+   <classifier-entry>
+     <name>0M-1000M-vsi-coloring</name>
+     <filter-operation>match-all-filter</filter-operation>
+     <metered-flow xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-flow>
+     <classifier-action-entry-cfg>
+       <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+       <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+         <policing-profile>0M-1000M-vsi-coloring</policing-profile>
+       </policing>
+     </classifier-action-entry-cfg>
+   </classifier-entry>
+ </classifiers>
+
+ <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+   <policy>
+     <name>0M-1000M-vsi-coloring</name>
+     <classifiers>
+       <name>0M-1000M-vsi-coloring</name>
+     </classifiers>
+   </policy>
+ </policies>
+
+ <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+   <policy-profile>
+     <name>0M-1000M-vsi-coloring</name>
+     <policy-list>
+       <name>0M-1000M-vsi-coloring</name>
+     </policy-list>
+     <policy-list>
+       <name>POLICY_EG</name>
+     </policy-list>
+   </policy-profile>
+ </qos-policy-profiles>
+
+
+</config>
+  </edit-config>
+</rpc>

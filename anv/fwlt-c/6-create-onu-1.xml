@@ -1,0 +1,21 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="37">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+  <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+    <device-id>fwlt-c-12</device-id>
+    <device-specific-data>
+      <onus xmlns="urn:bbf:params:xml:ns:yang:bbf-fiber-onu-emulated-mount">
+        <onu xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>onu1</name>
+        </onu>
+      </onus>
+    </device-specific-data>
+  </device>
+</device-manager>
+    </config>
+  </edit-config>
+</rpc>

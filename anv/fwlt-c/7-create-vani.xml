@@ -1,0 +1,29 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="39">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+  <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+    <device-id>fwlt-c-12</device-id>
+    <device-specific-data>
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>ani_01</name>
+          <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:v-ani</type>
+          <v-ani xmlns="urn:bbf:yang:bbf-xponvani">
+            <onu-id>127</onu-id>
+            <channel-partition>CGP_01</channel-partition>
+            <expected-serial-number>ALCLFA999999</expected-serial-number>
+            <preferred-channel-pair>CP_01</preferred-channel-pair>
+            <onu-name xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-if-xponvani-aug">onu1</onu-name>
+          </v-ani>
+        </interface>
+      </interfaces>
+    </device-specific-data>
+  </device>
+</device-manager>
+    </config>
+  </edit-config>
+</rpc>

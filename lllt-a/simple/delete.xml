@@ -12,21 +12,12 @@
   <component xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
     <name>C1_Port</name>
   </component>
-	<component xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
-		<name>C2_Sfp</name>
-	</component>
-	<component xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
-		<name>C2_Port</name>
-	</component>
 </hardware>
 <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
   <forwarders>
     <forwarder xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
       <name>fwd1</name>
     </forwarder>
-		<forwarder xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
-			<name>fwd2</name>
-		</forwarder>
   </forwarders>
 </forwarding>
 <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
@@ -83,20 +74,11 @@
   <interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
     <name>eth1</name>
   </interface>
-	<interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
-		<name>eth2</name>
-	</interface>
   <interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
     <name>net1_vsi</name>
   </interface>
-	<interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
-		<name>net2_vsi</name>
-	</interface>
   <interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
     <name>uni1_vsi</name>
-  </interface>
-	<interface xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="delete">
-    <name>uni2_vsi</name>
   </interface>
 </interfaces>
 <tm-profiles xmlns="urn:bbf:yang:bbf-qos-traffic-mngt">

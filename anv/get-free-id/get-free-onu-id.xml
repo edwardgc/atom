@@ -1,8 +1,9 @@
 <rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1775">
    <get-free-onu-ids xmlns="http://www.nokia.com/management-solutions/pon-id-allocation">
-      <channel-group-name>CG_1</channel-group-name>
+      <channel-group-name>cg_ont1</channel-group-name>
       <xpon-type xmlns:xpon-types="urn:bbf:yang:bbf-xpon-types">xpon-types:xgs</xpon-type>
-      <v-ani-name>ALCLFD09620E</v-ani-name>
+      <v-ani-name>ALCLFD09620E1</v-ani-name>
+      <v-ani-name>ALCLFD09620E2</v-ani-name>
       <!-- <allowed-id-list>0-127</allowed-id-list> -->
    </get-free-onu-ids>
 </rpc>

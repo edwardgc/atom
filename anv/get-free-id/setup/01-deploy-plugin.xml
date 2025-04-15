@@ -3,3 +3,7 @@
 		<definition-archive>device-extension-ls-fx-fglt-b-24.12-594.zip</definition-archive>
 	</deploy-device-plug>
 </rpc>
+
+<!--
+kubectl cp --namespace default /home/cguo005/plugins/device-extension-ls-fx-fglt-b-24.12-594.zip ${pod}:/root;
+//-->

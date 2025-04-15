@@ -5,32 +5,18 @@
 		</target>
 		<config>
 <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
-  <component>
-    <name>C1_Sfp</name>
-    <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
-    <parent>C1</parent>
-    <parent-rel-pos>1</parent-rel-pos>
-    <mfg-name>ALCL</mfg-name>
-    <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE62600AA</model-name>
-  </component>
-  <component>
-    <name>C1_Port</name>
-    <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
-    <parent>C1_Sfp</parent>
-    <parent-rel-pos>1</parent-rel-pos>
-  </component>
 	<component>
-		<name>C2_Sfp</name>
+		<name>C1_Sfp</name>
 		<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
-		<parent>C3</parent>
+		<parent>C1</parent>
 		<parent-rel-pos>1</parent-rel-pos>
 		<mfg-name>ALCL</mfg-name>
-		<model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE62600AA</model-name>
+		<model-name xmlns="urn:bbf:yang:bbf-hardware-extension">3FE64927AA</model-name>
 	</component>
 	<component>
-		<name>C2_Port</name>
-		<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
-		<parent>C2_Sfp</parent>
+		<name>C1_Port</name>
+		<class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:rj45</class>
+		<parent>C1_Sfp</parent>
 		<parent-rel-pos>1</parent-rel-pos>
 	</component>
 </hardware>
@@ -339,11 +325,11 @@
     <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
       <manual>
         <duplex>full</duplex>
-        <speed>eth-if-speed-10gb</speed>
+        <speed>eth-if-speed-1gb</speed>
       </manual>
     </ethernet>
   </interface>
-  <interface>
+	<interface>
     <name>net1_vsi</name>
     <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
     <enabled>true</enabled>

@@ -7,11 +7,11 @@
 		<config>
 			<device-manager xmlns="http://www.nokia.com/management-solutions/anv">
 				<device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
-					<device-id>LT_1</device-id>
+					<device-id>HelloWorld</device-id>
 					<device-specific-data>
 						<if:interfaces xmlns:if="urn:ietf:params:xml:ns:yang:ietf-interfaces">
 							<if:interface>
-								<if:name>CG_1</if:name>
+								<if:name>cg_ont1</if:name>
 								<if:enabled>true</if:enabled>
 								<if:type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-group
 								</if:type>

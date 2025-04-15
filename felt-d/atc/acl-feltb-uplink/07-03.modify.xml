@@ -1,0 +1,306 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="553">
+<edit-config>
+  <target>
+    <running/>
+  </target>
+  <config>
+
+    <filters xmlns="urn:bbf:yang:bbf-qos-filters">
+<enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>enhanced_filter1</name>
+  <filter-operation xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:match-all-filter</filter-operation>
+  <filter>
+    <name>enh_filter1</name>
+    <source-mac-address>
+      <mac-address-value>10:11:22:33:55:55</mac-address-value>
+      <mac-address-mask>FF:FF:FF:FF:FF:FF</mac-address-mask>
+    </source-mac-address>
+  </filter>
+</enhanced-filter>
+</filters>
+
+<filters xmlns="urn:bbf:yang:bbf-qos-filters">
+  <enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>enhanced_filter1_2</name>
+    <filter-operation xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:match-all-filter</filter-operation>
+    <filter>
+      <name>enh_filter1_2</name>
+      <source-mac-address>
+        <mac-address-value>20:11:22:33:55:55</mac-address-value>
+        <mac-address-mask>FF:FF:FF:FF:FF:FF</mac-address-mask>
+      </source-mac-address>
+    </filter>
+  </enhanced-filter>
+</filters>
+
+<filters xmlns="urn:bbf:yang:bbf-qos-filters">
+ <enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>enhanced_filter1</name>
+   <filter-operation xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:match-all-filter</filter-operation>
+   <filter>
+     <name>enh_filter1</name>
+     <destination-mac-address>
+       <mac-address-value>20:11:22:33:55:55</mac-address-value>
+       <mac-address-mask>FF:FF:FF:FF:FF:FF</mac-address-mask>
+     </destination-mac-address>
+   </filter>
+ </enhanced-filter>
+</filters>
+
+<filters xmlns="urn:bbf:yang:bbf-qos-filters">
+<enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>enhanced_filter1_2</name>
+  <filter-operation xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:match-all-filter</filter-operation>
+  <filter>
+    <name>enh_filter1_2</name>
+    <destination-mac-address>
+      <mac-address-value>10:11:22:33:55:55</mac-address-value>
+      <mac-address-mask>FF:FF:FF:FF:FF:FF</mac-address-mask>
+    </destination-mac-address>
+  </filter>
+</enhanced-filter>
+</filters>
+
+<filters xmlns="urn:bbf:yang:bbf-qos-filters">
+<enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>enhanced_filter1</name>
+  <filter-operation xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:match-all-filter</filter-operation>
+  <filter>
+    <name>enh_filter1</name>
+    <vlans>
+      <tag>
+        <index>0</index>
+        <in-pbit-list>0,2-3</in-pbit-list>
+      </tag>
+    </vlans>
+  </filter>
+</enhanced-filter>
+</filters>
+
+<filters xmlns="urn:bbf:yang:bbf-qos-filters">
+ <enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>enhanced_filter1_2</name>
+   <filter-operation xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:match-all-filter</filter-operation>
+   <filter>
+     <name>enh_filter1_2</name>
+     <pbit-marking-list>
+       <index>0</index>
+       <pbit-value>0</pbit-value>
+     </pbit-marking-list>
+   </filter>
+ </enhanced-filter>
+</filters>
+
+
+<filters xmlns="urn:bbf:yang:bbf-qos-filters">
+ <enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>enhanced_filter1_2</name>
+   <filter-operation xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:match-all-filter</filter-operation>
+   <filter>
+     <name>enh_filter1_2</name>
+     <pbit-marking-list>
+       <index>0</index>
+       <pbit-value>2</pbit-value>
+     </pbit-marking-list>
+   </filter>
+ </enhanced-filter>
+</filters>
+
+<filters xmlns="urn:bbf:yang:bbf-qos-filters">
+ <enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>enhanced_filter1_2</name>
+   <filter-operation xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:match-all-filter</filter-operation>
+   <filter>
+     <name>enh_filter1_2</name>
+     <pbit-marking-list>
+       <index>0</index>
+       <pbit-value>3</pbit-value>
+     </pbit-marking-list>
+   </filter>
+ </enhanced-filter>
+</filters>
+
+
+<filters xmlns="urn:bbf:yang:bbf-qos-filters">
+<enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>enhanced_filter1</name>
+  <filter-operation xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:match-all-filter</filter-operation>
+  <filter>
+    <name>enh_filter1</name>
+    <vlans>
+      <tag>
+        <index>0</index>
+        <in-dei>0</in-dei>
+      </tag>
+    </vlans>
+  </filter>
+</enhanced-filter>
+</filters>
+
+<filters xmlns="urn:bbf:yang:bbf-qos-filters">
+  <enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+    <name>enhanced_filter1_2</name>
+    <filter-operation xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:match-all-filter</filter-operation>
+    <filter>
+      <name>enh_filter1_2</name>
+      <dei-marking-list>
+        <index>0</index>
+        <dei-value>0</dei-value>
+      </dei-marking-list>
+    </filter>
+  </enhanced-filter>
+</filters>
+
+<filters xmlns="urn:bbf:yang:bbf-qos-filters">
+ <enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+   <name>enhanced_filter1</name>
+   <filter-operation>match-all-filter</filter-operation>
+   <filter>
+     <name>enh_filter1</name>
+     <ethernet-frame-type>ipv4</ethernet-frame-type>
+   </filter>
+ </enhanced-filter>
+</filters>
+
+<filters xmlns="urn:bbf:yang:bbf-qos-filters">
+<enhanced-filter xmlns="urn:bbf:yang:bbf-qos-enhanced-filters" xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+ <name>enhanced_filter1_2</name>
+ <filter-operation>match-all-filter</filter-operation>
+ <filter>
+   <name>enh_filter1_2</name>
+   <ethernet-frame-type>ipv4</ethernet-frame-type>
+ </filter>
+</enhanced-filter>
+</filters>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+  <name>classifier_01</name>
+  <filter-operation>match-all-filter</filter-operation>
+  <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced_filter1</enhanced-filter-name>
+  <classifier-action-entry-cfg>
+    <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:discard</action-type>
+    <discard xmlns="urn:bbf:yang:bbf-qos-policing"/>
+  </classifier-action-entry-cfg>
+</classifier-entry>
+</classifiers>
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+ <name>classifier_02</name>
+ <filter-operation>match-all-filter</filter-operation>
+ <enhanced-filter-name xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">enhanced_filter1_2</enhanced-filter-name>
+ <classifier-action-entry-cfg>
+   <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:discard</action-type>
+   <discard xmlns="urn:bbf:yang:bbf-qos-policing"/>
+ </classifier-action-entry-cfg>
+</classifier-entry>
+</classifiers>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy>
+   <name>policy1</name>
+   <classifiers>
+     <name>classifier_01</name>
+   </classifiers>
+ </policy>
+</policies>
+
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy-profile>
+    <name>IPP2</name>
+    <policy-list>
+      <name>policy1</name>
+    </policy-list>
+  </policy-profile>
+</qos-policy-profiles>
+
+<policies xmlns="urn:bbf:yang:bbf-qos-policies">
+  <policy>
+    <name>policy2</name>
+    <classifiers>
+      <name>classifier_02</name>
+    </classifiers>
+  </policy>
+</policies>
+
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+ <policy-profile>
+   <name>QPP2</name>
+   <policy-list>
+     <name>policy2</name>
+   </policy-list>
+ </policy-profile>
+</qos-policy-profiles>
+
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+<policy-profile>
+  <name>QPP2</name>
+  <policy-list>
+    <name>G_POLICY2</name>
+  </policy-list>
+</policy-profile>
+</qos-policy-profiles>
+
+<qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+<policy-profile>
+  <name>IPP2</name>
+  <policy-list>
+    <name>G_ING_POLICY2</name>
+  </policy-list>
+</policy-profile>
+</qos-policy-profiles>
+
+<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+<interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+ <name>uni1_vsi1</name>
+ <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+ <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+   <interface>eth1</interface>
+ </subif-lower-layer>
+ <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+   <ingress-rule>
+     <rule>
+       <name>a</name>
+       <priority>100</priority>
+       <flexible-match>
+         <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+           <tag>
+             <index>0</index>
+             <dot1q-tag>
+               <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+               <vlan-id>2002</vlan-id>
+               <pbit>any</pbit>
+               <dei>any</dei>
+             </dot1q-tag>
+           </tag>
+         </match-criteria>
+       </flexible-match>
+       <ingress-rewrite>
+         <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+       </ingress-rewrite>
+     </rule>
+   </ingress-rule>
+   <egress-rewrite>
+     <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+       <index>0</index>
+       <dot1q-tag>
+         <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+         <vlan-id>2002</vlan-id>
+         <pbit-from-tag-index>0</pbit-from-tag-index>
+         <dei-from-tag-index>0</dei-from-tag-index>
+       </dot1q-tag>
+     </push-tag>
+   </egress-rewrite>
+ </inline-frame-processing>
+ <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+   <interface-usage>inherit</interface-usage>
+ </interface-usage>
+ <ingress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">IPP2</ingress-qos-policy-profile>
+ <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">QPP2</egress-qos-policy-profile>
+</interface>
+</interfaces>
+
+  </config>
+</edit-config>
+</rpc>

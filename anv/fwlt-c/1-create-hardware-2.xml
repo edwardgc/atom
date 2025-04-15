@@ -1,0 +1,24 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="32">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+  <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+    <device-id>fwlt-c-12</device-id>
+    <device-specific-data>
+      <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+        <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>PORTTEST</name>
+          <class xmlns:nokia-hwi="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-hardware-identities">nokia-hwi:transceiver-link-ngpon</class>
+          <parent>SFPTEST</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+        </component>
+      </hardware>
+    </device-specific-data>
+  </device>
+</device-manager>
+    </config>
+  </edit-config>
+</rpc>

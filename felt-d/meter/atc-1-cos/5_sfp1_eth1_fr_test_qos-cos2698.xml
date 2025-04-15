@@ -1,0 +1,190 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+<config>
+
+  <policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+      <policing-profile>
+        <name>cos-vsi-coloring</name>
+        <scope xmlns:bbf-qos-cls="urn:bbf:yang:bbf-qos-classifiers">bbf-qos-cls:ethernet-interface</scope>
+        <two-rate-three-color-marker-with-cos xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+          <cir>50</cir>
+          <cbs>204000</cbs>
+          <cbs-tc-threshold>
+            <policing-tc-threshold>
+              <tc>0</tc>
+              <threshold>40</threshold>
+            </policing-tc-threshold>
+            <policing-tc-threshold>
+              <tc>1</tc>
+              <threshold>100</threshold>
+            </policing-tc-threshold>
+          </cbs-tc-threshold>
+          <pir>10000000</pir>
+          <pbs>354000</pbs>
+          <pbs-tc-threshold>
+            <policing-tc-threshold>
+              <tc>0</tc>
+              <threshold>40</threshold>
+            </policing-tc-threshold>
+            <policing-tc-threshold>
+              <tc>1</tc>
+              <threshold>100</threshold>
+            </policing-tc-threshold>
+          </pbs-tc-threshold>
+        </two-rate-three-color-marker-with-cos>
+        <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">P_policingTc-policy</policing-pre-handling-profile>
+        <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">pol-act-outer-dei-marking</policing-action-profile>
+      </policing-profile>
+    </policing-profiles>
+
+   <policing-pre-handling-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+      <pre-handling-profile>
+        <name>P_policingTc-policy</name>
+        <pre-handling-entry>
+          <name>pbit0</name>
+          <match-params>
+            <pbit-marking-list>
+              <index>1</index>
+              <pbit-value>0</pbit-value>
+            </pbit-marking-list>
+          </match-params>
+          <policing-traffic-class>0</policing-traffic-class>
+        </pre-handling-entry>
+        <pre-handling-entry>
+          <name>pbit1</name>
+          <match-params>
+            <pbit-marking-list>
+              <index>1</index>
+              <pbit-value>1</pbit-value>
+            </pbit-marking-list>
+          </match-params>
+          <policing-traffic-class>1</policing-traffic-class>
+        </pre-handling-entry>
+        <pre-handling-entry>
+          <name>pbit2</name>
+          <match-params>
+            <pbit-marking-list>
+              <index>1</index>
+              <pbit-value>2</pbit-value>
+            </pbit-marking-list>
+          </match-params>
+          <policing-traffic-class>1</policing-traffic-class>
+        </pre-handling-entry>
+        <pre-handling-entry>
+          <name>pbit3</name>
+          <match-params>
+            <pbit-marking-list>
+              <index>1</index>
+              <pbit-value>3</pbit-value>
+            </pbit-marking-list>
+          </match-params>
+          <policing-traffic-class>1</policing-traffic-class>
+        </pre-handling-entry>
+        <pre-handling-entry>
+          <name>pbit4</name>
+          <match-params>
+            <pbit-marking-list>
+              <index>1</index>
+              <pbit-value>4</pbit-value>
+            </pbit-marking-list>
+          </match-params>
+          <policing-traffic-class>1</policing-traffic-class>
+        </pre-handling-entry>
+        <pre-handling-entry>
+          <name>pbit5</name>
+          <match-params>
+            <pbit-marking-list>
+              <index>1</index>
+              <pbit-value>5</pbit-value>
+            </pbit-marking-list>
+          </match-params>
+          <policing-traffic-class>1</policing-traffic-class>
+        </pre-handling-entry>
+        <pre-handling-entry>
+          <name>pbit6</name>
+          <match-params>
+            <pbit-marking-list>
+              <index>1</index>
+              <pbit-value>6</pbit-value>
+            </pbit-marking-list>
+          </match-params>
+          <policing-traffic-class>1</policing-traffic-class>
+        </pre-handling-entry>
+        <pre-handling-entry>
+          <name>pbit7</name>
+          <match-params>
+            <pbit-marking-list>
+              <index>1</index>
+              <pbit-value>7</pbit-value>
+            </pbit-marking-list>
+          </match-params>
+          <policing-traffic-class>1</policing-traffic-class>
+        </pre-handling-entry>
+      </pre-handling-profile>
+    </policing-pre-handling-profiles>
+
+    <policing-action-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+      <action-profile>
+        <name>pol-act-outer-dei-marking</name>
+        <action>
+          <flow-color>green</flow-color>
+          <metered-flow>true</metered-flow>
+          <metered-color>true</metered-color>
+        </action>
+        <action>
+          <flow-color>yellow</flow-color>
+          <dei-marking-list>
+            <index>0</index>
+            <dei-value>1</dei-value>
+          </dei-marking-list>
+          <metered-flow>true</metered-flow>
+          <metered-color>true</metered-color>
+        </action>
+        <action>
+          <flow-color>red</flow-color>
+          <discard/>
+        </action>
+      </action-profile>
+    </policing-action-profiles>
+
+   <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+      <classifier-entry>
+        <name>cos-vsi-coloring</name>
+        <filter-operation>match-all-filter</filter-operation>
+        <metered-flow xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-flow>
+        <classifier-action-entry-cfg>
+          <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+          <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+            <policing-profile>cos-vsi-coloring</policing-profile>
+          </policing>
+        </classifier-action-entry-cfg>
+      </classifier-entry>
+    </classifiers>
+
+    <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+      <policy>
+        <name>cos-vsi-coloring</name>
+        <classifiers>
+          <name>cos-vsi-coloring</name>
+        </classifiers>
+      </policy>
+    </policies>
+
+    <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+      <policy-profile>
+        <name>Leaf-Spine-Network-DS-Dual-HS</name>
+        <policy-list>
+          <name>cos-vsi-coloring</name>
+        </policy-list>
+        <policy-list>
+          <name>POLICY_EG</name>
+        </policy-list>
+      </policy-profile>
+    </qos-policy-profiles>
+
+</config>
+  </edit-config>
+</rpc>

@@ -1,0 +1,117 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+<config>
+
+  <tm-profiles xmlns="urn:bbf:yang:bbf-qos-traffic-mngt">
+    <bac-entry>
+      <name>BACKPLQ</name>
+      <max-queue-size>1048576</max-queue-size>
+      <wtaildrop>
+        <color>
+          <green>
+            <max-threshold>100</max-threshold>
+          </green>
+          <yellow>
+            <max-threshold>80</max-threshold>
+          </yellow>
+          <red>
+            <max-threshold>60</max-threshold>
+          </red>
+        </color>
+      </wtaildrop>
+    </bac-entry>
+
+    <bac-entry>
+      <name>BACKPLQ-1</name>
+      <max-queue-size>1048576</max-queue-size>
+      <wtaildrop>
+        <color>
+          <green>
+            <max-threshold>100</max-threshold>
+          </green>
+          <yellow>
+            <max-threshold>80</max-threshold>
+          </yellow>
+          <red>
+            <max-threshold>60</max-threshold>
+          </red>
+        </color>
+      </wtaildrop>
+    </bac-entry>
+  </tm-profiles>
+
+
+    <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+      <interface>
+        <name>BP_Eth</name>
+        <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+        <enabled>true</enabled>
+        <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">BP_Logical_Port</port-layer-if>
+        <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+          <interface-usage>network-port</interface-usage>
+        </interface-usage>
+        <tm-root xmlns="urn:bbf:yang:bbf-qos-traffic-mngt">
+          <queue>
+            <local-queue-id>0</local-queue-id>
+            <bac-name>BACKPLQ</bac-name>
+            <priority>0</priority>
+            <weight>10</weight>
+          </queue>
+          <queue>
+            <local-queue-id>1</local-queue-id>
+            <bac-name>BACKPLQ</bac-name>
+            <priority>0</priority>
+            <weight>20</weight>
+          </queue>
+          <queue>
+            <local-queue-id>2</local-queue-id>
+            <bac-name>BACKPLQ</bac-name>
+            <priority>0</priority>
+            <weight>30</weight>
+          </queue>
+          <queue>
+            <local-queue-id>3</local-queue-id>
+            <bac-name>BACKPLQ</bac-name>
+            <priority>0</priority>
+            <weight>40</weight>
+          </queue>
+          <queue>
+            <local-queue-id>4</local-queue-id>
+            <bac-name>BACKPLQ-1</bac-name>
+            <priority>4</priority>
+            <weight>0</weight>
+          </queue>
+          <queue>
+            <local-queue-id>5</local-queue-id>
+            <bac-name>BACKPLQ</bac-name>
+            <priority>5</priority>
+            <weight>0</weight>
+          </queue>
+          <queue>
+            <local-queue-id>6</local-queue-id>
+            <bac-name>BACKPLQ</bac-name>
+            <priority>6</priority>
+            <weight>0</weight>
+          </queue>
+          <queue>
+            <local-queue-id>7</local-queue-id>
+            <bac-name>BACKPLQ</bac-name>
+            <priority>7</priority>
+            <weight>0</weight>
+          </queue>
+        </tm-root>
+        <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
+          <auto-negotiation>
+            <status>enabled</status>
+          </auto-negotiation>
+        </ethernet>
+      </interface>
+    </interfaces>
+
+
+</config>
+  </edit-config>
+</rpc>

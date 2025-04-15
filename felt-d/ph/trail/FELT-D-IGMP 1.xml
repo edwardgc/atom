@@ -1,0 +1,1281 @@
+<rpc message-id="1" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+    <forwarding xmlns="urn:bbf:yang:bbf-l2-forwarding">
+      <flooding-policies-profiles>
+        <flooding-policies-profile>
+          <name>drop_all</name>
+          <flooding-policy>
+            <name>dn_drop</name>
+            <in-interface-usages>
+              <interface-usages>network-port</interface-usages>
+            </in-interface-usages>
+            <destination-address>
+              <any-frame/>
+            </destination-address>
+            <out-interface-usages>
+              <interface-usages>subtended-node-port</interface-usages>
+            </out-interface-usages>
+          </flooding-policy>
+        </flooding-policies-profile>
+      </flooding-policies-profiles>
+      <forwarders>
+        <forwarder>
+          <name>fwd1</name>
+          <ports>
+            <port>
+              <name>net1_vsi_port</name>
+              <sub-interface>net1_vsi1</sub-interface>
+            </port>
+            <port>
+              <name>uni1_vsi_port</name>
+              <sub-interface>uni1_vsi1</sub-interface>
+            </port>
+          </ports>
+          <flooding-policies>
+            <flooding-policies-profile>drop_all</flooding-policies-profile>
+          </flooding-policies>
+          <mac-learning>
+            <forwarding-database>fdb1</forwarding-database>
+          </mac-learning>
+          <split-horizon-profiles>
+            <split-horizon-profile>spl1</split-horizon-profile>
+          </split-horizon-profiles>
+          <l2-dhcpv4-relay xmlns="urn:bbf:yang:bbf-l2-dhcpv4-relay-forwarding">
+            <downstream-broadcast-flooding>false</downstream-broadcast-flooding>
+          </l2-dhcpv4-relay>
+        </forwarder>
+      </forwarders>
+      <forwarding-databases>
+        <forwarding-database>
+          <name>fdb1</name>
+          <max-number-mac-addresses>1024</max-number-mac-addresses>
+          <aging-timer>300</aging-timer>
+        </forwarding-database>
+      </forwarding-databases>
+      <split-horizon-profiles>
+        <split-horizon-profile>
+          <name>no-u2u-uninni</name>
+          <split-horizon>
+            <in-interface-usage>user-port</in-interface-usage>
+            <out-interface-usage>user-port</out-interface-usage>
+            <out-interface-usage>subtended-node-port</out-interface-usage>
+          </split-horizon>
+          <split-horizon>
+            <in-interface-usage>subtended-node-port</in-interface-usage>
+            <out-interface-usage>user-port</out-interface-usage>
+            <out-interface-usage>subtended-node-port</out-interface-usage>
+          </split-horizon>
+        </split-horizon-profile>
+        <split-horizon-profile>
+          <name>spl1</name>
+          <split-horizon>
+            <in-interface-usage>user-port</in-interface-usage>
+            <out-interface-usage>user-port</out-interface-usage>
+            <out-interface-usage>subtended-node-port</out-interface-usage>
+          </split-horizon>
+          <split-horizon>
+            <in-interface-usage>subtended-node-port</in-interface-usage>
+            <out-interface-usage>user-port</out-interface-usage>
+            <out-interface-usage>subtended-node-port</out-interface-usage>
+          </split-horizon>
+        </split-horizon-profile>
+      </split-horizon-profiles>
+      <mac-learning-control-profiles>
+        <mac-learning-control-profile>
+          <name>no-mac-movement-uninni</name>
+          <mac-learning-rule>
+            <receiving-interface-usage>user-port</receiving-interface-usage>
+            <mac-can-not-move-to>user-port</mac-can-not-move-to>
+            <mac-can-not-move-to>subtended-node-port</mac-can-not-move-to>
+          </mac-learning-rule>
+          <mac-learning-rule>
+            <receiving-interface-usage>subtended-node-port</receiving-interface-usage>
+            <mac-can-not-move-to>user-port</mac-can-not-move-to>
+            <mac-can-not-move-to>subtended-node-port</mac-can-not-move-to>
+          </mac-learning-rule>
+        </mac-learning-control-profile>
+      </mac-learning-control-profiles>
+    </forwarding>
+    <classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+                  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>classifier_eg0</name>
+                    <filter-operation>match-all-filter</filter-operation>
+                    <match-criteria>
+                      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                        <index>0</index>
+                        <pbit-value>0</pbit-value>
+                      </pbit-marking-list>
+                    </match-criteria>
+                    <classifier-action-entry-cfg>
+                      <action-type>scheduling-traffic-class</action-type>
+                      <scheduling-traffic-class>0</scheduling-traffic-class>
+                    </classifier-action-entry-cfg>
+                  </classifier-entry>
+                  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>classifier_ing0</name>
+                    <filter-operation>match-all-filter</filter-operation>
+                    <match-criteria>
+                      <tag>
+                        <index>0</index>
+                        <in-pbit-list>0</in-pbit-list>
+                      </tag>
+                    </match-criteria>
+                    <classifier-action-entry-cfg>
+                      <action-type>scheduling-traffic-class</action-type>
+                      <scheduling-traffic-class>0</scheduling-traffic-class>
+                    </classifier-action-entry-cfg>
+                  </classifier-entry>
+                  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>classifier_eg1</name>
+                    <filter-operation>match-all-filter</filter-operation>
+                    <match-criteria>
+                      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                        <index>0</index>
+                        <pbit-value>1</pbit-value>
+                      </pbit-marking-list>
+                    </match-criteria>
+                    <classifier-action-entry-cfg>
+                      <action-type>scheduling-traffic-class</action-type>
+                      <scheduling-traffic-class>1</scheduling-traffic-class>
+                    </classifier-action-entry-cfg>
+                  </classifier-entry>
+                  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>classifier_ing1</name>
+                    <filter-operation>match-all-filter</filter-operation>
+                    <match-criteria>
+                      <tag>
+                        <index>0</index>
+                        <in-pbit-list>1</in-pbit-list>
+                      </tag>
+                    </match-criteria>
+                    <classifier-action-entry-cfg>
+                      <action-type>scheduling-traffic-class</action-type>
+                      <scheduling-traffic-class>1</scheduling-traffic-class>
+                    </classifier-action-entry-cfg>
+                  </classifier-entry>
+
+                  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>classifier_eg2</name>
+                    <filter-operation>match-all-filter</filter-operation>
+                    <match-criteria>
+                      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                        <index>0</index>
+                        <pbit-value>2</pbit-value>
+                      </pbit-marking-list>
+                    </match-criteria>
+                    <classifier-action-entry-cfg>
+                      <action-type>scheduling-traffic-class</action-type>
+                      <scheduling-traffic-class>2</scheduling-traffic-class>
+                    </classifier-action-entry-cfg>
+                  </classifier-entry>
+
+                  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>classifier_ing2</name>
+                    <filter-operation>match-all-filter</filter-operation>
+                    <match-criteria>
+                      <tag>
+                        <index>0</index>
+                        <in-pbit-list>2</in-pbit-list>
+                      </tag>
+                    </match-criteria>
+                    <classifier-action-entry-cfg>
+                      <action-type>scheduling-traffic-class</action-type>
+                      <scheduling-traffic-class>2</scheduling-traffic-class>
+                    </classifier-action-entry-cfg>
+                  </classifier-entry>
+
+                  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>classifier_eg3</name>
+                    <filter-operation>match-all-filter</filter-operation>
+                    <match-criteria>
+                      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                        <index>0</index>
+                        <pbit-value>3</pbit-value>
+                      </pbit-marking-list>
+                    </match-criteria>
+                    <classifier-action-entry-cfg>
+                      <action-type>scheduling-traffic-class</action-type>
+                      <scheduling-traffic-class>3</scheduling-traffic-class>
+                    </classifier-action-entry-cfg>
+                  </classifier-entry>
+
+                  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>classifier_ing3</name>
+                    <filter-operation>match-all-filter</filter-operation>
+                    <match-criteria>
+                      <tag>
+                        <index>0</index>
+                        <in-pbit-list>3</in-pbit-list>
+                      </tag>
+                    </match-criteria>
+                    <classifier-action-entry-cfg>
+                      <action-type>scheduling-traffic-class</action-type>
+                      <scheduling-traffic-class>3</scheduling-traffic-class>
+                    </classifier-action-entry-cfg>
+                  </classifier-entry>
+
+                  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>classifier_eg4</name>
+                    <filter-operation>match-all-filter</filter-operation>
+                    <match-criteria>
+                      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                        <index>0</index>
+                        <pbit-value>4</pbit-value>
+                      </pbit-marking-list>
+                    </match-criteria>
+                    <classifier-action-entry-cfg>
+                      <action-type>scheduling-traffic-class</action-type>
+                      <scheduling-traffic-class>4</scheduling-traffic-class>
+                    </classifier-action-entry-cfg>
+                  </classifier-entry>
+
+                  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>classifier_ing4</name>
+                    <filter-operation>match-all-filter</filter-operation>
+                    <match-criteria>
+                      <tag>
+                        <index>0</index>
+                        <in-pbit-list>4</in-pbit-list>
+                      </tag>
+                    </match-criteria>
+                    <classifier-action-entry-cfg>
+                      <action-type>scheduling-traffic-class</action-type>
+                      <scheduling-traffic-class>4</scheduling-traffic-class>
+                    </classifier-action-entry-cfg>
+                  </classifier-entry>
+
+                  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>classifier_eg5</name>
+                    <filter-operation>match-all-filter</filter-operation>
+                    <match-criteria>
+                      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                        <index>0</index>
+                        <pbit-value>5</pbit-value>
+                      </pbit-marking-list>
+                    </match-criteria>
+                    <classifier-action-entry-cfg>
+                      <action-type>scheduling-traffic-class</action-type>
+                      <scheduling-traffic-class>5</scheduling-traffic-class>
+                    </classifier-action-entry-cfg>
+                  </classifier-entry>
+
+                  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>classifier_ing5</name>
+                    <filter-operation>match-all-filter</filter-operation>
+                    <match-criteria>
+                      <tag>
+                        <index>0</index>
+                        <in-pbit-list>5</in-pbit-list>
+                      </tag>
+                    </match-criteria>
+                    <classifier-action-entry-cfg>
+                      <action-type>scheduling-traffic-class</action-type>
+                      <scheduling-traffic-class>5</scheduling-traffic-class>
+                    </classifier-action-entry-cfg>
+                  </classifier-entry>
+
+                  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>classifier_eg6</name>
+                    <filter-operation>match-all-filter</filter-operation>
+                    <match-criteria>
+                      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                        <index>0</index>
+                        <pbit-value>6</pbit-value>
+                      </pbit-marking-list>
+                    </match-criteria>
+                    <classifier-action-entry-cfg>
+                      <action-type>scheduling-traffic-class</action-type>
+                      <scheduling-traffic-class>6</scheduling-traffic-class>
+                    </classifier-action-entry-cfg>
+                  </classifier-entry>
+
+                  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>classifier_ing6</name>
+                    <filter-operation>match-all-filter</filter-operation>
+                    <match-criteria>
+                      <tag>
+                        <index>0</index>
+                        <in-pbit-list>6</in-pbit-list>
+                      </tag>
+                    </match-criteria>
+                    <classifier-action-entry-cfg>
+                      <action-type>scheduling-traffic-class</action-type>
+                      <scheduling-traffic-class>6</scheduling-traffic-class>
+                    </classifier-action-entry-cfg>
+                  </classifier-entry>
+
+                  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>classifier_eg7</name>
+                    <filter-operation>match-all-filter</filter-operation>
+                    <match-criteria>
+                      <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                        <index>0</index>
+                        <pbit-value>7</pbit-value>
+                      </pbit-marking-list>
+                    </match-criteria>
+                    <classifier-action-entry-cfg>
+                      <action-type>scheduling-traffic-class</action-type>
+                      <scheduling-traffic-class>7</scheduling-traffic-class>
+                    </classifier-action-entry-cfg>
+                  </classifier-entry>
+
+                  <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                    <name>classifier_ing7</name>
+                    <filter-operation>match-all-filter</filter-operation>
+                    <match-criteria>
+                      <tag>
+                        <index>0</index>
+                        <in-pbit-list>7</in-pbit-list>
+                      </tag>
+                    </match-criteria>
+                    <classifier-action-entry-cfg>
+                      <action-type>scheduling-traffic-class</action-type>
+                      <scheduling-traffic-class>7</scheduling-traffic-class>
+                    </classifier-action-entry-cfg>
+                  </classifier-entry>
+                    <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                      <name>cls_eg0</name>
+                      <filter-operation>match-all-filter</filter-operation>
+                      <match-criteria>
+                        <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                          <index>0</index>
+                          <pbit-value>0</pbit-value>
+                        </pbit-marking-list>
+                      </match-criteria>
+                      <classifier-action-entry-cfg>
+                        <action-type>scheduling-traffic-class</action-type>
+                        <scheduling-traffic-class>0</scheduling-traffic-class>
+                      </classifier-action-entry-cfg>
+                    </classifier-entry>
+
+                    <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                      <name>cls_eg1</name>
+                      <filter-operation>match-all-filter</filter-operation>
+                      <match-criteria>
+                        <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                          <index>0</index>
+                          <pbit-value>1</pbit-value>
+                        </pbit-marking-list>
+                      </match-criteria>
+                      <classifier-action-entry-cfg>
+                        <action-type>scheduling-traffic-class</action-type>
+                        <scheduling-traffic-class>1</scheduling-traffic-class>
+                      </classifier-action-entry-cfg>
+                    </classifier-entry>
+
+                    <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                      <name>cls_eg2</name>
+                      <filter-operation>match-all-filter</filter-operation>
+                      <match-criteria>
+                        <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                          <index>0</index>
+                          <pbit-value>2</pbit-value>
+                        </pbit-marking-list>
+                      </match-criteria>
+                      <classifier-action-entry-cfg>
+                        <action-type>scheduling-traffic-class</action-type>
+                        <scheduling-traffic-class>2</scheduling-traffic-class>
+                      </classifier-action-entry-cfg>
+                    </classifier-entry>
+
+                    <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                      <name>cls_eg3</name>
+                      <filter-operation>match-all-filter</filter-operation>
+                      <match-criteria>
+                        <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                          <index>0</index>
+                          <pbit-value>3</pbit-value>
+                        </pbit-marking-list>
+                      </match-criteria>
+                      <classifier-action-entry-cfg>
+                        <action-type>scheduling-traffic-class</action-type>
+                        <scheduling-traffic-class>3</scheduling-traffic-class>
+                      </classifier-action-entry-cfg>
+                    </classifier-entry>
+
+                    <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                      <name>cls_eg4</name>
+                      <filter-operation>match-all-filter</filter-operation>
+                      <match-criteria>
+                        <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                          <index>0</index>
+                          <pbit-value>4</pbit-value>
+                        </pbit-marking-list>
+                      </match-criteria>
+                      <classifier-action-entry-cfg>
+                        <action-type>scheduling-traffic-class</action-type>
+                        <scheduling-traffic-class>4</scheduling-traffic-class>
+                      </classifier-action-entry-cfg>
+                    </classifier-entry>
+
+                    <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                      <name>cls_eg5</name>
+                      <filter-operation>match-all-filter</filter-operation>
+                      <match-criteria>
+                        <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                          <index>0</index>
+                          <pbit-value>5</pbit-value>
+                        </pbit-marking-list>
+                      </match-criteria>
+                      <classifier-action-entry-cfg>
+                        <action-type>scheduling-traffic-class</action-type>
+                        <scheduling-traffic-class>5</scheduling-traffic-class>
+                      </classifier-action-entry-cfg>
+                    </classifier-entry>
+
+                    <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                      <name>cls_eg6</name>
+                      <filter-operation>match-all-filter</filter-operation>
+                      <match-criteria>
+                        <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                          <index>0</index>
+                          <pbit-value>6</pbit-value>
+                        </pbit-marking-list>
+                      </match-criteria>
+                      <classifier-action-entry-cfg>
+                        <action-type>scheduling-traffic-class</action-type>
+                        <scheduling-traffic-class>6</scheduling-traffic-class>
+                      </classifier-action-entry-cfg>
+                    </classifier-entry>
+
+                    <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                      <name>cls_eg7</name>
+                      <filter-operation>match-all-filter</filter-operation>
+                      <match-criteria>
+                        <pbit-marking-list xmlns="urn:bbf:yang:bbf-qos-policing">
+                          <index>0</index>
+                          <pbit-value>7</pbit-value>
+                        </pbit-marking-list>
+                      </match-criteria>
+                      <classifier-action-entry-cfg>
+                        <action-type>scheduling-traffic-class</action-type>
+                        <scheduling-traffic-class>7</scheduling-traffic-class>
+                      </classifier-action-entry-cfg>
+                    </classifier-entry>
+
+                <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                  <name>classifier_user_egress</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <match-criteria>
+                    <protocol>igmp</protocol>
+                  </match-criteria>
+                  <classifier-action-entry-cfg>
+                    <action-type>pbit-marking</action-type>
+                    <pbit-marking-cfg>
+                      <pbit-marking-list>
+                        <index>0</index>
+                        <pbit-value>7</pbit-value>
+                      </pbit-marking-list>
+                    </pbit-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+
+                <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                  <name>classifier_mc_net_egress</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <match-criteria>
+                    <protocol>igmp</protocol>
+                  </match-criteria>
+                  <classifier-action-entry-cfg>
+                    <action-type>pbit-marking</action-type>
+                    <pbit-marking-cfg>
+                      <pbit-marking-list>
+                        <index>0</index>
+                        <pbit-value>7</pbit-value>
+                      </pbit-marking-list>
+                    </pbit-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+				<classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                  <name>untagPbitDei</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+                    <untagged/>
+                  </vlans>
+                  <classifier-action-entry-cfg>
+                    <action-type>pbit-marking</action-type>
+                    <pbit-marking-cfg>
+                      <pbit-marking-list>
+                        <index>0</index>
+                        <pbit-value>2</pbit-value>
+                      </pbit-marking-list>
+                    </pbit-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+                <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                  <name>untagPbitDei</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+                    <untagged/>
+                  </vlans>
+                  <classifier-action-entry-cfg>
+                    <action-type>dei-marking</action-type>
+                    <dei-marking-cfg>
+                      <dei-marking-list>
+                        <index>0</index>
+                        <dei-value>0</dei-value>
+                      </dei-marking-list>
+                    </dei-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+                <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                  <name>tag_C_C_cls0</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+                    <tag>
+                      <index>0</index>
+                      <in-pbit-list>0</in-pbit-list>
+                    </tag>
+                  </vlans>
+                  <classifier-action-entry-cfg>
+                    <action-type>pbit-marking</action-type>
+                    <pbit-marking-cfg>
+                      <pbit-marking-list>
+                        <index>0</index>
+                        <pbit-value>0</pbit-value>
+                      </pbit-marking-list>
+                    </pbit-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+                <classifier-entry xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+                  <name>tag_C_C_cls1</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+                    <tag>
+                      <index>0</index>
+                      <in-pbit-list>1</in-pbit-list>
+                    </tag>
+                  </vlans>
+                  <classifier-action-entry-cfg>
+                    <action-type>pbit-marking</action-type>
+                    <pbit-marking-cfg>
+                      <pbit-marking-list>
+                        <index>0</index>
+                        <pbit-value>1</pbit-value>
+                      </pbit-marking-list>
+                    </pbit-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+                <classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+                  <name>tag_C_C_cls2</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+                    <tag>
+                      <index>0</index>
+                      <in-pbit-list>2</in-pbit-list>
+                    </tag>
+                  </vlans>
+                  <classifier-action-entry-cfg>
+                    <action-type>pbit-marking</action-type>
+                    <pbit-marking-cfg>
+                      <pbit-marking-list>
+                        <index>0</index>
+                        <pbit-value>2</pbit-value>
+                      </pbit-marking-list>
+                    </pbit-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+                <classifier-entry xmlns:ns3="urn:ietf:params:xml:ns:netconf:base:1.0" ns3:operation="merge">
+                  <name>tag_C_C_cls3</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+                    <tag>
+                      <index>0</index>
+                      <in-pbit-list>3</in-pbit-list>
+                    </tag>
+                  </vlans>
+                  <classifier-action-entry-cfg>
+                    <action-type>pbit-marking</action-type>
+                    <pbit-marking-cfg>
+                      <pbit-marking-list>
+                        <index>0</index>
+                        <pbit-value>3</pbit-value>
+                      </pbit-marking-list>
+                    </pbit-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+                <classifier-entry xmlns:ns4="urn:ietf:params:xml:ns:netconf:base:1.0" ns4:operation="merge">
+                  <name>tag_C_C_cls4</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+                    <tag>
+                      <index>0</index>
+                      <in-pbit-list>4</in-pbit-list>
+                    </tag>
+                  </vlans>
+                  <classifier-action-entry-cfg>
+                    <action-type>pbit-marking</action-type>
+                    <pbit-marking-cfg>
+                      <pbit-marking-list>
+                        <index>0</index>
+                        <pbit-value>4</pbit-value>
+                      </pbit-marking-list>
+                    </pbit-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+                <classifier-entry xmlns:ns5="urn:ietf:params:xml:ns:netconf:base:1.0" ns5:operation="merge">
+                  <name>tag_C_C_cls5</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+                    <tag>
+                      <index>0</index>
+                      <in-pbit-list>5</in-pbit-list>
+                    </tag>
+                  </vlans>
+                  <classifier-action-entry-cfg>
+                    <action-type>pbit-marking</action-type>
+                    <pbit-marking-cfg>
+                      <pbit-marking-list>
+                        <index>0</index>
+                        <pbit-value>5</pbit-value>
+                      </pbit-marking-list>
+                    </pbit-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+                <classifier-entry xmlns:ns6="urn:ietf:params:xml:ns:netconf:base:1.0" ns6:operation="merge">
+                  <name>tag_C_C_cls6</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+                    <tag>
+                      <index>0</index>
+                      <in-pbit-list>6</in-pbit-list>
+                    </tag>
+                  </vlans>
+                  <classifier-action-entry-cfg>
+                    <action-type>pbit-marking</action-type>
+                    <pbit-marking-cfg>
+                      <pbit-marking-list>
+                        <index>0</index>
+                        <pbit-value>6</pbit-value>
+                      </pbit-marking-list>
+                    </pbit-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+                <classifier-entry xmlns:ns7="urn:ietf:params:xml:ns:netconf:base:1.0" ns7:operation="merge">
+                  <name>tag_C_C_cls7</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+                    <tag>
+                      <index>0</index>
+                      <in-pbit-list>7</in-pbit-list>
+                    </tag>
+                  </vlans>
+                  <classifier-action-entry-cfg>
+                    <action-type>pbit-marking</action-type>
+                    <pbit-marking-cfg>
+                      <pbit-marking-list>
+                        <index>0</index>
+                        <pbit-value>7</pbit-value>
+                      </pbit-marking-list>
+                    </pbit-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+                <classifier-entry xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                  <name>tag_C_SC_cls0</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+                    <tag>
+                      <index>0</index>
+                      <in-pbit-list>0</in-pbit-list>
+                    </tag>
+                  </vlans>
+                  <classifier-action-entry-cfg>
+                    <action-type>pbit-marking</action-type>
+                    <pbit-marking-cfg>
+                      <pbit-marking-list>
+                        <index>0</index>
+                        <pbit-value>0</pbit-value>
+                      </pbit-marking-list>
+                      <pbit-marking-list>
+                        <index>1</index>
+                        <pbit-value>0</pbit-value>
+                      </pbit-marking-list>
+                    </pbit-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+                <classifier-entry xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+                  <name>tag_C_SC_cls1</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+                    <tag>
+                      <index>0</index>
+                      <in-pbit-list>1</in-pbit-list>
+                    </tag>
+                  </vlans>
+                  <classifier-action-entry-cfg>
+                    <action-type>pbit-marking</action-type>
+                    <pbit-marking-cfg>
+                      <pbit-marking-list>
+                        <index>0</index>
+                        <pbit-value>1</pbit-value>
+                      </pbit-marking-list>
+                      <pbit-marking-list>
+                        <index>1</index>
+                        <pbit-value>1</pbit-value>
+                      </pbit-marking-list>
+                    </pbit-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+                <classifier-entry xmlns:ns2="urn:ietf:params:xml:ns:netconf:base:1.0" ns2:operation="merge">
+                  <name>tag_C_SC_cls2</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+                    <tag>
+                      <index>0</index>
+                      <in-pbit-list>2</in-pbit-list>
+                    </tag>
+                  </vlans>
+                  <classifier-action-entry-cfg>
+                    <action-type>pbit-marking</action-type>
+                    <pbit-marking-cfg>
+                      <pbit-marking-list>
+                        <index>0</index>
+                        <pbit-value>2</pbit-value>
+                      </pbit-marking-list>
+                      <pbit-marking-list>
+                        <index>1</index>
+                        <pbit-value>2</pbit-value>
+                      </pbit-marking-list>
+                    </pbit-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+                <classifier-entry xmlns:ns3="urn:ietf:params:xml:ns:netconf:base:1.0" ns3:operation="merge">
+                  <name>tag_C_SC_cls3</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+                    <tag>
+                      <index>0</index>
+                      <in-pbit-list>3</in-pbit-list>
+                    </tag>
+                  </vlans>
+                  <classifier-action-entry-cfg>
+                    <action-type>pbit-marking</action-type>
+                    <pbit-marking-cfg>
+                      <pbit-marking-list>
+                        <index>0</index>
+                        <pbit-value>3</pbit-value>
+                      </pbit-marking-list>
+                      <pbit-marking-list>
+                        <index>1</index>
+                        <pbit-value>3</pbit-value>
+                      </pbit-marking-list>
+                    </pbit-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+                <classifier-entry xmlns:ns4="urn:ietf:params:xml:ns:netconf:base:1.0" ns4:operation="merge">
+                  <name>tag_C_SC_cls4</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+                    <tag>
+                      <index>0</index>
+                      <in-pbit-list>4</in-pbit-list>
+                    </tag>
+                  </vlans>
+                  <classifier-action-entry-cfg>
+                    <action-type>pbit-marking</action-type>
+                    <pbit-marking-cfg>
+                      <pbit-marking-list>
+                        <index>0</index>
+                        <pbit-value>4</pbit-value>
+                      </pbit-marking-list>
+                      <pbit-marking-list>
+                        <index>1</index>
+                        <pbit-value>4</pbit-value>
+                      </pbit-marking-list>
+                    </pbit-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+                <classifier-entry xmlns:ns5="urn:ietf:params:xml:ns:netconf:base:1.0" ns5:operation="merge">
+                  <name>tag_C_SC_cls5</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+                    <tag>
+                      <index>0</index>
+                      <in-pbit-list>5</in-pbit-list>
+                    </tag>
+                  </vlans>
+                  <classifier-action-entry-cfg>
+                    <action-type>pbit-marking</action-type>
+                    <pbit-marking-cfg>
+                      <pbit-marking-list>
+                        <index>0</index>
+                        <pbit-value>5</pbit-value>
+                      </pbit-marking-list>
+                      <pbit-marking-list>
+                        <index>1</index>
+                        <pbit-value>5</pbit-value>
+                      </pbit-marking-list>
+                    </pbit-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+                <classifier-entry xmlns:ns6="urn:ietf:params:xml:ns:netconf:base:1.0" ns6:operation="merge">
+                  <name>tag_C_SC_cls6</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+                    <tag>
+                      <index>0</index>
+                      <in-pbit-list>6</in-pbit-list>
+                    </tag>
+                  </vlans>
+                  <classifier-action-entry-cfg>
+                    <action-type>pbit-marking</action-type>
+                    <pbit-marking-cfg>
+                      <pbit-marking-list>
+                        <index>0</index>
+                        <pbit-value>6</pbit-value>
+                      </pbit-marking-list>
+                      <pbit-marking-list>
+                        <index>1</index>
+                        <pbit-value>6</pbit-value>
+                      </pbit-marking-list>
+                    </pbit-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+                <classifier-entry xmlns:ns7="urn:ietf:params:xml:ns:netconf:base:1.0" ns7:operation="merge">
+                  <name>tag_C_SC_cls7</name>
+                  <filter-operation>match-all-filter</filter-operation>
+                  <vlans xmlns="urn:bbf:yang:bbf-qos-enhanced-filters">
+                    <tag>
+                      <index>0</index>
+                      <in-pbit-list>7</in-pbit-list>
+                    </tag>
+                  </vlans>
+                  <classifier-action-entry-cfg>
+                    <action-type>pbit-marking</action-type>
+                    <pbit-marking-cfg>
+                      <pbit-marking-list>
+                        <index>0</index>
+                        <pbit-value>7</pbit-value>
+                      </pbit-marking-list>
+                      <pbit-marking-list>
+                        <index>1</index>
+                        <pbit-value>7</pbit-value>
+                      </pbit-marking-list>
+                    </pbit-marking-cfg>
+                  </classifier-action-entry-cfg>
+                </classifier-entry>
+              </classifiers>
+              <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+              <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>POLICY0</name>
+                <classifiers>
+                  <name>classifier_eg0</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_eg1</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_eg2</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_eg3</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_eg4</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_eg5</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_eg6</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_eg7</name>
+                </classifiers>
+              </policy>
+
+              <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>POLICY_ING</name>
+                <classifiers>
+                  <name>classifier_ing0</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_ing1</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_ing2</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_ing3</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_ing4</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_ing5</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_ing6</name>
+                </classifiers>
+                <classifiers>
+                  <name>classifier_ing7</name>
+                </classifiers>
+              </policy>
+
+			  <policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                  <name>POLICY_EG</name>
+                  <classifiers>
+                    <name>cls_eg0</name>
+                  </classifiers>
+                  <classifiers>
+                    <name>cls_eg1</name>
+                  </classifiers>
+                  <classifiers>
+                    <name>cls_eg2</name>
+                  </classifiers>
+                  <classifiers>
+                    <name>cls_eg3</name>
+                  </classifiers>
+                  <classifiers>
+                    <name>cls_eg4</name>
+                  </classifiers>
+                  <classifiers>
+                    <name>cls_eg5</name>
+                  </classifiers>
+                  <classifiers>
+                    <name>cls_eg6</name>
+                  </classifiers>
+                  <classifiers>
+                    <name>cls_eg7</name>
+                  </classifiers>
+                </policy>
+				<policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                  <name>policy_igmp</name>
+                  <classifiers>
+                    <name>classifier_user_egress</name>
+                  </classifiers>
+                </policy>
+				<policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                  <name>policy_classifier_mc_net_egress</name>
+                  <classifiers>
+                    <name>classifier_mc_net_egress</name>
+                  </classifiers>
+                </policy>
+
+				<policy xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                  <name>untag_policy</name>
+                  <classifiers>
+                    <name>untagPbitDei</name>
+                  </classifiers>
+                  <classifiers>
+                    <name>tag_C_C_cls0</name>
+                  </classifiers>
+                  <classifiers>
+                    <name>tag_C_C_cls1</name>
+                  </classifiers>
+                  <classifiers>
+                    <name>tag_C_C_cls2</name>
+                  </classifiers>
+                  <classifiers>
+                    <name>tag_C_C_cls3</name>
+                  </classifiers>
+                  <classifiers>
+                    <name>tag_C_C_cls4</name>
+                  </classifiers>
+                  <classifiers>
+                    <name>tag_C_C_cls5</name>
+                  </classifiers>
+                  <classifiers>
+                    <name>tag_C_C_cls6</name>
+                  </classifiers>
+                  <classifiers>
+                    <name>tag_C_C_cls7</name>
+                  </classifiers>
+                </policy>
+            </policies>
+
+            <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+              <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                <name>QPP0</name>
+                <policy-list>
+                  <name>POLICY0</name>
+                </policy-list>
+              </policy-profile>
+                <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                  <name>IPP0</name>
+                  <policy-list>
+                    <name>POLICY_ING</name>
+                  </policy-list>
+                </policy-profile>
+                <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                  <name>EPP0</name>
+                  <policy-list>
+                    <name>policy_igmp</name>
+                  </policy-list>
+                  <policy-list>
+                    <name>POLICY_EG</name>
+                  </policy-list>
+                </policy-profile>
+                <policy-profile xmlns:ns1="urn:ietf:params:xml:ns:netconf:base:1.0" ns1:operation="merge">
+                  <name>qpp_mc_net_egress</name>
+                  <policy-list>
+                    <name>policy_classifier_mc_net_egress</name>
+                  </policy-list>
+                </policy-profile>
+				        <policy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                  <name>untag_profile</name>
+                  <policy-list>
+                    <name>untag_policy</name>
+                  </policy-list>
+                </policy-profile>
+              </qos-policy-profiles>    <tm-profiles xmlns="urn:bbf:yang:bbf-qos-traffic-mngt">
+      <bac-entry>
+        <name>BACKPLQ</name>
+        <max-queue-size>1048576</max-queue-size>
+        <wtaildrop>
+          <color>
+            <green>
+              <max-threshold>7</max-threshold>
+            </green>
+            <yellow>
+              <max-threshold>6</max-threshold>
+            </yellow>
+            <red>
+              <max-threshold>5</max-threshold>
+            </red>
+          </color>
+        </wtaildrop>
+      </bac-entry>
+      <bac-entry>
+        <name>Bac-01</name>
+        <max-queue-size>10240</max-queue-size>
+        <taildrop>
+          <max-threshold>100</max-threshold>
+        </taildrop>
+      </bac-entry>
+    </tm-profiles>
+    <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+      <component>
+        <name>sfp1</name>
+        <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+        <parent>C1</parent>
+        <parent-rel-pos>1</parent-rel-pos>
+        <mfg-name>ALCL</mfg-name>
+        <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">NOKIA_ETHERNET</model-name>
+      </component>
+      <component>
+        <name>port1</name>
+        <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver-link</class>
+        <parent>sfp1</parent>
+        <parent-rel-pos>1</parent-rel-pos>
+      </component>
+    </hardware>
+    <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+      <interface>
+        <name>eth1</name>
+        <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+        <enabled>true</enabled>
+        <port-layer-if xmlns="urn:bbf:yang:bbf-interface-port-reference">port1</port-layer-if>
+        <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+          <interface-usage>user-port</interface-usage>
+        </interface-usage>
+        <tm-root xmlns="urn:bbf:yang:bbf-qos-traffic-mngt">
+          <queue>
+            <local-queue-id>0</local-queue-id>
+            <bac-name>Bac-01</bac-name>
+            <priority>1</priority>
+            <weight>10</weight>
+          </queue>
+          <queue>
+            <local-queue-id>1</local-queue-id>
+            <bac-name>Bac-01</bac-name>
+            <priority>1</priority>
+            <weight>10</weight>
+          </queue>
+          <queue>
+            <local-queue-id>2</local-queue-id>
+            <bac-name>Bac-01</bac-name>
+            <priority>1</priority>
+            <weight>10</weight>
+          </queue>
+          <queue>
+            <local-queue-id>3</local-queue-id>
+            <bac-name>Bac-01</bac-name>
+            <priority>1</priority>
+            <weight>10</weight>
+          </queue>
+          <queue>
+            <local-queue-id>4</local-queue-id>
+            <bac-name>Bac-01</bac-name>
+            <priority>1</priority>
+            <weight>10</weight>
+          </queue>
+          <queue>
+            <local-queue-id>5</local-queue-id>
+            <bac-name>Bac-01</bac-name>
+            <priority>1</priority>
+            <weight>10</weight>
+          </queue>
+          <queue>
+            <local-queue-id>6</local-queue-id>
+            <bac-name>Bac-01</bac-name>
+            <priority>1</priority>
+            <weight>10</weight>
+          </queue>
+          <queue>
+            <local-queue-id>7</local-queue-id>
+            <bac-name>Bac-01</bac-name>
+            <priority>1</priority>
+            <weight>10</weight>
+          </queue>
+        </tm-root>
+        <ethernet xmlns="urn:ieee:params:xml:ns:yang:ethernet">
+          <manual>
+            <duplex>full</duplex>
+            <speed>eth-if-speed-10gb</speed>
+          </manual>
+        </ethernet>
+      </interface>
+      <interface>
+        <name>net1_vsi1</name>
+        <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+        <enabled>true</enabled>
+        <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+          <interface-usage>inherit</interface-usage>
+        </interface-usage>
+        <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+          <interface>BP_Eth</interface>
+        </subif-lower-layer>
+        <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+          <ingress-rule>
+            <rule>
+              <name>rule_1</name>
+              <priority>100</priority>
+              <flexible-match>
+                <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                  <tag>
+                    <index>0</index>
+                    <dot1q-tag>
+                      <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                      <vlan-id>60</vlan-id>
+                      <pbit>any</pbit>
+                      <dei>any</dei>
+                    </dot1q-tag>
+                  </tag>
+                </match-criteria>
+              </flexible-match>
+              <ingress-rewrite>
+                <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+              </ingress-rewrite>
+            </rule>
+          </ingress-rule>
+          <egress-rewrite>
+            <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+              <index>0</index>
+              <dot1q-tag>
+                <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                <vlan-id>60</vlan-id>
+                <pbit-marking-index xmlns="urn:bbf:yang:bbf-qos-policies-sub-interfaces">0</pbit-marking-index>
+                <dei-marking-index xmlns="urn:bbf:yang:bbf-qos-policies-sub-interfaces">0</dei-marking-index>
+              </dot1q-tag>
+            </push-tag>
+          </egress-rewrite>
+        </inline-frame-processing>
+		<egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">qpp_mc_net_egress</egress-qos-policy-profile>
+      </interface>
+      <interface>
+        <name>uni1_vsi1</name>
+        <type xmlns:bbfift="urn:bbf:yang:bbf-if-type">bbfift:vlan-sub-interface</type>
+        <enabled>true</enabled>
+        <interface-usage xmlns="urn:bbf:yang:bbf-interface-usage">
+          <interface-usage>inherit</interface-usage>
+        </interface-usage>
+        <mac-learning xmlns="urn:bbf:yang:bbf-l2-forwarding">
+          <max-number-mac-addresses>32</max-number-mac-addresses>
+          <mac-learning-enable>true</mac-learning-enable>
+        </mac-learning>
+        <egress-qos-policy-profile xmlns="urn:bbf:yang:bbf-qos-policies">EPP0</egress-qos-policy-profile>
+        <subif-lower-layer xmlns="urn:bbf:yang:bbf-sub-interfaces">
+          <interface>eth1</interface>
+        </subif-lower-layer>
+        <inline-frame-processing xmlns="urn:bbf:yang:bbf-sub-interfaces">
+          <ingress-rule>
+            <rule>
+              <name>rule_1</name>
+              <priority>100</priority>
+              <flexible-match>
+                <match-criteria xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+                  <tag>
+                    <index>0</index>
+                    <dot1q-tag>
+                      <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                      <vlan-id>209</vlan-id>
+                      <pbit>any</pbit>
+                      <dei>any</dei>
+                    </dot1q-tag>
+                  </tag>
+                </match-criteria>
+              </flexible-match>
+              <ingress-rewrite>
+                <pop-tags xmlns="urn:bbf:yang:bbf-sub-interface-tagging">1</pop-tags>
+              </ingress-rewrite>
+            </rule>
+          </ingress-rule>
+          <egress-rewrite>
+            <push-tag xmlns="urn:bbf:yang:bbf-sub-interface-tagging">
+              <index>0</index>
+              <dot1q-tag>
+                <tag-type xmlns:bbf-dot1qt="urn:bbf:yang:bbf-dot1q-types">bbf-dot1qt:c-vlan</tag-type>
+                <vlan-id>209</vlan-id>
+                <pbit-from-tag-index>0</pbit-from-tag-index>
+                <dei-from-tag-index>0</dei-from-tag-index>
+              </dot1q-tag>
+            </push-tag>
+          </egress-rewrite>
+        </inline-frame-processing>
+      </interface>
+    </interfaces>
+                <multicast xmlns="urn:bbf:yang:bbf-mgmd">
+                    <mgmd>
+                      <multicast-proxy-profile xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                        <name>vpn1_proxy</name>
+                        <protocol-version>version-2</protocol-version>
+                        <interfaces-to-hosts-data>
+                          <query-interval>30</query-interval>
+                          <query-max-response-time>20</query-max-response-time>
+                          <startup-query-interval>5</startup-query-interval>
+                          <startup-query-count>2</startup-query-count>
+                          <immediate-leave>enabled</immediate-leave>
+                        </interfaces-to-hosts-data>
+                      </multicast-proxy-profile>
+                    <multicast-vpn xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+                      <name>vpn1</name>
+                      <mode>proxy</mode>
+                      <multicast-proxy-profile-name>vpn1_proxy</multicast-proxy-profile-name>
+                      <ipv4-address>0.0.0.0</ipv4-address>
+                      <multicast-network-interface>
+                        <name>mc_net_1</name>
+                        <single-uplink-interface-data>
+                          <vlan-sub-interface>net1_vsi1</vlan-sub-interface>
+                        </single-uplink-interface-data>
+                      </multicast-network-interface>
+					  <multicast-channel>
+                        <name>ch1</name>
+                        <network-interface>mc_net_1</network-interface>
+                        <ipv4>
+                          <source-ipv4-address>0.0.0.0</source-ipv4-address>
+                          <group-ipv4-address>225.1.1.1</group-ipv4-address>
+                          <group-ipv4-address-end>225.1.1.20</group-ipv4-address-end>
+                        </ipv4>
+                      </multicast-channel>
+					  <multicast-package>
+                        <name>A1</name>
+                        <multicast-channel-list>ch1</multicast-channel-list>
+                      </multicast-package>
+                      <multicast-interface-to-host>
+                        <name>mc_uni1</name>
+                        <vlan-sub-interface>uni1_vsi1</vlan-sub-interface>
+                        <max-group-number>20</max-group-number>
+                        <multicast-package>A1</multicast-package>
+                      </multicast-interface-to-host>
+                    </multicast-vpn>
+                  </mgmd>
+                </multicast>
+
+  </config>
+</edit-config>
+</rpc>

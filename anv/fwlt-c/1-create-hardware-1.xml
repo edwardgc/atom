@@ -1,0 +1,25 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="31">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+  <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+    <device-id>fwlt-c-12</device-id>
+    <device-specific-data>
+      <hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+        <component xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>SFPTEST</name>
+          <class xmlns:bbf-hwt="urn:bbf:yang:bbf-hardware-types">bbf-hwt:transceiver</class>
+          <parent>C5</parent>
+          <parent-rel-pos>1</parent-rel-pos>
+          <model-name xmlns="urn:bbf:yang:bbf-hardware-extension">NOKIA_NGPON</model-name>
+        </component>
+      </hardware>
+    </device-specific-data>
+  </device>
+</device-manager>
+    </config>
+  </edit-config>
+</rpc>

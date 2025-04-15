@@ -1,0 +1,122 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+ <edit-config>
+   <target>
+     <running/>
+   </target>
+<config>
+
+  <policing-action-profiles xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+    <action-profile>
+      <name>P_fc-x_to_bac-x/fc-red_to_discard</name>
+      <action>
+        <flow-color>green</flow-color>
+        <bac-color>green</bac-color>
+        <metered-flow>true</metered-flow>
+        <metered-color>true</metered-color>
+      </action>
+      <action>
+        <flow-color>yellow</flow-color>
+        <bac-color>yellow</bac-color>
+        <metered-flow>true</metered-flow>
+        <metered-color>true</metered-color>
+      </action>
+      <action>
+        <flow-color>red</flow-color>
+        <discard/>
+      </action>
+    </action-profile>
+  </policing-action-profiles>
+
+<policing-profiles xmlns="urn:bbf:yang:bbf-qos-policing">
+  <policing-profile>
+    <name>1M_2M-mef-cos-vsi-coloring</name>
+    <two-rate-three-color-marker-mef-with-cos xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">
+      <!-- <cir>1000000</cir> -->
+      <cir>10000</cir>
+      <cbs>10240</cbs>
+      <cbs-tc-threshold>
+        <policing-tc-threshold>
+          <tc>0</tc>
+          <threshold>10</threshold>
+        </policing-tc-threshold>
+        <policing-tc-threshold>
+          <tc>1</tc>
+          <threshold>20</threshold>
+        </policing-tc-threshold>
+        <policing-tc-threshold>
+          <tc>2</tc>
+          <threshold>30</threshold>
+        </policing-tc-threshold>
+        <policing-tc-threshold>
+          <tc>3</tc>
+          <threshold>40</threshold>
+        </policing-tc-threshold>
+      </cbs-tc-threshold>
+      <!-- <eir>2000000</eir> -->
+      <eir>1000000000</eir>
+      <ebs>10240</ebs>
+      <couple-flag>0</couple-flag>
+      <ebs-tc-threshold>
+        <policing-tc-threshold>
+          <tc>0</tc>
+          <threshold>10</threshold>
+        </policing-tc-threshold>
+        <policing-tc-threshold>
+          <tc>1</tc>
+          <threshold>20</threshold>
+        </policing-tc-threshold>
+        <policing-tc-threshold>
+          <tc>2</tc>
+          <threshold>30</threshold>
+        </policing-tc-threshold>
+        <policing-tc-threshold>
+          <tc>3</tc>
+          <threshold>40</threshold>
+        </policing-tc-threshold>
+      </ebs-tc-threshold>
+    </two-rate-three-color-marker-mef-with-cos>
+    <policing-pre-handling-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">P_policingTc-policy</policing-pre-handling-profile>
+    <policing-action-profile xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-sdan-qos-policing-extension">P_fc-x_to_bac-x/fc-red_to_discard</policing-action-profile>
+  </policing-profile>
+</policing-profiles>
+
+
+<classifiers xmlns="urn:bbf:yang:bbf-qos-classifiers">
+   <classifier-entry>
+     <name>1M_2M-mef-cos-vsi-coloring</name>
+     <filter-operation>match-all-filter</filter-operation>
+     <metered-flow xmlns="http://www.nokia.com/Fixed-Networks/BBA/yang/nokia-qos-filters-ext">false</metered-flow>
+     <classifier-action-entry-cfg>
+       <action-type xmlns:bbf-qos-plc="urn:bbf:yang:bbf-qos-policing">bbf-qos-plc:policing</action-type>
+       <policing xmlns="urn:bbf:yang:bbf-qos-policing">
+         <policing-profile>1M_2M-mef-cos-vsi-coloring</policing-profile>
+       </policing>
+     </classifier-action-entry-cfg>
+   </classifier-entry>
+ </classifiers>
+
+ <policies xmlns="urn:bbf:yang:bbf-qos-policies">
+   <policy>
+     <name>1M_2M-mef-cos-vsi-coloring</name>
+     <classifiers>
+       <name>1M_2M-mef-cos-vsi-coloring</name>
+     </classifiers>
+   </policy>
+ </policies>
+
+ <qos-policy-profiles xmlns="urn:bbf:yang:bbf-qos-policies">
+   <policy-profile>
+     <name>1M_2M-mef-cos-vsi-coloring</name>
+     <policy-list>
+       <name>1M_2M-mef-cos-vsi-coloring</name>
+     </policy-list>
+     <policy-list>
+       <name>POLICY_EG</name>
+     </policy-list>
+   </policy-profile>
+ </qos-policy-profiles>
+
+
+</config>
+  </edit-config>
+</rpc>

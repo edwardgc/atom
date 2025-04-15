@@ -10,7 +10,7 @@
           <push-nav-configuration-to-device>true</push-nav-configuration-to-device>
           <duid>123</duid>
           <hardware-type>LS-FX-FGLT-B</hardware-type>
-          <interface-version>22.6</interface-version>
+          <interface-version>24.12</interface-version>
         </device>
       </device-manager>
     </config>

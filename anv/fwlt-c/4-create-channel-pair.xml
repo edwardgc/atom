@@ -1,0 +1,28 @@
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="35">
+  <edit-config>
+    <target>
+      <running/>
+    </target>
+    <config>
+      <device-manager xmlns="http://www.nokia.com/management-solutions/anv">
+  <device xmlns="http://www.nokia.com/management-solutions/anv-device-holders">
+    <device-id>fwlt-c-12</device-id>
+    <device-specific-data>
+      <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface xmlns:ns0="urn:ietf:params:xml:ns:netconf:base:1.0" ns0:operation="merge">
+          <name>CP_01</name>
+          <type xmlns:bbf-xponift="urn:bbf:yang:bbf-xpon-if-type">bbf-xponift:channel-pair</type>
+          <channel-pair xmlns="urn:bbf:yang:bbf-xpon">
+            <channel-group-ref>CG_01</channel-group-ref>
+            <channel-partition-ref>CGP_01</channel-partition-ref>
+            <wavelength-prof-ref>xgspon-wave</wavelength-prof-ref>
+            <channel-pair-type xmlns:bbf-xpon-types="urn:bbf:yang:bbf-xpon-types">bbf-xpon-types:xgs</channel-pair-type>
+          </channel-pair>
+        </interface>
+      </interfaces>
+    </device-specific-data>
+  </device>
+</device-manager>
+    </config>
+  </edit-config>
+</rpc>

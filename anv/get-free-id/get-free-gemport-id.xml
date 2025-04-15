@@ -1,7 +1,9 @@
 <rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:ctx="http://www.nokia.com/management-solutions/netconf-extensions" ctx:session-id="0cb08e74-025b-41f4-855a-9d6628c36217" ctx:user-context="adminuser" message-id="1">
     <get-free-gemport-ids xmlns="http://www.nokia.com/management-solutions/pon-id-allocation">
-        <channel-group-name>CG_1</channel-group-name>
+        <channel-group-name>cg_ont1</channel-group-name>
         <xpon-type xmlns:xpon-types="urn:bbf:yang:bbf-xpon-types">xpon-types:gpon</xpon-type>
-            <gemport-name>GEM_FX_133.LT8_F1.ONT45_LAN1_IPTV</gemport-name>
+        <gemport-name>GEM_FX_133.LT8_F1.ONT45_LAN1_IPTV</gemport-name>
+        <gemport-name>GEM_FX_133.LT8_F1.ONT45_LAN1_IPTV-2</gemport-name>
+        <!-- <allowed-id-list>256-256</allowed-id-list> -->
     </get-free-gemport-ids>
 </rpc>

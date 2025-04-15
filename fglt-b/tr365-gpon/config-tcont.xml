@@ -11,7 +11,6 @@
                 <fixed-bandwidth>10000000</fixed-bandwidth>
                 <maximum-bandwidth>30000000</maximum-bandwidth>
                 <assured-bandwidth>10000000</assured-bandwidth>
-                <xponinfraAug:jitter-tolerance xmlns:xponinfraAug="urn:broadband-forum-org:yang:bbf-xponinfra-augment-nodes">8</xponinfraAug:jitter-tolerance>
               </traffic-descriptor-profile>
             </traffic-descriptor-profiles>
       			<tconts>
